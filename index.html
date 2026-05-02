@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>markblogforpublic</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#4F46E5',
+            'on-primary': '#FFFFFF',
+            'primary-container': '#E0DFFF',
+            'on-primary-container': '#1A0B8A',
+            secondary: '#5C5D72',
+            'on-secondary': '#FFFFFF',
+            'secondary-container': '#E1E0F9',
+            'on-secondary-container': '#191A2C',
+            tertiary: '#7A5368',
+            'on-tertiary': '#FFFFFF',
+            'tertiary-container': '#FFD8E8',
+            'on-tertiary-container': '#2E1122',
+            error: '#B3261E',
+            'on-error': '#FFFFFF',
+            'error-container': '#F9DEDC',
+            surface: '#FFFBFE',
+            'on-surface': '#1C1B1F',
+            'on-surface-variant': '#49454F',
+            outline: '#79747E',
+            'outline-variant': '#CAC4D0',
+            background: '#FFFBFE',
+            'on-background': '#1C1B1F',
+            'primary-dark': '#BDB8FF',
+            'on-primary-dark': '#2E1FA0',
+            'primary-container-dark': '#3F33C9',
+            'on-primary-container-dark': '#E0DFFF',
+            'surface-dark': '#1C1B1F',
+            'on-surface-dark': '#E6E1E5',
+            'surface-variant-dark': '#49454F',
+            'on-surface-variant-dark': '#CAC4D0',
+            'outline-dark': '#938F99',
+            'background-dark': '#1C1B1F',
+            'on-background-dark': '#E6E1E5',
+          },
+          borderRadius: {
+            'm3-sm': '8px',
+            'm3-md': '12px',
+            'm3-lg': '16px',
+            'm3-xl': '28px',
+          },
+          fontFamily: {
+            sans: ['"Google Sans"', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+          boxShadow: {
+            'm3-0': '0 0 0 0 rgba(0,0,0,0), 0 0 0 0 rgba(0,0,0,0)',
+            'm3-1': '0 1px 3px 0 rgba(0,0,0,0.12), 0 1px 2px 0 rgba(0,0,0,0.08)',
+            'm3-2': '0 2px 6px 0 rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.08)',
+            'm3-3': '0 4px 12px 0 rgba(0,0,0,0.14), 0 2px 4px 0 rgba(0,0,0,0.08)',
+            'm3-4': '0 6px 20px 0 rgba(0,0,0,0.15), 0 3px 6px 0 rgba(0,0,0,0.10)',
+            'm3-5': '0 8px 28px 0 rgba(0,0,0,0.16), 0 4px 8px 0 rgba(0,0,0,0.12)',
+          },
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-surface dark:bg-surface-dark text-on-surface dark:text-on-surface-dark font-sans">
+
+  <!-- ═══ Top App Bar (MD3) ═══ -->
+  <header class="sticky top-0 z-50 bg-surface/80 dark:bg-surface-dark/80 backdrop-blur-md shadow-m3-1">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Leading -->
+        <div class="flex items-center gap-3">
+          <a href="index.html" class="flex items-center gap-2 text-lg font-bold tracking-tight text-primary dark:text-primary-dark">
+            <span class="material-symbols-outlined text-[28px]">code_blocks</span>
+            markblogforpublic
+          </a>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex items-center gap-2">
+          <!-- Desktop nav -->
+          <nav class="hidden sm:flex items-center gap-1 mr-3">
+            <a href="index.html" class="nav-link active px-3 py-2 text-sm font-medium rounded-full text-on-surface-variant dark:text-on-surface-variant-dark hover:bg-primary-container/50 dark:hover:bg-primary-container-dark/50 transition-all" data-lang="en">Home</a>
+            <a href="index.html" class="nav-link active px-3 py-2 text-sm font-medium rounded-full text-on-surface-variant dark:text-on-surface-variant-dark hover:bg-primary-container/50 dark:hover:bg-primary-container-dark/50 transition-all" data-lang="zh">首页</a>
+            <a href="updates.html" class="nav-link px-3 py-2 text-sm font-medium rounded-full text-on-surface-variant dark:text-on-surface-variant-dark hover:bg-primary-container/50 dark:hover:bg-primary-container-dark/50 transition-all" data-lang="en">Updates</a>
+            <a href="updates.html" class="nav-link px-3 py-2 text-sm font-medium rounded-full text-on-surface-variant dark:text-on-surface-variant-dark hover:bg-primary-container/50 dark:hover:bg-primary-container-dark/50 transition-all" data-lang="zh">作者更新</a>
+            <a href="about.html" class="nav-link px-3 py-2 text-sm font-medium rounded-full text-on-surface-variant dark:text-on-surface-variant-dark hover:bg-primary-container/50 dark:hover:bg-primary-container-dark/50 transition-all" data-lang="en">About</a>
+            <a href="about.html" class="nav-link px-3 py-2 text-sm font-medium rounded-full text-on-surface-variant dark:text-on-surface-variant-dark hover:bg-primary-container/50 dark:hover:bg-primary-container-dark/50 transition-all" data-lang="zh">关于</a>
+          </nav>
+
+          <!-- Icon buttons -->
+          <button id="langToggle" class="m3-icon-btn relative" aria-label="Toggle language">
+            <span class="material-symbols-outlined text-[22px] text-on-surface-variant dark:text-on-surface-variant-dark">translate</span>
+            <span id="langLabel" class="absolute -bottom-1 right-0 text-[10px] font-medium text-primary dark:text-primary-dark">中文</span>
+          </button>
+
+          <button id="darkToggle" class="m3-icon-btn" aria-label="Toggle dark mode">
+            <span id="lightIcon" class="material-symbols-outlined text-[22px] text-on-surface-variant dark:text-on-surface-variant-dark">light_mode</span>
+            <span id="darkIcon" class="material-symbols-outlined text-[22px] text-on-surface-variant dark:text-on-surface-variant-dark hidden">dark_mode</span>
+          </button>
+
+          <button id="mobileMenuBtn" class="m3-icon-btn sm:!hidden" aria-label="Open menu">
+            <span class="material-symbols-outlined text-[22px]">menu</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile nav -->
+      <div id="mobileMenu" class="hidden sm:hidden pb-4 border-t border-outline-variant dark:border-surface-variant-dark pt-3 space-y-1">
+        <a href="index.html" class="block px-4 py-2.5 text-sm font-medium rounded-full text-primary dark:text-primary-dark bg-primary-container/30" data-lang="en">Home</a>
+        <a href="index.html" class="block px-4 py-2.5 text-sm font-medium rounded-full text-primary dark:text-primary-dark bg-primary-container/30" data-lang="zh">首页</a>
+        <a href="updates.html" class="block px-4 py-2.5 text-sm font-medium rounded-full text-on-surface-variant dark:text-on-surface-variant-dark hover:bg-primary-container/50" data-lang="en">Updates</a>
+        <a href="updates.html" class="block px-4 py-2.5 text-sm font-medium rounded-full text-on-surface-variant dark:text-on-surface-variant-dark hover:bg-primary-container/50" data-lang="zh">作者更新</a>
+        <a href="about.html" class="block px-4 py-2.5 text-sm font-medium rounded-full text-on-surface-variant dark:text-on-surface-variant-dark hover:bg-primary-container/50" data-lang="en">About</a>
+        <a href="about.html" class="block px-4 py-2.5 text-sm font-medium rounded-full text-on-surface-variant dark:text-on-surface-variant-dark hover:bg-primary-container/50" data-lang="zh">关于</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══ Hero Section ═══ -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary-container/40 via-surface dark:via-surface-dark to-tertiary-container/30 dark:to-[#2E1122]/40"></div>
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-32">
+      <div class="max-w-3xl">
+
+        <!-- EN -->
+        <div data-lang="en">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-container/60 dark:bg-primary-container-dark/40 text-sm font-medium text-primary dark:text-primary-dark mb-6">
+            <span class="material-symbols-outlined text-[18px]">handyman</span>
+            Developer &amp; Creator
+          </div>
+          <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-on-surface dark:text-on-surface-dark leading-[1.1] mb-6">
+            Building tools that<br/>
+            <span class="text-primary dark:text-primary-dark">bridge the gap</span>
+          </h1>
+          <p class="text-lg sm:text-xl text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed mb-10 max-w-xl">
+            I create practical open-source tools for real-world problems — with clean code, clear docs, and a focus on what actually matters.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="#projects" class="m3-filled-btn">
+              <span>View Projects</span>
+              <span class="material-symbols-outlined text-lg">arrow_downward</span>
+            </a>
+            <a href="about.html" class="m3-text-btn">
+              <span>More About Me</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- ZH -->
+        <div data-lang="zh" class="hidden">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-container/60 dark:bg-primary-container-dark/40 text-sm font-medium text-primary dark:text-primary-dark mb-6">
+            <span class="material-symbols-outlined text-[18px]">handyman</span>
+            开发者 &amp; 创造者
+          </div>
+          <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-on-surface dark:text-on-surface-dark leading-[1.1] mb-6">
+            打造<span class="text-primary dark:text-primary-dark">连接你我</span><br/>
+            的实用工具
+          </h1>
+          <p class="text-lg sm:text-xl text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed mb-10 max-w-xl">
+            我构建实用的开源工具，用干净的代码和清晰的文档解决真正的问题，专注做有意义的事。
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="#projects" class="m3-filled-btn">
+              <span>查看项目</span>
+              <span class="material-symbols-outlined text-lg">arrow_downward</span>
+            </a>
+            <a href="about.html" class="m3-text-btn">
+              <span>了解我</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Projects Section ═══ -->
+  <section id="projects" class="py-20 sm:py-24 bg-primary-container/20 dark:bg-primary-container-dark/10">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section header -->
+      <div class="text-center mb-16">
+        <div data-lang="en">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary-container/60 dark:bg-secondary-container/40 text-sm font-medium text-secondary dark:text-secondary mb-4">
+            <span class="material-symbols-outlined text-[18px]">folder_open</span>
+            Open Source
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-on-surface dark:text-on-surface-dark mb-4">Featured Projects</h2>
+          <p class="text-on-surface-variant dark:text-on-surface-variant-dark max-w-lg mx-auto">Well-documented, free-to-use tools built for the real world.</p>
+        </div>
+        <div data-lang="zh" class="hidden">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary-container/60 dark:bg-secondary-container/40 text-sm font-medium text-secondary dark:text-secondary mb-4">
+            <span class="material-symbols-outlined text-[18px]">folder_open</span>
+            开源项目
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-on-surface dark:text-on-surface-dark mb-4">项目展示</h2>
+          <p class="text-on-surface-variant dark:text-on-surface-variant-dark max-w-lg mx-auto">文档完善、免费使用的实用工具，为真实场景打造。</p>
+        </div>
+      </div>
+
+      <!-- Cards (MD3 elevation) -->
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <!-- ─── ImgBridge Card ─── -->
+        <div class="m3-card group">
+          <!-- Card header -->
+          <div class="flex items-center gap-4 mb-5">
+            <div class="w-14 h-14 rounded-m3-md bg-primary-container dark:bg-primary-container-dark flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-[28px] text-primary dark:text-primary-dark">image</span>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-on-surface dark:text-on-surface-dark">ImgBridge</h3>
+              <p class="text-sm text-on-surface-variant dark:text-on-surface-variant-dark">Image Recognition Bridge</p>
+            </div>
+          </div>
+
+          <!-- EN desc -->
+          <div data-lang="en">
+            <p class="text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed mb-5">
+              A local tool that bridges visual AI APIs to text-only LLMs. Upload images and get AI-powered descriptions, OCR, and scene analysis — giving any language model the ability to "see."
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="m3-chip">Python</span>
+              <span class="m3-chip">OpenAI API</span>
+              <span class="m3-chip">Anthropic API</span>
+              <span class="m3-chip">Privacy First</span>
+            </div>
+          </div>
+
+          <!-- ZH desc -->
+          <div data-lang="zh" class="hidden">
+            <p class="text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed mb-5">
+              一个本地图片识别桥梁工具。通过视觉 API 将图片转为文本描述，让纯文本 AI 模型也能"看懂"图片内容。支持批量上传、实时预览。
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="m3-chip">Python</span>
+              <span class="m3-chip">OpenAI API</span>
+              <span class="m3-chip">Anthropic API</span>
+              <span class="m3-chip">隐私优先</span>
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div class="flex items-center gap-3 pt-2">
+            <a href="https://github.com/markblogforpublic/ImgBridge" target="_blank" rel="noopener noreferrer" class="m3-label-btn">
+              <span class="material-symbols-outlined text-lg">open_in_new</span>
+              <span data-lang="en">GitHub</span><span data-lang="zh" class="hidden">GitHub 仓库</span>
+            </a>
+            <a href="https://github.com/markblogforpublic/ImgBridge/blob/main/README.md" target="_blank" rel="noopener noreferrer" class="m3-label-btn text-on-surface-variant">
+              <span class="material-symbols-outlined text-lg">description</span>
+              <span data-lang="en">README</span><span data-lang="zh" class="hidden">文档</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- ─── IdentifySKU Card ─── -->
+        <div class="m3-card group">
+          <!-- Card header -->
+          <div class="flex items-center gap-4 mb-5">
+            <div class="w-14 h-14 rounded-m3-md bg-tertiary-container dark:bg-tertiary-container flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-[28px] text-tertiary dark:text-tertiary">qr_code_scanner</span>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-on-surface dark:text-on-surface-dark">IdentifySKU</h3>
+              <p class="text-sm text-on-surface-variant dark:text-on-surface-variant-dark">FBA Label Splitter V2.5</p>
+            </div>
+          </div>
+
+          <!-- EN desc -->
+          <div data-lang="en">
+            <p class="text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed mb-5">
+              An Amazon FBA label intelligent splitting tool that automatically splits multi-label PDF sheets into individual SKU or range-based files. Supports UK, AU, and US marketplace formats.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="m3-chip">Python</span>
+              <span class="m3-chip">Flask</span>
+              <span class="m3-chip">PyMuPDF</span>
+              <span class="m3-chip">Bilingual</span>
+            </div>
+          </div>
+
+          <!-- ZH desc -->
+          <div data-lang="zh" class="hidden">
+            <p class="text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed mb-5">
+              亚马逊 FBA 标签智能拆分工具 V2.5，按 SKU 自动将整页 PDF 标签拆分成单独文件。支持英、澳、美三大站点格式，提供网页界面、命令行和桌面启动器三种使用方式。
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="m3-chip">Python</span>
+              <span class="m3-chip">Flask</span>
+              <span class="m3-chip">PyMuPDF</span>
+              <span class="m3-chip">中英双语</span>
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div class="flex items-center gap-3 pt-2">
+            <a href="https://github.com/markblogforpublic/IdentifySKU" target="_blank" rel="noopener noreferrer" class="m3-label-btn">
+              <span class="material-symbols-outlined text-lg">open_in_new</span>
+              <span data-lang="en">GitHub</span><span data-lang="zh" class="hidden">GitHub 仓库</span>
+            </a>
+            <a href="https://github.com/markblogforpublic/IdentifySKU/blob/main/README.md" target="_blank" rel="noopener noreferrer" class="m3-label-btn text-on-surface-variant">
+              <span class="material-symbols-outlined text-lg">description</span>
+              <span data-lang="en">README</span><span data-lang="zh" class="hidden">文档</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Footer ═══ -->
+  <footer class="border-t border-outline-variant dark:border-surface-variant-dark">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-on-surface-variant dark:text-on-surface-variant-dark">
+          <span data-lang="en">&copy; 2026 markblogforpublic</span>
+          <span data-lang="zh" class="hidden">&copy; 2026 markblogforpublic</span>
+        </p>
+        <a href="https://github.com/markblogforpublic" target="_blank" rel="noopener noreferrer" class="text-on-surface-variant dark:text-on-surface-variant-dark hover:text-primary dark:hover:text-primary-dark transition-colors">
+          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-label="GitHub">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

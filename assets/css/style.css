@@ -1,0 +1,217 @@
+/* ═══════════════════════════════════════
+   Material Design 3 — Custom Styles
+   ═══════════════════════════════════════ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ─── M3 Icon Button ─── */
+.m3-icon-btn {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 9999px;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.15s ease-out;
+}
+.m3-icon-btn:hover {
+  background: rgba(79, 70, 229, 0.08);
+}
+.dark .m3-icon-btn:hover {
+  background: rgba(189, 184, 255, 0.12);
+}
+.m3-icon-btn:focus-visible {
+  outline: 2px solid #4F46E5;
+  outline-offset: 2px;
+}
+
+/* ─── M3 Filled Button ─── */
+.m3-filled-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  background: #4F46E5;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.15s ease-out;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+}
+.m3-filled-btn:hover {
+  background: #4338CA;
+  box-shadow: 0 2px 6px rgba(79, 70, 229, 0.3);
+}
+.dark .m3-filled-btn {
+  background: #BDB8FF;
+  color: #2E1FA0;
+}
+.dark .m3-filled-btn:hover {
+  background: #CEC9FF;
+}
+.m3-filled-btn:focus-visible {
+  outline: 2px solid #4F46E5;
+  outline-offset: 2px;
+}
+
+/* ─── M3 Text Button ─── */
+.m3-text-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #4F46E5;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.15s ease-out;
+  background: transparent;
+}
+.m3-text-btn:hover {
+  background: rgba(79, 70, 229, 0.08);
+}
+.dark .m3-text-btn {
+  color: #BDB8FF;
+}
+.dark .m3-text-btn:hover {
+  background: rgba(189, 184, 255, 0.12);
+}
+.m3-text-btn:focus-visible {
+  outline: 2px solid #4F46E5;
+  outline-offset: 2px;
+}
+
+/* ─── M3 Label Button (for card actions) ─── */
+.m3-label-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  color: #4F46E5;
+  background: transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.15s ease-out;
+}
+.m3-label-btn:hover {
+  background: rgba(79, 70, 229, 0.08);
+}
+.dark .m3-label-btn {
+  color: #BDB8FF;
+}
+.dark .m3-label-btn:hover {
+  background: rgba(189, 184, 255, 0.12);
+}
+
+/* ─── M3 Card ─── */
+.m3-card {
+  background: #FFFBFE;
+  border: 1px solid #CAC4D0;
+  border-radius: 16px;
+  padding: 24px;
+  transition: box-shadow 0.2s ease-out, transform 0.2s ease-out;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+.m3-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  transform: translateY(-2px);
+}
+.dark .m3-card {
+  background: #1C1B1F;
+  border-color: #49454F;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.dark .m3-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+}
+
+/* ─── M3 Chip ─── */
+.m3-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: #E0DFFF;
+  color: #1A0B8A;
+}
+.dark .m3-chip {
+  background: rgba(189, 184, 255, 0.15);
+  color: #BDB8FF;
+}
+
+/* ─── Active Nav Link ─── */
+.nav-link.active {
+  background: rgba(79, 70, 229, 0.10);
+  color: #4F46E5;
+  font-weight: 600;
+}
+.dark .nav-link.active {
+  background: rgba(189, 184, 255, 0.15);
+  color: #BDB8FF;
+}
+
+/* ─── Focus ─── */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #4F46E5;
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* ─── Reduced Motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ─── Selection ─── */
+::selection {
+  background-color: #4F46E5;
+  color: white;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #CAC4D0;
+  border-radius: 3px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #49454F;
+}
+
+/* ─── Material Symbols fallback ─── */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}

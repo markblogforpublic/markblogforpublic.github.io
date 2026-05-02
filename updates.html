@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Updates — markblogforpublic</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            // Material Design 3 — Light
+            primary: '#4F46E5',
+            'on-primary': '#FFFFFF',
+            'primary-container': '#E0DFFF',
+            'on-primary-container': '#1A0B8A',
+            secondary: '#5C5D72',
+            'on-secondary': '#FFFFFF',
+            'secondary-container': '#E1E0F9',
+            'on-secondary-container': '#191A2C',
+            tertiary: '#7A5368',
+            'on-tertiary': '#FFFFFF',
+            'tertiary-container': '#FFD8E8',
+            'on-tertiary-container': '#2E1122',
+            error: '#B3261E',
+            'on-error': '#FFFFFF',
+            'error-container': '#F9DEDC',
+            surface: '#FFFBFE',
+            'on-surface': '#1C1B1F',
+            'on-surface-variant': '#49454F',
+            outline: '#79747E',
+            'outline-variant': '#CAC4D0',
+            background: '#FFFBFE',
+            'on-background': '#1C1B1F',
+            // MD3 — Dark
+            'primary-dark': '#BDB8FF',
+            'on-primary-dark': '#2E1FA0',
+            'primary-container-dark': '#3F33C9',
+            'on-primary-container-dark': '#E0DFFF',
+            'surface-dark': '#1C1B1F',
+            'on-surface-dark': '#E6E1E5',
+            'surface-variant-dark': '#49454F',
+            'on-surface-variant-dark': '#CAC4D0',
+            'outline-dark': '#938F99',
+            'background-dark': '#1C1B1F',
+            'on-background-dark': '#E6E1E5',
+          },
+          borderRadius: {
+            'm3-sm': '8px',
+            'm3-md': '12px',
+            'm3-lg': '16px',
+            'm3-xl': '28px',
+          },
+          fontFamily: {
+            sans: ['"Google Sans"', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+          boxShadow: {
+            'm3-0': '0 0 0 0 rgba(0,0,0,0), 0 0 0 0 rgba(0,0,0,0)',
+            'm3-1': '0 1px 3px 0 rgba(0,0,0,0.12), 0 1px 2px 0 rgba(0,0,0,0.08)',
+            'm3-2': '0 2px 6px 0 rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.08)',
+            'm3-3': '0 4px 12px 0 rgba(0,0,0,0.14), 0 2px 4px 0 rgba(0,0,0,0.08)',
+            'm3-4': '0 6px 20px 0 rgba(0,0,0,0.15), 0 3px 6px 0 rgba(0,0,0,0.10)',
+            'm3-5': '0 8px 28px 0 rgba(0,0,0,0.16), 0 4px 8px 0 rgba(0,0,0,0.12)',
+          },
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-[#FFFBFE] dark:bg-[#1C1B1F] text-on-surface dark:text-on-surface-dark font-sans">
+
+  <!-- Top App Bar (MD3) -->
+  <header class="sticky top-0 z-50 bg-surface/80 dark:bg-surface-dark/80 backdrop-blur-md shadow-m3-1">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Leading: Logo -->
+        <div class="flex items-center gap-3">
+          <a href="index.html" class="flex items-center gap-2 text-lg font-bold tracking-tight text-primary dark:text-primary-dark">
+            <span class="material-symbols-outlined text-[28px]">code_blocks</span>
+            markblogforpublic
+          </a>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex items-center gap-2">
+          <!-- Desktop Nav -->
+          <nav class="hidden sm:flex items-center gap-1 mr-3">
+            <a href="index.html" class="nav-link px-3 py-2 text-sm font-medium rounded-full text-on-surface-variant dark:text-on-surface-variant-dark hover:bg-primary-container/50 dark:hover:bg-primary-container-dark/50 transition-all" data-lang="en">Home</a>
+            <a href="index.html" class="nav-link px-3 py-2 text-sm font-medium rounded-full text-on-surface-variant dark:text-on-surface-variant-dark hover:bg-primary-container/50 dark:hover:bg-primary-container-dark/50 transition-all" data-lang="zh">首页</a>
+            <a href="updates.html" class="nav-link active px-3 py-2 text-sm font-medium rounded-full text-on-surface-variant dark:text-on-surface-variant-dark hover:bg-primary-container/50 dark:hover:bg-primary-container-dark/50 transition-all" data-lang="en">Updates</a>
+            <a href="updates.html" class="nav-link active px-3 py-2 text-sm font-medium rounded-full text-on-surface-variant dark:text-on-surface-variant-dark hover:bg-primary-container/50 dark:hover:bg-primary-container-dark/50 transition-all" data-lang="zh">作者更新</a>
+            <a href="about.html" class="nav-link px-3 py-2 text-sm font-medium rounded-full text-on-surface-variant dark:text-on-surface-variant-dark hover:bg-primary-container/50 dark:hover:bg-primary-container-dark/50 transition-all" data-lang="en">About</a>
+            <a href="about.html" class="nav-link px-3 py-2 text-sm font-medium rounded-full text-on-surface-variant dark:text-on-surface-variant-dark hover:bg-primary-container/50 dark:hover:bg-primary-container-dark/50 transition-all" data-lang="zh">关于</a>
+          </nav>
+
+          <!-- Icon buttons (MD3) -->
+          <button id="langToggle" class="m3-icon-btn relative" aria-label="Toggle language">
+            <span class="material-symbols-outlined text-[22px] text-on-surface-variant dark:text-on-surface-variant-dark">translate</span>
+            <span id="langLabel" class="absolute -bottom-1 right-0 text-[10px] font-medium text-primary dark:text-primary-dark">中文</span>
+          </button>
+
+          <button id="darkToggle" class="m3-icon-btn" aria-label="Toggle dark mode">
+            <span id="lightIcon" class="material-symbols-outlined text-[22px] text-on-surface-variant dark:text-on-surface-variant-dark">light_mode</span>
+            <span id="darkIcon" class="material-symbols-outlined text-[22px] text-on-surface-variant dark:text-on-surface-variant-dark hidden">dark_mode</span>
+          </button>
+
+          <!-- Mobile menu -->
+          <button id="mobileMenuBtn" class="m3-icon-btn sm:!hidden" aria-label="Open menu">
+            <span class="material-symbols-outlined text-[22px]">menu</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Nav -->
+      <div id="mobileMenu" class="hidden sm:hidden pb-4 border-t border-outline-variant dark:border-surface-variant-dark pt-3 space-y-1">
+        <a href="index.html" class="block px-4 py-2.5 text-sm font-medium rounded-full text-on-surface-variant dark:text-on-surface-variant-dark hover:bg-primary-container/50" data-lang="en">Home</a>
+        <a href="index.html" class="block px-4 py-2.5 text-sm font-medium rounded-full text-on-surface-variant dark:text-on-surface-variant-dark hover:bg-primary-container/50" data-lang="zh">首页</a>
+        <a href="updates.html" class="block px-4 py-2.5 text-sm font-medium rounded-full text-primary dark:text-primary-dark bg-primary-container/30" data-lang="en">Updates</a>
+        <a href="updates.html" class="block px-4 py-2.5 text-sm font-medium rounded-full text-primary dark:text-primary-dark bg-primary-container/30" data-lang="zh">作者更新</a>
+        <a href="about.html" class="block px-4 py-2.5 text-sm font-medium rounded-full text-on-surface-variant dark:text-on-surface-variant-dark hover:bg-primary-container/50" data-lang="en">About</a>
+        <a href="about.html" class="block px-4 py-2.5 text-sm font-medium rounded-full text-on-surface-variant dark:text-on-surface-variant-dark hover:bg-primary-container/50" data-lang="zh">关于</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Content -->
+  <main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+
+    <!-- EN -->
+    <div data-lang="en">
+      <h1 class="text-5xl sm:text-6xl font-extrabold tracking-tight text-on-surface dark:text-on-surface-dark mb-4">Updates</h1>
+      <p class="text-lg text-on-surface-variant dark:text-on-surface-variant-dark mb-12 max-w-xl">
+        Release notes, bug fixes, technical deep dives, and random thoughts.
+      </p>
+    </div>
+
+    <!-- ZH -->
+    <div data-lang="zh" class="hidden">
+      <h1 class="text-5xl sm:text-6xl font-extrabold tracking-tight text-on-surface dark:text-on-surface-dark mb-4">作者更新</h1>
+      <p class="text-lg text-on-surface-variant dark:text-on-surface-variant-dark mb-12 max-w-xl">
+        版本发布、Bug 解答、技术文章以及各种随想。
+      </p>
+    </div>
+
+    <!-- Article list -->
+    <div class="space-y-4">
+
+      <!-- Post: Hello World in 10 Languages -->
+      <a href="posts/hello-world-10-langs.html" class="group block m3-card !p-5 hover:!shadow-m3-3 transition-all">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-m3-md bg-tertiary-container dark:bg-tertiary-container flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-[24px] text-tertiary dark:text-tertiary">language</span>
+          </div>
+          <div class="min-w-0 flex-1">
+            <div data-lang="en">
+              <h2 class="text-lg font-bold text-on-surface dark:text-on-surface-dark group-hover:text-primary dark:group-hover:text-primary-dark transition-colors">Hello World in 10 Languages</h2>
+              <p class="text-sm text-on-surface-variant dark:text-on-surface-variant-dark mt-1 line-clamp-2">
+                Every programming journey begins with two words. Here's how ten different languages greet the world.
+              </p>
+            </div>
+            <div data-lang="zh" class="hidden">
+              <h2 class="text-lg font-bold text-on-surface dark:text-on-surface-dark group-hover:text-primary dark:group-hover:text-primary-dark transition-colors">10 种语言的 Hello World</h2>
+              <p class="text-sm text-on-surface-variant dark:text-on-surface-variant-dark mt-1 line-clamp-2">
+                每一段编程之旅都始于两个词。以下是用十种不同语言向世界打招呼的方式。
+              </p>
+            </div>
+            <div class="flex items-center gap-3 mt-3 text-xs text-on-surface-variant dark:text-on-surface-variant-dark">
+              <span class="flex items-center gap-1">
+                <span class="material-symbols-outlined text-[14px]">calendar_today</span>
+                2026-05-02
+              </span>
+              <span>·</span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-container/50 dark:bg-tertiary-container/30 text-tertiary dark:text-tertiary font-medium">
+                <span data-lang="en">Test</span>
+                <span data-lang="zh" class="hidden">测试</span>
+              </span>
+            </div>
+          </div>
+          <span class="material-symbols-outlined text-on-surface-variant dark:text-on-surface-variant-dark group-hover:text-primary dark:group-hover:text-primary-dark transition-colors mt-2">chevron_right</span>
+        </div>
+      </a>
+
+    </div>
+
+  </main>
+
+  <!-- Footer (MD3) -->
+  <footer class="border-t border-outline-variant dark:border-surface-variant-dark mt-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-on-surface-variant dark:text-on-surface-variant-dark">
+          <span data-lang="en">&copy; 2026 markblogforpublic</span>
+          <span data-lang="zh" class="hidden">&copy; 2026 markblogforpublic</span>
+        </p>
+        <a href="https://github.com/markblogforpublic" target="_blank" rel="noopener noreferrer" class="text-on-surface-variant dark:text-on-surface-variant-dark hover:text-primary dark:hover:text-primary-dark transition-colors">
+          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-label="GitHub">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
