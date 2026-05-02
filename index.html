@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>markblogforpublic</title>
+  <title>Mark — markblogforpublic</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -55,12 +55,8 @@
             sans: ['"Google Sans"', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
           },
           boxShadow: {
-            'm3-0': '0 0 0 0 rgba(0,0,0,0), 0 0 0 0 rgba(0,0,0,0)',
             'm3-1': '0 1px 3px 0 rgba(0,0,0,0.12), 0 1px 2px 0 rgba(0,0,0,0.08)',
-            'm3-2': '0 2px 6px 0 rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.08)',
             'm3-3': '0 4px 12px 0 rgba(0,0,0,0.14), 0 2px 4px 0 rgba(0,0,0,0.08)',
-            'm3-4': '0 6px 20px 0 rgba(0,0,0,0.15), 0 3px 6px 0 rgba(0,0,0,0.10)',
-            'm3-5': '0 8px 28px 0 rgba(0,0,0,0.16), 0 4px 8px 0 rgba(0,0,0,0.12)',
           },
         }
       }
@@ -74,109 +70,88 @@
 </head>
 <body class="bg-surface dark:bg-surface-dark text-on-surface dark:text-on-surface-dark font-sans">
 
-  <!-- ═══ Top App Bar (MD3) ═══ -->
+  <!-- ═══ Top App Bar ═══ -->
   <header class="sticky top-0 z-50 bg-surface/80 dark:bg-surface-dark/80 backdrop-blur-md shadow-m3-1">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
-        <!-- Leading -->
         <div class="flex items-center gap-3">
           <a href="index.html" class="flex items-center gap-2 text-lg font-bold tracking-tight text-primary dark:text-primary-dark">
             <span class="material-symbols-outlined text-[28px]">code_blocks</span>
             markblogforpublic
           </a>
         </div>
-
-        <!-- Actions -->
         <div class="flex items-center gap-2">
-          <!-- Desktop nav -->
           <nav class="hidden sm:flex items-center gap-1 mr-3">
-            <a href="index.html" class="nav-link active px-3 py-2 text-sm font-medium rounded-full text-on-surface-variant dark:text-on-surface-variant-dark hover:bg-primary-container/50 dark:hover:bg-primary-container-dark/50 transition-all" data-lang="en">Home</a>
-            <a href="index.html" class="nav-link active px-3 py-2 text-sm font-medium rounded-full text-on-surface-variant dark:text-on-surface-variant-dark hover:bg-primary-container/50 dark:hover:bg-primary-container-dark/50 transition-all" data-lang="zh">首页</a>
-            <a href="updates.html" class="nav-link px-3 py-2 text-sm font-medium rounded-full text-on-surface-variant dark:text-on-surface-variant-dark hover:bg-primary-container/50 dark:hover:bg-primary-container-dark/50 transition-all" data-lang="en">Updates</a>
-            <a href="updates.html" class="nav-link px-3 py-2 text-sm font-medium rounded-full text-on-surface-variant dark:text-on-surface-variant-dark hover:bg-primary-container/50 dark:hover:bg-primary-container-dark/50 transition-all" data-lang="zh">作者更新</a>
-            <a href="about.html" class="nav-link px-3 py-2 text-sm font-medium rounded-full text-on-surface-variant dark:text-on-surface-variant-dark hover:bg-primary-container/50 dark:hover:bg-primary-container-dark/50 transition-all" data-lang="en">About</a>
-            <a href="about.html" class="nav-link px-3 py-2 text-sm font-medium rounded-full text-on-surface-variant dark:text-on-surface-variant-dark hover:bg-primary-container/50 dark:hover:bg-primary-container-dark/50 transition-all" data-lang="zh">关于</a>
+            <a href="index.html" class="nav-link active px-3 py-2 text-sm font-medium rounded-full text-primary dark:text-primary-dark bg-primary-container/30 dark:bg-primary-container-dark/20 font-semibold" data-lang="en">Home</a>
+            <a href="index.html" class="nav-link active px-3 py-2 text-sm font-medium rounded-full text-primary dark:text-primary-dark bg-primary-container/30 dark:bg-primary-container-dark/20 font-semibold" data-lang="zh">首页</a>
+            <a href="updates.html" class="nav-link px-3 py-2 text-sm font-medium rounded-full text-on-surface-variant dark:text-on-surface-variant-dark hover:bg-primary-container/50 transition-all" data-lang="en">Updates</a>
+            <a href="updates.html" class="nav-link px-3 py-2 text-sm font-medium rounded-full text-on-surface-variant dark:text-on-surface-variant-dark hover:bg-primary-container/50 transition-all" data-lang="zh">作者更新</a>
+            <a href="about.html" class="nav-link px-3 py-2 text-sm font-medium rounded-full text-on-surface-variant dark:text-on-surface-variant-dark hover:bg-primary-container/50 transition-all" data-lang="en">About</a>
+            <a href="about.html" class="nav-link px-3 py-2 text-sm font-medium rounded-full text-on-surface-variant dark:text-on-surface-variant-dark hover:bg-primary-container/50 transition-all" data-lang="zh">关于</a>
           </nav>
-
-          <!-- Icon buttons -->
-          <button id="langToggle" class="m3-icon-btn relative" aria-label="Toggle language">
+          <button id="langToggle" class="m3-icon-btn relative">
             <span class="material-symbols-outlined text-[22px] text-on-surface-variant dark:text-on-surface-variant-dark">translate</span>
             <span id="langLabel" class="absolute -bottom-1 right-0 text-[10px] font-medium text-primary dark:text-primary-dark">中文</span>
           </button>
-
-          <button id="darkToggle" class="m3-icon-btn" aria-label="Toggle dark mode">
+          <button id="darkToggle" class="m3-icon-btn">
             <span id="lightIcon" class="material-symbols-outlined text-[22px] text-on-surface-variant dark:text-on-surface-variant-dark">light_mode</span>
             <span id="darkIcon" class="material-symbols-outlined text-[22px] text-on-surface-variant dark:text-on-surface-variant-dark hidden">dark_mode</span>
           </button>
-
-          <button id="mobileMenuBtn" class="m3-icon-btn sm:!hidden" aria-label="Open menu">
+          <button id="mobileMenuBtn" class="m3-icon-btn sm:!hidden">
             <span class="material-symbols-outlined text-[22px]">menu</span>
           </button>
         </div>
       </div>
-
-      <!-- Mobile nav -->
       <div id="mobileMenu" class="hidden sm:hidden pb-4 border-t border-outline-variant dark:border-surface-variant-dark pt-3 space-y-1">
-        <a href="index.html" class="block px-4 py-2.5 text-sm font-medium rounded-full text-primary dark:text-primary-dark bg-primary-container/30" data-lang="en">Home</a>
-        <a href="index.html" class="block px-4 py-2.5 text-sm font-medium rounded-full text-primary dark:text-primary-dark bg-primary-container/30" data-lang="zh">首页</a>
-        <a href="updates.html" class="block px-4 py-2.5 text-sm font-medium rounded-full text-on-surface-variant dark:text-on-surface-variant-dark hover:bg-primary-container/50" data-lang="en">Updates</a>
-        <a href="updates.html" class="block px-4 py-2.5 text-sm font-medium rounded-full text-on-surface-variant dark:text-on-surface-variant-dark hover:bg-primary-container/50" data-lang="zh">作者更新</a>
-        <a href="about.html" class="block px-4 py-2.5 text-sm font-medium rounded-full text-on-surface-variant dark:text-on-surface-variant-dark hover:bg-primary-container/50" data-lang="en">About</a>
-        <a href="about.html" class="block px-4 py-2.5 text-sm font-medium rounded-full text-on-surface-variant dark:text-on-surface-variant-dark hover:bg-primary-container/50" data-lang="zh">关于</a>
+        <a href="index.html" class="block px-4 py-2.5 text-sm font-medium rounded-full text-primary dark:text-primary-dark bg-primary-container/30">Home / 首页</a>
+        <a href="updates.html" class="block px-4 py-2.5 text-sm font-medium rounded-full text-on-surface-variant dark:text-on-surface-variant-dark hover:bg-primary-container/50">Updates / 作者更新</a>
+        <a href="about.html" class="block px-4 py-2.5 text-sm font-medium rounded-full text-on-surface-variant dark:text-on-surface-variant-dark hover:bg-primary-container/50">About / 关于</a>
       </div>
     </div>
   </header>
 
-  <!-- ═══ Hero Section ═══ -->
+  <!-- ═══ Hero ═══ -->
   <section class="relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-primary-container/40 via-surface dark:via-surface-dark to-tertiary-container/30 dark:to-[#2E1122]/40"></div>
-    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-32">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary-container/30 via-surface dark:via-surface-dark to-tertiary-container/20 dark:to-[#2E1122]/30"></div>
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-36">
       <div class="max-w-3xl">
 
-        <!-- EN -->
         <div data-lang="en">
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-container/60 dark:bg-primary-container-dark/40 text-sm font-medium text-primary dark:text-primary-dark mb-6">
-            <span class="material-symbols-outlined text-[18px]">handyman</span>
-            Developer &amp; Creator
-          </div>
           <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-on-surface dark:text-on-surface-dark leading-[1.1] mb-6">
-            Building tools that<br/>
-            <span class="text-primary dark:text-primary-dark">bridge the gap</span>
+            Hey, I'm<br/>
+            <span class="text-primary dark:text-primary-dark">Mark</span>
           </h1>
-          <p class="text-lg sm:text-xl text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed mb-10 max-w-xl">
-            I create practical open-source tools for real-world problems — with clean code, clear docs, and a focus on what actually matters.
+          <p class="text-lg sm:text-xl text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed max-w-xl">
+            Developer based in Tokyo. I build open-source tools, travel whenever I can, and listen to milet on repeat.
           </p>
-          <div class="flex flex-wrap gap-4">
-            <a href="#projects" class="m3-filled-btn">
-              <span>View Projects</span>
-              <span class="material-symbols-outlined text-lg">arrow_downward</span>
+          <div class="flex flex-wrap gap-3 mt-8">
+            <a href="#wander" class="m3-filled-btn">
+              <span class="material-symbols-outlined text-lg">explore</span>
+              <span>My Travels</span>
             </a>
-            <a href="about.html" class="m3-text-btn">
-              <span>More About Me</span>
+            <a href="#listen" class="m3-text-btn">
+              <span class="material-symbols-outlined text-lg">music_note</span>
+              <span>My Music</span>
             </a>
           </div>
         </div>
 
-        <!-- ZH -->
         <div data-lang="zh" class="hidden">
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-container/60 dark:bg-primary-container-dark/40 text-sm font-medium text-primary dark:text-primary-dark mb-6">
-            <span class="material-symbols-outlined text-[18px]">handyman</span>
-            开发者 &amp; 创造者
-          </div>
           <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-on-surface dark:text-on-surface-dark leading-[1.1] mb-6">
-            打造<span class="text-primary dark:text-primary-dark">连接你我</span><br/>
-            的实用工具
+            你好，我是<br/>
+            <span class="text-primary dark:text-primary-dark">Mark</span>
           </h1>
-          <p class="text-lg sm:text-xl text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed mb-10 max-w-xl">
-            我构建实用的开源工具，用干净的代码和清晰的文档解决真正的问题，专注做有意义的事。
+          <p class="text-lg sm:text-xl text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed max-w-xl">
+            常驻东京的开发者。做开源工具、有空就旅行、循环播放 milet。
           </p>
-          <div class="flex flex-wrap gap-4">
-            <a href="#projects" class="m3-filled-btn">
-              <span>查看项目</span>
-              <span class="material-symbols-outlined text-lg">arrow_downward</span>
+          <div class="flex flex-wrap gap-3 mt-8">
+            <a href="#wander" class="m3-filled-btn">
+              <span class="material-symbols-outlined text-lg">explore</span>
+              <span>我的足迹</span>
             </a>
-            <a href="about.html" class="m3-text-btn">
-              <span>了解我</span>
+            <a href="#listen" class="m3-text-btn">
+              <span class="material-symbols-outlined text-lg">music_note</span>
+              <span>我的音乐</span>
             </a>
           </div>
         </div>
@@ -185,137 +160,183 @@
     </div>
   </section>
 
-  <!-- ═══ Projects Section ═══ -->
-  <section id="projects" class="py-20 sm:py-24 bg-primary-container/20 dark:bg-primary-container-dark/10">
+  <!-- ═══ Wander ═══ -->
+  <section id="wander" class="py-20 sm:py-24">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
       <!-- Section header -->
-      <div class="text-center mb-16">
+      <div class="mb-14">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-container/50 dark:bg-primary-container-dark/30 text-sm font-medium text-primary dark:text-primary-dark mb-4">
+          <span class="material-symbols-outlined text-[18px]">explore</span>
+          <span data-lang="en">Wander</span>
+          <span data-lang="zh" class="hidden">足迹</span>
+        </div>
         <div data-lang="en">
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary-container/60 dark:bg-secondary-container/40 text-sm font-medium text-secondary dark:text-secondary mb-4">
-            <span class="material-symbols-outlined text-[18px]">folder_open</span>
-            Open Source
-          </div>
-          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-on-surface dark:text-on-surface-dark mb-4">Featured Projects</h2>
-          <p class="text-on-surface-variant dark:text-on-surface-variant-dark max-w-lg mx-auto">Well-documented, free-to-use tools built for the real world.</p>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-on-surface dark:text-on-surface-dark mb-3">Places I've been</h2>
+          <p class="text-on-surface-variant dark:text-on-surface-variant-dark max-w-lg">Each place left a piece of itself with me.</p>
         </div>
         <div data-lang="zh" class="hidden">
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary-container/60 dark:bg-secondary-container/40 text-sm font-medium text-secondary dark:text-secondary mb-4">
-            <span class="material-symbols-outlined text-[18px]">folder_open</span>
-            开源项目
-          </div>
-          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-on-surface dark:text-on-surface-dark mb-4">项目展示</h2>
-          <p class="text-on-surface-variant dark:text-on-surface-variant-dark max-w-lg mx-auto">文档完善、免费使用的实用工具，为真实场景打造。</p>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-on-surface dark:text-on-surface-dark mb-3">我去过的地方</h2>
+          <p class="text-on-surface-variant dark:text-on-surface-variant-dark max-w-lg">每个地方都在我心中留下了一部分自己。</p>
         </div>
       </div>
 
-      <!-- Cards (MD3 elevation) -->
-      <div class="grid md:grid-cols-2 gap-6">
+      <!-- Travel grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
 
-        <!-- ─── ImgBridge Card ─── -->
+        <!-- Tokyo -->
         <div class="m3-card group">
-          <!-- Card header -->
-          <div class="flex items-center gap-4 mb-5">
-            <div class="w-14 h-14 rounded-m3-md bg-primary-container dark:bg-primary-container-dark flex items-center justify-center shrink-0">
-              <span class="material-symbols-outlined text-[28px] text-primary dark:text-primary-dark">image</span>
-            </div>
-            <div>
-              <h3 class="text-xl font-bold text-on-surface dark:text-on-surface-dark">ImgBridge</h3>
-              <p class="text-sm text-on-surface-variant dark:text-on-surface-variant-dark">Image Recognition Bridge</p>
-            </div>
+          <div class="flex items-center gap-3 mb-3">
+            <span class="material-symbols-outlined text-primary dark:text-primary-dark">location_on</span>
+            <h3 class="text-lg font-bold text-on-surface dark:text-on-surface-dark">Tokyo</h3>
           </div>
-
-          <!-- EN desc -->
           <div data-lang="en">
-            <p class="text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed mb-5">
-              A local tool that bridges visual AI APIs to text-only LLMs. Upload images and get AI-powered descriptions, OCR, and scene analysis — giving any language model the ability to "see."
-            </p>
-            <div class="flex flex-wrap gap-2 mb-6">
-              <span class="m3-chip">Python</span>
-              <span class="m3-chip">OpenAI API</span>
-              <span class="m3-chip">Anthropic API</span>
-              <span class="m3-chip">Privacy First</span>
-            </div>
+            <p class="text-sm text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed">My home base. A city where ancient temples sit next to neon-lit skyscrapers, and every neighborhood has its own personality.</p>
           </div>
-
-          <!-- ZH desc -->
           <div data-lang="zh" class="hidden">
-            <p class="text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed mb-5">
-              一个本地图片识别桥梁工具。通过视觉 API 将图片转为文本描述，让纯文本 AI 模型也能"看懂"图片内容。支持批量上传、实时预览。
-            </p>
-            <div class="flex flex-wrap gap-2 mb-6">
-              <span class="m3-chip">Python</span>
-              <span class="m3-chip">OpenAI API</span>
-              <span class="m3-chip">Anthropic API</span>
-              <span class="m3-chip">隐私优先</span>
-            </div>
-          </div>
-
-          <!-- Actions -->
-          <div class="flex items-center gap-3 pt-2">
-            <a href="https://github.com/markblogforpublic/ImgBridge" target="_blank" rel="noopener noreferrer" class="m3-label-btn">
-              <span class="material-symbols-outlined text-lg">open_in_new</span>
-              <span data-lang="en">GitHub</span><span data-lang="zh" class="hidden">GitHub 仓库</span>
-            </a>
-            <a href="https://github.com/markblogforpublic/ImgBridge/blob/main/README.md" target="_blank" rel="noopener noreferrer" class="m3-label-btn text-on-surface-variant">
-              <span class="material-symbols-outlined text-lg">description</span>
-              <span data-lang="en">README</span><span data-lang="zh" class="hidden">文档</span>
-            </a>
+            <p class="text-sm text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed">我的大本营。一座古寺与霓虹高楼并存的城市，每个街区都有自己独特的性格。</p>
           </div>
         </div>
 
-        <!-- ─── IdentifySKU Card ─── -->
+        <!-- Mt. Fuji -->
         <div class="m3-card group">
-          <!-- Card header -->
-          <div class="flex items-center gap-4 mb-5">
-            <div class="w-14 h-14 rounded-m3-md bg-tertiary-container dark:bg-tertiary-container flex items-center justify-center shrink-0">
-              <span class="material-symbols-outlined text-[28px] text-tertiary dark:text-tertiary">qr_code_scanner</span>
-            </div>
-            <div>
-              <h3 class="text-xl font-bold text-on-surface dark:text-on-surface-dark">IdentifySKU</h3>
-              <p class="text-sm text-on-surface-variant dark:text-on-surface-variant-dark">FBA Label Splitter V2.5</p>
-            </div>
+          <div class="flex items-center gap-3 mb-3">
+            <span class="material-symbols-outlined text-primary dark:text-primary-dark">terrain</span>
+            <h3 class="text-lg font-bold text-on-surface dark:text-on-surface-dark">Mt. Fuji</h3>
           </div>
-
-          <!-- EN desc -->
           <div data-lang="en">
-            <p class="text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed mb-5">
-              An Amazon FBA label intelligent splitting tool that automatically splits multi-label PDF sheets into individual SKU or range-based files. Supports UK, AU, and US marketplace formats.
-            </p>
-            <div class="flex flex-wrap gap-2 mb-6">
-              <span class="m3-chip">Python</span>
-              <span class="m3-chip">Flask</span>
-              <span class="m3-chip">PyMuPDF</span>
-              <span class="m3-chip">Bilingual</span>
-            </div>
+            <p class="text-sm text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed">Japan's iconic peak. Whether seen from a passing train or climbed at sunrise, its presence is humbling.</p>
           </div>
-
-          <!-- ZH desc -->
           <div data-lang="zh" class="hidden">
-            <p class="text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed mb-5">
-              亚马逊 FBA 标签智能拆分工具 V2.5，按 SKU 自动将整页 PDF 标签拆分成单独文件。支持英、澳、美三大站点格式，提供网页界面、命令行和桌面启动器三种使用方式。
-            </p>
-            <div class="flex flex-wrap gap-2 mb-6">
-              <span class="m3-chip">Python</span>
-              <span class="m3-chip">Flask</span>
-              <span class="m3-chip">PyMuPDF</span>
-              <span class="m3-chip">中英双语</span>
-            </div>
-          </div>
-
-          <!-- Actions -->
-          <div class="flex items-center gap-3 pt-2">
-            <a href="https://github.com/markblogforpublic/IdentifySKU" target="_blank" rel="noopener noreferrer" class="m3-label-btn">
-              <span class="material-symbols-outlined text-lg">open_in_new</span>
-              <span data-lang="en">GitHub</span><span data-lang="zh" class="hidden">GitHub 仓库</span>
-            </a>
-            <a href="https://github.com/markblogforpublic/IdentifySKU/blob/main/README.md" target="_blank" rel="noopener noreferrer" class="m3-label-btn text-on-surface-variant">
-              <span class="material-symbols-outlined text-lg">description</span>
-              <span data-lang="en">README</span><span data-lang="zh" class="hidden">文档</span>
-            </a>
+            <p class="text-sm text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed">日本的象征。无论是在车窗远眺还是登顶看日出，富士山的壮丽总让人心生敬畏。</p>
           </div>
         </div>
 
+        <!-- Osaka / Kyoto / Nara -->
+        <div class="m3-card group">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="material-symbols-outlined text-primary dark:text-primary-dark">fort</span>
+            <h3 class="text-lg font-bold text-on-surface dark:text-on-surface-dark">Osaka · Kyoto · Nara</h3>
+          </div>
+          <div data-lang="en">
+            <p class="text-sm text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed">The Kansai trio: Osaka's food and energy, Kyoto's timeless temples, Nara's friendly deer and Great Buddha.</p>
+          </div>
+          <div data-lang="zh" class="hidden">
+            <p class="text-sm text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed">关西三城：大阪的美食与活力，京都的千年古刹，奈良的萌鹿与大佛。</p>
+          </div>
+        </div>
+
+        <!-- Kamakura -->
+        <div class="m3-card group">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="material-symbols-outlined text-primary dark:text-primary-dark">beach_access</span>
+            <h3 class="text-lg font-bold text-on-surface dark:text-on-surface-dark">Kamakura</h3>
+          </div>
+          <div data-lang="en">
+            <p class="text-sm text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed">A coastal escape south of Tokyo. Home to the Great Buddha, bamboo groves, and beach sunsets.</p>
+          </div>
+          <div data-lang="zh" class="hidden">
+            <p class="text-sm text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed">东京南边的海边小城。大佛、竹林、海滩日落，一日往返刚刚好。</p>
+          </div>
+        </div>
+
+        <!-- Bangkok -->
+        <div class="m3-card group">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="material-symbols-outlined text-primary dark:text-primary-dark">temple_buddhist</span>
+            <h3 class="text-lg font-bold text-on-surface dark:text-on-surface-dark">Bangkok</h3>
+          </div>
+          <div data-lang="en">
+            <p class="text-sm text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed">Chaos and charm in perfect balance. Temple rooftops, boat noodles, and a city that never sleeps.</p>
+          </div>
+          <div data-lang="zh" class="hidden">
+            <p class="text-sm text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed">混乱与魅力的完美平衡。寺庙金顶、船面、永不眠的城市。</p>
+          </div>
+        </div>
+
+        <!-- Sydney -->
+        <div class="m3-card group">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="material-symbols-outlined text-primary dark:text-primary-dark">sailing</span>
+            <h3 class="text-lg font-bold text-on-surface dark:text-on-surface-dark">Sydney</h3>
+          </div>
+          <div data-lang="en">
+            <p class="text-sm text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed">On my bucket list. Harbour views, the Opera House, and sun-drenched beaches — I'll make it there.</p>
+          </div>
+          <div data-lang="zh" class="hidden">
+            <p class="text-sm text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed">在我的愿望清单上。海港风光、歌剧院、阳光沙滩——总有一天会去的。</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Music ═══ -->
+  <section id="listen" class="py-20 sm:py-24 bg-primary-container/15 dark:bg-primary-container-dark/10">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="mb-14">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-tertiary-container/60 dark:bg-tertiary-container/40 text-sm font-medium text-tertiary dark:text-tertiary mb-4">
+          <span class="material-symbols-outlined text-[18px]">music_note</span>
+          <span data-lang="en">Listen</span>
+          <span data-lang="zh" class="hidden">听</span>
+        </div>
+        <div data-lang="en">
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-on-surface dark:text-on-surface-dark mb-3">My favorite artist: milet</h2>
+          <p class="text-on-surface-variant dark:text-on-surface-variant-dark max-w-lg">The voice that's always on my playlist.</p>
+        </div>
+        <div data-lang="zh" class="hidden">
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-on-surface dark:text-on-surface-dark mb-3">我最爱的歌手：milet</h2>
+          <p class="text-on-surface-variant dark:text-on-surface-variant-dark max-w-lg">一直在我歌单里的声音。</p>
+        </div>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="m3-card !p-8 sm:!p-10">
+          <div class="flex flex-col sm:flex-row items-start gap-6 sm:gap-8">
+            <!-- Avatar / icon -->
+            <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-m3-xl bg-gradient-to-br from-purple-400 via-pink-400 to-rose-400 dark:from-purple-500 dark:via-pink-500 dark:to-rose-500 flex items-center justify-center shrink-0 shadow-lg">
+              <span class="material-symbols-outlined text-4xl sm:text-5xl text-white">headphones</span>
+            </div>
+
+            <div class="flex-1 min-w-0">
+              <div data-lang="en">
+                <p class="text-base sm:text-lg text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed mb-5">
+                  <strong class="text-on-surface dark:text-on-surface-dark">milet</strong> is my favorite artist. She debuted in 2019 with <em>inside you</em>, produced by ONE OK ROCK's Toru — and her husky, low, gravelly voice immediately set her apart. It's rare and powerful, the opposite of the typical sweet J-Pop voice.
+                </p>
+                <p class="text-base sm:text-lg text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed mb-5">
+                  She grew up partly in Canada, so she naturally weaves English and Japanese into her lyrics. She writes her own songs, and every track feels like a genuine story — personal, emotional, never forced. Her music blends J-Pop with rock, folk, and atmospheric indie — spacious and deeply moving.
+                </p>
+                <p class="text-base sm:text-lg text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed">
+                  Beyond the voice, she's just a genuinely warm and cheerful person. She named her dog Jean after her favorite painter, calls her fans "miles," and after a health hiatus in 2025, she came back saying she's learned to embrace imperfection. That honesty is what makes her so inspiring.
+                </p>
+              </div>
+              <div data-lang="zh" class="hidden">
+                <p class="text-base sm:text-lg text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed mb-5">
+                  <strong class="text-on-surface dark:text-on-surface-dark">milet</strong> 是我最爱的歌手。2019 年以 ONE OK ROCK 吉他手 Toru 制作的〈inside you〉出道——她沙哑、低沉、颗粒感的嗓音立刻让她与众不同。那种声音稀有而有力量，和常见的甜美 JPOP 女声截然不同。
+                </p>
+                <p class="text-base sm:text-lg text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed mb-5">
+                  她少年时在加拿大生活过，所以能自然地把英语和日语编织在歌词里。她自己写歌创作，每一首听起来都像真实的故事——私人、真挚、毫不做作。她的音乐融合 JPOP、摇滚、民谣和氛围感独立音乐，空灵而动人。
+                </p>
+                <p class="text-base sm:text-lg text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed">
+                  除了声音，她本人也是一个温暖开朗的人。她以最喜欢的画家给爱犬取名 Jean，称粉丝为"miles"，2025 年因健康原因休整后复出，说学会了接纳不完美的自己。正是这份真实让人由衷喜欢。
+                </p>
+              </div>
+
+              <!-- Song recommendation chips -->
+              <div class="flex flex-wrap gap-2 mt-5 pt-5 border-t border-outline-variant dark:border-surface-variant-dark">
+                <span class="text-xs font-medium text-on-surface-variant dark:text-on-surface-variant-dark flex items-center gap-1.5">Favorite songs:</span>
+                <span class="m3-chip text-[11px]">inside you</span>
+                <span class="m3-chip text-[11px]">Drown</span>
+                <span class="m3-chip text-[11px]">Who I Am</span>
+                <span class="m3-chip text-[11px]">Anytime Anywhere</span>
+                <span class="m3-chip text-[11px]">Prover</span>
+                <span class="m3-chip text-[11px]">Kizuna no Kiseki</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -325,8 +346,8 @@
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
         <p class="text-sm text-on-surface-variant dark:text-on-surface-variant-dark">
-          <span data-lang="en">&copy; 2026 markblogforpublic</span>
-          <span data-lang="zh" class="hidden">&copy; 2026 markblogforpublic</span>
+          <span data-lang="en">&copy; 2026 Mark</span>
+          <span data-lang="zh" class="hidden">&copy; 2026 Mark</span>
         </p>
         <a href="https://github.com/markblogforpublic" target="_blank" rel="noopener noreferrer" class="text-on-surface-variant dark:text-on-surface-variant-dark hover:text-primary dark:hover:text-primary-dark transition-colors">
           <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-label="GitHub">

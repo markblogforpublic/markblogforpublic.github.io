@@ -189,6 +189,104 @@
 
     </div>
 
+    <!-- ═══ Projects Section ═══ -->
+    <div class="mt-16 pt-14 border-t border-outline-variant dark:border-surface-variant-dark">
+
+      <div class="flex items-center gap-2 mb-2">
+        <span class="material-symbols-outlined text-primary dark:text-primary-dark">folder_open</span>
+        <h2 class="text-xl font-bold text-on-surface dark:text-on-surface-dark">
+          <span data-lang="en">Open Source Projects</span>
+          <span data-lang="zh" class="hidden">开源项目</span>
+        </h2>
+      </div>
+      <p class="text-sm text-on-surface-variant dark:text-on-surface-variant-dark mb-8">
+        <span data-lang="en">Tools I've built — well-documented and free to use.</span>
+        <span data-lang="zh" class="hidden">我开发的开源工具，文档完善，免费使用。</span>
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-5">
+
+        <!-- ImgBridge -->
+        <div class="m3-card group">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-12 h-12 rounded-m3-md bg-primary-container dark:bg-primary-container-dark flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-[24px] text-primary dark:text-primary-dark">image</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-on-surface dark:text-on-surface-dark">ImgBridge</h3>
+              <p class="text-xs text-on-surface-variant dark:text-on-surface-variant-dark">Image Recognition Bridge</p>
+            </div>
+          </div>
+          <div data-lang="en">
+            <p class="text-sm text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed mb-4">A local tool that bridges visual AI APIs to text-only LLMs. Upload images and get AI-powered descriptions, OCR, and scene analysis.</p>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="m3-chip text-[11px]">Python</span>
+              <span class="m3-chip text-[11px]">OpenAI API</span>
+              <span class="m3-chip text-[11px]">Anthropic API</span>
+            </div>
+          </div>
+          <div data-lang="zh" class="hidden">
+            <p class="text-sm text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed mb-4">一个本地图片识别桥梁工具，通过视觉 API 将图片转为文本描述，让纯文本 AI 模型也能"看"懂图片。</p>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="m3-chip text-[11px]">Python</span>
+              <span class="m3-chip text-[11px]">OpenAI API</span>
+              <span class="m3-chip text-[11px]">Anthropic API</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <a href="https://github.com/markblogforpublic/ImgBridge" target="_blank" rel="noopener noreferrer" class="m3-label-btn !pl-0">
+              <span class="material-symbols-outlined text-lg">open_in_new</span>
+              <span data-lang="en">GitHub</span><span data-lang="zh" class="hidden">GitHub</span>
+            </a>
+            <a href="https://github.com/markblogforpublic/ImgBridge/blob/main/README.md" target="_blank" rel="noopener noreferrer" class="m3-label-btn text-on-surface-variant">
+              <span class="material-symbols-outlined text-lg">description</span>
+              README
+            </a>
+          </div>
+        </div>
+
+        <!-- IdentifySKU -->
+        <div class="m3-card group">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-12 h-12 rounded-m3-md bg-tertiary-container dark:bg-tertiary-container flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-[24px] text-tertiary dark:text-tertiary">qr_code_scanner</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-on-surface dark:text-on-surface-dark">IdentifySKU</h3>
+              <p class="text-xs text-on-surface-variant dark:text-on-surface-variant-dark">FBA Label Splitter V2.5</p>
+            </div>
+          </div>
+          <div data-lang="en">
+            <p class="text-sm text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed mb-4">Automatically splits multi-label PDF sheets into individual SKU or range-based files. Supports UK, AU, and US Amazon marketplace formats.</p>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="m3-chip text-[11px]">Python</span>
+              <span class="m3-chip text-[11px]">Flask</span>
+              <span class="m3-chip text-[11px]">PyMuPDF</span>
+            </div>
+          </div>
+          <div data-lang="zh" class="hidden">
+            <p class="text-sm text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed mb-4">按 SKU 自动将整页 PDF 标签拆分成单独文件，支持英、澳、美三大站点格式，提供网页界面、命令行和桌面启动器。</p>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="m3-chip text-[11px]">Python</span>
+              <span class="m3-chip text-[11px]">Flask</span>
+              <span class="m3-chip text-[11px]">PyMuPDF</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <a href="https://github.com/markblogforpublic/IdentifySKU" target="_blank" rel="noopener noreferrer" class="m3-label-btn !pl-0">
+              <span class="material-symbols-outlined text-lg">open_in_new</span>
+              <span data-lang="en">GitHub</span><span data-lang="zh" class="hidden">GitHub</span>
+            </a>
+            <a href="https://github.com/markblogforpublic/IdentifySKU/blob/main/README.md" target="_blank" rel="noopener noreferrer" class="m3-label-btn text-on-surface-variant">
+              <span class="material-symbols-outlined text-lg">description</span>
+              README
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
   </main>
 
   <!-- Footer (MD3) -->
