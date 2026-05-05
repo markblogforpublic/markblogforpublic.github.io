@@ -10,9 +10,9 @@
 
 ```
 📁 blog/
-├── index.html                  ← 首页（Hero + 项目卡片）
+├── index.html                  ← 首页（个人简介 + 旅行 + milet）
 ├── about.html                  ← 关于我（个人介绍 + 免责声明）
-├── updates.html                ← 作者更新（文章列表）
+├── updates.html                ← 作者更新（文章列表 + 项目展示）
 ├── README.md                   ← 就是这个文件
 ├── .gitignore
 │
