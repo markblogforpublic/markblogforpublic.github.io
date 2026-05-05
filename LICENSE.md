@@ -4,6 +4,18 @@
 
 ---
 
+## Associated Project Licenses
+
+The open-source projects showcased on this site are each licensed under their own terms:
+
+| Project | License |
+|---------|---------|
+| [ImgBridge](https://github.com/markblogforpublic/ImgBridge) | **Apache 2.0** |
+| [IdentifySKU](https://github.com/markblogforpublic/IdentifySKU) | **LGPL v3** |
+| [AILTES](https://github.com/markblogforpublic/AILTES) | **GPL v3 (Non-Commercial)** |
+
+---
+
 ## Content License — CC BY-NC-ND 4.0
 
 All written content, articles, blog posts, images, and documentation on this website are licensed under the **Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License**.
