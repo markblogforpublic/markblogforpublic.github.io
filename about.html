@@ -137,33 +137,94 @@
         Hi there! I'm <strong class="text-on-surface dark:text-on-surface-dark">Mark</strong>, a developer based in Tokyo, focused on building practical open-source tools that solve real-world problems. I believe software should be useful, well-documented, and accessible to everyone.
       </p>
 
-      <!-- Projects list (MD3 card) -->
-      <div class="m3-card !p-6 mb-10">
+      <!-- ═══ Goals & Directions ═══ -->
+      <div class="m3-card !p-6 mb-6">
         <h2 class="text-xl font-bold text-on-surface dark:text-on-surface-dark mb-5 flex items-center gap-2">
-          <span class="material-symbols-outlined text-primary dark:text-primary-dark">code</span>
-          What I've Built
+          <span class="material-symbols-outlined text-primary dark:text-primary-dark">flag</span>
+          <span data-lang="en">Blog Goals &amp; Directions</span>
+          <span data-lang="zh" class="hidden">博客目标与方向</span>
         </h2>
-        <div class="space-y-4">
-          <div class="flex items-start gap-3 p-4 rounded-m3-sm bg-primary-container/30 dark:bg-primary-container-dark/20">
-            <span class="material-symbols-outlined text-primary dark:text-primary-dark mt-0.5">image</span>
-            <div>
-              <strong class="text-on-surface dark:text-on-surface-dark">ImgBridge</strong>
-              <p class="text-sm text-on-surface-variant dark:text-on-surface-variant-dark mt-0.5">Giving text-only AI models the ability to "see" by bridging visual APIs to any language model.</p>
-            </div>
+        <div data-lang="en">
+          <p class="text-sm text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed mb-4">
+            This blog showcases my open-source journey across three intersecting areas:
+          </p>
+          <ul class="space-y-3 text-sm">
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary mt-0.5 text-lg">image</span>
+              <span class="text-on-surface-variant dark:text-on-surface-variant-dark"><strong class="text-on-surface dark:text-on-surface-dark">AI x Vision</strong> — Tools like ImgBridge that bridge visual AI to any language model, making AI accessible beyond text.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-tertiary mt-0.5 text-lg">qr_code_scanner</span>
+              <span class="text-on-surface-variant dark:text-on-surface-variant-dark"><strong class="text-on-surface dark:text-on-surface-dark">Automation x E-commerce</strong> — Practical tools like IdentifySKU that solve real seller pain points.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-emerald-600 mt-0.5 text-lg">record_voice_over</span>
+              <span class="text-on-surface-variant dark:text-on-surface-variant-dark"><strong class="text-on-surface dark:text-on-surface-dark">AI x Education</strong> — Projects like AILTES that explore how LLMs can transform language learning.</span>
+            </li>
+          </ul>
+          <p class="text-sm text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed mt-4">
+            Moving forward, I want to keep building at these intersections — open-source, privacy-first, and well-documented tools that genuinely help people.
+          </p>
+        </div>
+        <div data-lang="zh" class="hidden">
+          <p class="text-sm text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed mb-4">
+            这个博客记录我在三个交叉领域的开源之旅：
+          </p>
+          <ul class="space-y-3 text-sm">
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary mt-0.5 text-lg">image</span>
+              <span class="text-on-surface-variant dark:text-on-surface-variant-dark"><strong class="text-on-surface dark:text-on-surface-dark">AI x 视觉</strong> — 像 ImgBridge 这样的工具，连接视觉 AI 与任何语言模型。</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-tertiary mt-0.5 text-lg">qr_code_scanner</span>
+              <span class="text-on-surface-variant dark:text-on-surface-variant-dark"><strong class="text-on-surface dark:text-on-surface-dark">自动化 x 电商</strong> — IdentifySKU 等实用工具，解决真实卖家痛点。</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-emerald-600 mt-0.5 text-lg">record_voice_over</span>
+              <span class="text-on-surface-variant dark:text-on-surface-variant-dark"><strong class="text-on-surface dark:text-on-surface-dark">AI x 教育</strong> — AILTES 等项目，探索大语言模型如何改变语言学习。</span>
+            </li>
+          </ul>
+          <p class="text-sm text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed mt-4">
+            未来我会继续在这些交叉点上构建——开源、隐私优先、文档完善、真正有用的工具。
+          </p>
+        </div>
+      </div>
+
+      <!-- ═══ License ═══ -->
+      <div class="rounded-m3-lg border border-outline-variant dark:border-surface-variant-dark p-5 mb-6">
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-primary dark:text-primary-dark mt-0.5">license</span>
+          <div>
+            <h3 class="font-bold text-on-surface dark:text-on-surface-dark mb-1">
+              <span data-lang="en">Open Source License</span>
+              <span data-lang="zh" class="hidden">开源许可证</span>
+            </h3>
+            <p class="text-xs text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed">
+              <span data-lang="en">Blog content is licensed under <strong>CC BY-NC-ND 4.0</strong>, source code under <strong>Apache 2.0</strong>. Each project has its own license — see the <a href="https://github.com/markblogforpublic" class="text-primary dark:text-primary-dark underline underline-offset-2">GitHub repo</a> for details.</span>
+              <span data-lang="zh" class="hidden">博客内容采用 <strong>CC BY-NC-ND 4.0</strong>，源代码采用 <strong>Apache 2.0</strong>。每个项目有各自的许可证——详见 <a href="https://github.com/markblogforpublic" class="text-primary dark:text-primary-dark underline underline-offset-2">GitHub 仓库</a>。</span>
+            </p>
           </div>
-          <div class="flex items-start gap-3 p-4 rounded-m3-sm bg-tertiary-container/30 dark:bg-tertiary-container/20">
-            <span class="material-symbols-outlined text-tertiary dark:text-tertiary mt-0.5">qr_code_scanner</span>
-            <div>
-              <strong class="text-on-surface dark:text-on-surface-dark">IdentifySKU</strong>
-              <p class="text-sm text-on-surface-variant dark:text-on-surface-variant-dark mt-0.5">An intelligent Amazon FBA label splitter that saves sellers hours of manual work.</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-3 p-4 rounded-m3-sm bg-gradient-to-r from-emerald-50 to-cyan-50 dark:from-emerald-900/10 dark:to-cyan-900/10">
-            <span class="material-symbols-outlined text-emerald-600 dark:text-emerald-400 mt-0.5">record_voice_over</span>
-            <div>
-              <strong class="text-on-surface dark:text-on-surface-dark">AILTES</strong>
-              <p class="text-sm text-on-surface-variant dark:text-on-surface-variant-dark mt-0.5">An AI-driven IELTS speaking practice platform that scores and evaluates spoken English.</p>
-            </div>
+        </div>
+      </div>
+
+      <!-- ═══ milet ═══ -->
+      <div class="rounded-m3-lg border border-outline-variant dark:border-surface-variant-dark p-5 mb-10 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/10 dark:to-pink-900/10">
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-pink-500 dark:text-pink-400 mt-0.5">headphones</span>
+          <div>
+            <h3 class="font-bold text-on-surface dark:text-on-surface-dark mb-1">
+              <span data-lang="en">🎵 Go listen to milet!</span>
+              <span data-lang="zh" class="hidden">🎵 去听听 milet 的歌吧！</span>
+            </h3>
+            <p class="text-xs text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed mb-2">
+              <span data-lang="en">My favorite artist. Her voice is incredible — check out her official site:</span>
+              <span data-lang="zh" class="hidden">我最爱的歌手，她的声音让人着迷——这是她的官方网站：</span>
+            </p>
+            <a href="https://www.milet.jp/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-sm font-medium text-primary dark:text-primary-dark hover:underline">milet.jp ↗</a>
+            <p class="text-xs text-on-surface-variant/60 dark:text-on-surface-variant-dark/60 mt-2">
+              <span data-lang="en"><em>Unofficial recommendation — I'm just a fan. This is an external link not affiliated with me or this blog.</em></span>
+              <span data-lang="zh" class="hidden"><em>非官方推荐，纯个人分享。此为外部链接，与本博客无关联。</em></span>
+            </p>
           </div>
         </div>
       </div>
@@ -223,32 +284,59 @@
         你好！我是 <strong class="text-on-surface dark:text-on-surface-dark">Mark</strong>，一名常驻东京的开发者，专注于开发解决实际问题的开源工具。我相信软件应该实用、文档完善、人人可用。
       </p>
 
-      <div class="m3-card !p-6 mb-10">
+      <div class="m3-card !p-6 mb-6">
         <h2 class="text-xl font-bold text-on-surface dark:text-on-surface-dark mb-5 flex items-center gap-2">
-          <span class="material-symbols-outlined text-primary dark:text-primary-dark">code</span>
-          我的项目
+          <span class="material-symbols-outlined text-primary dark:text-primary-dark">flag</span>
+          博客目标与方向
         </h2>
-        <div class="space-y-4">
-          <div class="flex items-start gap-3 p-4 rounded-m3-sm bg-primary-container/30 dark:bg-primary-container-dark/20">
-            <span class="material-symbols-outlined text-primary dark:text-primary-dark mt-0.5">image</span>
-            <div>
-              <strong class="text-on-surface dark:text-on-surface-dark">ImgBridge</strong>
-              <p class="text-sm text-on-surface-variant dark:text-on-surface-variant-dark mt-0.5">给纯文本 AI 模型装上"眼睛"，让任何语言模型都能看懂图片内容。</p>
-            </div>
+        <p class="text-sm text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed mb-4">
+          这个博客记录我在三个交叉领域的开源之旅：
+        </p>
+        <ul class="space-y-3 text-sm">
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-primary mt-0.5 text-lg">image</span>
+            <span class="text-on-surface-variant dark:text-on-surface-variant-dark"><strong class="text-on-surface dark:text-on-surface-dark">AI x 视觉</strong> — 像 ImgBridge 这样的工具，连接视觉 AI 与任何语言模型。</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-tertiary mt-0.5 text-lg">qr_code_scanner</span>
+            <span class="text-on-surface-variant dark:text-on-surface-variant-dark"><strong class="text-on-surface dark:text-on-surface-dark">自动化 x 电商</strong> — IdentifySKU 等实用工具，解决真实卖家痛点。</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-emerald-600 mt-0.5 text-lg">record_voice_over</span>
+            <span class="text-on-surface-variant dark:text-on-surface-variant-dark"><strong class="text-on-surface dark:text-on-surface-dark">AI x 教育</strong> — AILTES 等项目，探索大语言模型如何改变语言学习。</span>
+          </li>
+        </ul>
+        <p class="text-sm text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed mt-4">
+          未来我会继续在这些交叉点上构建——开源、隐私优先、文档完善、真正有用的工具。
+        </p>
+      </div>
+
+      <!-- 许可证 -->
+      <div class="rounded-m3-lg border border-outline-variant dark:border-surface-variant-dark p-5 mb-6">
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-primary dark:text-primary-dark mt-0.5">license</span>
+          <div>
+            <h3 class="font-bold text-on-surface dark:text-on-surface-dark mb-1">开源许可证</h3>
+            <p class="text-xs text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed">
+              博客内容采用 <strong>CC BY-NC-ND 4.0</strong>，源代码采用 <strong>Apache 2.0</strong>。每个项目有各自的许可证——详见 <a href="https://github.com/markblogforpublic" class="text-primary dark:text-primary-dark underline underline-offset-2">GitHub 仓库</a>。
+            </p>
           </div>
-          <div class="flex items-start gap-3 p-4 rounded-m3-sm bg-tertiary-container/30 dark:bg-tertiary-container/20">
-            <span class="material-symbols-outlined text-tertiary dark:text-tertiary mt-0.5">qr_code_scanner</span>
-            <div>
-              <strong class="text-on-surface dark:text-on-surface-dark">IdentifySKU</strong>
-              <p class="text-sm text-on-surface-variant dark:text-on-surface-variant-dark mt-0.5">亚马逊 FBA 标签智能拆分工具，帮卖家省去数小时的手动操作。</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-3 p-4 rounded-m3-sm bg-gradient-to-r from-emerald-50 to-cyan-50 dark:from-emerald-900/10 dark:to-cyan-900/10">
-            <span class="material-symbols-outlined text-emerald-600 dark:text-emerald-400 mt-0.5">record_voice_over</span>
-            <div>
-              <strong class="text-on-surface dark:text-on-surface-dark">AILTES</strong>
-              <p class="text-sm text-on-surface-variant dark:text-on-surface-variant-dark mt-0.5">AI 驱动的雅思口语练习平台，支持多维度评分与可解释反馈。</p>
-            </div>
+        </div>
+      </div>
+
+      <!-- milet -->
+      <div class="rounded-m3-lg border border-outline-variant dark:border-surface-variant-dark p-5 mb-10 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/10 dark:to-pink-900/10">
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-pink-500 dark:text-pink-400 mt-0.5">headphones</span>
+          <div>
+            <h3 class="font-bold text-on-surface dark:text-on-surface-dark mb-1">🎵 去听听 milet 的歌吧！</h3>
+            <p class="text-xs text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed mb-2">
+              我最爱的歌手，她的声音让人着迷——这是她的官方网站：
+            </p>
+            <a href="https://www.milet.jp/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-sm font-medium text-primary dark:text-primary-dark hover:underline">milet.jp ↗</a>
+            <p class="text-xs text-on-surface-variant/60 dark:text-on-surface-variant-dark/60 mt-2">
+              <em>非官方推荐，纯个人分享。此为外部链接，与本博客无关联。</em>
+            </p>
           </div>
         </div>
       </div>
