@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AILTES — Research & Dev Report — markblogforpublic</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#4F46E5','on-primary': '#FFFFFF','primary-container': '#E0DFFF','on-primary-container': '#1A0B8A',
+            secondary: '#5C5D72','secondary-container': '#E1E0F9',
+            tertiary: '#7A5368','tertiary-container': '#FFD8E8',
+            surface: '#FFFBFE','on-surface': '#1C1B1F','on-surface-variant': '#49454F',
+            outline: '#79747E','outline-variant': '#CAC4D0',
+            'primary-dark': '#BDB8FF','primary-container-dark': '#3F33C9',
+            'surface-dark': '#1C1B1F','on-surface-dark': '#E6E1E5','surface-variant-dark': '#49454F','on-surface-variant-dark': '#CAC4D0',
+          },
+          borderRadius: { 'm3-sm': '8px','m3-md': '12px','m3-lg': '16px' },
+          fontFamily: { sans: ['"Google Sans"', 'Inter', 'system-ui', '-apple-system', 'sans-serif'] },
+          boxShadow: { 'm3-1': '0 1px 3px 0 rgba(0,0,0,0.12)', 'm3-3': '0 4px 12px 0 rgba(0,0,0,0.14)' },
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .sc { background: #FFFBFE; border: 1px solid #CAC4D0; border-radius: 16px; padding: 24px; margin-bottom: 20px; }
+    .dark .sc { background: #1C1B1F; border-color: #49454F; }
+    .hl { border-left: 4px solid #4F46E5; padding-left: 16px; }
+    .dark .hl { border-left-color: #BDB8FF; }
+    .tag2 { display: inline-flex; padding: 2px 10px; border-radius: 8px; font-size: .75rem; font-weight: 500; background: #E0DFFF; color: #1A0B8A; }
+    .dark .tag2 { background: rgba(189,184,255,0.15); color: #BDB8FF; }
+  </style>
+</head>
+<body class="bg-surface dark:bg-surface-dark text-on-surface dark:text-on-surface-dark font-sans">
+
+  <header class="sticky top-0 z-50 bg-surface/80 dark:bg-surface-dark/80 backdrop-blur-md shadow-m3-1">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="../index.html" class="flex items-center gap-2 text-lg font-bold tracking-tight text-primary dark:text-primary-dark">
+          <span class="material-symbols-outlined text-[28px]">code_blocks</span> markblogforpublic
+        </a>
+        <div class="flex items-center gap-2">
+          <nav class="hidden sm:flex items-center gap-1 mr-3">
+            <a href="../index.html" class="px-3 py-2 text-sm font-medium rounded-full text-on-surface-variant hover:bg-primary-container/50">Home / 首页</a>
+            <a href="../updates.html" class="px-3 py-2 text-sm font-medium rounded-full bg-primary-container/40 text-primary font-semibold">Updates / 作者更新</a>
+            <a href="../about.html" class="px-3 py-2 text-sm font-medium rounded-full text-on-surface-variant hover:bg-primary-container/50">About / 关于</a>
+          </nav>
+          <button id="langToggle" class="m3-icon-btn relative">
+            <span class="material-symbols-outlined text-[22px]">translate</span>
+            <span id="langLabel" class="absolute -bottom-1 right-0 text-[10px] font-medium text-primary">中文</span>
+          </button>
+          <button id="darkToggle" class="m3-icon-btn">
+            <span id="lightIcon" class="material-symbols-outlined text-[22px] text-on-surface-variant">light_mode</span>
+            <span id="darkIcon" class="material-symbols-outlined text-[22px] text-on-surface-variant hidden">dark_mode</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+
+    <a href="../updates.html" class="inline-flex items-center gap-1.5 text-sm font-medium text-on-surface-variant dark:text-on-surface-variant-dark hover:text-primary transition-colors mb-8">
+      <span class="material-symbols-outlined text-lg">arrow_back</span>
+      <span data-lang="en">Back to Updates</span><span data-lang="zh" class="hidden">返回作者更新</span>
+    </a>
+
+    <header class="mb-10">
+      <div class="flex flex-wrap gap-2 mb-4">
+        <span class="tag2">Research</span>
+        <span class="tag2" style="background:#FFD8E8;color:#2E1122">EdTech</span>
+        <span class="tag2" style="background:#E1E0F9;color:#191A2C">Dev Log</span>
+      </div>
+      <div data-lang="en">
+        <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-on-surface dark:text-on-surface-dark leading-[1.15] mb-4">AILTES: AI English Speaking Evaluation System</h1>
+        <p class="text-base sm:text-lg text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed mb-4">
+          An LLM-powered IELTS speaking practice platform with multi-dimensional scoring, explainable feedback — and the story of how it was built.
+        </p>
+      </div>
+      <div data-lang="zh" class="hidden">
+        <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-on-surface dark:text-on-surface-dark leading-[1.15] mb-4">AILTES：基于大语言模型的英语口语评估系统</h1>
+        <p class="text-base sm:text-lg text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed mb-4">
+          基于大语言模型的雅思口语练习平台——多维度评分、可解释性反馈，以及背后的开发故事。
+        </p>
+      </div>
+      <div class="flex items-center gap-4 text-sm text-on-surface-variant">
+        <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px]">calendar_today</span> 2026-05-05</span>
+        <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px]">schedule</span> ~18 min read</span>
+      </div>
+    </header>
+
+    <!-- Abstract -->
+    <div class="hl mb-8 p-5 rounded-m3-md bg-primary-container/20 dark:bg-primary-container-dark/15">
+      <div data-lang="en">
+        <p class="text-sm font-semibold text-primary mb-1">Abstract</p>
+        <p class="text-sm text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed">
+          This research presents AILTES, an AI-driven interactive English speaking system that uses large language models to simulate IELTS speaking exams, evaluate expression quality across multiple dimensions (fluency, lexical resource, naturalness), and provide explainable feedback. The system features four core modules — dialogue generation, expression evaluation, feedback generation, and user analytics — and supports both cloud API and local model deployment. This report also covers the development journey: technical decisions, challenges faced, and lessons learned.
+        </p>
+      </div>
+      <div data-lang="zh" class="hidden">
+        <p class="text-sm font-semibold text-primary mb-1">摘要</p>
+        <p class="text-sm text-on-surface-variant dark:text-on-surface-variant-dark leading-relaxed">
+          本研究提出了 AILTES，一个基于大语言模型的英语口语交互系统。该系统模拟雅思口语考试场景，从流畅度、词汇丰富度、表达自然度三个维度评估表达质量，并提供可解释性反馈。系统包含对话生成、表达评估、反馈生成和用户数据分析四个核心模块，支持云端 API 和本地模型两种部署方式。本文还记录了开发历程：技术决策、遇到的挑战和心得收获。
+        </p>
+      </div>
+    </div>
+
+    <!-- ═══ PART I: RESEARCH ═══ -->
+    <div class="flex items-center gap-3 mb-6">
+      <span class="material-symbols-outlined text-primary">menu_book</span>
+      <h2 class="text-lg font-bold text-on-surface dark:text-on-surface-dark tracking-wide uppercase" style="letter-spacing:0.1em">
+        <span data-lang="en">Part I — Research</span><span data-lang="zh" class="hidden">第一部分 — 研究</span>
+      </h2>
+    </div>
+
+    <!-- 1. Intro -->
+    <div class="sc">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="w-8 h-8 rounded-full bg-primary-container dark:bg-primary-container-dark flex items-center justify-center text-sm font-bold text-primary shrink-0">1</span>
+        <h3 class="text-xl font-bold text-on-surface dark:text-on-surface-dark">
+          <span data-lang="en">Introduction</span><span data-lang="zh" class="hidden">研究背景</span>
+        </h3>
+      </div>
+      <div data-lang="en">
+        <p class="text-sm text-on-surface-variant leading-relaxed mb-3">Large Language Models (LLMs) have made remarkable progress in NLP, but existing English learning tools still have significant gaps: they focus on writing, lack multi-turn conversation, cannot simulate real exam scenarios, and provide feedback without explainability. This research bridges that gap.</p>
+        <p class="text-sm text-on-surface-variant leading-relaxed">Objective: design an English speaking system with <strong>realistic interaction</strong> and <strong>explainable expression quality evaluation</strong>.</p>
+      </div>
+      <div data-lang="zh" class="hidden">
+        <p class="text-sm text-on-surface-variant leading-relaxed mb-3">大语言模型在 NLP 领域取得了显著进展，但现有英语学习工具仍存在明显不足：侧重写作、缺乏多轮对话、无法模拟真实考试、反馈缺乏解释性。本研究旨在填补这一空白。</p>
+        <p class="text-sm text-on-surface-variant leading-relaxed">目标：设计一个具备真实交互能力和可解释表达质量评估的英语口语系统。</p>
+      </div>
+    </div>
+
+    <!-- 2. System Architecture -->
+    <div class="sc !border-primary/30">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-sm font-bold text-white shrink-0">2</span>
+        <h3 class="text-xl font-bold text-on-surface dark:text-on-surface-dark">
+          <span data-lang="en">System Architecture</span><span data-lang="zh" class="hidden">系统架构</span>
+        </h3>
+      </div>
+      <!-- visual -->
+      <div class="bg-primary-container/20 dark:bg-primary-container-dark/15 rounded-m3-md p-5 mb-6 text-center text-xs font-mono text-on-surface-variant leading-loose">
+        <span class="text-primary font-bold">┌─────────────┐</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-tertiary font-bold">┌────────────────┐</span><br/>
+        <span class="text-primary font-bold">│&nbsp;Dialogue&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-tertiary font-bold">│&nbsp;Expression&nbsp;&nbsp;&nbsp;&nbsp;│</span><br/>
+        <span class="text-primary font-bold">│&nbsp;Generation&nbsp;│</span> ──▶ <span class="text-tertiary font-bold">│&nbsp;Evaluation&nbsp;&nbsp;&nbsp;&nbsp;│</span><br/>
+        <span class="text-primary font-bold">└─────────────┘</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-tertiary font-bold">└───────┬────────┘</span><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;┌────────────────┐&nbsp;&nbsp;&nbsp;&nbsp;┌────────────────────┐<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-emerald-600 font-bold">│&nbsp;Feedback&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-amber-600 font-bold">│&nbsp;User Analytics&nbsp;&nbsp;│</span><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-emerald-600 font-bold">│&nbsp;Generation&nbsp;│</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-amber-600 font-bold">│&nbsp;&amp; History&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│</span><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-emerald-600 font-bold">└────────────────┘</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-amber-600 font-bold">└────────────────────┘</span>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-3">
+        <div class="p-3 rounded-m3-md bg-primary-container/15"><span class="material-symbols-outlined text-primary text-lg">forum</span><p class="text-sm font-bold mt-1">Dialogue Generation</p><p class="text-xs text-on-surface-variant">Simulates examiner, multi-turn IELTS Part 1/2/3</p></div>
+        <div class="p-3 rounded-m3-md bg-tertiary-container/30"><span class="material-symbols-outlined text-tertiary text-lg">score</span><p class="text-sm font-bold mt-1">Expression Evaluation <span class="text-xs font-normal">⭐Core</span></p><p class="text-xs text-on-surface-variant">Fluency, Lexical Resource, Naturalness (1-9)</p></div>
+        <div class="p-3 rounded-m3-md bg-emerald-50 dark:bg-emerald-900/15"><span class="material-symbols-outlined text-emerald-600 text-lg">edit_note</span><p class="text-sm font-bold mt-1">Feedback Generation</p><p class="text-xs text-on-surface-variant">Rewriting, error highlighting, explanations</p></div>
+        <div class="p-3 rounded-m3-md bg-amber-50 dark:bg-amber-900/15"><span class="material-symbols-outlined text-amber-600 text-lg">monitoring</span><p class="text-sm font-bold mt-1">User Analytics</p><p class="text-xs text-on-surface-variant">History, progress trends, weakness detection</p></div>
+      </div>
+    </div>
+
+    <!-- 3. Methodology -->
+    <div class="sc">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="w-8 h-8 rounded-full bg-primary-container dark:bg-primary-container-dark flex items-center justify-center text-sm font-bold text-primary shrink-0">3</span>
+        <h3 class="text-xl font-bold text-on-surface dark:text-on-surface-dark">
+          <span data-lang="en">Methodology &amp; Implementation</span><span data-lang="zh" class="hidden">方法与实现</span>
+        </h3>
+      </div>
+      <div class="space-y-3">
+        <div class="p-3 rounded-m3-md border border-outline-variant">
+          <p class="text-sm font-bold text-on-surface">Prompt Engineering</p>
+          <p class="text-xs text-on-surface-variant" data-lang="en">Carefully designed system prompts with IELTS rubric examples, forcing structured JSON output, and separating evaluation from dialogue to avoid role conflict.</p>
+          <p class="text-xs text-on-surface-variant" data-lang="zh" class="hidden">精心设计的系统提示词，包含雅思评分标准示例，强制结构化 JSON 输出，将评估与对话任务分离以避免角色冲突。</p>
+        </div>
+        <div class="p-3 rounded-m3-md border border-outline-variant">
+          <p class="text-sm font-bold text-on-surface">Rule + LLM Hybrid</p>
+          <p class="text-xs text-on-surface-variant" data-lang="en">Rules handle basic grammar detection. LLM handles semantic understanding and naturalness — combining both approaches' strengths.</p>
+          <p class="text-xs text-on-surface-variant" data-lang="zh" class="hidden">规则方法处理基础语法检测，LLM 处理语义理解与自然度评估，结合两者优势。</p>
+        </div>
+      </div>
+      <div class="mt-4 p-4 rounded-m3-md bg-primary-container/15">
+        <p class="text-sm font-bold text-on-surface mb-2">Tech Stack</p>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="tag2">Next.js 16</span><span class="tag2">React 19</span><span class="tag2">FastAPI</span><span class="tag2">OpenAI</span>
+          <span class="tag2">Anthropic</span><span class="tag2">LLaMA.cpp</span><span class="tag2">GGUF</span><span class="tag2">CUDA</span>
+          <span class="tag2">Vulkan</span><span class="tag2">Whisper</span><span class="tag2">MongoDB</span><span class="tag2">Recharts</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Evaluation Dimensions -->
+    <div class="sc">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="w-8 h-8 rounded-full bg-primary-container dark:bg-primary-container-dark flex items-center justify-center text-sm font-bold text-primary shrink-0">4</span>
+        <h3 class="text-xl font-bold text-on-surface dark:text-on-surface-dark">
+          <span data-lang="en">Evaluation Dimensions</span><span data-lang="zh" class="hidden">评估维度</span>
+        </h3>
+      </div>
+      <div class="space-y-3">
+        <div class="flex items-center gap-3 p-3 rounded-m3-sm bg-primary-container/20">
+          <span class="material-symbols-outlined text-primary">speed</span>
+          <div><p class="text-sm font-semibold text-on-surface">Fluency</p><p class="text-xs text-on-surface-variant" data-lang="en">Speech rhythm, hesitation, filler words</p><p class="text-xs text-on-surface-variant" data-lang="zh" class="hidden">语速节奏、停顿模式、填充词</p></div>
+        </div>
+        <div class="flex items-center gap-3 p-3 rounded-m3-sm bg-tertiary-container/30">
+          <span class="material-symbols-outlined text-tertiary">dictionary</span>
+          <div><p class="text-sm font-semibold text-on-surface">Lexical Resource</p><p class="text-xs text-on-surface-variant" data-lang="en">Vocabulary range, collocation, paraphrasing</p><p class="text-xs text-on-surface-variant" data-lang="zh" class="hidden">词汇广度、搭配准确性、转述能力</p></div>
+        </div>
+        <div class="flex items-center gap-3 p-3 rounded-m3-sm bg-emerald-50 dark:bg-emerald-900/15">
+          <span class="material-symbols-outlined text-emerald-600">psychology</span>
+          <div><p class="text-sm font-semibold text-on-surface">Naturalness</p><p class="text-xs text-on-surface-variant" data-lang="en">Idiomatic expression, grammar, pragmatics</p><p class="text-xs text-on-surface-variant" data-lang="zh" class="hidden">地道表达、语法准确性、语用恰当性</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Conclusion & Future -->
+    <div class="sc">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="w-8 h-8 rounded-full bg-primary-container dark:bg-primary-container-dark flex items-center justify-center text-sm font-bold text-primary shrink-0">5</span>
+        <h3 class="text-xl font-bold text-on-surface dark:text-on-surface-dark">
+          <span data-lang="en">Conclusion &amp; Future Work</span><span data-lang="zh" class="hidden">结论与未来展望</span>
+        </h3>
+      </div>
+      <div data-lang="en">
+        <p class="text-sm text-on-surface-variant leading-relaxed mb-3">AILTES delivers a complete AI-powered English speaking system with realistic interaction, multi-dimensional evaluation, and explainable feedback. The open-source implementation is freely available on GitHub.</p>
+        <p class="text-sm font-semibold text-on-surface mb-2">Future directions:</p>
+        <ul class="text-sm text-on-surface-variant leading-relaxed space-y-1 list-disc pl-5">
+          <li>End-to-end ASR integration for voice-based practice</li>
+          <li>Fine-grained scoring calibrated against official IELTS rubrics</li>
+          <li>Large-scale user studies for statistical validation</li>
+          <li>Personalized learning path recommendations</li>
+        </ul>
+      </div>
+      <div data-lang="zh" class="hidden">
+        <p class="text-sm text-on-surface-variant leading-relaxed mb-3">AILTES 实现了一个完整的 AI 英语口语交互系统，具备真实交互、多维度评估和可解释性反馈。项目已开源。</p>
+        <p class="text-sm font-semibold text-on-surface mb-2">未来方向：</p>
+        <ul class="text-sm text-on-surface-variant leading-relaxed space-y-1 list-disc pl-5">
+          <li>端到端语音识别集成</li>
+          <li>与官方雅思评分标准校准的精细评分</li>
+          <li>大规模用户实验与统计验证</li>
+          <li>个性化学习路径推荐</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ═══ PART II: DEV REPORT ═══ -->
+    <div class="flex items-center gap-3 mb-6 mt-12">
+      <span class="material-symbols-outlined text-primary">construction</span>
+      <h2 class="text-lg font-bold text-on-surface dark:text-on-surface-dark tracking-wide uppercase" style="letter-spacing:0.1em">
+        <span data-lang="en">Part II — Development Report</span><span data-lang="zh" class="hidden">第二部分 — 开发报告</span>
+      </h2>
+    </div>
+
+    <!-- Why -->
+    <div class="sc">
+      <div class="flex items-center gap-3 mb-3">
+        <span class="material-symbols-outlined text-primary">emoji_objects</span>
+        <h3 class="text-xl font-bold text-on-surface dark:text-on-surface-dark">
+          <span data-lang="en">Why I Built This</span><span data-lang="zh" class="hidden">为什么做这个项目</span>
+        </h3>
+      </div>
+      <div data-lang="en">
+        <p class="text-sm text-on-surface-variant leading-relaxed">
+          IELTS speaking practice is a real pain point — one-on-one tutoring is expensive, and most tools either lack interactivity or provide generic feedback. I wanted to build a "virtual examiner" available 24/7 that provides detailed, actionable feedback while respecting privacy by running locally. What started as a simple question — "Can an LLM reliably evaluate spoken English?" — became a full-stack application with four interconnected modules, GPU backend management, and a real-time analytics dashboard.
+        </p>
+      </div>
+      <div data-lang="zh" class="hidden">
+        <p class="text-sm text-on-surface-variant leading-relaxed">
+          雅思口语练习是一个真实痛点——一对一辅导昂贵，大多工具缺乏交互性或反馈笼统。我想做一个 24/7 在线的"虚拟考官"，提供详细反馈，同时通过本地运行保护隐私。从一个简单问题开始——"大语言模型能可靠评估英语口语吗？"——最终演变为一个全栈应用。
+        </p>
+      </div>
+    </div>
+
+    <!-- Tech Decisions -->
+    <div class="sc">
+      <div class="flex items-center gap-3 mb-3">
+        <span class="material-symbols-outlined text-primary">build</span>
+        <h3 class="text-xl font-bold text-on-surface dark:text-on-surface-dark">
+          <span data-lang="en">Technical Decisions</span><span data-lang="zh" class="hidden">技术决策</span>
+        </h3>
+      </div>
+      <div class="space-y-4">
+        <div class="hl p-4 rounded-m3-md bg-primary-container/15">
+          <p class="text-sm font-bold text-on-surface mb-1">GPU Backend Hot-Swapping</p>
+          <p class="text-xs text-on-surface-variant" data-lang="en">The trickiest part. llama-cpp-python needs different DLLs for CUDA vs Vulkan vs CPU. I built a launcher that detects your GPU, copies the right DLLs at startup, and lets you switch instantly — no Docker, no complex setup.</p>
+          <p class="text-xs text-on-surface-variant" data-lang="zh" class="hidden">最棘手的部分。我写了一个启动器：自动检测 GPU，启动时复制对应 DLL，无需 Docker 无需复杂配置。</p>
+        </div>
+        <div class="hl p-4 rounded-m3-md bg-tertiary-container/20">
+          <p class="text-sm font-bold text-on-surface mb-1">Scoring Prompt Engineering</p>
+          <p class="text-xs text-on-surface-variant" data-lang="en">Getting consistent 1-9 scores required forcing structured JSON output, providing IELTS rubric examples in the system prompt, and separating evaluation from dialogue to avoid role conflict.</p>
+          <p class="text-xs text-on-surface-variant" data-lang="zh" class="hidden">强制结构化 JSON 输出、在 system prompt 中嵌入雅思评分标准、将评估与对话任务分离。</p>
+        </div>
+        <div class="hl p-4 rounded-m3-md bg-emerald-50 dark:bg-emerald-900/15">
+          <p class="text-sm font-bold text-on-surface mb-1">Bilingual by Design</p>
+          <p class="text-xs text-on-surface-variant" data-lang="en">Full English and Chinese support in both the frontend UI and the backend evaluator prompts — following the same pattern as this blog, making the project accessible to a wider audience.</p>
+          <p class="text-xs text-on-surface-variant" data-lang="zh" class="hidden">沿用博客的双语模式——前端 UI 和后端评估 Prompt 都完整支持中英文。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Challenges -->
+    <div class="sc">
+      <div class="flex items-center gap-3 mb-3">
+        <span class="material-symbols-outlined text-primary">warning</span>
+        <h3 class="text-xl font-bold text-on-surface dark:text-on-surface-dark">
+          <span data-lang="en">Challenges Faced</span><span data-lang="zh" class="hidden">遇到的挑战</span>
+        </h3>
+      </div>
+      <div class="space-y-3">
+        <div class="flex items-start gap-3 p-3 rounded-m3-sm bg-red-50 dark:bg-red-900/10">
+          <span class="material-symbols-outlined text-red-500 text-lg">gpu</span>
+          <div><p class="text-sm font-semibold text-on-surface">DLL Hell</p><p class="text-xs text-on-surface-variant" data-lang="en">Managing CUDA/Vulkan DLLs across GPU vendors was a nightmare. Solution: pre-bundle backends, let users download only what they need, hot-swap at launch.</p><p class="text-xs text-on-surface-variant" data-lang="zh" class="hidden">管理不同 GPU 厂商的 DLL 非常痛苦。预打包所有后端，用户只需下载需要的部分。</p></div>
+        </div>
+        <div class="flex items-start gap-3 p-3 rounded-m3-sm bg-orange-50 dark:bg-orange-900/10">
+          <span class="material-symbols-outlined text-orange-500 text-lg">score</span>
+          <div><p class="text-sm font-semibold text-on-surface">Scoring Consistency</p><p class="text-xs text-on-surface-variant" data-lang="en">LLMs are inherently inconsistent. Reliable 1-9 scoring required many iterations of prompt refinement and testing.</p><p class="text-xs text-on-surface-variant" data-lang="zh" class="hidden">LLM 天然不一致。获得可靠评分需要多次迭代优化 Prompt。</p></div>
+        </div>
+        <div class="flex items-start gap-3 p-3 rounded-m3-sm bg-yellow-50 dark:bg-yellow-900/10">
+          <span class="material-symbols-outlined text-yellow-600 text-lg">bolt</span>
+          <div><p class="text-sm font-semibold text-on-surface">Local Model Performance</p><p class="text-xs text-on-surface-variant" data-lang="en">GGUF models are slow (30s+ per response). The UI needed clear loading states and expectation-setting banners.</p><p class="text-xs text-on-surface-variant" data-lang="zh" class="hidden">本地 GGUF 模型推理慢。UI 需要清晰的加载状态和预期提示。</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="grid grid-cols-3 gap-3 mb-6">
+      <div class="sc text-center !p-4"><p class="text-2xl font-bold text-primary">4</p><p class="text-xs text-on-surface-variant" data-lang="en">Core Modules</p><p data-lang="zh" class="hidden text-xs text-on-surface-variant">核心模块</p></div>
+      <div class="sc text-center !p-4"><p class="text-2xl font-bold text-primary">3</p><p class="text-xs text-on-surface-variant" data-lang="en">GPU Backends</p><p data-lang="zh" class="hidden text-xs text-on-surface-variant">GPU 后端</p></div>
+      <div class="sc text-center !p-4"><p class="text-2xl font-bold text-primary">3</p><p class="text-xs text-on-surface-variant" data-lang="en">Eval Dimensions</p><p data-lang="zh" class="hidden text-xs text-on-surface-variant">评估维度</p></div>
+    </div>
+
+    <!-- Lessons -->
+    <div class="sc !border-primary/30">
+      <div class="flex items-center gap-3 mb-3">
+        <span class="material-symbols-outlined text-primary">school</span>
+        <h3 class="text-xl font-bold text-on-surface dark:text-on-surface-dark">
+          <span data-lang="en">What I Learned</span><span data-lang="zh" class="hidden">收获与成长</span>
+        </h3>
+      </div>
+      <div data-lang="en">
+        <ul class="text-sm text-on-surface-variant leading-relaxed space-y-2 list-disc pl-5">
+          <li><strong>System design matters.</strong> Four modules with clear separation of concerns made the project scalable and maintainable.</li>
+          <li><strong>LLMs are tools, not magic.</strong> A well-prompted small model can outperform a poorly-prompted large one on specific tasks.</li>
+          <li><strong>GPU programming is still hard.</strong> Pre-bundling backends with clear setup instructions is essential for user adoption.</li>
+          <li><strong>Education is high-stakes.</strong> Telling someone their English is a "5" when it's a "6" affects confidence. Reliable evaluation requires humility and testing.</li>
+          <li><strong>Choose the right license.</strong> GPL (Non-Commercial) for educational use, MIT for broader use — each project needs the right fit.</li>
+        </ul>
+      </div>
+      <div data-lang="zh" class="hidden">
+        <ul class="text-sm text-on-surface-variant leading-relaxed space-y-2 list-disc pl-5">
+          <li><strong>系统设计至关重要。</strong>四个模块、清晰的关注点分离，让项目可扩展可维护。</li>
+          <li><strong>LLM 是工具，不是魔法。</strong>Prompt 好的小模型在特定任务上可能胜过 Prompt 差的大模型。</li>
+          <li><strong>GPU 编程依然困难。</strong>预打包后端和清晰指南对用户采用至关重要。</li>
+          <li><strong>教育是高风险的。</strong>评分错误会影响信心。可靠评估需要谦逊和持续测试。</li>
+          <li><strong>选择合适的许可证。</strong>教育用途 GPL，广泛用途 MIT——每个项目需要匹配目标的许可证。</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Closing -->
+    <div class="hl p-5 rounded-m3-md bg-primary-container/15 dark:bg-primary-container-dark/10">
+      <div data-lang="en">
+        <p class="text-sm text-on-surface-variant leading-relaxed mb-2">
+          Building AILTES was one of the most rewarding projects I've worked on. It sits at the intersection of everything I care about — AI, education, and building tools that genuinely help people. The project is fully open-source and I'd love to see others contribute, fork it, or use it as a starting point for their own EdTech ideas.
+        </p>
+        <p class="text-sm font-semibold text-on-surface">— Mark</p>
+      </div>
+      <div data-lang="zh" class="hidden">
+        <p class="text-sm text-on-surface-variant leading-relaxed mb-2">
+          AILTES 是我做过最有成就感的项目之一。它站在我关心的所有事物的交汇点上——AI、教育、真正的工具。项目已完全开源，希望能看到更多人参与。
+        </p>
+        <p class="text-sm font-semibold text-on-surface">— Mark</p>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap items-center justify-between gap-4 rounded-m3-lg bg-primary-container/20 p-5 mt-6">
+      <div><p class="text-sm font-medium text-on-surface">GitHub Repository</p><p class="text-xs text-on-surface-variant">github.com/markblogforpublic/AILTES</p></div>
+      <a href="https://github.com/markblogforpublic/AILTES" target="_blank" rel="noopener noreferrer" class="m3-filled-btn">
+        <span class="material-symbols-outlined text-lg">open_in_new</span><span>GitHub</span>
+      </a>
+    </div>
+
+  </article>
+
+  <footer class="border-t border-outline-variant mt-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-on-surface-variant">&copy; 2026 Mark</p>
+        <a href="https://github.com/markblogforpublic" target="_blank" rel="noopener noreferrer" class="text-on-surface-variant hover:text-primary transition-colors">
+          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
