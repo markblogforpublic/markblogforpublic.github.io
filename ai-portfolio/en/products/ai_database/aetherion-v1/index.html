@@ -1,0 +1,1006 @@
+<!DOCTYPE html><html lang="en" data-theme="database" class="scroll-smooth" data-astro-cid-37fxchfa> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="AI-native database operating system, Claude API, 9 role combinations, AST validation + risk engine"><title>Aetherion v1.0 | AI Portfolio</title><link rel="icon" type="image/svg+xml" href="../../../../favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="../../../../_astro/BaseLayout.BuAdYsho.css">
+<style>@media(min-width:1024px){.toc-sidebar[data-astro-cid-fz5pa65a]{display:block!important}}
+</style></head> <body data-astro-cid-37fxchfa> <nav class="nav-bar fixed top-0 left-0 right-0 z-50" style="height: 56px;" data-astro-cid-37fxchfa> <div style="max-width: 80rem; margin: 0 auto; height: 100%; display: flex; align-items: center; padding: 0 1.5rem;" data-astro-cid-37fxchfa> <!-- Logo --> <a href="../../../../zh/index.html" class="nav-logo" data-astro-cid-37fxchfa>AI Portfolio</a> <!-- Spacer --> <div style="flex: 1;" data-astro-cid-37fxchfa></div> <!-- Desktop nav links (center) --> <div class="desktop-nav" style="display: flex; align-items: center; gap: 2rem; position: absolute; left: 50%; transform: translateX(-50%);" data-astro-cid-37fxchfa> <a href="../../../../zh/index.html" class="nav-link" data-astro-cid-37fxchfa>首页</a> <a href="../../../../zh/index.html#products" class="nav-link" data-astro-cid-37fxchfa>产品</a> <a href="../../../../zh/index.html#research" class="nav-link" data-astro-cid-37fxchfa>研究</a> <a href="../../../../zh/about/index.html" class="nav-link" data-astro-cid-37fxchfa>About</a> </div> <!-- Right side --> <div style="display: flex; align-items: center; gap: 0.5rem;" data-astro-cid-37fxchfa> <a href="../../../../zh/index.html" style="font-size: 0.8125rem; font-weight: 500; text-decoration: none; padding: 0.375rem 0.625rem; border-radius: 4px; transition: all 0.15s ease; color: #6b6560; border: 1px solid #d6cec4;" data-astro-cid-37fxchfa>中文</a> <a href="../../../index.html" style="font-size: 0.8125rem; font-weight: 500; text-decoration: none; padding: 0.375rem 0.625rem; border-radius: 4px; transition: all 0.15s ease; background: #1a1a1a; color: #fff;" data-astro-cid-37fxchfa>EN</a> <!-- Mobile hamburger --> <button class="mobile-menu-btn" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu" data-astro-cid-37fxchfa> <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" data-astro-cid-37fxchfa> <path d="M3 6h14M3 10h14M3 14h14" data-astro-cid-37fxchfa></path> </svg> </button> </div> </div> </nav> <!-- Mobile nav --> <div class="mobile-nav" data-astro-cid-37fxchfa> <a href="../../../../zh/index.html" data-astro-cid-37fxchfa>首页</a> <a href="../../../../zh/index.html#products" data-astro-cid-37fxchfa>产品</a> <a href="../../../../zh/index.html#research" data-astro-cid-37fxchfa>研究</a> <a href="../../../../zh/about/index.html" data-astro-cid-37fxchfa>About</a> <a href="../../../index.html" data-astro-cid-37fxchfa>English</a> </div> <main class="min-h-screen" style="padding-top: 56px;" data-astro-cid-37fxchfa>  <div style="max-width: 80rem; margin: 0 auto; padding: 0 1.5rem;" data-astro-cid-fz5pa65a> <!-- Breadcrumb --> <nav style="padding: 1rem 0; font-size: 0.8125rem; color: #9a938c; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;" data-astro-cid-fz5pa65a> <a href="../../../../zh/index.html" style="color: #6b6560; text-decoration: none; transition: opacity 0.15s;" data-astro-cid-fz5pa65a>首页</a>  <span style="color: #c4bdb4;" data-astro-cid-fz5pa65a>/</span> <a href="../../../index.html#products" style="color: #6b6560; text-decoration: none; transition: opacity 0.15s;" data-astro-cid-fz5pa65a>Products</a> <span style="color: #c4bdb4;" data-astro-cid-fz5pa65a>/</span> <a href="../../../index.html#products" style="color: #6b6560; text-decoration: none; transition: opacity 0.15s;" data-astro-cid-fz5pa65a>AI Database</a> <span style="color: #c4bdb4;" data-astro-cid-fz5pa65a>/</span> <span style="color: #1a1a1a;" data-astro-cid-fz5pa65a>Aetherion v1.0</span> </nav> <div style="display: flex; gap: 3rem; padding-bottom: 4rem;" data-astro-cid-fz5pa65a> <!-- Sidebar TOC --> <aside style="width: 14rem; flex-shrink: 0; display: none;" class="toc-sidebar" data-astro-cid-fz5pa65a> <div style="position: sticky; top: 5rem;" data-astro-cid-fz5pa65a> <p style="font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #9a938c; margin-bottom: 0.75rem;" data-astro-cid-fz5pa65a>目录</p> <nav id="toc" style="font-size: 0.8125rem; line-height: 1.6;" data-astro-cid-fz5pa65a></nav> </div> </aside> <!-- Content --> <article class="markdown-content" style="flex: 1; min-width: 0; max-width: 48rem;" data-astro-cid-fz5pa65a> <!-- Category badge --> <div style="margin-bottom: 1rem;" data-astro-cid-fz5pa65a> <span style="display: inline-block; font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9a938c; padding: 0.25rem 0.625rem; border: 1px solid #d6cec4; border-radius: 4px;" data-astro-cid-fz5pa65a> AI Database </span> </div> <h1 style="font-size: 2.25rem; font-weight: 700; color: #1a1a1a; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 0.75rem; font-family: var(--font-heading); border: none; padding: 0;" data-astro-cid-fz5pa65a> Aetherion v1.0 </h1> <p style="font-size: 1rem; color: #6b6560; line-height: 1.7; margin-bottom: 2rem;" data-astro-cid-fz5pa65a> AI-native database operating system, Claude API, 9 role combinations, AST validation + risk engine </p> <div style="height: 1px; background: #d6cec4; margin-bottom: 2rem;" data-astro-cid-fz5pa65a></div>  <h1 id="aetherion-v10--feature-report">Aetherion v1.0 — Feature Report</h1>
+<blockquote>
+<p>AI-Native Database Operating System</p>
+</blockquote>
+<p><strong>Version:</strong> 0.1.0
+<strong>Date:</strong> 2026-05-30
+<strong>Tech Stack:</strong> Python 3.11+ · FastAPI · React 18 · Vite · TailwindCSS 4 · Anthropic SDK</p>
+<hr>
+<h2 id="1-project-overview">1. Project Overview</h2>
+<p>Aetherion is an <strong>AI-native database operating system</strong> that transforms databases from passive storage into intelligent collaborative systems. It leverages the Anthropic Claude API to enable natural language to SQL conversion, database analysis, risk assessment, and autonomous optimization, while providing a rigorous security governance framework.</p>
+<p>Core philosophy:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Databases should not merely store information.</span></span>
+<span class="line"><span>They should understand, analyze, optimize, and collaborate.</span></span></code></pre>
+<hr>
+<h2 id="2-system-architecture">2. System Architecture</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>┌─────────────────────────────────────────────────────────────┐</span></span>
+<span class="line"><span>│                    User Interface Layer                       │</span></span>
+<span class="line"><span>│            Vite + React + TailwindCSS 4                      │</span></span>
+<span class="line"><span>│  ┌──────────┬──────────┬──────────┬──────────┬──────────┐    │</span></span>
+<span class="line"><span>│  │ AI Chat  │ Database │ Security │ Monitor  │ Settings │    │</span></span>
+<span class="line"><span>│  └────┬─────┴────┬─────┴────┬─────┴────┬─────┴────┬─────┘    │</span></span>
+<span class="line"><span>│       │ REST API │ SSE      │ REST     │ REST     │ REST     │</span></span>
+<span class="line"><span>└───────┼──────────┼──────────┼──────────┼──────────┼──────────┘</span></span>
+<span class="line"><span>        │          │          │          │          │</span></span>
+<span class="line"><span>┌───────▼──────────▼──────────▼──────────▼──────────▼──────────┐</span></span>
+<span class="line"><span>│                   FastAPI Backend (Python)                     │</span></span>
+<span class="line"><span>│  ┌────────────────────────────────────────────────────────┐   │</span></span>
+<span class="line"><span>│  │              GovernanceMatrix (Core Orchestrator)       │   │</span></span>
+<span class="line"><span>│  │                                                        │   │</span></span>
+<span class="line"><span>│  │  ┌─────────────┐  ┌──────────────┐  ┌──────────────┐  │   │</span></span>
+<span class="line"><span>│  │  │ Cognitive   │  │ Security     │  │ Data Access  │  │   │</span></span>
+<span class="line"><span>│  │  │ Engine Layer│  │ Governance   │  │ Layer        │  │   │</span></span>
+<span class="line"><span>│  │  │             │  │ Layer        │  │              │  │   │</span></span>
+<span class="line"><span>│  │  │ Hōkiboshi   │  │ AST Validator│  │ SQLite       │  │   │</span></span>
+<span class="line"><span>│  │  │ Sfumato     │  │ Risk Engine  │  │ PostgreSQL   │  │   │</span></span>
+<span class="line"><span>│  │  │ Vivace      │  │ Role Registry│  │              │  │   │</span></span>
+<span class="line"><span>│  │  └──────┬──────┘  └──────┬───────┘  └──────┬───────┘  │   │</span></span>
+<span class="line"><span>│  │         └────────────────┼─────────────────┘           │   │</span></span>
+<span class="line"><span>│  │                    ┌─────▼─────┐                       │   │</span></span>
+<span class="line"><span>│  │                    │ Audit Log │                       │   │</span></span>
+<span class="line"><span>│  │                    └───────────┘                       │   │</span></span>
+<span class="line"><span>│  └────────────────────────────────────────────────────────┘   │</span></span>
+<span class="line"><span>└───────────────────────────────────────────────────────────────┘</span></span></code></pre>
+<hr>
+<h2 id="3-dual-layer-execution-matrix">3. Dual-Layer Execution Matrix</h2>
+<p>Aetherion’s core design is a dual-layer matrix of <strong>Execution Permission Layer × Cognitive Intelligence Layer</strong>, producing 9 distinct AI roles.</p>
+<h3 id="31-execution-permission-layer-what--what-ai-is-allowed-to-do">3.1 Execution Permission Layer (WHAT — What AI is Allowed to Do)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Mode</th><th>Description</th><th>Security Level</th></tr></thead><tbody><tr><td><code>plan</code></td><td>Read-only mode. AI can analyze schemas, generate SQL, simulate execution, and explain query plans, but cannot modify the database.</td><td>Highest</td></tr><tr><td><code>allow_edit</code></td><td>Human-AI collaboration mode. AI can execute queries, modify records, optimize tables, and create indexes, but each critical operation requires user confirmation.</td><td>Medium</td></tr><tr><td><code>bypass</code></td><td>Fully autonomous execution mode. AI can autonomously optimize systems, execute migrations, and fix performance issues. The Guardian system still blocks fatal operations.</td><td>Controlled</td></tr></tbody></table>
+<h3 id="32-cognitive-intelligence-layer-how--how-ai-thinks-and-reasons">3.2 Cognitive Intelligence Layer (HOW — How AI Thinks and Reasons)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Engine</th><th>Codename</th><th>Mapped Model</th><th>Characteristics</th><th>Token Consumption</th></tr></thead><tbody><tr><td><strong>Hōkiboshi</strong></td><td>Comet</td><td>Claude Opus</td><td>Deep system reasoning, Extended Thinking, multi-step reasoning chains</td><td>Very high</td></tr><tr><td><strong>Sfumato</strong></td><td>Sfumato</td><td>Claude Sonnet</td><td>Exploratory reasoning, hypothesis-driven, fuzzy reasoning, pattern discovery</td><td>Medium-high</td></tr><tr><td><strong>Vivace</strong></td><td>Vivace</td><td>Claude Haiku</td><td>High-speed execution, minimal latency, tool-first, rapid query generation</td><td>Low</td></tr></tbody></table>
+<h3 id="33-nine-role-combinations">3.3 Nine Role Combinations</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>Hōkiboshi</th><th>Sfumato</th><th>Vivace</th></tr></thead><tbody><tr><td><strong>Plan</strong></td><td>Strategic Database Analyst</td><td>Exploratory BI Assistant</td><td>Quick SQL Assistant</td></tr><tr><td><strong>Allow Edit</strong></td><td>Advanced DBA Copilot</td><td>Research Analyst</td><td>Operational Execution Assistant</td></tr><tr><td><strong>Bypass</strong></td><td>Autonomous Database Architect</td><td>Autonomous Research Agent</td><td>High-Frequency Infrastructure Agent</td></tr></tbody></table>
+<hr>
+<h2 id="4-core-module-details">4. Core Module Details</h2>
+<h3 id="41-cognitive-engine-aetherionai">4.1 Cognitive Engine (<code>aetherion/ai/</code>)</h3>
+<p><strong>Client (<code>client.py</code>)</strong></p>
+<ul>
+<li>Wraps the Anthropic Python SDK with support for custom API URL and key</li>
+<li>Prompt Caching: system prompt and schema context use <code>ephemeral</code> cache control</li>
+<li>Streaming output: <code>stream_message()</code> returns text chunks in real time</li>
+<li>Extended Thinking: deep reasoning enabled in Hōkiboshi mode (<code>thinking_budget=10000</code>)</li>
+<li>Token tracking: records input/output/cache_read/cache_creation tokens and cost estimates</li>
+<li>Automatic environment conflict cleanup: detects and clears leftover Claude Code session variables such as <code>ANTHROPIC_AUTH_TOKEN</code></li>
+</ul>
+<p><strong>Cognitive Engine Base Class (<code>cognitive_engine.py</code>)</strong></p>
+<ul>
+<li>Abstract interface: <code>build_reasoning_chain()</code> and <code>get_tools()</code> implemented by each engine</li>
+<li>Automatic routing: selects Extended Thinking / Tool Use / Simple Message mode based on <code>thinking_budget</code></li>
+<li>Schema context injection: passes database structure via the <code>schema_context</code> parameter</li>
+</ul>
+<p><strong>Three Engine Implementations:</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Engine</th><th>System Prompt Style</th><th>Toolset</th><th>max_tokens</th><th>thinking_budget</th></tr></thead><tbody><tr><td>Hōkiboshi</td><td>Structured, systematic, multi-step reasoning</td><td><code>analyze_schema</code>, <code>explain_query</code>, <code>execute_readonly_query</code>, <code>analyze_indexes</code></td><td>8192</td><td>10000</td></tr><tr><td>Sfumato</td><td>Narrative, exploratory, hypothesis-driven</td><td><code>explore_table</code>, <code>run_query</code>, <code>find_correlations</code>, <code>detect_anomalies</code></td><td>4096</td><td>0</td></tr><tr><td>Vivace</td><td>Concise, action-oriented, tool-first</td><td><code>execute_query</code>, <code>get_table_info</code>, <code>show_tables</code></td><td>2048</td><td>0</td></tr></tbody></table>
+<h3 id="42-database-adapters-aetheriondb">4.2 Database Adapters (<code>aetherion/db/</code>)</h3>
+<p><strong>Abstract Base Class (<code>base.py</code>)</strong></p>
+<ul>
+<li>Unified interface: <code>connect()</code>, <code>disconnect()</code>, <code>get_schema()</code>, <code>execute()</code>, <code>explain()</code>, <code>get_stats()</code></li>
+<li>Context manager: <code>with adapter:</code> for automatic connect/disconnect</li>
+<li>Schema to string: <code>to_context_string()</code> generates an AI-readable database structure description</li>
+<li>Data models: <code>ColumnInfo</code>, <code>IndexInfo</code>, <code>ForeignKeyInfo</code>, <code>TableInfo</code>, <code>SchemaInfo</code>, <code>QueryResult</code>, <code>ExecutionPlan</code>, <code>DatabaseStats</code></li>
+</ul>
+<p><strong>SQLite Adapter (<code>sqlite_adapter.py</code>)</strong></p>
+<ul>
+<li>WAL mode: enables <code>PRAGMA journal_mode=WAL</code> to optimize concurrent read performance</li>
+<li>Foreign key constraints: <code>PRAGMA foreign_keys=ON</code></li>
+<li>Full schema extraction: <code>PRAGMA table_info</code>, <code>PRAGMA foreign_key_list</code>, <code>PRAGMA index_list</code></li>
+<li>Row count statistics: <code>SELECT COUNT(*)</code> for exact counts</li>
+<li>EXPLAIN support: parses opcodes to calculate Seq Scan / Index Scan statistics</li>
+</ul>
+<p><strong>PostgreSQL Adapter (<code>postgresql_adapter.py</code>)</strong></p>
+<ul>
+<li>Connects via <code>psycopg2-binary</code></li>
+<li><code>information_schema</code> queries for columns, foreign keys, indexes</li>
+<li><code>pg_indexes</code> / <code>pg_class</code> / <code>pg_stat_activity</code> for statistics</li>
+<li>EXPLAIN JSON format output with recursive execution plan tree parsing</li>
+</ul>
+<h3 id="43-security-governance-layer-aetherionsecurity">4.3 Security Governance Layer (<code>aetherion/security/</code>)</h3>
+<p><strong>AST Validator (<code>ast_validator.py</code>)</strong></p>
+<p>All AI-generated SQL must pass AST parsing validation before execution. Uses the <code>sqlglot</code> library.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Check</th><th>Action</th><th>Description</th></tr></thead><tbody><tr><td><code>DROP DATABASE</code> / <code>DROP SCHEMA</code></td><td>BLOCK</td><td>Guardian system permanently blocks</td></tr><tr><td><code>TRUNCATE TABLE</code></td><td>BLOCK</td><td>Permanently blocked</td></tr><tr><td><code>DELETE</code> without <code>WHERE</code></td><td>BLOCK</td><td>Condition must be specified</td></tr><tr><td><code>UPDATE</code> without <code>WHERE</code></td><td>BLOCK</td><td>Condition must be specified</td></tr><tr><td><code>ALTER TABLE</code></td><td>REQUIRE_CONFIRM</td><td>Requires user confirmation</td></tr><tr><td><code>CREATE INDEX</code></td><td>REQUIRE_CONFIRM</td><td>May impact write performance</td></tr><tr><td>Multi-statement injection</td><td>BLOCK</td><td>Detects <code>;</code>-separated multiple SQL statements</td></tr><tr><td>JOIN count > 4</td><td>FLAG</td><td>Warning for complex queries</td></tr></tbody></table>
+<p><strong>Risk Scoring Engine (<code>risk_engine.py</code>)</strong></p>
+<p>Three-dimensional risk assessment:</p>
+<ol>
+<li><strong>Risk Level</strong>: LOW → MEDIUM → HIGH → CRITICAL</li>
+<li><strong>Impact Scope</strong>: NONE → SINGLE_ROW → MULTI_ROW → TABLE → SCHEMA → DATABASE</li>
+<li><strong>Confidence</strong>: 0.0 ~ 1.0 (below threshold triggers sandbox execution)</li>
+</ol>
+<p>Composite scoring formula: <code>score = base_risk × 0.6 + scope_factor × 0.3 + confidence_factor × 0.1</code></p>
+<p>Execution path decisions:</p>
+<ul>
+<li>LOW → Direct execution in all modes</li>
+<li>MEDIUM → Bypass executes directly, Allow Edit requires confirmation, Plan blocks</li>
+<li>HIGH → Sandbox execution + confirmation</li>
+<li>CRITICAL → Guardian permanently blocks</li>
+</ul>
+<p><strong>Role Registry (<code>role_registry.py</code>)</strong></p>
+<p>Pre-configured 9 roles, each containing:</p>
+<ul>
+<li>Tool whitelist (limits tools available to that role)</li>
+<li>Safety constitution type (Safety / Research / Enterprise / Speed)</li>
+<li>Token budget and Thinking budget</li>
+<li>Streaming output toggle</li>
+</ul>
+<h3 id="44-governance-matrix-aetheriongovernancematrixpy">4.4 Governance Matrix (<code>aetherion/governance/matrix.py</code>)</h3>
+<p>Core orchestrator, processes an 8-step pipeline:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>User Input → ① Parse Role → ② Fetch Schema → ③ Build Context</span></span>
+<span class="line"><span>         → ④ Get Engine → ⑤ AI Processing → ⑥ Extract Content and Tool Calls</span></span>
+<span class="line"><span>         → ⑦ Validate SQL (AST + Risk) → ⑧ Execute or Return</span></span></code></pre>
+<p>Supports runtime mode switching (<code>/mode hokiboshi</code>, <code>/exec bypass</code>), with warnings on privilege escalation.</p>
+<h3 id="45-audit-log-aetherionauditloggerpy">4.5 Audit Log (<code>aetherion/audit/logger.py</code>)</h3>
+<ul>
+<li>Storage: SQLite append-only database</li>
+<li>Recorded content: timestamp, session ID, execution/cognitive mode, role name, user input, generated SQL, risk level, execution result, token consumption</li>
+<li>Query interface: filter by session_id, action, limit</li>
+<li>Statistics interface: total entry count, per-action counts, token consumption summary</li>
+</ul>
+<h3 id="46-configuration-system-aetherionconfigpy">4.6 Configuration System (<code>aetherion/config.py</code>)</h3>
+<p>Priority override: CLI arguments > environment variables > configuration file (<code>aetherion.yaml</code>) > defaults</p>
+<p>Supported environment variables:</p>
+<ul>
+<li><code>ANTHROPIC_API_KEY</code> — API key</li>
+<li><code>ANTHROPIC_BASE_URL</code> — API base URL (supports proxy/relay services)</li>
+<li><code>AETHERION_MODEL</code> — Default model name</li>
+</ul>
+<hr>
+<h2 id="5-cli-aetherionclipy">5. CLI (<code>aetherion/cli.py</code>)</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">aetherion</span><span style="color:#032F62"> chat</span><span style="color:#6A737D">                    # Interactive chat (default Vivace mode)</span></span>
+<span class="line"><span style="color:#6F42C1">aetherion</span><span style="color:#032F62"> chat</span><span style="color:#005CC5"> --mode</span><span style="color:#032F62"> hokiboshi</span><span style="color:#6A737D">   # Deep reasoning mode</span></span>
+<span class="line"><span style="color:#6F42C1">aetherion</span><span style="color:#032F62"> chat</span><span style="color:#005CC5"> --mode</span><span style="color:#032F62"> sfumato</span><span style="color:#6A737D">     # Exploratory mode</span></span>
+<span class="line"><span style="color:#6F42C1">aetherion</span><span style="color:#032F62"> analyze</span><span style="color:#005CC5"> --db</span><span style="color:#032F62"> sqlite:x</span><span style="color:#6A737D">   # Analyze database</span></span>
+<span class="line"><span style="color:#6F42C1">aetherion</span><span style="color:#032F62"> query</span><span style="color:#032F62"> "natural language question"</span><span style="color:#6A737D">      # Single query</span></span>
+<span class="line"><span style="color:#6F42C1">aetherion</span><span style="color:#032F62"> status</span><span style="color:#6A737D">                  # Show current configuration</span></span>
+<span class="line"><span style="color:#6F42C1">aetherion</span><span style="color:#032F62"> serve</span><span style="color:#6A737D">                   # Start Web dashboard API server</span></span>
+<span class="line"><span style="color:#6F42C1">aetherion</span><span style="color:#032F62"> serve</span><span style="color:#005CC5"> --model</span><span style="color:#032F62"> mimo-v2.5</span><span style="color:#6A737D"> # Start with specified model</span></span>
+<span class="line"><span style="color:#6F42C1">aetherion</span><span style="color:#032F62"> serve</span><span style="color:#005CC5"> --port</span><span style="color:#005CC5"> 8001</span><span style="color:#6A737D">       # Specify port</span></span></code></pre>
+<p>Built-in interactive mode commands:</p>
+<ul>
+<li><code>/mode &#x3C;hokiboshi|sfumato|vivace></code> — Switch cognitive mode</li>
+<li><code>/exec &#x3C;plan|allow_edit|bypass></code> — Switch execution mode</li>
+<li><code>/usage</code> — Show token consumption statistics</li>
+<li><code>/schema</code> — Show database structure</li>
+<li><code>/quit</code> — Exit</li>
+</ul>
+<hr>
+<h2 id="6-web-dashboard-gui">6. Web Dashboard (GUI)</h2>
+<h3 id="61-technical-architecture">6.1 Technical Architecture</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Layer</th><th>Technology</th></tr></thead><tbody><tr><td>Frontend framework</td><td>React 18 + TypeScript</td></tr><tr><td>Build tool</td><td>Vite 8</td></tr><tr><td>Styling</td><td>TailwindCSS 4 (Vite plugin mode)</td></tr><tr><td>Icons</td><td>Lucide React</td></tr><tr><td>Markdown</td><td>react-markdown</td></tr><tr><td>Backend</td><td>FastAPI + Uvicorn</td></tr><tr><td>Communication</td><td>REST API + SSE streaming output</td></tr><tr><td>Fonts</td><td>Inter (body) + JetBrains Mono (code/data)</td></tr></tbody></table>
+<h3 id="62-design-style">6.2 Design Style</h3>
+<p>Claude Code terminal aesthetics:</p>
+<ul>
+<li>Ultra-dark black background (<code>#0d0d0d</code>)</li>
+<li>Purple brand color (<code>#8b5cf6</code>) + semi-transparent brand color backgrounds</li>
+<li>Monospace font for all code, SQL, data, and statistics</li>
+<li>Ultra-thin scrollbar (5px)</li>
+<li>Borderless input design with purple outline on focus</li>
+<li>Rounded cards (8-12px), 150ms transition animations</li>
+</ul>
+<h3 id="63-five-panels">6.3 Five Panels</h3>
+<h4 id="-ai-chat-panel-default-panel">① AI Chat Panel (Default Panel)</h4>
+<ul>
+<li><strong>Real-time streaming output</strong>: Displays AI responses character by character via SSE (Server-Sent Events)</li>
+<li><strong>Markdown rendering</strong>: Supports code blocks, tables, lists, and blockquotes</li>
+<li><strong>Mode switching</strong>: Top-right dropdown to select execution mode and cognitive mode</li>
+<li><strong>SQL preview</strong>: AI-generated SQL displayed in monospace code blocks</li>
+<li><strong>Role identity</strong>: Each response shows the role name used and execution time</li>
+<li><strong>Block notification</strong>: Displays a red BLOCKED label when intercepted by the Guardian system</li>
+<li><strong>Input experience</strong>: Enter to send, Shift+Enter for newline, auto-focus</li>
+</ul>
+<h4 id="-database-browser-panel">② Database Browser Panel</h4>
+<ul>
+<li><strong>Left-side tree navigation</strong>: Tables → Columns (primary key with gold key icon, foreign key with blue icon) → Type tags</li>
+<li><strong>Row count statistics</strong>: Row count displayed to the right of each table</li>
+<li><strong>Query editor</strong>: Monospace SQL input box, Ctrl+Enter for quick execution</li>
+<li><strong>Results table</strong>: Fixed headers, hover row highlighting, NULL values shown with transparency</li>
+<li><strong>Connection management</strong>: Database URL input at the top, supports SQLite and PostgreSQL</li>
+<li><strong>Database statistics</strong>: Table count, total rows, file size</li>
+</ul>
+<h4 id="-security-and-governance-panel">③ Security and Governance Panel</h4>
+<ul>
+<li><strong>Current mode display</strong>: Execution mode + cognitive mode dropdown switching, shows current active role name and description</li>
+<li><strong>SQL validator</strong>: One-click validation after pasting SQL, displays AST analysis results
+<ul>
+<li>Statement type (SELECT/INSERT/UPDATE/DELETE/DDL)</li>
+<li>Table count, JOIN count, WHERE clause presence</li>
+<li>Violation list (with severity icons)</li>
+</ul>
+</li>
+<li><strong>Risk assessment</strong>: Risk level (with color label), score, impact scope, confidence
+<ul>
+<li>Shows lock icon and block reason when blocked</li>
+</ul>
+</li>
+<li><strong>Role matrix</strong>: Displays all 9 roles, current active role highlighted</li>
+</ul>
+<h4 id="-monitoring-and-audit-panel">④ Monitoring and Audit Panel</h4>
+<ul>
+<li><strong>Statistics cards</strong>: Total entries, input tokens, output tokens, action type count</li>
+<li><strong>Action distribution</strong>: Counts for allowed / blocked / confirmed</li>
+<li><strong>Audit log table</strong>: Time, mode, role, input, SQL, risk, action, duration, token consumption
+<ul>
+<li>Fixed table header, hover row highlighting</li>
+<li>Time displayed with monospace font alignment</li>
+</ul>
+</li>
+</ul>
+<h4 id="-settings-panel-modal-window">⑤ Settings Panel (Modal Window)</h4>
+<ul>
+<li><strong>API Key</strong>: Password input with show/hide toggle, displays currently masked key</li>
+<li><strong>Base URL</strong>: Supports custom proxy/relay addresses (e.g. <code>https://token-plan-cn.xiaomimimo.com/anthropic</code>)</li>
+<li><strong>Model</strong>: Supports custom model names (e.g. <code>mimo-v2.5</code>, <code>claude-sonnet-4-20250514</code>)</li>
+<li><strong>Test connection</strong>: One-click API connectivity test, displays connection result and model name</li>
+<li><strong>Persistent save</strong>: Configuration written to <code>aetherion.yaml</code> file and environment variables set simultaneously</li>
+<li><strong>Configuration path hint</strong>: Displays the full path of the current configuration file</li>
+</ul>
+<h3 id="64-sidebar-navigation">6.4 Sidebar Navigation</h3>
+<ul>
+<li>56px narrow bar, expands to 180px on hover, 200ms transition</li>
+<li>Four panel navigation icons + text labels</li>
+<li>Bottom: Settings gear icon + language switch (CN/EN)</li>
+<li>Current panel highlighted with brand color semi-transparent background</li>
+</ul>
+<h3 id="65-internationalization-i18n">6.5 Internationalization (i18n)</h3>
+<ul>
+<li>Supports Chinese / English one-click switching</li>
+<li>Language preference stored in <code>localStorage</code></li>
+<li>Covers all panel titles, buttons, prompt text, and placeholders</li>
+</ul>
+<hr>
+<h2 id="7-api-endpoints-overview">7. API Endpoints Overview</h2>
+<h3 id="71-database-apidb">7.1 Database (<code>/api/db</code>)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Method</th><th>Path</th><th>Description</th></tr></thead><tbody><tr><td><code>POST</code></td><td><code>/api/db/connect</code></td><td>Connect to database</td></tr><tr><td><code>GET</code></td><td><code>/api/db/schema</code></td><td>Get full schema</td></tr><tr><td><code>GET</code></td><td><code>/api/db/tables</code></td><td>List all table names</td></tr><tr><td><code>GET</code></td><td><code>/api/db/tables/{name}</code></td><td>Get single table details</td></tr><tr><td><code>POST</code></td><td><code>/api/db/query</code></td><td>Execute SQL query</td></tr><tr><td><code>GET</code></td><td><code>/api/db/stats</code></td><td>Get database statistics</td></tr></tbody></table>
+<h3 id="72-ai-chat-apichat">7.2 AI Chat (<code>/api/chat</code>)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Method</th><th>Path</th><th>Description</th></tr></thead><tbody><tr><td><code>POST</code></td><td><code>/api/chat</code></td><td>Send message, return full reply</td></tr><tr><td><code>POST</code></td><td><code>/api/chat/stream</code></td><td>SSE streaming output</td></tr><tr><td><code>GET</code></td><td><code>/api/chat/sessions</code></td><td>List active sessions</td></tr></tbody></table>
+<h3 id="73-security-governance-apisecurity">7.3 Security Governance (<code>/api/security</code>)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Method</th><th>Path</th><th>Description</th></tr></thead><tbody><tr><td><code>POST</code></td><td><code>/api/security/validate</code></td><td>SQL AST validation</td></tr><tr><td><code>POST</code></td><td><code>/api/security/assess</code></td><td>Risk assessment</td></tr><tr><td><code>GET</code></td><td><code>/api/security/mode</code></td><td>Get current mode</td></tr><tr><td><code>POST</code></td><td><code>/api/security/mode</code></td><td>Switch mode</td></tr><tr><td><code>GET</code></td><td><code>/api/security/roles</code></td><td>List all 9 roles</td></tr></tbody></table>
+<h3 id="74-audit-log-apiaudit">7.4 Audit Log (<code>/api/audit</code>)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Method</th><th>Path</th><th>Description</th></tr></thead><tbody><tr><td><code>GET</code></td><td><code>/api/audit/entries</code></td><td>Query audit log</td></tr><tr><td><code>GET</code></td><td><code>/api/audit/stats</code></td><td>Audit statistics</td></tr></tbody></table>
+<h3 id="75-settings-management-apisettings">7.5 Settings Management (<code>/api/settings</code>)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Method</th><th>Path</th><th>Description</th></tr></thead><tbody><tr><td><code>GET</code></td><td><code>/api/settings</code></td><td>Get current settings</td></tr><tr><td><code>PUT</code></td><td><code>/api/settings</code></td><td>Update settings (persist to YAML)</td></tr><tr><td><code>POST</code></td><td><code>/api/settings/test</code></td><td>Test API connection</td></tr></tbody></table>
+<h3 id="76-system">7.6 System</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Method</th><th>Path</th><th>Description</th></tr></thead><tbody><tr><td><code>GET</code></td><td><code>/api/health</code></td><td>Health check</td></tr></tbody></table>
+<hr>
+<h2 id="8-configuration-system">8. Configuration System</h2>
+<h3 id="81-configuration-file-aetherionyaml">8.1 Configuration File (<code>aetherion.yaml</code>)</h3>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#22863A">anthropic</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#22863A">  api_key</span><span style="color:#24292E">: </span><span style="color:#032F62">"your-api-key"</span></span>
+<span class="line"><span style="color:#22863A">  base_url</span><span style="color:#24292E">: </span><span style="color:#032F62">"https://api.anthropic.com"</span></span>
+<span class="line"><span style="color:#22863A">  default_model</span><span style="color:#24292E">: </span><span style="color:#032F62">"claude-sonnet-4-20250514"</span></span>
+<span class="line"><span style="color:#22863A">  max_retries</span><span style="color:#24292E">: </span><span style="color:#005CC5">3</span></span>
+<span class="line"><span style="color:#22863A">  timeout</span><span style="color:#24292E">: </span><span style="color:#005CC5">120.0</span></span>
+<span class="line"><span style="color:#22863A">database</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#22863A">  engine</span><span style="color:#24292E">: </span><span style="color:#032F62">"sqlite"</span></span>
+<span class="line"><span style="color:#22863A">  url</span><span style="color:#24292E">: </span><span style="color:#032F62">"sqlite:///aetherion.db"</span></span>
+<span class="line"><span style="color:#22863A">  pool_size</span><span style="color:#24292E">: </span><span style="color:#005CC5">5</span></span>
+<span class="line"><span style="color:#22863A">security</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#22863A">  constitution</span><span style="color:#24292E">: </span><span style="color:#032F62">"safety"</span></span>
+<span class="line"><span style="color:#22863A">  enable_sandbox</span><span style="color:#24292E">: </span><span style="color:#005CC5">true</span></span>
+<span class="line"><span style="color:#22863A">  enable_audit_log</span><span style="color:#24292E">: </span><span style="color:#005CC5">true</span></span>
+<span class="line"><span style="color:#22863A">  max_join_tables</span><span style="color:#24292E">: </span><span style="color:#005CC5">4</span></span>
+<span class="line"><span style="color:#22863A">governance</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#22863A">  execution_mode</span><span style="color:#24292E">: </span><span style="color:#032F62">"plan"</span></span>
+<span class="line"><span style="color:#22863A">  cognitive_mode</span><span style="color:#24292E">: </span><span style="color:#032F62">"vivace"</span></span></code></pre>
+<h3 id="82-environment-variables">8.2 Environment Variables</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Variable</th><th>Description</th></tr></thead><tbody><tr><td><code>ANTHROPIC_API_KEY</code></td><td>API key</td></tr><tr><td><code>ANTHROPIC_BASE_URL</code></td><td>API base URL</td></tr><tr><td><code>AETHERION_MODEL</code></td><td>Default model name</td></tr></tbody></table>
+<h3 id="83-safety-constitution-types">8.3 Safety Constitution Types</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Constitution</th><th>Description</th></tr></thead><tbody><tr><td><code>safety</code></td><td>Most conservative: defaults to rejecting all write operations</td></tr><tr><td><code>research</code></td><td>Research-oriented: allows analysis and exploration</td></tr><tr><td><code>enterprise</code></td><td>Balanced: equal emphasis on efficiency and security</td></tr><tr><td><code>speed</code></td><td>Fastest: minimal approvals, still retains Guardian hard limits</td></tr></tbody></table>
+<hr>
+<h2 id="9-project-file-structure">9. Project File Structure</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Aetherion_Project/</span></span>
+<span class="line"><span>├── aetherion/                          # Python backend</span></span>
+<span class="line"><span>│   ├── __init__.py                     # Package initialization, version number</span></span>
+<span class="line"><span>│   ├── config.py                       # Configuration system (Pydantic model + YAML loading)</span></span>
+<span class="line"><span>│   ├── cli.py                          # CLI entry point (Typer + Rich)</span></span>
+<span class="line"><span>│   ├── ai/</span></span>
+<span class="line"><span>│   │   ├── client.py                   # Anthropic SDK wrapper</span></span>
+<span class="line"><span>│   │   ├── cognitive_engine.py         # Cognitive engine abstract base class</span></span>
+<span class="line"><span>│   │   └── engines/</span></span>
+<span class="line"><span>│   │       ├── hokiboshi.py            # Deep reasoning engine</span></span>
+<span class="line"><span>│   │       ├── sfumato.py              # Exploratory engine</span></span>
+<span class="line"><span>│   │       └── vivace.py               # High-speed engine</span></span>
+<span class="line"><span>│   ├── db/adapters/</span></span>
+<span class="line"><span>│   │   ├── base.py                     # Database adapter abstract base class + data models</span></span>
+<span class="line"><span>│   │   ├── sqlite_adapter.py           # SQLite implementation</span></span>
+<span class="line"><span>│   │   └── postgresql_adapter.py       # PostgreSQL implementation</span></span>
+<span class="line"><span>│   ├── security/</span></span>
+<span class="line"><span>│   │   ├── ast_validator.py            # SQL AST validator</span></span>
+<span class="line"><span>│   │   └── risk_engine.py              # Risk scoring engine</span></span>
+<span class="line"><span>│   ├── governance/</span></span>
+<span class="line"><span>│   │   ├── matrix.py                   # Governance matrix (core orchestrator)</span></span>
+<span class="line"><span>│   │   └── role_registry.py            # Role registry</span></span>
+<span class="line"><span>│   ├── audit/</span></span>
+<span class="line"><span>│   │   └── logger.py                   # Audit log</span></span>
+<span class="line"><span>│   └── api/</span></span>
+<span class="line"><span>│       ├── __init__.py                 # FastAPI application entry point</span></span>
+<span class="line"><span>│       ├── schemas.py                  # Pydantic request/response models</span></span>
+<span class="line"><span>│       └── routes/</span></span>
+<span class="line"><span>│           ├── chat.py                 # AI chat endpoints</span></span>
+<span class="line"><span>│           ├── db.py                   # Database endpoints</span></span>
+<span class="line"><span>│           ├── security.py             # Security governance endpoints</span></span>
+<span class="line"><span>│           ├── audit.py                # Audit endpoints</span></span>
+<span class="line"><span>│           └── settings.py             # Settings management endpoints</span></span>
+<span class="line"><span>├── frontend/                           # React frontend</span></span>
+<span class="line"><span>│   ├── index.html                      # HTML entry (Google Fonts)</span></span>
+<span class="line"><span>│   ├── vite.config.ts                  # Vite configuration + API proxy</span></span>
+<span class="line"><span>│   ├── src/</span></span>
+<span class="line"><span>│   │   ├── main.tsx                    # React entry point</span></span>
+<span class="line"><span>│   │   ├── App.tsx                     # Application shell + panel routing</span></span>
+<span class="line"><span>│   │   ├── index.css                   # Global styles + design tokens</span></span>
+<span class="line"><span>│   │   ├── types/index.ts              # TypeScript type definitions</span></span>
+<span class="line"><span>│   │   ├── lib/</span></span>
+<span class="line"><span>│   │   │   ├── api.ts                  # API client</span></span>
+<span class="line"><span>│   │   │   ├── i18n.ts                 # Internationalization (CN/EN)</span></span>
+<span class="line"><span>│   │   │   └── utils.ts                # Utility functions</span></span>
+<span class="line"><span>│   │   └── components/</span></span>
+<span class="line"><span>│   │       ├── Sidebar.tsx             # Sidebar navigation</span></span>
+<span class="line"><span>│   │       ├── ChatPanel.tsx           # AI chat panel</span></span>
+<span class="line"><span>│   │       ├── DatabasePanel.tsx       # Database browser panel</span></span>
+<span class="line"><span>│   │       ├── SecurityPanel.tsx       # Security and governance panel</span></span>
+<span class="line"><span>│   │       ├── MonitorPanel.tsx        # Monitoring and audit panel</span></span>
+<span class="line"><span>│   │       └── SettingsPanel.tsx       # Settings modal window</span></span>
+<span class="line"><span>│   └── package.json</span></span>
+<span class="line"><span>├── tests/                              # Test directory (to be written)</span></span>
+<span class="line"><span>├── pyproject.toml                      # Python project configuration</span></span>
+<span class="line"><span>├── chinook.sqlite                      # Test database (Chinook music store)</span></span>
+<span class="line"><span>└── aetherion.yaml                      # Runtime configuration file</span></span></code></pre>
+<hr>
+<h2 id="10-test-database">10. Test Database</h2>
+<p>The project includes the <strong>Chinook</strong> sample database (music store model):</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Table Name</th><th>Row Count</th><th>Description</th></tr></thead><tbody><tr><td>Album</td><td>347</td><td>Albums</td></tr><tr><td>Artist</td><td>275</td><td>Artists</td></tr><tr><td>Customer</td><td>59</td><td>Customers</td></tr><tr><td>Employee</td><td>8</td><td>Employees</td></tr><tr><td>Genre</td><td>25</td><td>Genres</td></tr><tr><td>Invoice</td><td>412</td><td>Invoices</td></tr><tr><td>InvoiceLine</td><td>2,240</td><td>Invoice line items</td></tr><tr><td>MediaType</td><td>5</td><td>Media types</td></tr><tr><td>Playlist</td><td>18</td><td>Playlists</td></tr><tr><td>PlaylistTrack</td><td>8,715</td><td>Playlist tracks</td></tr><tr><td>Track</td><td>3,503</td><td>Tracks</td></tr></tbody></table>
+<p><strong>Total:</strong> 11 tables, 15,607 rows of data</p>
+<hr>
+<h2 id="11-known-bug-fix-records">11. Known Bug Fix Records</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Bug</th><th>Cause</th><th>Fix</th></tr></thead><tbody><tr><td>Configuration not reading environment variables</td><td>In Pydantic v2.12.5, <code>field_validator(mode="before")</code> does not trigger when using default values</td><td>Switched to <code>model_validator(mode="after")</code></td></tr><tr><td>Token tracking crash</td><td>MiMo proxy returns <code>None</code> values for cache tokens; <code>getattr</code> returns <code>None</code> instead of <code>0</code></td><td>Added <code>or 0</code> after all <code>getattr</code> calls</td></tr><tr><td>Custom model not taking effect</td><td><code>get_model_for_mode()</code> always returned the built-in model mapping</td><td>Detects user-defined model and overrides the mapping</td></tr><tr><td>API 401 authentication failure</td><td>Claude Code session leaves behind <code>ANTHROPIC_AUTH_TOKEN</code> environment variable, which the SDK sends automatically causing proxy rejection</td><td>Clears conflicting environment variables in <code>AetherionClient.__init__</code></td></tr></tbody></table>
+<hr>
+<h2 id="12-future-roadmap">12. Future Roadmap</h2>
+<h3 id="phase-2">Phase 2</h3>
+<ul>
+<li>Multi-agent orchestration</li>
+<li>Vector database integration</li>
+<li>Query optimization engine</li>
+<li>Memory system</li>
+</ul>
+<h3 id="phase-3">Phase 3</h3>
+<ul>
+<li>Autonomous infrastructure management</li>
+<li>AI-driven database migrations</li>
+<li>Self-healing database systems</li>
+<li>Distributed governance framework</li>
+<li>User authentication and multi-tenancy</li>
+<li>WebSocket real-time security alert push</li>
+<li>More database adapters (MySQL, DuckDB)</li>
+<li>Unit tests and integration tests</li>
+</ul>
+<hr>
+<h2 id="13-dependencies">13. Dependencies</h2>
+<h3 id="python-backend">Python Backend</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Package</th><th>Version</th><th>Purpose</th></tr></thead><tbody><tr><td>anthropic</td><td>≥0.40.0</td><td>Claude API SDK</td></tr><tr><td>fastapi</td><td>≥0.110.0</td><td>Web API framework</td></tr><tr><td>uvicorn</td><td>≥0.27.0</td><td>ASGI server</td></tr><tr><td>sqlalchemy</td><td>≥2.0.25</td><td>ORM (reserved)</td></tr><tr><td>psycopg2-binary</td><td>≥2.9.9</td><td>PostgreSQL driver</td></tr><tr><td>pydantic</td><td>≥2.5.0</td><td>Data validation</td></tr><tr><td>pydantic-settings</td><td>≥2.1.0</td><td>Settings management</td></tr><tr><td>sqlglot</td><td>≥20.0.0</td><td>SQL AST parsing</td></tr><tr><td>pyyaml</td><td>≥6.0.1</td><td>YAML configuration</td></tr><tr><td>rich</td><td>≥13.7.0</td><td>Terminal rich text</td></tr><tr><td>typer</td><td>≥0.9.0</td><td>CLI framework</td></tr></tbody></table>
+<h3 id="frontend">Frontend</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Package</th><th>Purpose</th></tr></thead><tbody><tr><td>react 18</td><td>UI framework</td></tr><tr><td>react-dom</td><td>DOM rendering</td></tr><tr><td>react-markdown</td><td>Markdown rendering</td></tr><tr><td>lucide-react</td><td>Icon library</td></tr><tr><td>react-router-dom</td><td>Routing (reserved)</td></tr><tr><td>tailwindcss 4</td><td>Atomic CSS</td></tr><tr><td>@tailwindcss/vite</td><td>Vite integration</td></tr><tr><td>clsx + tailwind-merge</td><td>Class name merging</td></tr><tr><td>vite</td><td>Build tool</td></tr><tr><td>typescript</td><td>Type safety</td></tr></tbody></table>  </article> </div> </div>  </main> <footer class="footer-border" style="padding: 2.5rem 1.5rem; text-align: center; font-size: 0.8125rem; color: #9a938c; background: #f5f0eb;" data-astro-cid-37fxchfa> <p data-astro-cid-37fxchfa>&copy; 2026 AI Portfolio. Crafted with precision.</p> </footer> </body></html>  <script type="module">function l(){const s=document.querySelector(".markdown-content"),o=document.getElementById("toc");if(!s||!o)return;o.innerHTML="";const a=s.querySelectorAll("h2, h3");a.forEach((e,n)=>{const r=e.id||`heading-${n}`;e.id=r;const t=document.createElement("a");t.href=`#${r}`,t.textContent=e.textContent?.trim()||"",t.style.display="block",t.style.padding="0.2rem 0",t.style.color=e.tagName==="H2"?"#1a1a1a":"#9a938c",t.style.textDecoration="none",t.style.transition="color 0.15s ease",t.style.paddingLeft=e.tagName==="H3"?"0.75rem":"0",t.style.fontSize=e.tagName==="H3"?"0.75rem":"0.8125rem",t.style.opacity="0.85",o.appendChild(t)});const i=new IntersectionObserver(e=>{e.forEach(n=>{if(n.isIntersecting){const r=n.target.id;o.querySelectorAll("a").forEach(t=>{const c=t.getAttribute("href")===`#${r}`;t.style.opacity=c?"1":"0.85",t.style.color=c?"#1a1a1a":"",t.style.fontWeight=c?"600":""})}})},{rootMargin:"-80px 0px -70% 0px"});a.forEach(e=>i.observe(e))}l();document.addEventListener("astro:page-load",l);</script>

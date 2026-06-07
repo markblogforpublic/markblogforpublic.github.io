@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <radialGradient id="glow1" cx="30%" cy="40%">
+      <stop offset="0%" stop-color="#4a4a6a" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#1a1a2e" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="70%" cy="60%">
+      <stop offset="0%" stop-color="#3b5c8a" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#1a1a2e" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="#0d0d14"/>
+  <rect width="800" height="500" fill="url(#glow1)"/>
+  <rect width="800" height="500" fill="url(#glow2)"/>
+  <!-- Voronoi cells -->
+  <g stroke="#c8c8d4" stroke-width="0.8" fill="none" opacity="0.6">
+    <polygon points="0,0 120,45 95,130 0,100"/>
+    <polygon points="120,45 250,20 280,95 200,120 95,130"/>
+    <polygon points="250,20 400,0 420,80 280,95"/>
+    <polygon points="400,0 550,30 520,110 420,80"/>
+    <polygon points="550,30 700,10 720,90 650,120 520,110"/>
+    <polygon points="700,10 800,0 800,85 720,90"/>
+    <polygon points="0,100 95,130 80,220 0,200"/>
+    <polygon points="95,130 200,120 230,195 150,210 80,220"/>
+    <polygon points="200,120 280,95 340,160 300,200 230,195"/>
+    <polygon points="280,95 420,80 450,155 380,180 340,160"/>
+    <polygon points="420,80 520,110 540,175 480,190 450,155"/>
+    <polygon points="520,110 650,120 620,200 560,195 540,175"/>
+    <polygon points="650,120 720,90 780,160 740,195 620,200"/>
+    <polygon points="720,90 800,85 800,180 780,160"/>
+    <polygon points="0,200 80,220 70,310 0,320"/>
+    <polygon points="80,220 150,210 180,290 120,305 70,310"/>
+    <polygon points="150,210 230,195 260,275 200,285 180,290"/>
+    <polygon points="230,195 300,200 330,270 280,285 260,275"/>
+    <polygon points="300,200 380,180 400,260 350,275 330,270"/>
+    <polygon points="380,180 450,155 470,245 420,260 400,260"/>
+    <polygon points="450,155 480,190 510,265 470,245"/>
+    <polygon points="480,190 560,195 580,270 530,280 510,265"/>
+    <polygon points="560,195 620,200 640,280 590,285 580,270"/>
+    <polygon points="620,200 740,195 720,280 660,285 640,280"/>
+    <polygon points="740,195 800,180 800,290 720,280"/>
+    <polygon points="0,320 70,310 60,400 0,410"/>
+    <polygon points="70,310 120,305 140,385 95,395 60,400"/>
+    <polygon points="120,305 180,290 200,370 160,380 140,385"/>
+    <polygon points="180,290 200,285 240,360 200,370"/>
+    <polygon points="200,285 260,275 280,350 240,360"/>
+    <polygon points="260,275 280,285 310,345 280,350"/>
+    <polygon points="280,285 330,270 350,340 310,345"/>
+    <polygon points="330,270 350,275 380,335 350,340"/>
+    <polygon points="350,275 400,260 420,330 380,335"/>
+    <polygon points="400,260 420,260 450,325 420,330"/>
+    <polygon points="420,260 470,245 490,320 450,325"/>
+    <polygon points="470,245 510,265 530,330 490,320"/>
+    <polygon points="510,265 530,280 560,340 530,330"/>
+    <polygon points="530,280 580,270 600,340 560,340"/>
+    <polygon points="580,270 590,285 620,345 600,340"/>
+    <polygon points="590,285 640,280 650,350 620,345"/>
+    <polygon points="640,280 660,285 680,355 650,350"/>
+    <polygon points="660,285 720,280 710,360 680,355"/>
+    <polygon points="720,280 800,290 800,380 710,360"/>
+    <polygon points="0,410 60,400 50,500 0,500"/>
+    <polygon points="60,400 95,395 85,500 50,500"/>
+    <polygon points="95,395 140,385 130,500 85,500"/>
+    <polygon points="140,385 160,380 175,500 130,500"/>
+    <polygon points="160,380 200,370 210,500 175,500"/>
+    <polygon points="200,370 240,360 250,500 210,500"/>
+    <polygon points="240,360 280,350 290,500 250,500"/>
+    <polygon points="280,350 310,345 325,500 290,500"/>
+    <polygon points="310,345 350,340 360,500 325,500"/>
+    <polygon points="350,340 380,335 395,500 360,500"/>
+    <polygon points="380,335 420,330 430,500 395,500"/>
+    <polygon points="420,330 450,325 465,500 430,500"/>
+    <polygon points="450,325 490,320 500,500 465,500"/>
+    <polygon points="490,320 530,330 540,500 500,500"/>
+    <polygon points="530,330 560,340 575,500 540,500"/>
+    <polygon points="560,340 600,340 610,500 575,500"/>
+    <polygon points="600,340 620,345 640,500 610,500"/>
+    <polygon points="620,345 650,350 670,500 640,500"/>
+    <polygon points="650,350 680,355 700,500 670,500"/>
+    <polygon points="680,355 710,360 730,500 700,500"/>
+    <polygon points="710,360 800,380 800,500 730,500"/>
+  </g>
+  <!-- Subtle vertex dots -->
+  <g fill="#e0e0e8" opacity="0.5">
+    <circle cx="95" cy="130" r="1.5"/>
+    <circle cx="200" cy="120" r="1.5"/>
+    <circle cx="280" cy="95" r="1.5"/>
+    <circle cx="420" cy="80" r="1.5"/>
+    <circle cx="520" cy="110" r="1.5"/>
+    <circle cx="650" cy="120" r="1.5"/>
+    <circle cx="230" cy="195" r="1.5"/>
+    <circle cx="340" cy="160" r="1.5"/>
+    <circle cx="450" cy="155" r="1.5"/>
+    <circle cx="540" cy="175" r="1.5"/>
+    <circle cx="180" cy="290" r="1.5"/>
+    <circle cx="300" cy="200" r="1.5"/>
+    <circle cx="400" cy="260" r="1.5"/>
+    <circle cx="560" cy="195" r="1.5"/>
+    <circle cx="620" cy="200" r="1.5"/>
+    <circle cx="260" cy="275" r="1.5"/>
+    <circle cx="380" cy="180" r="1.5"/>
+    <circle cx="510" cy="265" r="1.5"/>
+    <circle cx="580" cy="270" r="1.5"/>
+    <circle cx="330" cy="270" r="1.2"/>
+    <circle cx="470" cy="245" r="1.2"/>
+    <circle cx="640" cy="280" r="1.2"/>
+    <circle cx="150" cy="210" r="1.2"/>
+    <circle cx="350" cy="340" r="1.2"/>
+    <circle cx="530" cy="280" r="1.2"/>
+  </g>
+</svg>

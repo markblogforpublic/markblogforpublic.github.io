@@ -1,0 +1,563 @@
+<!DOCTYPE html><html lang="zh" data-theme="agent" class="scroll-smooth" data-astro-cid-37fxchfa> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="终端AI编程助手，Python Textual + Rich TUI，6个工具，4×2正交模式系统"><title>DeepSeek Codex TUI | AI Portfolio</title><link rel="icon" type="image/svg+xml" href="../../../../favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="../../../../_astro/BaseLayout.BuAdYsho.css">
+<style>@media(min-width:1024px){.toc-sidebar[data-astro-cid-fz5pa65a]{display:block!important}}
+</style></head> <body data-astro-cid-37fxchfa> <nav class="nav-bar fixed top-0 left-0 right-0 z-50" style="height: 56px;" data-astro-cid-37fxchfa> <div style="max-width: 80rem; margin: 0 auto; height: 100%; display: flex; align-items: center; padding: 0 1.5rem;" data-astro-cid-37fxchfa> <!-- Logo --> <a href="../../../index.html" class="nav-logo" data-astro-cid-37fxchfa>AI Portfolio</a> <!-- Spacer --> <div style="flex: 1;" data-astro-cid-37fxchfa></div> <!-- Desktop nav links (center) --> <div class="desktop-nav" style="display: flex; align-items: center; gap: 2rem; position: absolute; left: 50%; transform: translateX(-50%);" data-astro-cid-37fxchfa> <a href="../../../index.html" class="nav-link" data-astro-cid-37fxchfa>首页</a> <a href="../../../index.html#products" class="nav-link" data-astro-cid-37fxchfa>产品</a> <a href="../../../index.html#research" class="nav-link" data-astro-cid-37fxchfa>研究</a> <a href="../../../about/index.html" class="nav-link" data-astro-cid-37fxchfa>About</a> </div> <!-- Right side --> <div style="display: flex; align-items: center; gap: 0.5rem;" data-astro-cid-37fxchfa> <a href="../../../index.html" style="font-size: 0.8125rem; font-weight: 500; text-decoration: none; padding: 0.375rem 0.625rem; border-radius: 4px; transition: all 0.15s ease; background: #1a1a1a; color: #fff;" data-astro-cid-37fxchfa>中文</a> <a href="../../../../en/index.html" style="font-size: 0.8125rem; font-weight: 500; text-decoration: none; padding: 0.375rem 0.625rem; border-radius: 4px; transition: all 0.15s ease; color: #6b6560; border: 1px solid #d6cec4;" data-astro-cid-37fxchfa>EN</a> <!-- Mobile hamburger --> <button class="mobile-menu-btn" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu" data-astro-cid-37fxchfa> <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" data-astro-cid-37fxchfa> <path d="M3 6h14M3 10h14M3 14h14" data-astro-cid-37fxchfa></path> </svg> </button> </div> </div> </nav> <!-- Mobile nav --> <div class="mobile-nav" data-astro-cid-37fxchfa> <a href="../../../index.html" data-astro-cid-37fxchfa>首页</a> <a href="../../../index.html#products" data-astro-cid-37fxchfa>产品</a> <a href="../../../index.html#research" data-astro-cid-37fxchfa>研究</a> <a href="../../../about/index.html" data-astro-cid-37fxchfa>About</a> <a href="../../../../en/index.html" data-astro-cid-37fxchfa>English</a> </div> <main class="min-h-screen" style="padding-top: 56px;" data-astro-cid-37fxchfa>  <div style="max-width: 80rem; margin: 0 auto; padding: 0 1.5rem;" data-astro-cid-fz5pa65a> <!-- Breadcrumb --> <nav style="padding: 1rem 0; font-size: 0.8125rem; color: #9a938c; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;" data-astro-cid-fz5pa65a> <a href="../../../index.html" style="color: #6b6560; text-decoration: none; transition: opacity 0.15s;" data-astro-cid-fz5pa65a>首页</a>  <span style="color: #c4bdb4;" data-astro-cid-fz5pa65a>/</span> <a href="../../../index.html#products" style="color: #6b6560; text-decoration: none; transition: opacity 0.15s;" data-astro-cid-fz5pa65a>产品</a> <span style="color: #c4bdb4;" data-astro-cid-fz5pa65a>/</span> <a href="../../../index.html#products" style="color: #6b6560; text-decoration: none; transition: opacity 0.15s;" data-astro-cid-fz5pa65a>AI Agent</a> <span style="color: #c4bdb4;" data-astro-cid-fz5pa65a>/</span> <span style="color: #1a1a1a;" data-astro-cid-fz5pa65a>DeepSeek Codex TUI</span> </nav> <div style="display: flex; gap: 3rem; padding-bottom: 4rem;" data-astro-cid-fz5pa65a> <!-- Sidebar TOC --> <aside style="width: 14rem; flex-shrink: 0; display: none;" class="toc-sidebar" data-astro-cid-fz5pa65a> <div style="position: sticky; top: 5rem;" data-astro-cid-fz5pa65a> <p style="font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #9a938c; margin-bottom: 0.75rem;" data-astro-cid-fz5pa65a>目录</p> <nav id="toc" style="font-size: 0.8125rem; line-height: 1.6;" data-astro-cid-fz5pa65a></nav> </div> </aside> <!-- Content --> <article class="markdown-content" style="flex: 1; min-width: 0; max-width: 48rem;" data-astro-cid-fz5pa65a> <!-- Category badge --> <div style="margin-bottom: 1rem;" data-astro-cid-fz5pa65a> <span style="display: inline-block; font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9a938c; padding: 0.25rem 0.625rem; border: 1px solid #d6cec4; border-radius: 4px;" data-astro-cid-fz5pa65a> AI Agent </span> </div> <h1 style="font-size: 2.25rem; font-weight: 700; color: #1a1a1a; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 0.75rem; font-family: var(--font-heading); border: none; padding: 0;" data-astro-cid-fz5pa65a> DeepSeek Codex TUI </h1> <p style="font-size: 1rem; color: #6b6560; line-height: 1.7; margin-bottom: 2rem;" data-astro-cid-fz5pa65a> 终端AI编程助手，Python Textual + Rich TUI，6个工具，4×2正交模式系统 </p> <div style="height: 1px; background: #d6cec4; margin-bottom: 2rem;" data-astro-cid-fz5pa65a></div>  <h1 id="deepseek-codex-tui-v10--功能完整报告">DeepSeek Codex TUI v1.0 — 功能完整报告</h1>
+<h2 id="一项目概述">一、项目概述</h2>
+<p>DeepSeek Codex TUI 是一个类似 OpenAI Codex CLI 的终端 AI 编程助手，使用 DeepSeek API 作为后端（OpenAI 协议兼容）。核心能力：AI 通过 Tool Calls 读写文件、执行命令、搜索代码，在终端中交互式完成编程任务。</p>
+<h3 id="技术栈">技术栈</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>组件</th><th>技术</th></tr></thead><tbody><tr><td>TUI 框架</td><td>Python Textual + Rich</td></tr><tr><td>HTTP 客户端</td><td>httpx（异步流式）</td></tr><tr><td>API 协议</td><td>OpenAI 兼容（DeepSeek / OpenAI / 任何兼容 API）</td></tr><tr><td>Key 存储</td><td>keyring（OS 级安全存储）+ 文件回退</td></tr><tr><td>沙箱</td><td>Docker 容器（可选）/ 本地 subprocess</td></tr></tbody></table>
+<h3 id="启动方式">启动方式</h3>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#005CC5">cd</span><span style="color:#032F62"> D:/claude/agenttui</span></span>
+<span class="line"><span style="color:#6F42C1">pip</span><span style="color:#032F62"> install</span><span style="color:#005CC5"> -e</span><span style="color:#032F62"> .</span></span>
+<span class="line"><span style="color:#6F42C1">dcodex</span></span></code></pre>
+<hr>
+<h2 id="二核心功能">二、核心功能</h2>
+<h3 id="21-流式聊天">2.1 流式聊天</h3>
+<ul>
+<li>实时流式输出 AI 回复（Markdown 渲染）</li>
+<li>思考过程（reasoning_content）可折叠显示</li>
+<li>处理时间显示（“Sautéed for 3s”）</li>
+<li>Token 用量和缓存命中实时更新</li>
+</ul>
+<h3 id="22-tool-calls工具调用">2.2 Tool Calls（工具调用）</h3>
+<p>AI 可调用 6 个工具完成编程任务：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>工具</th><th>功能</th><th>参数</th></tr></thead><tbody><tr><td><code>read_file</code></td><td>读取文件内容</td><td>path, start_line, end_line</td></tr><tr><td><code>write_file</code></td><td>写入/覆盖文件</td><td>path, content</td></tr><tr><td><code>edit_file</code></td><td>查找替换编辑</td><td>path, old_text, new_text</td></tr><tr><td><code>run_command</code></td><td>执行终端命令</td><td>command, cwd</td></tr><tr><td><code>search_code</code></td><td>正则搜索代码</td><td>pattern, path, file_filter</td></tr><tr><td><code>list_files</code></td><td>列出目录结构</td><td>path</td></tr></tbody></table>
+<h3 id="23-工具调用展示claude-code-风格">2.3 工具调用展示（Claude Code 风格）</h3>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>● Write(scientific_calculator/calculator.py)</span></span>
+<span class="line"><span>    1 │ #!/usr/bin/env python3</span></span>
+<span class="line"><span>    2 │ import math</span></span>
+<span class="line"><span>    3 │</span></span>
+<span class="line"><span>    4 │ def add(a, b):</span></span>
+<span class="line"><span>    5 │     return a + b</span></span>
+<span class="line"><span>    ... +269 lines (ctrl+o to expand)</span></span>
+<span class="line"><span>  ✓ auto</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>● Bash(python calculator.py)</span></span>
+<span class="line"><span>  $ python calculator.py</span></span>
+<span class="line"><span>  Calculator ready</span></span>
+<span class="line"><span>  ✓ done</span></span></code></pre>
+<hr>
+<h2 id="三42-正交模式系统">三、4×2 正交模式系统</h2>
+<h3 id="31-runtime-模式ai-在做什么">3.1 Runtime 模式（AI 在做什么）</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>模式</th><th>说明</th><th>切换</th></tr></thead><tbody><tr><td><strong>auto</strong></td><td>AI 按权限模式正常执行工具</td><td><code>/plan</code> 退出时</td></tr><tr><td><strong>plan</strong></td><td>AI 只规划，不执行任何工具</td><td><code>/plan</code> 进入时</td></tr></tbody></table>
+<h3 id="32-permission-模式工具怎么被批准">3.2 Permission 模式（工具怎么被批准）</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>模式</th><th>文件读</th><th>文件写</th><th>命令执行</th><th>安全等级</th></tr></thead><tbody><tr><td><strong>suggest</strong></td><td>确认</td><td>确认</td><td>确认</td><td>★★★★★</td></tr><tr><td><strong>auto-edit</strong></td><td>自动</td><td>自动</td><td>确认</td><td>★★★☆☆</td></tr><tr><td><strong>full-auto</strong></td><td>自动</td><td>自动</td><td>自动</td><td>★★☆☆☆</td></tr><tr><td><strong>bypass</strong></td><td>自动</td><td>自动</td><td>自动（⚠️ 危险）</td><td>★☆☆☆☆</td></tr></tbody></table>
+<h3 id="33-审批弹窗claude-code-风格">3.3 审批弹窗（Claude Code 风格）</h3>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>● Write(calc.py)</span></span>
+<span class="line"><span>  write_file(path='calc.py', content='...')</span></span>
+<span class="line"><span>  Do you want to proceed?</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  > 1. Yes</span></span>
+<span class="line"><span>    2. Yes, and always allow for this session</span></span>
+<span class="line"><span>    3. No</span></span></code></pre>
+<ul>
+<li><strong>Yes</strong> — 本次允许</li>
+<li><strong>Yes, and always allow</strong> — 会话内同类工具自动通过</li>
+<li><strong>No</strong> — 拒绝，AI 收到 “用户拒绝了此操作”</li>
+</ul>
+<hr>
+<h2 id="四-命令系统">四、/ 命令系统</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>命令</th><th>功能</th></tr></thead><tbody><tr><td><code>/help</code></td><td>显示所有可用命令</td></tr><tr><td><code>/clear</code></td><td>清空当前对话</td></tr><tr><td><code>/new</code></td><td>新建会话（选择工作目录）</td></tr><tr><td><code>/settings</code></td><td>打开设置界面</td></tr><tr><td><code>/plan</code></td><td>进入/退出规划模式</td></tr><tr><td><code>/mode</code></td><td>切换权限模式（suggest → auto-edit → full-auto → bypass）</td></tr><tr><td><code>/model</code></td><td>切换模型（支持 <code>--1m</code> 1M 上下文）</td></tr><tr><td><code>/thinking</code></td><td>开关思考模式</td></tr><tr><td><code>/effort</code></td><td>设置思考深度（low/medium/high/xhigh/max）</td></tr><tr><td><code>/balance</code></td><td>查询账户余额</td></tr><tr><td><code>/cost</code></td><td>显示本次会话 token 用量</td></tr><tr><td><code>/compact</code></td><td>压缩对话上下文</td></tr><tr><td><code>/system</code></td><td>查看/设置系统提示词</td></tr><tr><td><code>/history</code></td><td>查看会话历史</td></tr></tbody></table>
+<h3 id="41-plan-规划模式工作流">4.1 /plan 规划模式工作流</h3>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>● /plan</span></span>
+<span class="line"><span>📋 规划模式已启用 (runtime: plan)</span></span>
+<span class="line"><span>权限模式不变: suggest</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>● 我想做个计算器</span></span>
+<span class="line"><span>→ AI 问澄清问题（不执行工具）</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>● 科学计算器，Python</span></span>
+<span class="line"><span>→ AI 输出实施方案</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>● /plan</span></span>
+<span class="line"><span>✓ 退出规划模式 → auto</span></span>
+<span class="line"><span>当前权限: suggest</span></span></code></pre>
+<h3 id="42-model-1m-1m-上下文">4.2 /model —1m 1M 上下文</h3>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>/model deepseek-v4-pro --1m    →  deepseek-v4-pro[1m]</span></span>
+<span class="line"><span>/model deepseek-v4-flash --1m  →  deepseek-v4-flash[1m]</span></span></code></pre>
+<hr>
+<h2 id="五多-provider-配置">五、多 Provider 配置</h2>
+<p>支持多个 API Provider，独立配置：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#6A737D">// providers.json</span></span>
+<span class="line"><span style="color:#24292E">[</span></span>
+<span class="line"><span style="color:#24292E">  {</span></span>
+<span class="line"><span style="color:#005CC5">    "id"</span><span style="color:#24292E">: </span><span style="color:#032F62">"abc123"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "name"</span><span style="color:#24292E">: </span><span style="color:#032F62">"DeepSeek"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "base_url"</span><span style="color:#24292E">: </span><span style="color:#032F62">"https://api.deepseek.com"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "api_key"</span><span style="color:#24292E">: </span><span style="color:#032F62">"sk-..."</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "model"</span><span style="color:#24292E">: </span><span style="color:#032F62">"deepseek-v4-pro"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "thinking_enabled"</span><span style="color:#24292E">: </span><span style="color:#005CC5">true</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "reasoning_effort"</span><span style="color:#24292E">: </span><span style="color:#032F62">"high"</span></span>
+<span class="line"><span style="color:#24292E">  },</span></span>
+<span class="line"><span style="color:#24292E">  {</span></span>
+<span class="line"><span style="color:#005CC5">    "id"</span><span style="color:#24292E">: </span><span style="color:#032F62">"def456"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "name"</span><span style="color:#24292E">: </span><span style="color:#032F62">"OpenAI"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "base_url"</span><span style="color:#24292E">: </span><span style="color:#032F62">"https://api.openai.com/v1"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "api_key"</span><span style="color:#24292E">: </span><span style="color:#032F62">"sk-..."</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "model"</span><span style="color:#24292E">: </span><span style="color:#032F62">"gpt-4o"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "thinking_enabled"</span><span style="color:#24292E">: </span><span style="color:#005CC5">false</span></span>
+<span class="line"><span style="color:#24292E">  }</span></span>
+<span class="line"><span style="color:#24292E">]</span></span></code></pre>
+<p>设置界面功能：</p>
+<ul>
+<li>添加/删除 Provider</li>
+<li>一键切换当前 Provider</li>
+<li>验证 API Key 连通性 + 余额查询</li>
+<li>每个 Provider 独立配置模型、thinking、effort</li>
+</ul>
+<hr>
+<h2 id="六界面布局">六、界面布局</h2>
+<h3 id="61-主聊天界面">6.1 主聊天界面</h3>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>╔═══════════════════════════════════════════════════════════════╗</span></span>
+<span class="line"><span>║ DeepSeek Codex  deepseek-v4-pro  cwd: D:/project  auto|suggest ║</span></span>
+<span class="line"><span>╠═══════════════════════════════════════════════════════════════╣</span></span>
+<span class="line"><span>║ ┌─ 消息区域 (2/3) ──────┬─ 工具调用 (1/3) ─────────────────┐║</span></span>
+<span class="line"><span>║ │ ● 你好                 │ Tool Calls                       │║</span></span>
+<span class="line"><span>║ │                        │                                  │║</span></span>
+<span class="line"><span>║ │ Thought for 3s         │ ● Write(calc.py)                 │║</span></span>
+<span class="line"><span>║ │ (ctrl+o to expand)     │   1 │ #!/usr/bin/env python3    │║</span></span>
+<span class="line"><span>║ │                        │   2 │ import math                │║</span></span>
+<span class="line"><span>║ │ 我来帮你创建计算器...    │   ... +269 lines                 │║</span></span>
+<span class="line"><span>║ │                        │ ✓ auto                           │║</span></span>
+<span class="line"><span>║ │                        │                                  │║</span></span>
+<span class="line"><span>║ │                        │ ● Bash(python calc.py)           │║</span></span>
+<span class="line"><span>║ │                        │   $ python calc.py               │║</span></span>
+<span class="line"><span>║ │                        │ ✓ done                           │║</span></span>
+<span class="line"><span>║ ├────────────────────────┴──────────────────────────────────┤║</span></span>
+<span class="line"><span>║ │ > 输入消息... (/ 命令, Enter 发送, Esc 中断)               │║</span></span>
+<span class="line"><span>║ ├────────────────────────────────────────────────────────────┤║</span></span>
+<span class="line"><span>║ │ v4-pro | effort:high | Tokens: 13,604 | Cache: 13,056     │║</span></span>
+<span class="line"><span>║ └────────────────────────────────────────────────────────────┘║</span></span>
+<span class="line"><span>╚═══════════════════════════════════════════════════════════════╝</span></span></code></pre>
+<h3 id="62-启动信任检查">6.2 启动信任检查</h3>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>╔════════════════════════════════════════════════════════╗</span></span>
+<span class="line"><span>║ Accessing workspace:                                   ║</span></span>
+<span class="line"><span>║ D:\claude\agenttui                                     ║</span></span>
+<span class="line"><span>║                                                        ║</span></span>
+<span class="line"><span>║ Quick safety check: Is this a project you created      ║</span></span>
+<span class="line"><span>║ or one you trust?                                      ║</span></span>
+<span class="line"><span>║                                                        ║</span></span>
+<span class="line"><span>║ DeepSeek Codex will be able to read, edit, and         ║</span></span>
+<span class="line"><span>║ execute files here.                                    ║</span></span>
+<span class="line"><span>║                                                        ║</span></span>
+<span class="line"><span>║ Security guide:                                        ║</span></span>
+<span class="line"><span>║   - Commands run in a Docker sandbox when available    ║</span></span>
+<span class="line"><span>║   - Dangerous commands require explicit approval       ║</span></span>
+<span class="line"><span>║   - You can change approval mode with /mode            ║</span></span>
+<span class="line"><span>║                                                        ║</span></span>
+<span class="line"><span>║     [  1. Yes, I trust this folder  ]                  ║</span></span>
+<span class="line"><span>║     [  2. No, exit                  ]                  ║</span></span>
+<span class="line"><span>╚════════════════════════════════════════════════════════╝</span></span></code></pre>
+<h3 id="63-设置界面">6.3 设置界面</h3>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>╔════════════════════════════════════════════════════════╗</span></span>
+<span class="line"><span>║ [← 返回]  设置                                         ║</span></span>
+<span class="line"><span>╠════════════════════════════════════════════════════════╣</span></span>
+<span class="line"><span>║ API Provider 配置                                      ║</span></span>
+<span class="line"><span>║ ┌──────────────────────────────────────────────────┐  ║</span></span>
+<span class="line"><span>║ │ DeepSeek  (https://api.deepseek.com) [当前]      │  ║</span></span>
+<span class="line"><span>║ │ OpenAI    (https://api.openai.com/v1)            │  ║</span></span>
+<span class="line"><span>║ └──────────────────────────────────────────────────┘  ║</span></span>
+<span class="line"><span>║ [+ 添加] [设为当前] [删除]                              ║</span></span>
+<span class="line"><span>║                                                        ║</span></span>
+<span class="line"><span>║ 编辑 Provider                                          ║</span></span>
+<span class="line"><span>║   名称:      [DeepSeek               ]                ║</span></span>
+<span class="line"><span>║   Base URL:  [https://api.deepseek.com]               ║</span></span>
+<span class="line"><span>║   API Key:   [sk-****...             ]                ║</span></span>
+<span class="line"><span>║   模型:      [deepseek-v4-pro        ]                ║</span></span>
+<span class="line"><span>║   Thinking:  [x] 启用                                  ║</span></span>
+<span class="line"><span>║ [保存 Provider] [验证 Key]                              ║</span></span>
+<span class="line"><span>║                                                        ║</span></span>
+<span class="line"><span>║ 全局设置                                                ║</span></span>
+<span class="line"><span>║   权限模式:  [suggest ▾]                                ║</span></span>
+<span class="line"><span>║   工作目录:  [D:/projects              ]               ║</span></span>
+<span class="line"><span>╚════════════════════════════════════════════════════════╝</span></span></code></pre>
+<hr>
+<h2 id="七快捷键">七、快捷键</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>快捷键</th><th>功能</th></tr></thead><tbody><tr><td><code>Ctrl+1</code></td><td>切换到聊天界面</td></tr><tr><td><code>Ctrl+5</code></td><td>切换到设置界面</td></tr><tr><td><code>Ctrl+N</code></td><td>新建会话（选择工作目录）</td></tr><tr><td><code>Ctrl+L</code></td><td>清空聊天</td></tr><tr><td><code>Ctrl+M</code></td><td>切换权限模式</td></tr><tr><td><code>Esc</code></td><td>打断当前生成</td></tr><tr><td><code>Enter</code></td><td>发送消息 / 确认审批</td></tr><tr><td><code>Tab</code></td><td>审批按钮间切换</td></tr></tbody></table>
+<hr>
+<h2 id="八安全特性">八、安全特性</h2>
+<h3 id="81-docker-沙箱">8.1 Docker 沙箱</h3>
+<ul>
+<li>Docker 可用时自动使用容器执行命令</li>
+<li><code>python:3.12-slim</code> 镜像</li>
+<li><code>--network none</code> 禁用网络</li>
+<li>工作目录挂载到 <code>/workspace</code></li>
+<li>退出时自动清理容器</li>
+<li>不可用时回退到本地 subprocess</li>
+</ul>
+<h3 id="82-危险命令检测">8.2 危险命令检测</h3>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#005CC5">DANGEROUS_COMMANDS</span><span style="color:#D73A49"> =</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#032F62">    "rm"</span><span style="color:#24292E">, </span><span style="color:#032F62">"rmdir"</span><span style="color:#24292E">, </span><span style="color:#032F62">"del"</span><span style="color:#24292E">, </span><span style="color:#032F62">"rd"</span><span style="color:#24292E">, </span><span style="color:#032F62">"format"</span><span style="color:#24292E">, </span><span style="color:#032F62">"mkfs"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#032F62">    "shutdown"</span><span style="color:#24292E">, </span><span style="color:#032F62">"reboot"</span><span style="color:#24292E">, </span><span style="color:#032F62">"halt"</span><span style="color:#24292E">, </span><span style="color:#032F62">"poweroff"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#032F62">    "sudo"</span><span style="color:#24292E">, </span><span style="color:#032F62">"su"</span><span style="color:#24292E">, </span><span style="color:#032F62">"runas"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#032F62">    "chmod"</span><span style="color:#24292E">, </span><span style="color:#032F62">"chown"</span><span style="color:#24292E">, </span><span style="color:#032F62">"icacls"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#032F62">    "kill"</span><span style="color:#24292E">, </span><span style="color:#032F62">"killall"</span><span style="color:#24292E">, </span><span style="color:#032F62">"taskkill"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">}</span></span></code></pre>
+<h3 id="83-api-key-安全存储">8.3 API Key 安全存储</h3>
+<ul>
+<li>优先使用 OS keyring（Windows Credential Locker / macOS Keychain / Linux SecretService）</li>
+<li>回退到加密文件存储</li>
+<li>不硬编码在代码中</li>
+</ul>
+<hr>
+<h2 id="九性能优化">九、性能优化</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>优化项</th><th>实现</th></tr></thead><tbody><tr><td>Markdown 更新限频</td><td>每 0.08 秒最多更新一次</td></tr><tr><td>思考过程更新限频</td><td>每 0.3 秒更新一次</td></tr><tr><td>滚动限频</td><td>每 0.15 秒 scroll_end 一次</td></tr><tr><td>参数过滤</td><td>inspect.signature 自动过滤 AI 返回的多余参数</td></tr><tr><td>会话持久化</td><td>conversations.json 本地存储</td></tr></tbody></table>
+<hr>
+<h2 id="十错误处理">十、错误处理</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>场景</th><th>处理</th></tr></thead><tbody><tr><td>网络连接失败</td><td>Toast 通知 + 重试</td></tr><tr><td>401 认证失败</td><td>跳转设置页</td></tr><tr><td>429 限速</td><td>显示等待时间</td></tr><tr><td>流中断（无 [DONE]）</td><td>保留已生成内容</td></tr><tr><td>工具执行超时</td><td>30 秒自动终止</td></tr><tr><td>命令执行超时</td><td>Docker 容器自动清理</td></tr><tr><td>ESC 中断</td><td>保留已生成内容 + 清理 agent 消息</td></tr></tbody></table>
+<hr>
+<h2 id="十一项目结构">十一、项目结构</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>deepseek_tui/</span></span>
+<span class="line"><span>├── __main__.py              # 入口</span></span>
+<span class="line"><span>├── app.py                   # 主 App（模式切换、信任检查）</span></span>
+<span class="line"><span>├── core/</span></span>
+<span class="line"><span>│   ├── agent.py             # Agent 循环（消息→工具→继续）</span></span>
+<span class="line"><span>│   ├── client.py            # OpenAI 协议 HTTP 客户端</span></span>
+<span class="line"><span>│   ├── tool_executor.py     # 工具执行（参数过滤、Docker 集成）</span></span>
+<span class="line"><span>│   ├── tools.py             # 6 个工具定义</span></span>
+<span class="line"><span>│   ├── sandbox.py           # Docker 沙箱 + 本地执行</span></span>
+<span class="line"><span>│   ├── stream_parser.py     # SSE 流解析</span></span>
+<span class="line"><span>│   ├── settings.py          # 设置 + Provider 管理</span></span>
+<span class="line"><span>│   ├── key_store.py         # API Key 安全存储</span></span>
+<span class="line"><span>│   ├── conversation_manager.py  # 会话持久化</span></span>
+<span class="line"><span>│   └── models.py            # 数据类</span></span>
+<span class="line"><span>├── screens/</span></span>
+<span class="line"><span>│   ├── chat_screen.py       # 聊天界面</span></span>
+<span class="line"><span>│   └── settings_screen.py   # 设置界面</span></span>
+<span class="line"><span>├── widgets/</span></span>
+<span class="line"><span>│   ├── chat_pane.py         # 核心聊天面板（流式、命令、布局）</span></span>
+<span class="line"><span>│   ├── tool_call_widget.py  # 工具调用展示（Claude Code 风格）</span></span>
+<span class="line"><span>│   ├── approval_widget.py   # 审批弹窗（3 选项）</span></span>
+<span class="line"><span>│   ├── effort_screen.py     # Effort 选择弹窗</span></span>
+<span class="line"><span>│   ├── workdir_prompt.py    # 工作目录选择弹窗</span></span>
+<span class="line"><span>│   ├── trust_screen.py      # 启动信任检查弹窗</span></span>
+<span class="line"><span>│   ├── welcome_banner.py    # 欢迎横幅</span></span>
+<span class="line"><span>│   └── status_bar.py        # 底部状态栏</span></span>
+<span class="line"><span>├── storage/</span></span>
+<span class="line"><span>│   ├── paths.py             # 数据目录</span></span>
+<span class="line"><span>│   └── json_store.py        # JSON 读写</span></span>
+<span class="line"><span>├── resources/</span></span>
+<span class="line"><span>│   ├── system_prompt.md     # AI 系统提示词</span></span>
+<span class="line"><span>│   └── plan_mode_prompt.md  # 规划模式提示词</span></span>
+<span class="line"><span>└── css/</span></span>
+<span class="line"><span>    └── app.tcss             # 全局样式</span></span></code></pre>
+<hr>
+<h2 id="十二数据存储">十二、数据存储</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>~/.local/share/deepseek-codex-tui/</span></span>
+<span class="line"><span>├── settings.json            # 全局设置（runtime_mode, permission_mode...）</span></span>
+<span class="line"><span>├── providers.json           # API Provider 配置列表</span></span>
+<span class="line"><span>├── secrets.json             # API Key 回退存储（keyring 不可用时）</span></span>
+<span class="line"><span>├── index.json               # 会话索引</span></span>
+<span class="line"><span>└── conversations/</span></span>
+<span class="line"><span>    ├── {uuid1}.json         # 会话 1</span></span>
+<span class="line"><span>    ├── {uuid2}.json         # 会话 2</span></span>
+<span class="line"><span>    └── ...</span></span></code></pre>
+<hr>
+<h2 id="十三已知限制">十三、已知限制</h2>
+<ol>
+<li><strong>Docker 依赖</strong>：沙箱功能需要 Docker Desktop 运行</li>
+<li><strong>无 undo</strong>：文件写入后无法自动撤销</li>
+<li><strong>无测试</strong>：未包含自动化测试</li>
+<li><strong>单用户</strong>：不支持多用户并发</li>
+<li><strong>离线不可用</strong>：需要网络连接到 API</li>
+</ol>  </article> </div> </div>  </main> <footer class="footer-border" style="padding: 2.5rem 1.5rem; text-align: center; font-size: 0.8125rem; color: #9a938c; background: #f5f0eb;" data-astro-cid-37fxchfa> <p data-astro-cid-37fxchfa>&copy; 2026 AI Portfolio. Crafted with precision.</p> </footer> </body></html>  <script type="module">function l(){const s=document.querySelector(".markdown-content"),o=document.getElementById("toc");if(!s||!o)return;o.innerHTML="";const a=s.querySelectorAll("h2, h3");a.forEach((e,n)=>{const r=e.id||`heading-${n}`;e.id=r;const t=document.createElement("a");t.href=`#${r}`,t.textContent=e.textContent?.trim()||"",t.style.display="block",t.style.padding="0.2rem 0",t.style.color=e.tagName==="H2"?"#1a1a1a":"#9a938c",t.style.textDecoration="none",t.style.transition="color 0.15s ease",t.style.paddingLeft=e.tagName==="H3"?"0.75rem":"0",t.style.fontSize=e.tagName==="H3"?"0.75rem":"0.8125rem",t.style.opacity="0.85",o.appendChild(t)});const i=new IntersectionObserver(e=>{e.forEach(n=>{if(n.isIntersecting){const r=n.target.id;o.querySelectorAll("a").forEach(t=>{const c=t.getAttribute("href")===`#${r}`;t.style.opacity=c?"1":"0.85",t.style.color=c?"#1a1a1a":"",t.style.fontWeight=c?"600":""})}})},{rootMargin:"-80px 0px -70% 0px"});a.forEach(e=>i.observe(e))}l();document.addEventListener("astro:page-load",l);</script>

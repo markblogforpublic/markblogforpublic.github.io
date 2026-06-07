@@ -1,0 +1,1262 @@
+<!DOCTYPE html><html lang="en" data-theme="agent" class="scroll-smooth" data-astro-cid-37fxchfa> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="AI Agent infrastructure platform with 3-axis 18 configurations, 18 MCP Servers, and 595 tests all passing"><title>ALL-AGENT v5.0 Omni3 | AI Portfolio</title><link rel="icon" type="image/svg+xml" href="../../../../favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="../../../../_astro/BaseLayout.BuAdYsho.css">
+<style>@media(min-width:1024px){.toc-sidebar[data-astro-cid-fz5pa65a]{display:block!important}}
+</style></head> <body data-astro-cid-37fxchfa> <nav class="nav-bar fixed top-0 left-0 right-0 z-50" style="height: 56px;" data-astro-cid-37fxchfa> <div style="max-width: 80rem; margin: 0 auto; height: 100%; display: flex; align-items: center; padding: 0 1.5rem;" data-astro-cid-37fxchfa> <!-- Logo --> <a href="../../../../zh/index.html" class="nav-logo" data-astro-cid-37fxchfa>AI Portfolio</a> <!-- Spacer --> <div style="flex: 1;" data-astro-cid-37fxchfa></div> <!-- Desktop nav links (center) --> <div class="desktop-nav" style="display: flex; align-items: center; gap: 2rem; position: absolute; left: 50%; transform: translateX(-50%);" data-astro-cid-37fxchfa> <a href="../../../../zh/index.html" class="nav-link" data-astro-cid-37fxchfa>首页</a> <a href="../../../../zh/index.html#products" class="nav-link" data-astro-cid-37fxchfa>产品</a> <a href="../../../../zh/index.html#research" class="nav-link" data-astro-cid-37fxchfa>研究</a> <a href="../../../../zh/about/index.html" class="nav-link" data-astro-cid-37fxchfa>About</a> </div> <!-- Right side --> <div style="display: flex; align-items: center; gap: 0.5rem;" data-astro-cid-37fxchfa> <a href="../../../../zh/index.html" style="font-size: 0.8125rem; font-weight: 500; text-decoration: none; padding: 0.375rem 0.625rem; border-radius: 4px; transition: all 0.15s ease; color: #6b6560; border: 1px solid #d6cec4;" data-astro-cid-37fxchfa>中文</a> <a href="../../../index.html" style="font-size: 0.8125rem; font-weight: 500; text-decoration: none; padding: 0.375rem 0.625rem; border-radius: 4px; transition: all 0.15s ease; background: #1a1a1a; color: #fff;" data-astro-cid-37fxchfa>EN</a> <!-- Mobile hamburger --> <button class="mobile-menu-btn" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu" data-astro-cid-37fxchfa> <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" data-astro-cid-37fxchfa> <path d="M3 6h14M3 10h14M3 14h14" data-astro-cid-37fxchfa></path> </svg> </button> </div> </div> </nav> <!-- Mobile nav --> <div class="mobile-nav" data-astro-cid-37fxchfa> <a href="../../../../zh/index.html" data-astro-cid-37fxchfa>首页</a> <a href="../../../../zh/index.html#products" data-astro-cid-37fxchfa>产品</a> <a href="../../../../zh/index.html#research" data-astro-cid-37fxchfa>研究</a> <a href="../../../../zh/about/index.html" data-astro-cid-37fxchfa>About</a> <a href="../../../index.html" data-astro-cid-37fxchfa>English</a> </div> <main class="min-h-screen" style="padding-top: 56px;" data-astro-cid-37fxchfa>  <div style="max-width: 80rem; margin: 0 auto; padding: 0 1.5rem;" data-astro-cid-fz5pa65a> <!-- Breadcrumb --> <nav style="padding: 1rem 0; font-size: 0.8125rem; color: #9a938c; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;" data-astro-cid-fz5pa65a> <a href="../../../../zh/index.html" style="color: #6b6560; text-decoration: none; transition: opacity 0.15s;" data-astro-cid-fz5pa65a>首页</a>  <span style="color: #c4bdb4;" data-astro-cid-fz5pa65a>/</span> <a href="../../../index.html#products" style="color: #6b6560; text-decoration: none; transition: opacity 0.15s;" data-astro-cid-fz5pa65a>Products</a> <span style="color: #c4bdb4;" data-astro-cid-fz5pa65a>/</span> <a href="../../../index.html#products" style="color: #6b6560; text-decoration: none; transition: opacity 0.15s;" data-astro-cid-fz5pa65a>AI Agent</a> <span style="color: #c4bdb4;" data-astro-cid-fz5pa65a>/</span> <span style="color: #1a1a1a;" data-astro-cid-fz5pa65a>ALL-AGENT v5.0 Omni3</span> </nav> <div style="display: flex; gap: 3rem; padding-bottom: 4rem;" data-astro-cid-fz5pa65a> <!-- Sidebar TOC --> <aside style="width: 14rem; flex-shrink: 0; display: none;" class="toc-sidebar" data-astro-cid-fz5pa65a> <div style="position: sticky; top: 5rem;" data-astro-cid-fz5pa65a> <p style="font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #9a938c; margin-bottom: 0.75rem;" data-astro-cid-fz5pa65a>目录</p> <nav id="toc" style="font-size: 0.8125rem; line-height: 1.6;" data-astro-cid-fz5pa65a></nav> </div> </aside> <!-- Content --> <article class="markdown-content" style="flex: 1; min-width: 0; max-width: 48rem;" data-astro-cid-fz5pa65a> <!-- Category badge --> <div style="margin-bottom: 1rem;" data-astro-cid-fz5pa65a> <span style="display: inline-block; font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9a938c; padding: 0.25rem 0.625rem; border: 1px solid #d6cec4; border-radius: 4px;" data-astro-cid-fz5pa65a> AI Agent </span> </div> <h1 style="font-size: 2.25rem; font-weight: 700; color: #1a1a1a; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 0.75rem; font-family: var(--font-heading); border: none; padding: 0;" data-astro-cid-fz5pa65a> ALL-AGENT v5.0 Omni3 </h1> <p style="font-size: 1rem; color: #6b6560; line-height: 1.7; margin-bottom: 2rem;" data-astro-cid-fz5pa65a> AI Agent infrastructure platform with 3-axis 18 configurations, 18 MCP Servers, and 595 tests all passing </p> <div style="height: 1px; background: #d6cec4; margin-bottom: 2rem;" data-astro-cid-fz5pa65a></div>  <h1 id="all-agent-v50-omni3--full-feature-report">ALL-AGENT v5.0 Omni3 — Full Feature Report</h1>
+<blockquote>
+<p>Version: Internal 5.0 / External v4.5.0 Omni3<br>
+Date: 2026-06-06<br>
+Status: Phase 0-3 all completed, Phase 4 tests passed (595/595)</p>
+</blockquote>
+<hr>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="#1-project-overview">Project Overview</a></li>
+<li><a href="#2-core-architecture-3-axis-18-configurations">Core Architecture: 3-Axis 18 Configurations</a></li>
+<li><a href="#3-phase-0--core-shell">Phase 0 — Core Shell</a></li>
+<li><a href="#4-phase-05--layered-context-runtime">Phase 0.5 — Layered Context Runtime</a></li>
+<li><a href="#5-phase-1--execution-runtime--orchestrator">Phase 1 — Execution Runtime + Orchestrator</a></li>
+<li><a href="#6-phase-2--agent-system--security">Phase 2 — Agent System + Security</a></li>
+<li><a href="#7-phase-3--delivery-layer">Phase 3 — Delivery Layer</a></li>
+<li><a href="#8-phase-4--testing--stabilization">Phase 4 — Testing + Stabilization</a></li>
+<li><a href="#9-advanced-feature-modules">Advanced Feature Modules</a></li>
+<li><a href="#10-mcp-server-ecosystem">MCP Server Ecosystem</a></li>
+<li><a href="#11-frontend-desktop-gui">Frontend Desktop GUI</a></li>
+<li><a href="#12-file-structure-index">File Structure Index</a></li>
+<li><a href="#13-known-limitations-and-future-directions">Known Limitations and Future Directions</a></li>
+</ol>
+<hr>
+<h2 id="1-project-overview">1. Project Overview</h2>
+<p><strong>ALL-AGENT v5.0</strong> is an <strong>AI Agent infrastructure platform</strong>, not a chatbot. It provides:</p>
+<ul>
+<li><strong>MCP tool calling</strong> — All external capabilities are exposed through standard MCP Servers</li>
+<li><strong>Dynamic tool loading</strong> — Only tools relevant to the current task are loaded, saving tokens</li>
+<li><strong>Coding + productivity workflows</strong> — Complete agent chains from planning to code to review</li>
+<li><strong>Security + permission boundaries</strong> — Three-tier permission model + Policy Engine</li>
+<li><strong>Swappable model providers</strong> — Seamless switching between Anthropic / OpenAI / Gemini / local models</li>
+<li><strong>Distributed DAG</strong> — Cross-machine task scheduling and execution</li>
+<li><strong>Self-optimizing runtime (Apotheosis)</strong> — Self-healing, self-evolving, self-adaptive</li>
+</ul>
+<h3 id="code-scale">Code Scale</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Metric</th><th>Value</th></tr></thead><tbody><tr><td>Python source files</td><td>150+</td></tr><tr><td>TypeScript/TSX frontend</td><td>20+</td></tr><tr><td>MCP Server implementations</td><td>18</td></tr><tr><td>Unit/Integration/E2E tests</td><td>595 (all passing)</td></tr><tr><td>Compressed backup size</td><td>228 MB</td></tr></tbody></table>
+<hr>
+<h2 id="2-core-architecture-3-axis-18-configurations">2. Core Architecture: 3-Axis 18 Configurations</h2>
+<p>The system is controlled by three <strong>fully independent</strong> axes, any combination of which is valid:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Axis</th><th>Options</th><th>Scope</th></tr></thead><tbody><tr><td><strong>A: Security Mode</strong></td><td>Safe / Allow Edit / Bypass</td><td>Permission enforcement level</td></tr><tr><td><strong>B: Runtime Mode</strong></td><td>Hoshiai / Swing / Cadence</td><td>Delivery format, state machine depth</td></tr><tr><td><strong>C: Model Strategy</strong></td><td>Auto / Manual</td><td>Model discovery, configuration, routing</td></tr></tbody></table>
+<p>A x B x C = <strong>3 x 3 x 2 = 18 operating configurations</strong>.</p>
+<h3 id="axis-b-detail-runtime-modes">Axis B Detail: Runtime Modes</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Mode</th><th>Purpose</th><th>DAG Depth</th><th>Agent Count</th><th>Compression Threshold</th></tr></thead><tbody><tr><td><strong>Hoshiai</strong></td><td>Full standalone operation</td><td>Unlimited</td><td>All</td><td>Standard</td></tr><tr><td><strong>Swing</strong></td><td>MCP aggregation adapter</td><td>2 levels</td><td>Limited</td><td>Standard</td></tr><tr><td><strong>Cadence</strong></td><td>Lightweight standalone operation</td><td>Limited</td><td>Reduced</td><td>40%</td></tr></tbody></table>
+<h3 id="axis-c-detail-model-strategy">Axis C Detail: Model Strategy</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Strategy</th><th>Behavior</th></tr></thead><tbody><tr><td><strong>Auto</strong></td><td>Automatically calls <code>/v1/models</code> to discover models, uses regex to infer capabilities, and auto-routes tasks</td></tr><tr><td><strong>Manual</strong></td><td>User manually configures in <code>user_models.yaml</code>, zero-day compatibility + safe fallback</td></tr></tbody></table>
+<hr>
+<h2 id="3-phase-0--core-shell">3. Phase 0 — Core Shell</h2>
+<h3 id="31-provider-abstraction-layer">3.1 Provider Abstraction Layer</h3>
+<p><strong>Files</strong>: <code>providers/base.py</code>, <code>providers/anthropic.py</code>, <code>providers/openai.py</code>, <code>providers/gemini.py</code>, <code>providers/fallback.py</code></p>
+<p>Unified interface with all Providers handling format conversion internally:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#D73A49">class</span><span style="color:#6F42C1"> Provider</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#D73A49">    async</span><span style="color:#D73A49"> def</span><span style="color:#6F42C1"> generate</span><span style="color:#24292E">(self, messages, </span><span style="color:#D73A49">*</span><span style="color:#24292E">, tools</span><span style="color:#D73A49">=</span><span style="color:#005CC5">None</span><span style="color:#24292E">, temperature</span><span style="color:#D73A49">=</span><span style="color:#005CC5">None</span><span style="color:#24292E">): </span><span style="color:#005CC5">...</span></span>
+<span class="line"><span style="color:#D73A49">    async</span><span style="color:#D73A49"> def</span><span style="color:#6F42C1"> stream</span><span style="color:#24292E">(self, messages, </span><span style="color:#D73A49">*</span><span style="color:#24292E">, tools</span><span style="color:#D73A49">=</span><span style="color:#005CC5">None</span><span style="color:#24292E">): </span><span style="color:#005CC5">...</span></span>
+<span class="line"><span style="color:#D73A49">    async</span><span style="color:#D73A49"> def</span><span style="color:#6F42C1"> embed</span><span style="color:#24292E">(self, texts): </span><span style="color:#005CC5">...</span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Provider</th><th>Features</th></tr></thead><tbody><tr><td>Anthropic</td><td>Native tool calling, extended thinking</td></tr><tr><td>OpenAI</td><td>Base64 tunnel + Batch Tool Unpacker</td></tr><tr><td>Gemini</td><td>Google AI adapter</td></tr><tr><td>Fallback</td><td>Multi-provider automatic degradation</td></tr></tbody></table>
+<h3 id="32-mcp-hub">3.2 MCP Hub</h3>
+<p><strong>Files</strong>: <code>hub/client.py</code>, <code>hub/registry.py</code>, <code>hub/router.py</code>, <code>hub/gateway.py</code></p>
+<p>Core router responsibilities:</p>
+<ul>
+<li>Starts MCP Server processes (from <code>config.yaml</code>)</li>
+<li>Auto-discovers tools via <code>tools/list</code></li>
+<li>Filters tools by task (determined by Orchestrator context layer)</li>
+<li>Performs permission checks (Safe / Allow Edit / Bypass)</li>
+<li>Evaluates Policy Engine rules</li>
+<li>Routes <code>tools/call</code> to the correct Server</li>
+<li>Handles Server crashes (auto-restart, max 2 times)</li>
+<li>Enforces tool response truncation (hard limit per call)</li>
+</ul>
+<p><strong>Streaming Byte-Limit Guard</strong>:</p>
+<ul>
+<li>64KB chunked stdio reading</li>
+<li>Exceeds 20MB physical limit -> closes pipe + kills MCP Server</li>
+<li>Prevents OOM</li>
+</ul>
+<p><strong>Tool Truncation (Head-Tail + Semantic Anchoring)</strong>:</p>
+<ul>
+<li>When exceeding <code>max_tokens</code>, retains first 2K + last 8K tokens</li>
+<li>Scans middle section for keywords like <code>error</code>/<code>traceback</code>/<code>exception</code>, extracts key lines and injects truncation markers</li>
+<li>Eliminates “blind middle zone”</li>
+</ul>
+<h3 id="33-runtime-modes">3.3 Runtime Modes</h3>
+<p><strong>Files</strong>: <code>runtime/hoshiai.py</code>, <code>runtime/swing.py</code>, <code>runtime/cadence.py</code>, <code>runtime/base_mode.py</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Mode</th><th>Core Mechanism</th></tr></thead><tbody><tr><td>Hoshiai</td><td>100% standalone operation, unlimited DAG, full agent chains</td></tr><tr><td>Swing</td><td>MCP aggregation, Lease + Polling, PAUSED response wrapping, Base64 tunnel</td></tr><tr><td>Cadence</td><td>Deadman Switch (30s lease / 45s no poll -> Abort), workspace isolation</td></tr></tbody></table>
+<p><strong>Swing-specific</strong>:</p>
+<ul>
+<li>Base64 tunnel: Auto-encodes code/text tool parameters in Base64, eliminating JSON/escaping character conflicts</li>
+<li>Batch Tool Unpacker: Captures multiple tool intents in a single LLM turn, dispatches concurrently via <code>anyio.create_task_group()</code></li>
+</ul>
+<p><strong>Cadence-specific</strong>:</p>
+<ul>
+<li>Lease &#x26; Heartbeat: Each <code>get_task_result</code> poll renews lease for 30s, 45s without poll -> AbortEvent</li>
+<li>PAUSED response wrapping: Includes <code>instruction</code> field, forces client LLM to stop generation and display the issue</li>
+</ul>
+<h3 id="34-gateway">3.4 Gateway</h3>
+<p><strong>Files</strong>: <code>hub/gateway.py</code></p>
+<p>Runtime mode dispatcher that dynamically instantiates Hoshiai / Swing / Cadence based on configuration.</p>
+<h3 id="35-model-manager">3.5 Model Manager</h3>
+<p><strong>Files</strong>: <code>hub/model_manager.py</code></p>
+<ul>
+<li>Dynamic model discovery (calls Provider API)</li>
+<li>Regex-based intelligent inference (<code>context_window</code>, <code>thinking_supported</code>)</li>
+<li>User YAML override</li>
+<li>Safe Fallback: Unconfigured models use conservative defaults (<code>context_window: 4096</code>, <code>thinking_budget: 0</code>)</li>
+</ul>
+<h3 id="36-permission-system">3.6 Permission System</h3>
+<p><strong>Files</strong>: <code>hub/permissions.py</code>, <code>hub/policy_engine.py</code>, <code>hub/tool_capability.py</code></p>
+<p>Three-tier permission model:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Mode</th><th>Policy Engine</th><th>Workspace Isolation</th></tr></thead><tbody><tr><td><strong>Safe</strong> (default)</td><td>Full enforcement (deny/allow/require_approval)</td><td>Yes</td></tr><tr><td><strong>Allow Edit</strong></td><td>Enforcement active, file editing + git allowed, destructive operations blocked</td><td>Yes</td></tr><tr><td><strong>Bypass</strong></td><td>No policy enforcement, all operations allowed</td><td>No</td></tr></tbody></table>
+<p>Policy Engine example:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#22863A">policies</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#24292E">  - </span><span style="color:#22863A">tool</span><span style="color:#24292E">: </span><span style="color:#032F62">"terminal.execute"</span></span>
+<span class="line"><span style="color:#22863A">    deny</span><span style="color:#24292E">: [</span><span style="color:#032F62">"rm -rf *"</span><span style="color:#24292E">, </span><span style="color:#032F62">"sudo *"</span><span style="color:#24292E">, </span><span style="color:#032F62">"wget *"</span><span style="color:#24292E">, </span><span style="color:#032F62">"curl *"</span><span style="color:#24292E">]</span></span>
+<span class="line"><span style="color:#22863A">    allow</span><span style="color:#24292E">: [</span><span style="color:#032F62">"pytest *"</span><span style="color:#24292E">, </span><span style="color:#032F62">"npm *"</span><span style="color:#24292E">, </span><span style="color:#032F62">"git *"</span><span style="color:#24292E">, </span><span style="color:#032F62">"python *"</span><span style="color:#24292E">]</span></span>
+<span class="line"><span style="color:#22863A">    require_approval</span><span style="color:#24292E">: [</span><span style="color:#032F62">"rm *"</span><span style="color:#24292E">, </span><span style="color:#032F62">"git push *"</span><span style="color:#24292E">]</span></span></code></pre>
+<p>Tool Capability Metadata:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#D73A49">class</span><span style="color:#6F42C1"> ToolCapability</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#24292E">    risk: Literal[</span><span style="color:#032F62">"low"</span><span style="color:#24292E">, </span><span style="color:#032F62">"medium"</span><span style="color:#24292E">, </span><span style="color:#032F62">"high"</span><span style="color:#24292E">]</span></span>
+<span class="line"><span style="color:#24292E">    cost: Literal[</span><span style="color:#032F62">"cheap"</span><span style="color:#24292E">, </span><span style="color:#032F62">"medium"</span><span style="color:#24292E">, </span><span style="color:#032F62">"expensive"</span><span style="color:#24292E">]</span></span>
+<span class="line"><span style="color:#24292E">    requires_network: </span><span style="color:#005CC5">bool</span></span>
+<span class="line"><span style="color:#24292E">    side_effects: </span><span style="color:#005CC5">bool</span></span>
+<span class="line"><span style="color:#24292E">    rate_limit: </span><span style="color:#005CC5">int</span><span style="color:#D73A49"> |</span><span style="color:#005CC5"> None</span></span></code></pre>
+<h3 id="37-first-mcp-server-filesystem">3.7 First MCP Server: Filesystem</h3>
+<p><strong>Files</strong>: <code>mcp_servers/filesystem_server.py</code></p>
+<p>Standard file operations MCP Server supporting:</p>
+<ul>
+<li>Read/write/list files</li>
+<li>Directory operations</li>
+<li>Symlink resolution (<code>resolve()</code> with traversal prevention)</li>
+</ul>
+<hr>
+<h2 id="4-phase-05--layered-context-runtime">4. Phase 0.5 — Layered Context Runtime</h2>
+<p><strong>Files</strong>: <code>orchestrator/context.py</code>, <code>orchestrator/context_snapshot.py</code></p>
+<h3 id="41-four-layer-context-hierarchy">4.1 Four-Layer Context Hierarchy</h3>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>L3: Long-term Knowledge</span></span>
+<span class="line"><span>  └── Cross-session knowledge, user preferences, project structure</span></span>
+<span class="line"><span>  └── Persistent storage, loaded on session start</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>L2: Task Memory</span></span>
+<span class="line"><span>  └── Key information extracted per DAG task</span></span>
+<span class="line"><span>  └── Agent: Planner loads L2+L3</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>L1: Rolling Summary</span></span>
+<span class="line"><span>  └── Compressed session summary (old turns folded)</span></span>
+<span class="line"><span>  └── Agent: Reviewer uses L1+L2</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>L0: Raw History</span></span>
+<span class="line"><span>  └── Last N turns preserved in full</span></span>
+<span class="line"><span>  └── Agent: Debugger uses L0+L1</span></span></code></pre>
+<h3 id="42-token-budget-control">4.2 Token Budget Control</h3>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Fixed overhead = system prompt + tool schemas</span></span>
+<span class="line"><span>Available = total budget - fixed overhead - sunk_tokens</span></span>
+<span class="line"><span>  ├── history: &#x3C;= 60% of available (exceeding triggers compression)</span></span>
+<span class="line"><span>  ├── output: reserve 20% of available</span></span>
+<span class="line"><span>  └── buffer: reserve 20% (safety margin, never allocated)</span></span></code></pre>
+<h3 id="43-semantic-collapse">4.3 Semantic Collapse</h3>
+<p>When history exceeds the 60% threshold:</p>
+<ol>
+<li><strong>Lossless Metadata Condensation</strong>: Extracts incompressible entities before compression
+<ul>
+<li>All file paths and line ranges of successful modifications</li>
+<li>All failed tool calls (name, arguments, error traceback)</li>
+<li>Failure counter per task</li>
+</ul>
+</li>
+<li>These metadata are appended as <code>StructuredEvictionTombstones</code> and never compressed</li>
+<li><strong>Immutable Semantic Anchors</strong>: Architecture decisions, rejected alternatives, design constraints
+<ul>
+<li>Marked as <code>PERMANENT</code>, survive all compression cycles</li>
+</ul>
+</li>
+</ol>
+<h3 id="44-context-snapshot">4.4 Context Snapshot</h3>
+<p><strong>Files</strong>: <code>orchestrator/context_snapshot.py</code></p>
+<ul>
+<li><code>ContextSnapshot</code>: Saves complete L0-L3 state</li>
+<li><code>create_snapshot()</code>: Saves current context layers (including L1+L3)</li>
+<li><code>restore_from_snapshot()</code>: Restores to a specified snapshot</li>
+<li>Supports Blackboard task memory injection</li>
+</ul>
+<hr>
+<h2 id="5-phase-1--execution-runtime--orchestrator">5. Phase 1 — Execution Runtime + Orchestrator</h2>
+<h3 id="51-taskgraph-dag">5.1 TaskGraph (DAG)</h3>
+<p><strong>Files</strong>: <code>orchestrator/task_graph.py</code></p>
+<ul>
+<li>DAG definition + topological sort + parallel execution</li>
+<li>TaskNode states: <code>PENDING -> RUNNING -> COMPLETED / FAILED / SKIPPED</code></li>
+<li><code>is_terminal()</code>: Terminal state check</li>
+<li><code>get_full_summary()</code>: Full state summary (including retry_count, error, tokens_used, tools_called)</li>
+<li><strong>Fail-Fast Graph Pruning</strong>: FAILED nodes cascade all downstream to SKIPPED</li>
+</ul>
+<h3 id="52-task-lifecycle">5.2 Task Lifecycle</h3>
+<p><strong>Files</strong>: <code>orchestrator/task_lifecycle.py</code></p>
+<p>Full state machine:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>PENDING -> RUNNING -> WAITING_TOOL -> RUNNING -> COMPLETED</span></span>
+<span class="line"><span>                       ↓                         ↓</span></span>
+<span class="line"><span>                 BLOCKED_PERMISSION          PARTIAL</span></span>
+<span class="line"><span>                       ↓                  WAITING_USER_INPUT</span></span>
+<span class="line"><span>                  RETRYING -> RUNNING -> FAILED -> PAUSED</span></span></code></pre>
+<p><strong>Resiliency Matrix</strong>:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>State</th><th>Type</th><th>Behavior</th></tr></thead><tbody><tr><td>CRASHED</td><td>Transient</td><td>Auto-re-enqueue, exponential backoff (max 3 times)</td></tr><tr><td>PAUSED</td><td>Transient</td><td>Preserves context snapshot, waits for explicit WakeEvent</td></tr><tr><td>WAITING_USER_INPUT</td><td>Transient</td><td>60s timeout -> Dummy Tool Responder</td></tr><tr><td>FAILED</td><td><strong>Terminal</strong></td><td><strong>Immediate block</strong>, cascades downstream to SKIPPED</td></tr><tr><td>PARTIAL</td><td><strong>Terminal</strong></td><td>Cannot re-enter, hard-links downstream to SKIPPED</td></tr></tbody></table>
+<h3 id="53-event-bus">5.3 Event Bus</h3>
+<p><strong>Files</strong>: <code>orchestrator/event_bus.py</code></p>
+<p>Structured event system:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#24292E">event_types </span><span style="color:#D73A49">=</span><span style="color:#24292E"> [</span></span>
+<span class="line"><span style="color:#032F62">    "TaskStarted"</span><span style="color:#24292E">, </span><span style="color:#032F62">"TaskCompleted"</span><span style="color:#24292E">, </span><span style="color:#032F62">"TaskFailed"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#032F62">    "ToolCalled"</span><span style="color:#24292E">, </span><span style="color:#032F62">"ToolResult"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#032F62">    "AgentStarted"</span><span style="color:#24292E">, </span><span style="color:#032F62">"AgentCompleted"</span><span style="color:#24292E">, </span><span style="color:#032F62">"AgentFailed"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#032F62">    "Retry"</span><span style="color:#24292E">, </span><span style="color:#032F62">"ContextCompressed"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#032F62">    "PermissionBlocked"</span><span style="color:#24292E">, </span><span style="color:#032F62">"PermissionApproved"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#032F62">    "UserFeedbackProvided"</span><span style="color:#24292E">, </span><span style="color:#032F62">"UserFeedbackApplied"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#032F62">    "TaskPaused"</span><span style="color:#24292E">, </span><span style="color:#032F62">"TaskResumed"</span><span style="color:#24292E">, </span><span style="color:#032F62">"TaskAborted"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#032F62">    "CheckpointSaved"</span><span style="color:#24292E">, </span><span style="color:#032F62">"RecoveryTriggered"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">]</span></span></code></pre>
+<p><strong>Suppression Flag (recursive protection)</strong>: When telemetry listeners trigger new events, <code>ContextVar</code> is used to suppress them, preventing infinite recursion.</p>
+<h3 id="54-orchestrator">5.4 Orchestrator</h3>
+<p><strong>Files</strong>: <code>orchestrator/orchestrator.py</code></p>
+<p>Central dispatcher:</p>
+<ul>
+<li>Receives request -> DAG -> Execution -> Result</li>
+<li>AgentResult: <code>summary + status + artifacts + files_changed</code></li>
+<li>ContextVar propagation to background tasks (<code>copy_context().run()</code>)</li>
+<li>Background agent: Runs asynchronously, writes results to Blackboard</li>
+</ul>
+<h3 id="55-recovery">5.5 Recovery</h3>
+<p><strong>Files</strong>: <code>orchestrator/recovery.py</code></p>
+<ul>
+<li><strong>Checkpoint Atomicity</strong>: Copy-on-Write snapshot + <code>fsync()</code> + <code>os.replace()</code> atomic write</li>
+<li><strong>Sunk Token Registry</strong>: Tracks tokens consumed by crashed/retry/rejected operations</li>
+<li><strong>Sunk Cost Circuit Breaker</strong>: <code>available / max_context_window &#x3C; 0.35</code> -> stops retrying, marks PARTIAL</li>
+<li>Recovery flow: Startup -> Load checkpoint -> Skip COMPLETED -> Re-enqueue FAILED/CRASHED</li>
+</ul>
+<h3 id="56-blackboard">5.6 Blackboard</h3>
+<p><strong>Files</strong>: <code>orchestrator/blackboard.py</code></p>
+<p>Three-layer shared data plane:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#D73A49">class</span><span style="color:#6F42C1"> Blackboard</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#24292E">    task_state: dict[</span><span style="color:#005CC5">str</span><span style="color:#24292E">, TaskNode]     </span><span style="color:#6A737D"># DAG node state</span></span>
+<span class="line"><span style="color:#24292E">    memory: dict[</span><span style="color:#005CC5">str</span><span style="color:#24292E">, MemoryEntry]      </span><span style="color:#6A737D"># Cross-agent discoveries, decisions</span></span>
+<span class="line"><span style="color:#24292E">    artifacts: dict[</span><span style="color:#005CC5">str</span><span style="color:#24292E">, Artifact]      </span><span style="color:#6A737D"># File references, code diffs, test output</span></span></code></pre>
+<p><strong>Generation Ring Buffer</strong>: Each artifact retains <code>latest</code> + <code>previous</code>, supporting Diff/Regression/Blame.</p>
+<p><strong>GC Strategy</strong>:</p>
+<ul>
+<li><code>task_state</code>: Prune after all downstream nodes reach terminal state</li>
+<li><code>memory</code>: Auto-archive on same-key overwrite; when total exceeds threshold -> Semantic Merge</li>
+<li><code>artifacts</code>: After downstream references complete -> reclaim <code>previous</code> pointer</li>
+</ul>
+<h3 id="57-conflict-detection">5.7 Conflict Detection</h3>
+<p><strong>Files</strong>: <code>orchestrator/conflict.py</code></p>
+<p>Parallel branch file change tracking + conflict detection.</p>
+<hr>
+<h2 id="6-phase-2--agent-system--security">6. Phase 2 — Agent System + Security</h2>
+<h3 id="61-agent-base-class">6.1 Agent Base Class</h3>
+<p><strong>Files</strong>: <code>agents/base.py</code></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#D73A49">class</span><span style="color:#6F42C1"> Agent</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#D73A49">    async</span><span style="color:#D73A49"> def</span><span style="color:#6F42C1"> run</span><span style="color:#24292E">(self, context: AgentContext) -> AgentResult: </span><span style="color:#005CC5">...</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">class</span><span style="color:#6F42C1"> AgentContext</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#24292E">    task: </span><span style="color:#005CC5">str</span></span>
+<span class="line"><span style="color:#24292E">    task_id: </span><span style="color:#005CC5">str</span></span>
+<span class="line"><span style="color:#24292E">    provider: Provider </span><span style="color:#D73A49">|</span><span style="color:#005CC5"> None</span></span>
+<span class="line"><span style="color:#24292E">    blackboard: Blackboard </span><span style="color:#D73A49">|</span><span style="color:#005CC5"> None</span></span>
+<span class="line"><span style="color:#24292E">    system_extra: </span><span style="color:#005CC5">str</span><span style="color:#D73A49"> |</span><span style="color:#005CC5"> None</span></span>
+<span class="line"><span style="color:#24292E">    messages: list[Message] </span><span style="color:#D73A49">|</span><span style="color:#005CC5"> None</span></span>
+<span class="line"><span style="color:#24292E">    mcp_servers: list[</span><span style="color:#005CC5">str</span><span style="color:#24292E">] </span><span style="color:#D73A49">|</span><span style="color:#005CC5"> None</span><span style="color:#6A737D">   # Agent-level MCP filtering</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">class</span><span style="color:#6F42C1"> AgentResult</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#24292E">    summary: </span><span style="color:#005CC5">str</span></span>
+<span class="line"><span style="color:#24292E">    status: AgentStatus</span></span>
+<span class="line"><span style="color:#24292E">    artifacts: dict[</span><span style="color:#005CC5">str</span><span style="color:#24292E">, Any]</span></span>
+<span class="line"><span style="color:#24292E">    files_changed: list[</span><span style="color:#005CC5">str</span><span style="color:#24292E">]</span></span></code></pre>
+<h3 id="62-agent-roles">6.2 Agent Roles</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Agent</th><th>Input</th><th>Output</th><th>Features</th></tr></thead><tbody><tr><td><strong>Planner</strong></td><td>Goal</td><td>DAG task graph</td><td>Can run without provider (pure planning)</td></tr><tr><td><strong>Coder</strong></td><td>Task + tools</td><td>Code changes + test results</td><td>Requires provider, uses tools to edit files</td></tr><tr><td><strong>SubReviewer</strong></td><td>Coder output</td><td>pass/reject</td><td>Requires provider, LLM review</td></tr><tr><td><strong>GlobalReviewer</strong></td><td>All SubReviewer results</td><td>Cross-task compatibility</td><td>No provider defaults to pass</td></tr><tr><td><strong>Debugger</strong></td><td>Failure info</td><td>Fix proposal</td><td>Requires provider</td></tr><tr><td><strong>Finalizer</strong></td><td>All results</td><td>Final output</td><td>Aggregates all artifacts</td></tr></tbody></table>
+<p><strong>Agent Workflow (Initial DAG)</strong>:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Planner -> DAG</span></span>
+<span class="line"><span>          ├── Coder(task1) -> SubReviewer(task1) ──┐</span></span>
+<span class="line"><span>          ├── Coder(task2) -> SubReviewer(task2) ──┤── GlobalReviewer -> Finalize</span></span>
+<span class="line"><span>          └── Coder(task3) -> SubReviewer(task3) ──┘</span></span></code></pre>
+<p><strong>Dynamic Node Expansion (Unrolling)</strong>:</p>
+<ul>
+<li>SubReviewer rejects -> Coder(v2) -> SubReviewer(v2)</li>
+<li>GlobalReviewer rejects -> <code>conflict_boundary</code> -> only affected branches re-execute</li>
+<li>DAG always remains acyclic; cycles are unrolled into sequential node pairs</li>
+</ul>
+<h3 id="63-agent-declarative-system-p0-p4">6.3 Agent Declarative System (P0-P4)</h3>
+<p><strong>Files</strong>: <code>agents/registry.py</code>, <code>agents/base.py</code>, <code>orchestrator/context_snapshot.py</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Level</th><th>Feature</th><th>File</th></tr></thead><tbody><tr><td><strong>P0</strong></td><td>YAML/Markdown frontmatter agent definition</td><td><code>agents/registry.py</code></td></tr><tr><td><strong>P1</strong></td><td>Context isolation — Snapshot save/restore L0-L3</td><td><code>orchestrator/context_snapshot.py</code></td></tr><tr><td><strong>P2</strong></td><td>Foreground/Background mode — <code>RUNNING_BACKGROUND</code> state</td><td><code>orchestrator/task_lifecycle.py</code></td></tr><tr><td><strong>P3</strong></td><td>Agent-level MCP selection — <code>mcp_servers</code> field filters tools</td><td><code>hub/router.py</code></td></tr><tr><td><strong>P4</strong></td><td>Natural language task routing — <code>find_best_match()</code> semantic matching</td><td><code>agents/base.py</code></td></tr></tbody></table>
+<h3 id="64-human-in-the-loop-hitl">6.4 Human-in-the-Loop (HITL)</h3>
+<p><strong>Interruption Strategy</strong>:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Level</th><th><code>blocking</code></th><th>Timeout</th><th>State</th><th>Behavior</th></tr></thead><tbody><tr><td>Info</td><td>False</td><td>60s</td><td>WAITING_USER_INPUT</td><td>Agent continues with best guess</td></tr><tr><td>Blocking</td><td>True</td><td>None</td><td><strong>PAUSED</strong></td><td>Requires explicit user wake-up</td></tr></tbody></table>
+<p><strong>Dummy Tool Responder</strong>: Injects ToolResult at 60s timeout (not a fake user message), conforming to LLM protocol.</p>
+<h3 id="65-security-module">6.5 Security Module</h3>
+<p><strong>Files</strong>: <code>security/sandbox.py</code>, <code>security/allowlist.py</code>, <code>security/denylist.py</code>, <code>security/approvals.py</code>, <code>security/docker_sandbox.py</code></p>
+<ul>
+<li><strong>Sandbox</strong>: Workspace isolation (Safe + Allow Edit modes)</li>
+<li><strong>Allowlist/Denylist</strong>: Tool access control</li>
+<li><strong>Approvals</strong>: High-risk operation approval workflow</li>
+<li><strong>Docker Sandbox</strong>: Optional Docker container isolation</li>
+</ul>
+<h3 id="66-computer-use-security">6.6 Computer Use Security</h3>
+<p><strong>Files</strong>: <code>security/cu_security/auto_pause.py</code>, <code>security/cu_security/injection.py</code>, <code>security/cu_security/risk_engine.py</code>, <code>security/cu_security/safe_rollback.py</code></p>
+<ul>
+<li>Auto-pause: Automatically pauses on anomalous behavior</li>
+<li>Injection detection: Detects injection attacks</li>
+<li>Risk engine: Operation risk scoring</li>
+<li>Safe rollback: Safe rollback mechanism</li>
+</ul>
+<hr>
+<h2 id="7-phase-3--delivery-layer">7. Phase 3 — Delivery Layer</h2>
+<h3 id="71-fastapi-server">7.1 FastAPI Server</h3>
+<p><strong>Files</strong>: <code>desktop/server.py</code>, <code>api/main.py</code></p>
+<ul>
+<li>REST API + WebSocket + SSE streaming</li>
+<li>Session management (create, list, delete)</li>
+<li>Admin endpoints (permission mode switching, model configuration)</li>
+<li>OpenTelemetry tracing</li>
+</ul>
+<h3 id="72-cli-client">7.2 CLI Client</h3>
+<p><strong>Files</strong>: <code>cli/main.py</code>, <code>cli/agent_cli.py</code>, <code>cli/config.py</code>, <code>cli/app.py</code></p>
+<ul>
+<li>HTTP + WebSocket communication</li>
+<li>Agent command-line interface</li>
+<li>Configuration loading</li>
+</ul>
+<h3 id="73-mcp-aggregation-adapter">7.3 MCP Aggregation Adapter</h3>
+<p>Exposes standard interfaces:</p>
+<ul>
+<li><code>submit_task</code>: Submit a task</li>
+<li><code>get_task_result</code>: Get results (including PAUSED wrapping)</li>
+<li><code>cancel_task</code>: Cancel a task</li>
+<li><code>ask_followup</code>: HITL interaction</li>
+</ul>
+<hr>
+<h2 id="8-phase-4--testing--stabilization">8. Phase 4 — Testing + Stabilization</h2>
+<h3 id="81-test-coverage">8.1 Test Coverage</h3>
+<p><strong>595 tests, all passing.</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Test Layer</th><th>File Count</th><th>Content</th></tr></thead><tbody><tr><td>Unit</td><td>14</td><td>agents, hub, orchestrator, providers, runtime, security, evaluation, distributed_dag, sandbox_v2, marketplace, apothosis, episodic</td></tr><tr><td>Integration</td><td>5</td><td>MCP protocol, orchestrator flow, security modes, knowledge graph, wiring sprint</td></tr><tr><td>E2E</td><td>1</td><td>Full workflow</td></tr><tr><td>Performance</td><td>1</td><td>Token budget stress</td></tr></tbody></table>
+<h3 id="82-48-bugs-fixed">8.2 48 Bugs Fixed</h3>
+<p>By severity:</p>
+<ul>
+<li><strong>CRITICAL (6)</strong>: Route method not found, httpx undefined, streaming not working, stream returns generator, Ultracode display error, yaml.safe_load returns None</li>
+<li><strong>HIGH (10)</strong>: Background agent state error, MCP filter cleared, state transition missing, Lock serialization, HTTP 500 returns 200</li>
+<li><strong>MEDIUM (14)</strong>: ContextVar lost, context snapshot mixing, session type error</li>
+<li><strong>LOW (18)</strong>: Regex completion, name collision, symlink traversal, type annotations</li>
+</ul>
+<h3 id="83-structural-bugs-fixed">8.3 Structural Bugs Fixed</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Bug</th><th>Fix</th></tr></thead><tbody><tr><td>Blackboard task_state leak</td><td>Added <code>prune_task_state()</code> + downstream tracking</td></tr><tr><td>Checkpoint metadata loss</td><td><code>get_full_summary()</code> includes retry/error/tokens/tools</td></tr><tr><td>Context snapshot missing L1+L3</td><td>Snapshot fully saves L0-L3</td></tr><tr><td>task_memory always empty</td><td>Inject memory from Blackboard</td></tr><tr><td>Router MCP filter race condition</td><td>Changed to stateless <code>get_filtered_tools(mcp_servers=)</code></td></tr><tr><td>Circular import (agents &#x3C;-> orchestrator)</td><td>Removed top-level ComputerUseAgent import</td></tr><tr><td>ID collision (sandbox)</td><td><code>_generate_id()</code> changed to use <code>uuid.uuid4()</code></td></tr><tr><td>asyncio deprecated (Python 3.12)</td><td>All <code>get_event_loop()</code> -> <code>asyncio.run()</code></td></tr></tbody></table>
+<hr>
+<h2 id="9-advanced-feature-modules">9. Advanced Feature Modules</h2>
+<h3 id="91-apotheosis-engine-self-optimizing-runtime">9.1 Apotheosis Engine (Self-Optimizing Runtime)</h3>
+<p><strong>Files</strong>: <code>apothosis/engine.py</code>, <code>apothosis/adaptive.py</code>, <code>apothosis/observability.py</code>, <code>apothosis/evolution.py</code>, <code>apothosis/healer.py</code></p>
+<p>Five-layer self-optimizing architecture:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Layer</th><th>Feature</th></tr></thead><tbody><tr><td>Layer 1</td><td>Unified Observability — Metrics, alerts, dashboards</td></tr><tr><td>Layer 2</td><td>Cross-Mode Intelligence — Automatic runtime mode switching</td></tr><tr><td>Layer 3</td><td>Adaptive Optimization — Concurrency, model routing, compression</td></tr><tr><td>Layer 4</td><td>Self-Healing — Error diagnosis, automatic fix, Provider degradation</td></tr><tr><td>Layer 5</td><td>Self-Evolution — Pattern detection, skill extraction, experience knowledge base</td></tr></tbody></table>
+<h3 id="92-distributed-dag">9.2 Distributed DAG</h3>
+<p><strong>Files</strong>: <code>orchestrator/distributed/distributed_dag.py</code>, <code>orchestrator/distributed/worker_registry.py</code>, <code>orchestrator/distributed/task_dispatcher.py</code>, <code>orchestrator/distributed/transport.py</code></p>
+<p>Cross-machine DAG execution:</p>
+<ul>
+<li><strong>WorkerRegistry</strong>: Worker registration, capability matching, load balancing, heartbeat detection</li>
+<li><strong>TaskDispatcher</strong>: Dispatch strategies (Least Loaded / Capability-based / LOCAL_FIRST)</li>
+<li><strong>Transport</strong>: Local/remote communication abstraction (LocalTransport for testing)</li>
+<li><strong>DistributedDAG</strong>: Adds distributed layer on top of local TaskGraph
+<ul>
+<li>Auto-reassignment on Worker failure</li>
+<li>Mixed execution (partially local, partially remote)</li>
+</ul>
+</li>
+</ul>
+<h3 id="93-knowledge-graph">9.3 Knowledge Graph</h3>
+<p><strong>Files</strong>: <code>memory/knowledge_graph.py</code></p>
+<p>Structured project knowledge graph:</p>
+<ul>
+<li>Entity-Relation graph (module, class, function, api_endpoint, data_table, decision)</li>
+<li>RAG query support</li>
+<li>Project structure, dependencies, API endpoints, design decision tracking</li>
+</ul>
+<h3 id="94-dreaming-memory-reorganization">9.4 Dreaming (Memory Reorganization)</h3>
+<p><strong>Files</strong>: <code>memory/dreaming.py</code></p>
+<p>Runs asynchronous memory organization after DAG completion:</p>
+<ul>
+<li>Extracts key decisions, error patterns, file changes</li>
+<li>Writes to L3 long-term knowledge base</li>
+<li>Auto-loads relevant memories for the next task of the same type</li>
+</ul>
+<h3 id="95-episodic-memory">9.5 Episodic Memory</h3>
+<p><strong>Files</strong>: <code>memory/episodic.py</code>, <code>memory/episodic_utils.py</code></p>
+<p>Episodic memory system that tracks task execution experiences.</p>
+<h3 id="96-skill-marketplace">9.6 Skill Marketplace</h3>
+<p><strong>Files</strong>: <code>skills/marketplace.py</code>, <code>skills/_registry.py</code>, <code>skills/_loader.py</code>, <code>skills/_executor.py</code></p>
+<ul>
+<li>Built-in skills: brainstorming, code_review, code_simplifier, deep_research, inbox_digest, log_analyzer</li>
+<li>Market skills: catalog.json management, HTTP/Git download</li>
+<li>Security: SSRF protection (ALLOWED_SOURCE_HOSTS allowlist), path traversal prevention</li>
+</ul>
+<h3 id="97-feature-registry">9.7 Feature Registry</h3>
+<p><strong>Files</strong>: <code>providers/advanced/features.py</code>, <code>providers/advanced/thinking.py</code></p>
+<ul>
+<li>Vendor-agnostic model capability declarations</li>
+<li>Adaptive thinking (differential configuration for Opus/Sonnet/Haiku)</li>
+<li>Effort levels (reasoning intensity control)</li>
+</ul>
+<h3 id="98-cost-tracker">9.8 Cost Tracker</h3>
+<p><strong>Files</strong>: <code>orchestrator/cost_tracker.py</code></p>
+<p>Token usage tracking + cost calculation.</p>
+<h3 id="99-self-healer">9.9 Self-Healer</h3>
+<p><strong>Files</strong>: <code>orchestrator/self_healer.py</code></p>
+<p>Automatic error repair: Diagnoses failure causes, automatically adjusts strategy and retries.</p>
+<h3 id="910-compaction">9.10 Compaction</h3>
+<p><strong>Files</strong>: <code>orchestrator/advanced/compaction.py</code></p>
+<p>Advanced context compression strategies.</p>
+<h3 id="911-task-queue">9.11 Task Queue</h3>
+<p><strong>Files</strong>: <code>orchestrator/task_queue.py</code></p>
+<p>Priority task queue.</p>
+<hr>
+<h2 id="10-mcp-server-ecosystem">10. MCP Server Ecosystem</h2>
+<h3 id="101-core-servers">10.1 Core Servers</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Server</th><th>File</th><th>Features</th></tr></thead><tbody><tr><td><strong>Filesystem</strong></td><td><code>filesystem_server.py</code></td><td>File read/write, directory operations, symlinks</td></tr><tr><td><strong>Terminal</strong></td><td><code>terminal_server.py</code></td><td>Shell command execution, Policy Engine enforcement</td></tr><tr><td><strong>GitHub</strong></td><td><code>github_server.py</code></td><td>Git operations, PR management</td></tr><tr><td><strong>Web Search</strong></td><td><code>web_search_server.py</code></td><td>Web search (DDGS)</td></tr><tr><td><strong>Database</strong></td><td><code>database_server.py</code></td><td>Database operations</td></tr><tr><td><strong>SQLite</strong></td><td><code>sqlite_server.py</code></td><td>SQLite exploration and queries</td></tr></tbody></table>
+<h3 id="102-advanced-servers">10.2 Advanced Servers</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Server</th><th>File</th><th>Features</th></tr></thead><tbody><tr><td><strong>Browser</strong></td><td><code>browser_server.py</code></td><td>Browser automation</td></tr><tr><td><strong>Computer Use</strong></td><td><code>computer_use_server.py</code></td><td>Desktop operations (Argus Agent)</td></tr><tr><td><strong>Smart Edit</strong></td><td><code>smart_edit_server.py</code></td><td>Intelligent file editing</td></tr><tr><td><strong>Excel</strong></td><td><code>excel_server.py</code></td><td>Excel operations</td></tr><tr><td><strong>Pandoc</strong></td><td><code>pandoc_server.py</code></td><td>Document format conversion</td></tr><tr><td><strong>Knowledge Graph</strong></td><td><code>knowledge_graph_server.py</code></td><td>Knowledge graph queries</td></tr><tr><td><strong>Memory</strong></td><td><code>memory_server.py</code></td><td>Memory storage and retrieval</td></tr><tr><td><strong>Mindmap</strong></td><td><code>mindmap_server.py</code></td><td>Mind map generation</td></tr><tr><td><strong>Multimodal</strong></td><td><code>multimodal_server.py</code></td><td>Multimodal processing</td></tr><tr><td><strong>Summarizer</strong></td><td><code>summarizer_server.py</code></td><td>Document summarization</td></tr><tr><td><strong>Alchemy</strong></td><td><code>alchemy_server.py</code></td><td>Data transformation</td></tr><tr><td><strong>Calculator</strong></td><td><code>calculator_server.py</code></td><td>Calculator</td></tr><tr><td><strong>Stub</strong></td><td><code>stub_server.py</code></td><td>Test stub Server</td></tr></tbody></table>
+<h3 id="103-computer-use-subsystem">10.3 Computer Use Subsystem</h3>
+<p><strong>Files</strong>: <code>mcp_servers/computer_use/</code> (12 files)</p>
+<p>Argus Agent architecture:</p>
+<ul>
+<li><code>argus_agent.py</code>: Core Agent logic</li>
+<li><code>argus_computer_tool.py</code>: Computer operation tools</li>
+<li><code>argus_model_detect.py</code>: Model detection</li>
+<li><code>argus_safety.py</code>: Safety checks</li>
+<li><code>argus_screen.py</code>: Screen capture</li>
+<li><code>input_control.py</code>: Input control (mouse, keyboard)</li>
+<li><code>ocr.py</code>: Text recognition</li>
+<li><code>screenshot.py</code>: Screenshot</li>
+<li><code>screen_info.py</code>: Screen information</li>
+<li><code>security.py</code>: Security policies</li>
+<li><code>types.py</code>: Type definitions</li>
+</ul>
+<hr>
+<h2 id="11-frontend-desktop-gui">11. Frontend Desktop GUI</h2>
+<p><strong>Path</strong>: <code>desktop/app/</code></p>
+<h3 id="111-core-components">11.1 Core Components</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Component</th><th>File</th><th>Features</th></tr></thead><tbody><tr><td><strong>PromptBox</strong></td><td><code>components/chat/PromptBox.tsx</code></td><td>Main chat input (effort slider, model dropdown, Ultracode)</td></tr><tr><td><strong>OmniPromptBox</strong></td><td><code>components/omni/OmniPromptBox.tsx</code></td><td>Multimodal input (file upload, paste, drag-and-drop)</td></tr><tr><td><strong>OmniPane</strong></td><td><code>components/omni/OmniPane.tsx</code></td><td>Omni panel (streaming output, error handling)</td></tr><tr><td><strong>MessageList</strong></td><td><code>components/chat/MessageList.tsx</code></td><td>Message list</td></tr></tbody></table>
+<h3 id="112-state-management">11.2 State Management</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Store</th><th>File</th><th>Features</th></tr></thead><tbody><tr><td>settingsStore</td><td><code>stores/settingsStore.ts</code></td><td>Global settings</td></tr><tr><td>chatStore</td><td><code>stores/chatStore.ts</code></td><td>Chat state</td></tr><tr><td>sessionStore</td><td><code>stores/sessionStore.ts</code></td><td>Session management</td></tr></tbody></table>
+<h3 id="113-tech-stack">11.3 Tech Stack</h3>
+<ul>
+<li>React + TypeScript</li>
+<li>Vite build</li>
+<li>Zustand state management</li>
+<li>SSE streaming</li>
+</ul>
+<h3 id="114-build-commands">11.4 Build Commands</h3>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#005CC5">cd</span><span style="color:#032F62"> desktop/app</span></span>
+<span class="line"><span style="color:#6F42C1">npm</span><span style="color:#032F62"> run</span><span style="color:#032F62"> build</span><span style="color:#6A737D">    # vite build</span></span>
+<span class="line"><span style="color:#6F42C1">npx</span><span style="color:#032F62"> tsc</span><span style="color:#005CC5"> --noEmit</span><span style="color:#6A737D"> # type check</span></span></code></pre>
+<hr>
+<h2 id="12-file-structure-index">12. File Structure Index</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>ALL-AGENT-v4.5.0-Omni3-20260601/</span></span>
+<span class="line"><span>├── agents/                    # Agent implementations</span></span>
+<span class="line"><span>│   ├── base.py               # Agent base class + AgentSpec + AgentResult</span></span>
+<span class="line"><span>│   ├── planner.py            # PlannerAgent</span></span>
+<span class="line"><span>│   ├── coder.py              # CoderAgent</span></span>
+<span class="line"><span>│   ├── reviewer.py           # SubReviewer + GlobalReviewer</span></span>
+<span class="line"><span>│   ├── debugger.py           # DebuggerAgent</span></span>
+<span class="line"><span>│   ├── finalizer.py          # FinalizerAgent</span></span>
+<span class="line"><span>│   ├── computer_use_agent.py # ComputerUseAgent</span></span>
+<span class="line"><span>│   ├── registry.py           # AgentRegistry (declarative loading)</span></span>
+<span class="line"><span>│   └── advanced/advisor.py   # Advanced Advisor Agent</span></span>
+<span class="line"><span>├── providers/                 # Model Provider abstraction</span></span>
+<span class="line"><span>│   ├── base.py               # Provider ABC</span></span>
+<span class="line"><span>│   ├── anthropic.py          # Anthropic native</span></span>
+<span class="line"><span>│   ├── openai.py             # OpenAI adapter</span></span>
+<span class="line"><span>│   ├── gemini.py             # Gemini adapter</span></span>
+<span class="line"><span>│   ├── fallback.py           # Multi-provider fallback</span></span>
+<span class="line"><span>│   └── advanced/             # Features + Thinking</span></span>
+<span class="line"><span>├── hub/                       # MCP Hub core</span></span>
+<span class="line"><span>│   ├── client.py             # MCP Client (stdio JSON-RPC)</span></span>
+<span class="line"><span>│   ├── registry.py           # ToolRegistry</span></span>
+<span class="line"><span>│   ├── router.py             # Tool routing + MCP filtering</span></span>
+<span class="line"><span>│   ├── gateway.py            # Runtime mode dispatch</span></span>
+<span class="line"><span>│   ├── model_manager.py      # ModelManager</span></span>
+<span class="line"><span>│   ├── permissions.py        # PermissionManager</span></span>
+<span class="line"><span>│   ├── policy_engine.py      # Policy Engine</span></span>
+<span class="line"><span>│   ├── tool_capability.py    # ToolCapability metadata</span></span>
+<span class="line"><span>│   ├── server_manager.py     # MCP Server management</span></span>
+<span class="line"><span>│   ├── admin_tools.py        # Admin tools</span></span>
+<span class="line"><span>│   ├── mcp_resources.py      # MCP resources</span></span>
+<span class="line"><span>│   └── advanced/             # Citations, CodeExecution, ComputerUse, Detector, ToolSearch</span></span>
+<span class="line"><span>├── runtime/                   # Runtime modes</span></span>
+<span class="line"><span>│   ├── base_mode.py          # BaseMode ABC</span></span>
+<span class="line"><span>│   ├── hoshiai.py            # Full standalone</span></span>
+<span class="line"><span>│   ├── swing.py              # MCP aggregation</span></span>
+<span class="line"><span>│   ├── cadence.py            # Lightweight standalone</span></span>
+<span class="line"><span>│   └── apothosis_mode.py     # Apotheosis mode</span></span>
+<span class="line"><span>├── orchestrator/              # Orchestrator</span></span>
+<span class="line"><span>│   ├── orchestrator.py       # Central dispatcher</span></span>
+<span class="line"><span>│   ├── task_graph.py         # DAG</span></span>
+<span class="line"><span>│   ├── task_lifecycle.py     # State machine</span></span>
+<span class="line"><span>│   ├── event_bus.py          # Event Bus</span></span>
+<span class="line"><span>│   ├── context.py            # L0-L3 Context</span></span>
+<span class="line"><span>│   ├── context_snapshot.py   # Context Snapshot</span></span>
+<span class="line"><span>│   ├── blackboard.py         # Blackboard + RingBuffer + GC</span></span>
+<span class="line"><span>│   ├── recovery.py           # Checkpoint + Recovery</span></span>
+<span class="line"><span>│   ├── conflict.py           # Conflict detection</span></span>
+<span class="line"><span>│   ├── cost_tracker.py       # Cost tracking</span></span>
+<span class="line"><span>│   ├── self_healer.py        # Self-healing</span></span>
+<span class="line"><span>│   ├── task_queue.py         # Task queue</span></span>
+<span class="line"><span>│   ├── advanced/compaction.py # Advanced compaction</span></span>
+<span class="line"><span>│   └── distributed/          # Distributed DAG</span></span>
+<span class="line"><span>│       ├── distributed_dag.py</span></span>
+<span class="line"><span>│       ├── worker_registry.py</span></span>
+<span class="line"><span>│       ├── task_dispatcher.py</span></span>
+<span class="line"><span>│       └── transport.py</span></span>
+<span class="line"><span>├── mcp_servers/               # MCP Server implementations (18)</span></span>
+<span class="line"><span>│   ├── filesystem_server.py</span></span>
+<span class="line"><span>│   ├── terminal_server.py</span></span>
+<span class="line"><span>│   ├── github_server.py</span></span>
+<span class="line"><span>│   ├── browser_server.py</span></span>
+<span class="line"><span>│   ├── computer_use_server.py</span></span>
+<span class="line"><span>│   ├── database_server.py</span></span>
+<span class="line"><span>│   ├── ... (18 total)</span></span>
+<span class="line"><span>│   └── computer_use/         # Computer Use subsystem (12 files)</span></span>
+<span class="line"><span>├── memory/                    # Memory system</span></span>
+<span class="line"><span>│   ├── store.py              # MemoryStore</span></span>
+<span class="line"><span>│   ├── summarize.py          # Summarization</span></span>
+<span class="line"><span>│   ├── dreaming.py           # Memory reorganization</span></span>
+<span class="line"><span>│   ├── knowledge_graph.py    # Knowledge graph</span></span>
+<span class="line"><span>│   ├── episodic.py           # Episodic memory</span></span>
+<span class="line"><span>│   ├── checkpoints.py        # Checkpoints</span></span>
+<span class="line"><span>│   └── memory_tools.py       # Memory tools</span></span>
+<span class="line"><span>├── security/                  # Security module</span></span>
+<span class="line"><span>│   ├── sandbox.py            # Sandbox</span></span>
+<span class="line"><span>│   ├── allowlist.py          # Allowlist</span></span>
+<span class="line"><span>│   ├── denylist.py           # Denylist</span></span>
+<span class="line"><span>│   ├── approvals.py          # Approval workflow</span></span>
+<span class="line"><span>│   ├── docker_sandbox.py     # Docker sandbox</span></span>
+<span class="line"><span>│   └── cu_security/          # Computer Use security</span></span>
+<span class="line"><span>├── skills/                    # Skill system</span></span>
+<span class="line"><span>│   ├── marketplace.py        # Skill marketplace</span></span>
+<span class="line"><span>│   ├── _registry.py          # Skill registry</span></span>
+<span class="line"><span>│   ├── _loader.py            # Skill loader</span></span>
+<span class="line"><span>│   ├── _executor.py          # Skill executor</span></span>
+<span class="line"><span>│   ├── built_in/             # Built-in skills (6)</span></span>
+<span class="line"><span>│   └── market/               # Market skill catalog</span></span>
+<span class="line"><span>├── features/                  # Feature modules</span></span>
+<span class="line"><span>│   ├── base.py               # NewFeatureBase</span></span>
+<span class="line"><span>│   ├── milestone_management.py</span></span>
+<span class="line"><span>│   ├── progress_tracking.py</span></span>
+<span class="line"><span>│   ├── dependency_management.py</span></span>
+<span class="line"><span>│   ├── knowledge_sharing.py</span></span>
+<span class="line"><span>│   └── documentation_generation.py</span></span>
+<span class="line"><span>├── apothosis/                 # Self-optimizing engine</span></span>
+<span class="line"><span>│   ├── engine.py             # Five-layer engine</span></span>
+<span class="line"><span>│   ├── adaptive.py           # Adaptive</span></span>
+<span class="line"><span>│   ├── observability.py      # Observability</span></span>
+<span class="line"><span>│   ├── evolution.py          # Self-evolution</span></span>
+<span class="line"><span>│   └── healer.py             # Self-healing</span></span>
+<span class="line"><span>├── evaluation/                # Evaluation framework</span></span>
+<span class="line"><span>│   ├── metrics.py            # Metrics</span></span>
+<span class="line"><span>│   ├── replay.py             # Replay</span></span>
+<span class="line"><span>│   └── dashboard.py          # Dashboard</span></span>
+<span class="line"><span>├── benchmark/                 # Benchmarks</span></span>
+<span class="line"><span>│   ├── eval_framework.py</span></span>
+<span class="line"><span>│   └── smoke_tests.py</span></span>
+<span class="line"><span>├── model_router/              # Model router</span></span>
+<span class="line"><span>│   ├── router.py</span></span>
+<span class="line"><span>│   ├── anthropic_provider.py</span></span>
+<span class="line"><span>│   ├── openai_provider.py</span></span>
+<span class="line"><span>│   ├── google_provider.py</span></span>
+<span class="line"><span>│   └── local_provider.py</span></span>
+<span class="line"><span>├── constitution/              # Constitutional AI</span></span>
+<span class="line"><span>│   └── constitution.py</span></span>
+<span class="line"><span>├── api/                       # API layer</span></span>
+<span class="line"><span>│   ├── main.py</span></span>
+<span class="line"><span>│   └── features_api.py</span></span>
+<span class="line"><span>├── cli/                       # CLI</span></span>
+<span class="line"><span>│   ├── main.py</span></span>
+<span class="line"><span>│   ├── agent_cli.py</span></span>
+<span class="line"><span>│   ├── config.py</span></span>
+<span class="line"><span>│   ├── app.py</span></span>
+<span class="line"><span>│   ├── keychain.py</span></span>
+<span class="line"><span>│   ├── setup.py</span></span>
+<span class="line"><span>│   ├── commands/</span></span>
+<span class="line"><span>│   ├── display/</span></span>
+<span class="line"><span>│   ├── engine/</span></span>
+<span class="line"><span>│   └── presets/</span></span>
+<span class="line"><span>├── desktop/                   # Desktop GUI</span></span>
+<span class="line"><span>│   ├── server.py             # FastAPI main server</span></span>
+<span class="line"><span>│   ├── schemas.py</span></span>
+<span class="line"><span>│   ├── app/                  # React + TypeScript frontend</span></span>
+<span class="line"><span>│   └── debug_dashboard.py</span></span>
+<span class="line"><span>├── frontend/</span></span>
+<span class="line"><span>│   └── debug_dashboard.py</span></span>
+<span class="line"><span>├── tests/                     # Tests (595)</span></span>
+<span class="line"><span>│   ├── unit/                 # 14 test files</span></span>
+<span class="line"><span>│   ├── integration/          # 5 test files</span></span>
+<span class="line"><span>│   ├── e2e/                  # 1 test file</span></span>
+<span class="line"><span>│   └── performance/          # 1 test file</span></span>
+<span class="line"><span>├── CLAUDE.md                  # Project specification</span></span>
+<span class="line"><span>├── README.md                  # Project description</span></span>
+<span class="line"><span>├── QUICK_START.md             # Quick start guide</span></span>
+<span class="line"><span>├── memory_ai_agent_cc.md      # Project memory file</span></span>
+<span class="line"><span>├── pyproject.toml             # Project configuration</span></span>
+<span class="line"><span>├── requirements.txt           # Dependencies</span></span>
+<span class="line"><span>├── start.py                   # Python entry point</span></span>
+<span class="line"><span>├── start.sh / start.bat       # Shell/Batch startup</span></span>
+<span class="line"><span>├── stop.sh / stop.bat         # Stop scripts</span></span>
+<span class="line"><span>└── .env                       # Environment variables</span></span></code></pre>
+<hr>
+<h2 id="13-known-limitations-and-future-directions">13. Known Limitations and Future Directions</h2>
+<h3 id="known-limitations">Known Limitations</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Limitation</th><th>Severity</th><th>Description</th></tr></thead><tbody><tr><td>Blackboard GC needs larger refactoring</td><td>Medium</td><td>task_state retention policy needs dynamic adjustment based on DAG topology</td></tr><tr><td>Context snapshot incomplete</td><td>Low</td><td>L1+L3 restored on recovery, but compression ratio can be optimized</td></tr><tr><td>Router lacks per-agent filter instance</td><td>Low</td><td>Currently uses stateless function calls, no caching across multiple filter invocations</td></tr><tr><td>context_usage is polling instead of push</td><td>Low</td><td>Frontend polls every 5s, could be switched to SSE</td></tr></tbody></table>
+<h3 id="future-directions">Future Directions</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Priority</th><th>Direction</th><th>Content</th></tr></thead><tbody><tr><td>P1</td><td>Performance benchmarks</td><td>Token budget, context compression ratio, parallel DAG throughput</td></tr><tr><td>P2</td><td>Frontend improvements</td><td>Responsive layout, dark mode optimization, mobile adaptation</td></tr><tr><td>P3</td><td>Documentation</td><td>API documentation, user guide, deployment guide</td></tr><tr><td>P4</td><td>CI/CD</td><td>GitHub Actions automated testing + deployment</td></tr></tbody></table>
+<hr>
+<p><em>This report covers all implemented features, architecture design, file structure, and known limitations of ALL-AGENT v5.0 Omni3.</em></p>  </article> </div> </div>  </main> <footer class="footer-border" style="padding: 2.5rem 1.5rem; text-align: center; font-size: 0.8125rem; color: #9a938c; background: #f5f0eb;" data-astro-cid-37fxchfa> <p data-astro-cid-37fxchfa>&copy; 2026 AI Portfolio. Crafted with precision.</p> </footer> </body></html>  <script type="module">function l(){const s=document.querySelector(".markdown-content"),o=document.getElementById("toc");if(!s||!o)return;o.innerHTML="";const a=s.querySelectorAll("h2, h3");a.forEach((e,n)=>{const r=e.id||`heading-${n}`;e.id=r;const t=document.createElement("a");t.href=`#${r}`,t.textContent=e.textContent?.trim()||"",t.style.display="block",t.style.padding="0.2rem 0",t.style.color=e.tagName==="H2"?"#1a1a1a":"#9a938c",t.style.textDecoration="none",t.style.transition="color 0.15s ease",t.style.paddingLeft=e.tagName==="H3"?"0.75rem":"0",t.style.fontSize=e.tagName==="H3"?"0.75rem":"0.8125rem",t.style.opacity="0.85",o.appendChild(t)});const i=new IntersectionObserver(e=>{e.forEach(n=>{if(n.isIntersecting){const r=n.target.id;o.querySelectorAll("a").forEach(t=>{const c=t.getAttribute("href")===`#${r}`;t.style.opacity=c?"1":"0.85",t.style.color=c?"#1a1a1a":"",t.style.fontWeight=c?"600":""})}})},{rootMargin:"-80px 0px -70% 0px"});a.forEach(e=>i.observe(e))}l();document.addEventListener("astro:page-load",l);</script>

@@ -1,0 +1,1005 @@
+<!DOCTYPE html><html lang="zh" data-theme="database" class="scroll-smooth" data-astro-cid-37fxchfa> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="AI原生数据库操作系统，Claude API，9种角色组合，AST验证+风险引擎"><title>Aetherion v1.0 | AI Portfolio</title><link rel="icon" type="image/svg+xml" href="../../../../favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="../../../../_astro/BaseLayout.BuAdYsho.css">
+<style>@media(min-width:1024px){.toc-sidebar[data-astro-cid-fz5pa65a]{display:block!important}}
+</style></head> <body data-astro-cid-37fxchfa> <nav class="nav-bar fixed top-0 left-0 right-0 z-50" style="height: 56px;" data-astro-cid-37fxchfa> <div style="max-width: 80rem; margin: 0 auto; height: 100%; display: flex; align-items: center; padding: 0 1.5rem;" data-astro-cid-37fxchfa> <!-- Logo --> <a href="../../../index.html" class="nav-logo" data-astro-cid-37fxchfa>AI Portfolio</a> <!-- Spacer --> <div style="flex: 1;" data-astro-cid-37fxchfa></div> <!-- Desktop nav links (center) --> <div class="desktop-nav" style="display: flex; align-items: center; gap: 2rem; position: absolute; left: 50%; transform: translateX(-50%);" data-astro-cid-37fxchfa> <a href="../../../index.html" class="nav-link" data-astro-cid-37fxchfa>首页</a> <a href="../../../index.html#products" class="nav-link" data-astro-cid-37fxchfa>产品</a> <a href="../../../index.html#research" class="nav-link" data-astro-cid-37fxchfa>研究</a> <a href="../../../about/index.html" class="nav-link" data-astro-cid-37fxchfa>About</a> </div> <!-- Right side --> <div style="display: flex; align-items: center; gap: 0.5rem;" data-astro-cid-37fxchfa> <a href="../../../index.html" style="font-size: 0.8125rem; font-weight: 500; text-decoration: none; padding: 0.375rem 0.625rem; border-radius: 4px; transition: all 0.15s ease; background: #1a1a1a; color: #fff;" data-astro-cid-37fxchfa>中文</a> <a href="../../../../en/index.html" style="font-size: 0.8125rem; font-weight: 500; text-decoration: none; padding: 0.375rem 0.625rem; border-radius: 4px; transition: all 0.15s ease; color: #6b6560; border: 1px solid #d6cec4;" data-astro-cid-37fxchfa>EN</a> <!-- Mobile hamburger --> <button class="mobile-menu-btn" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu" data-astro-cid-37fxchfa> <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" data-astro-cid-37fxchfa> <path d="M3 6h14M3 10h14M3 14h14" data-astro-cid-37fxchfa></path> </svg> </button> </div> </div> </nav> <!-- Mobile nav --> <div class="mobile-nav" data-astro-cid-37fxchfa> <a href="../../../index.html" data-astro-cid-37fxchfa>首页</a> <a href="../../../index.html#products" data-astro-cid-37fxchfa>产品</a> <a href="../../../index.html#research" data-astro-cid-37fxchfa>研究</a> <a href="../../../about/index.html" data-astro-cid-37fxchfa>About</a> <a href="../../../../en/index.html" data-astro-cid-37fxchfa>English</a> </div> <main class="min-h-screen" style="padding-top: 56px;" data-astro-cid-37fxchfa>  <div style="max-width: 80rem; margin: 0 auto; padding: 0 1.5rem;" data-astro-cid-fz5pa65a> <!-- Breadcrumb --> <nav style="padding: 1rem 0; font-size: 0.8125rem; color: #9a938c; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;" data-astro-cid-fz5pa65a> <a href="../../../index.html" style="color: #6b6560; text-decoration: none; transition: opacity 0.15s;" data-astro-cid-fz5pa65a>首页</a>  <span style="color: #c4bdb4;" data-astro-cid-fz5pa65a>/</span> <a href="../../../index.html#products" style="color: #6b6560; text-decoration: none; transition: opacity 0.15s;" data-astro-cid-fz5pa65a>产品</a> <span style="color: #c4bdb4;" data-astro-cid-fz5pa65a>/</span> <a href="../../../index.html#products" style="color: #6b6560; text-decoration: none; transition: opacity 0.15s;" data-astro-cid-fz5pa65a>AI Database</a> <span style="color: #c4bdb4;" data-astro-cid-fz5pa65a>/</span> <span style="color: #1a1a1a;" data-astro-cid-fz5pa65a>Aetherion v1.0</span> </nav> <div style="display: flex; gap: 3rem; padding-bottom: 4rem;" data-astro-cid-fz5pa65a> <!-- Sidebar TOC --> <aside style="width: 14rem; flex-shrink: 0; display: none;" class="toc-sidebar" data-astro-cid-fz5pa65a> <div style="position: sticky; top: 5rem;" data-astro-cid-fz5pa65a> <p style="font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #9a938c; margin-bottom: 0.75rem;" data-astro-cid-fz5pa65a>目录</p> <nav id="toc" style="font-size: 0.8125rem; line-height: 1.6;" data-astro-cid-fz5pa65a></nav> </div> </aside> <!-- Content --> <article class="markdown-content" style="flex: 1; min-width: 0; max-width: 48rem;" data-astro-cid-fz5pa65a> <!-- Category badge --> <div style="margin-bottom: 1rem;" data-astro-cid-fz5pa65a> <span style="display: inline-block; font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9a938c; padding: 0.25rem 0.625rem; border: 1px solid #d6cec4; border-radius: 4px;" data-astro-cid-fz5pa65a> AI Database </span> </div> <h1 style="font-size: 2.25rem; font-weight: 700; color: #1a1a1a; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 0.75rem; font-family: var(--font-heading); border: none; padding: 0;" data-astro-cid-fz5pa65a> Aetherion v1.0 </h1> <p style="font-size: 1rem; color: #6b6560; line-height: 1.7; margin-bottom: 2rem;" data-astro-cid-fz5pa65a> AI原生数据库操作系统，Claude API，9种角色组合，AST验证+风险引擎 </p> <div style="height: 1px; background: #d6cec4; margin-bottom: 2rem;" data-astro-cid-fz5pa65a></div>  <h1 id="aetherion-v10--功能报告">Aetherion v1.0 — 功能报告</h1>
+<blockquote>
+<p>AI-Native Database Operating System</p>
+</blockquote>
+<p><strong>版本:</strong> 0.1.0
+<strong>日期:</strong> 2026-05-30
+<strong>技术栈:</strong> Python 3.11+ · FastAPI · React 18 · Vite · TailwindCSS 4 · Anthropic SDK</p>
+<hr>
+<h2 id="一项目概述">一、项目概述</h2>
+<p>Aetherion 是一个 <strong>AI 原生数据库操作系统</strong>，将数据库从被动存储转变为智能协作系统。它通过 Anthropic Claude API 实现自然语言到 SQL 的转换、数据库分析、风险评估和自主优化，同时提供严格的安全治理框架。</p>
+<p>核心理念：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>数据库不应只是存储信息。</span></span>
+<span class="line"><span>它们应当理解、分析、优化并协作。</span></span></code></pre>
+<hr>
+<h2 id="二系统架构">二、系统架构</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>┌─────────────────────────────────────────────────────────────┐</span></span>
+<span class="line"><span>│                    用户界面层                                 │</span></span>
+<span class="line"><span>│            Vite + React + TailwindCSS 4                      │</span></span>
+<span class="line"><span>│  ┌──────────┬──────────┬──────────┬──────────┬──────────┐    │</span></span>
+<span class="line"><span>│  │ AI Chat  │ Database │ Security │ Monitor  │ Settings │    │</span></span>
+<span class="line"><span>│  └────┬─────┴────┬─────┴────┬─────┴────┬─────┴────┬─────┘    │</span></span>
+<span class="line"><span>│       │ REST API │ SSE      │ REST     │ REST     │ REST     │</span></span>
+<span class="line"><span>└───────┼──────────┼──────────┼──────────┼──────────┼──────────┘</span></span>
+<span class="line"><span>        │          │          │          │          │</span></span>
+<span class="line"><span>┌───────▼──────────▼──────────▼──────────▼──────────▼──────────┐</span></span>
+<span class="line"><span>│                   FastAPI Backend (Python)                     │</span></span>
+<span class="line"><span>│  ┌────────────────────────────────────────────────────────┐   │</span></span>
+<span class="line"><span>│  │              GovernanceMatrix（核心编排器）               │   │</span></span>
+<span class="line"><span>│  │                                                        │   │</span></span>
+<span class="line"><span>│  │  ┌─────────────┐  ┌──────────────┐  ┌──────────────┐  │   │</span></span>
+<span class="line"><span>│  │  │ 认知引擎层   │  │ 安全治理层    │  │ 数据访问层    │  │   │</span></span>
+<span class="line"><span>│  │  │             │  │              │  │              │  │   │</span></span>
+<span class="line"><span>│  │  │ Hōkiboshi   │  │ AST Validator│  │ SQLite       │  │   │</span></span>
+<span class="line"><span>│  │  │ Sfumato     │  │ Risk Engine  │  │ PostgreSQL   │  │   │</span></span>
+<span class="line"><span>│  │  │ Vivace      │  │ Role Registry│  │              │  │   │</span></span>
+<span class="line"><span>│  │  └──────┬──────┘  └──────┬───────┘  └──────┬───────┘  │   │</span></span>
+<span class="line"><span>│  │         └────────────────┼─────────────────┘           │   │</span></span>
+<span class="line"><span>│  │                    ┌─────▼─────┐                       │   │</span></span>
+<span class="line"><span>│  │                    │ 审计日志   │                       │   │</span></span>
+<span class="line"><span>│  │                    └───────────┘                       │   │</span></span>
+<span class="line"><span>│  └────────────────────────────────────────────────────────┘   │</span></span>
+<span class="line"><span>└───────────────────────────────────────────────────────────────┘</span></span></code></pre>
+<hr>
+<h2 id="三双层执行矩阵">三、双层执行矩阵</h2>
+<p>Aetherion 的核心设计是 <strong>执行权限层 × 认知智能层</strong> 的双层矩阵，产生 9 种独立 AI 角色。</p>
+<h3 id="31-执行权限层what--ai-被允许做什么">3.1 执行权限层（WHAT — AI 被允许做什么）</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>模式</th><th>说明</th><th>安全等级</th></tr></thead><tbody><tr><td><code>plan</code></td><td>只读模式。AI 可以分析 schema、生成 SQL、模拟执行、解释查询计划，但不能修改数据库。</td><td>最高</td></tr><tr><td><code>allow_edit</code></td><td>人机协作模式。AI 可执行查询、修改记录、优化表、创建索引，但每个关键操作需要用户确认。</td><td>中等</td></tr><tr><td><code>bypass</code></td><td>全自主执行模式。AI 可自主优化系统、执行迁移、修复性能问题。Guardian 系统仍阻止致命操作。</td><td>受控</td></tr></tbody></table>
+<h3 id="32-认知智能层how--ai-如何思考和推理">3.2 认知智能层（HOW — AI 如何思考和推理）</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>引擎</th><th>代号</th><th>映射模型</th><th>特点</th><th>Token 消耗</th></tr></thead><tbody><tr><td><strong>Hōkiboshi</strong></td><td>彗星</td><td>Claude Opus</td><td>深度系统推理，Extended Thinking，多步推理链</td><td>极高</td></tr><tr><td><strong>Sfumato</strong></td><td>晕涂法</td><td>Claude Sonnet</td><td>探索性推理，假设驱动，模糊推理，模式发现</td><td>中高</td></tr><tr><td><strong>Vivace</strong></td><td>活泼</td><td>Claude Haiku</td><td>高速执行，最小延迟，工具优先，快速查询生成</td><td>低</td></tr></tbody></table>
+<h3 id="33-九种角色组合">3.3 九种角色组合</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>Hōkiboshi</th><th>Sfumato</th><th>Vivace</th></tr></thead><tbody><tr><td><strong>Plan</strong></td><td>战略数据库分析师</td><td>探索性 BI 助手</td><td>快速 SQL 助手</td></tr><tr><td><strong>Allow Edit</strong></td><td>高级 DBA 副驾驶</td><td>研究型分析师</td><td>操作执行助手</td></tr><tr><td><strong>Bypass</strong></td><td>自主数据库架构师</td><td>自主研究代理</td><td>高频基础设施代理</td></tr></tbody></table>
+<hr>
+<h2 id="四核心模块详解">四、核心模块详解</h2>
+<h3 id="41-认知引擎aetherionai">4.1 认知引擎（<code>aetherion/ai/</code>）</h3>
+<p><strong>客户端（<code>client.py</code>）</strong></p>
+<ul>
+<li>封装 Anthropic Python SDK，支持自定义 API 地址和密钥</li>
+<li>Prompt Caching：系统提示和 Schema 上下文使用 <code>ephemeral</code> 缓存控制</li>
+<li>流式输出：<code>stream_message()</code> 实时返回文本块</li>
+<li>Extended Thinking：Hōkiboshi 模式下启用深度推理（<code>thinking_budget=10000</code>）</li>
+<li>Token 追踪：记录 input/output/cache_read/cache_creation tokens 和成本估算</li>
+<li>环境冲突自动清理：检测并清除 <code>ANTHROPIC_AUTH_TOKEN</code> 等 Claude Code 会话遗留变量</li>
+</ul>
+<p><strong>认知引擎基类（<code>cognitive_engine.py</code>）</strong></p>
+<ul>
+<li>抽象接口：<code>build_reasoning_chain()</code> 和 <code>get_tools()</code> 由各引擎实现</li>
+<li>自动路由：根据 <code>thinking_budget</code> 选择 Extended Thinking / Tool Use / Simple Message 模式</li>
+<li>Schema 上下文注入：通过 <code>schema_context</code> 参数传递数据库结构</li>
+</ul>
+<p><strong>三个引擎实现：</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>引擎</th><th>系统提示风格</th><th>工具集</th><th>max_tokens</th><th>thinking_budget</th></tr></thead><tbody><tr><td>Hōkiboshi</td><td>结构化、系统性、多步推理</td><td><code>analyze_schema</code>, <code>explain_query</code>, <code>execute_readonly_query</code>, <code>analyze_indexes</code></td><td>8192</td><td>10000</td></tr><tr><td>Sfumato</td><td>叙事性、探索性、假设驱动</td><td><code>explore_table</code>, <code>run_query</code>, <code>find_correlations</code>, <code>detect_anomalies</code></td><td>4096</td><td>0</td></tr><tr><td>Vivace</td><td>简洁、行动导向、工具优先</td><td><code>execute_query</code>, <code>get_table_info</code>, <code>show_tables</code></td><td>2048</td><td>0</td></tr></tbody></table>
+<h3 id="42-数据库适配器aetheriondb">4.2 数据库适配器（<code>aetherion/db/</code>）</h3>
+<p><strong>抽象基类（<code>base.py</code>）</strong></p>
+<ul>
+<li>统一接口：<code>connect()</code>, <code>disconnect()</code>, <code>get_schema()</code>, <code>execute()</code>, <code>explain()</code>, <code>get_stats()</code></li>
+<li>上下文管理器：<code>with adapter:</code> 自动连接/断开</li>
+<li>Schema 转字符串：<code>to_context_string()</code> 生成 AI 可读的数据库结构描述</li>
+<li>数据模型：<code>ColumnInfo</code>, <code>IndexInfo</code>, <code>ForeignKeyInfo</code>, <code>TableInfo</code>, <code>SchemaInfo</code>, <code>QueryResult</code>, <code>ExecutionPlan</code>, <code>DatabaseStats</code></li>
+</ul>
+<p><strong>SQLite 适配器（<code>sqlite_adapter.py</code>）</strong></p>
+<ul>
+<li>WAL 模式：启用 <code>PRAGMA journal_mode=WAL</code> 优化并发读性能</li>
+<li>外键约束：<code>PRAGMA foreign_keys=ON</code></li>
+<li>完整 Schema 提取：<code>PRAGMA table_info</code>, <code>PRAGMA foreign_key_list</code>, <code>PRAGMA index_list</code></li>
+<li>行数统计：<code>SELECT COUNT(*)</code> 精确计数</li>
+<li>EXPLAIN 支持：解析操作码统计 Seq Scan / Index Scan</li>
+</ul>
+<p><strong>PostgreSQL 适配器（<code>postgresql_adapter.py</code>）</strong></p>
+<ul>
+<li>通过 <code>psycopg2-binary</code> 连接</li>
+<li><code>information_schema</code> 查询列、外键、索引</li>
+<li><code>pg_indexes</code> / <code>pg_class</code> / <code>pg_stat_activity</code> 获取统计信息</li>
+<li>EXPLAIN JSON 格式输出，递归解析执行计划树</li>
+</ul>
+<h3 id="43-安全治理层aetherionsecurity">4.3 安全治理层（<code>aetherion/security/</code>）</h3>
+<p><strong>AST 验证器（<code>ast_validator.py</code>）</strong></p>
+<p>所有 AI 生成的 SQL 在执行前必须通过 AST 解析验证。使用 <code>sqlglot</code> 库。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>检查项</th><th>动作</th><th>说明</th></tr></thead><tbody><tr><td><code>DROP DATABASE</code> / <code>DROP SCHEMA</code></td><td>BLOCK</td><td>Guardian 系统永久阻止</td></tr><tr><td><code>TRUNCATE TABLE</code></td><td>BLOCK</td><td>永久阻止</td></tr><tr><td><code>DELETE</code> 无 <code>WHERE</code></td><td>BLOCK</td><td>必须指定条件</td></tr><tr><td><code>UPDATE</code> 无 <code>WHERE</code></td><td>BLOCK</td><td>必须指定条件</td></tr><tr><td><code>ALTER TABLE</code></td><td>REQUIRE_CONFIRM</td><td>需要用户确认</td></tr><tr><td><code>CREATE INDEX</code></td><td>REQUIRE_CONFIRM</td><td>可能影响写入性能</td></tr><tr><td>多语句注入</td><td>BLOCK</td><td>检测 <code>;</code> 分隔的多条 SQL</td></tr><tr><td>JOIN 数量 > 4</td><td>FLAG</td><td>警告复杂查询</td></tr></tbody></table>
+<p><strong>风险评分引擎（<code>risk_engine.py</code>）</strong></p>
+<p>三维风险评估：</p>
+<ol>
+<li><strong>风险等级</strong>：LOW → MEDIUM → HIGH → CRITICAL</li>
+<li><strong>影响范围</strong>：NONE → SINGLE_ROW → MULTI_ROW → TABLE → SCHEMA → DATABASE</li>
+<li><strong>置信度</strong>：0.0 ~ 1.0（低于阈值触发沙箱执行）</li>
+</ol>
+<p>综合评分公式：<code>score = base_risk × 0.6 + scope_factor × 0.3 + confidence_factor × 0.1</code></p>
+<p>执行路径决策：</p>
+<ul>
+<li>LOW → 所有模式直接执行</li>
+<li>MEDIUM → Bypass 直接，Allow Edit 确认，Plan 阻止</li>
+<li>HIGH → 沙箱执行 + 确认</li>
+<li>CRITICAL → Guardian 永久阻止</li>
+</ul>
+<p><strong>角色注册表（<code>role_registry.py</code>）</strong></p>
+<p>预配置 9 种角色，每种包含：</p>
+<ul>
+<li>工具白名单（限制该角色可用的工具）</li>
+<li>安全宪法类型（Safety / Research / Enterprise / Speed）</li>
+<li>Token 预算和 Thinking 预算</li>
+<li>流式输出开关</li>
+</ul>
+<h3 id="44-治理矩阵aetheriongovernancematrixpy">4.4 治理矩阵（<code>aetherion/governance/matrix.py</code>）</h3>
+<p>核心编排器，处理管道 8 步：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>用户输入 → ① 解析角色 → ② 获取 Schema → ③ 构建上下文</span></span>
+<span class="line"><span>         → ④ 获取引擎 → ⑤ AI 处理 → ⑥ 提取内容和工具调用</span></span>
+<span class="line"><span>         → ⑦ 验证 SQL（AST + Risk）→ ⑧ 执行或返回</span></span></code></pre>
+<p>支持运行时模式切换（<code>/mode hokiboshi</code>, <code>/exec bypass</code>），权限升级时发出警告。</p>
+<h3 id="45-审计日志aetherionauditloggerpy">4.5 审计日志（<code>aetherion/audit/logger.py</code>）</h3>
+<ul>
+<li>存储：SQLite append-only 数据库</li>
+<li>记录内容：时间戳、会话 ID、执行/认知模式、角色名、用户输入、生成的 SQL、风险等级、执行结果、Token 消耗</li>
+<li>查询接口：按 session_id、action、limit 过滤</li>
+<li>统计接口：总条目数、各动作计数、Token 消耗汇总</li>
+</ul>
+<h3 id="46-配置系统aetherionconfigpy">4.6 配置系统（<code>aetherion/config.py</code>）</h3>
+<p>优先级叠加：CLI 参数 > 环境变量 > 配置文件（<code>aetherion.yaml</code>）> 默认值</p>
+<p>支持的环境变量：</p>
+<ul>
+<li><code>ANTHROPIC_API_KEY</code> — API 密钥</li>
+<li><code>ANTHROPIC_BASE_URL</code> — API 基础地址（支持代理/中继服务）</li>
+<li><code>AETHERION_MODEL</code> — 默认模型名</li>
+</ul>
+<hr>
+<h2 id="五cli-命令行aetherionclipy">五、CLI 命令行（<code>aetherion/cli.py</code>）</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">aetherion</span><span style="color:#032F62"> chat</span><span style="color:#6A737D">                    # 交互式对话（默认 Vivace 模式）</span></span>
+<span class="line"><span style="color:#6F42C1">aetherion</span><span style="color:#032F62"> chat</span><span style="color:#005CC5"> --mode</span><span style="color:#032F62"> hokiboshi</span><span style="color:#6A737D">   # 深度推理模式</span></span>
+<span class="line"><span style="color:#6F42C1">aetherion</span><span style="color:#032F62"> chat</span><span style="color:#005CC5"> --mode</span><span style="color:#032F62"> sfumato</span><span style="color:#6A737D">     # 探索模式</span></span>
+<span class="line"><span style="color:#6F42C1">aetherion</span><span style="color:#032F62"> analyze</span><span style="color:#005CC5"> --db</span><span style="color:#032F62"> sqlite:x</span><span style="color:#6A737D">   # 分析数据库</span></span>
+<span class="line"><span style="color:#6F42C1">aetherion</span><span style="color:#032F62"> query</span><span style="color:#032F62"> "自然语言问题"</span><span style="color:#6A737D">      # 单次查询</span></span>
+<span class="line"><span style="color:#6F42C1">aetherion</span><span style="color:#032F62"> status</span><span style="color:#6A737D">                  # 显示当前配置</span></span>
+<span class="line"><span style="color:#6F42C1">aetherion</span><span style="color:#032F62"> serve</span><span style="color:#6A737D">                   # 启动 Web 仪表盘 API 服务器</span></span>
+<span class="line"><span style="color:#6F42C1">aetherion</span><span style="color:#032F62"> serve</span><span style="color:#005CC5"> --model</span><span style="color:#032F62"> mimo-v2.5</span><span style="color:#6A737D"> # 指定模型启动</span></span>
+<span class="line"><span style="color:#6F42C1">aetherion</span><span style="color:#032F62"> serve</span><span style="color:#005CC5"> --port</span><span style="color:#005CC5"> 8001</span><span style="color:#6A737D">       # 指定端口</span></span></code></pre>
+<p>交互模式内置命令：</p>
+<ul>
+<li><code>/mode &#x3C;hokiboshi|sfumato|vivace></code> — 切换认知模式</li>
+<li><code>/exec &#x3C;plan|allow_edit|bypass></code> — 切换执行模式</li>
+<li><code>/usage</code> — 显示 Token 消耗统计</li>
+<li><code>/schema</code> — 显示数据库结构</li>
+<li><code>/quit</code> — 退出</li>
+</ul>
+<hr>
+<h2 id="六web-仪表盘gui">六、Web 仪表盘（GUI）</h2>
+<h3 id="61-技术架构">6.1 技术架构</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>层</th><th>技术</th></tr></thead><tbody><tr><td>前端框架</td><td>React 18 + TypeScript</td></tr><tr><td>构建工具</td><td>Vite 8</td></tr><tr><td>样式</td><td>TailwindCSS 4（Vite 插件模式）</td></tr><tr><td>图标</td><td>Lucide React</td></tr><tr><td>Markdown</td><td>react-markdown</td></tr><tr><td>后端</td><td>FastAPI + Uvicorn</td></tr><tr><td>通信</td><td>REST API + SSE 流式输出</td></tr><tr><td>字体</td><td>Inter（正文）+ JetBrains Mono（代码/数据）</td></tr></tbody></table>
+<h3 id="62-设计风格">6.2 设计风格</h3>
+<p>Claude Code 终端美学：</p>
+<ul>
+<li>极深黑色背景（<code>#0d0d0d</code>）</li>
+<li>紫色品牌色（<code>#8b5cf6</code>）+ 半透明品牌色背景</li>
+<li>等宽字体用于所有代码、SQL、数据、统计数字</li>
+<li>极细滚动条（5px）</li>
+<li>无边框输入框设计，聚焦时紫色描边</li>
+<li>圆角卡片（8-12px），150ms 过渡动画</li>
+</ul>
+<h3 id="63-五大面板">6.3 五大面板</h3>
+<h4 id="-ai-对话面板默认面板">① AI 对话面板（默认面板）</h4>
+<ul>
+<li><strong>实时流式输出</strong>：通过 SSE（Server-Sent Events）逐字显示 AI 回复</li>
+<li><strong>Markdown 渲染</strong>：支持代码块、表格、列表、引用块</li>
+<li><strong>模式切换</strong>：右上角下拉选择执行模式和认知模式</li>
+<li><strong>SQL 预览</strong>：AI 生成的 SQL 以等宽代码块显示</li>
+<li><strong>角色标识</strong>：每次回复显示使用角色名和执行时间</li>
+<li><strong>阻断提示</strong>：被 Guardian 系统拦截时显示红色 BLOCKED 标签</li>
+<li><strong>输入体验</strong>：Enter 发送，Shift+Enter 换行，自动聚焦</li>
+</ul>
+<h4 id="-数据库浏览器面板">② 数据库浏览器面板</h4>
+<ul>
+<li><strong>左侧树形导航</strong>：表 → 列（主键金色钥匙图标，外键蓝色图标）→ 类型标签</li>
+<li><strong>行数统计</strong>：每张表右侧显示行数</li>
+<li><strong>查询编辑器</strong>：等宽字体 SQL 输入框，Ctrl+Enter 快速执行</li>
+<li><strong>结果表格</strong>：固定表头，hover 行高亮，NULL 值半透明显示</li>
+<li><strong>连接管理</strong>：顶部输入数据库 URL，支持 SQLite 和 PostgreSQL</li>
+<li><strong>数据库统计</strong>：表数量、总行数、文件大小</li>
+</ul>
+<h4 id="-安全与治理面板">③ 安全与治理面板</h4>
+<ul>
+<li><strong>当前模式展示</strong>：执行模式 + 认知模式下拉切换，显示当前活跃角色名和描述</li>
+<li><strong>SQL 验证器</strong>：粘贴 SQL 后一键验证，显示 AST 分析结果
+<ul>
+<li>语句类型（SELECT/INSERT/UPDATE/DELETE/DDL）</li>
+<li>表数量、JOIN 数量、是否有 WHERE 子句</li>
+<li>违规项列表（带严重度图标）</li>
+</ul>
+</li>
+<li><strong>风险评估</strong>：风险等级（带颜色标签）、评分、影响范围、置信度
+<ul>
+<li>被阻止时显示锁图标和阻止原因</li>
+</ul>
+</li>
+<li><strong>角色矩阵</strong>：展示全部 9 种角色，当前激活的角色高亮显示</li>
+</ul>
+<h4 id="-监控与审计面板">④ 监控与审计面板</h4>
+<ul>
+<li><strong>统计卡片</strong>：总条目数、输入 Token、输出 Token、动作类型数</li>
+<li><strong>动作分布</strong>：allowed / blocked / confirmed 各自的计数</li>
+<li><strong>审计日志表</strong>：时间、模式、角色、输入、SQL、风险、动作、耗时、Token 消耗
+<ul>
+<li>表头固定，hover 行高亮</li>
+<li>时间使用等宽字体对齐</li>
+</ul>
+</li>
+</ul>
+<h4 id="-设置面板模态窗口">⑤ 设置面板（模态窗口）</h4>
+<ul>
+<li><strong>API Key</strong>：密码输入框 + 显示/隐藏切换，显示当前遮罩密钥</li>
+<li><strong>Base URL</strong>：支持自定义代理/中继地址（如 <code>https://token-plan-cn.xiaomimimo.com/anthropic</code>）</li>
+<li><strong>Model</strong>：支持自定义模型名（如 <code>mimo-v2.5</code>、<code>claude-sonnet-4-20250514</code>）</li>
+<li><strong>测试连接</strong>：一键测试 API 连通性，显示连接结果和模型名</li>
+<li><strong>持久化保存</strong>：配置写入 <code>aetherion.yaml</code> 文件并同时设置环境变量</li>
+<li><strong>配置路径提示</strong>：显示当前配置文件的完整路径</li>
+</ul>
+<h3 id="64-侧边栏导航">6.4 侧边栏导航</h3>
+<ul>
+<li>56px 窄栏，hover 展开至 180px，200ms 过渡</li>
+<li>四个面板导航图标 + 文字标签</li>
+<li>底部：Settings 齿轮图标 + 语言切换（中/英）</li>
+<li>当前面板以品牌色半透明背景高亮</li>
+</ul>
+<h3 id="65-国际化i18n">6.5 国际化（i18n）</h3>
+<ul>
+<li>支持中文 / 英文一键切换</li>
+<li>语言偏好存储在 <code>localStorage</code></li>
+<li>覆盖所有面板的标题、按钮、提示文字、占位符</li>
+</ul>
+<hr>
+<h2 id="七api-端点总览">七、API 端点总览</h2>
+<h3 id="71-数据库apidb">7.1 数据库（<code>/api/db</code>）</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>方法</th><th>路径</th><th>说明</th></tr></thead><tbody><tr><td><code>POST</code></td><td><code>/api/db/connect</code></td><td>连接数据库</td></tr><tr><td><code>GET</code></td><td><code>/api/db/schema</code></td><td>获取完整 Schema</td></tr><tr><td><code>GET</code></td><td><code>/api/db/tables</code></td><td>列出所有表名</td></tr><tr><td><code>GET</code></td><td><code>/api/db/tables/{name}</code></td><td>获取单表详情</td></tr><tr><td><code>POST</code></td><td><code>/api/db/query</code></td><td>执行 SQL 查询</td></tr><tr><td><code>GET</code></td><td><code>/api/db/stats</code></td><td>获取数据库统计</td></tr></tbody></table>
+<h3 id="72-ai-对话apichat">7.2 AI 对话（<code>/api/chat</code>）</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>方法</th><th>路径</th><th>说明</th></tr></thead><tbody><tr><td><code>POST</code></td><td><code>/api/chat</code></td><td>发送消息，返回完整回复</td></tr><tr><td><code>POST</code></td><td><code>/api/chat/stream</code></td><td>SSE 流式输出</td></tr><tr><td><code>GET</code></td><td><code>/api/chat/sessions</code></td><td>列出活跃会话</td></tr></tbody></table>
+<h3 id="73-安全治理apisecurity">7.3 安全治理（<code>/api/security</code>）</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>方法</th><th>路径</th><th>说明</th></tr></thead><tbody><tr><td><code>POST</code></td><td><code>/api/security/validate</code></td><td>SQL AST 验证</td></tr><tr><td><code>POST</code></td><td><code>/api/security/assess</code></td><td>风险评估</td></tr><tr><td><code>GET</code></td><td><code>/api/security/mode</code></td><td>获取当前模式</td></tr><tr><td><code>POST</code></td><td><code>/api/security/mode</code></td><td>切换模式</td></tr><tr><td><code>GET</code></td><td><code>/api/security/roles</code></td><td>列出全部 9 种角色</td></tr></tbody></table>
+<h3 id="74-审计日志apiaudit">7.4 审计日志（<code>/api/audit</code>）</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>方法</th><th>路径</th><th>说明</th></tr></thead><tbody><tr><td><code>GET</code></td><td><code>/api/audit/entries</code></td><td>查询审计日志</td></tr><tr><td><code>GET</code></td><td><code>/api/audit/stats</code></td><td>审计统计信息</td></tr></tbody></table>
+<h3 id="75-设置管理apisettings">7.5 设置管理（<code>/api/settings</code>）</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>方法</th><th>路径</th><th>说明</th></tr></thead><tbody><tr><td><code>GET</code></td><td><code>/api/settings</code></td><td>获取当前设置</td></tr><tr><td><code>PUT</code></td><td><code>/api/settings</code></td><td>更新设置（持久化到 YAML）</td></tr><tr><td><code>POST</code></td><td><code>/api/settings/test</code></td><td>测试 API 连接</td></tr></tbody></table>
+<h3 id="76-系统">7.6 系统</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>方法</th><th>路径</th><th>说明</th></tr></thead><tbody><tr><td><code>GET</code></td><td><code>/api/health</code></td><td>健康检查</td></tr></tbody></table>
+<hr>
+<h2 id="八配置系统">八、配置系统</h2>
+<h3 id="81-配置文件aetherionyaml">8.1 配置文件（<code>aetherion.yaml</code>）</h3>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#22863A">anthropic</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#22863A">  api_key</span><span style="color:#24292E">: </span><span style="color:#032F62">"your-api-key"</span></span>
+<span class="line"><span style="color:#22863A">  base_url</span><span style="color:#24292E">: </span><span style="color:#032F62">"https://api.anthropic.com"</span></span>
+<span class="line"><span style="color:#22863A">  default_model</span><span style="color:#24292E">: </span><span style="color:#032F62">"claude-sonnet-4-20250514"</span></span>
+<span class="line"><span style="color:#22863A">  max_retries</span><span style="color:#24292E">: </span><span style="color:#005CC5">3</span></span>
+<span class="line"><span style="color:#22863A">  timeout</span><span style="color:#24292E">: </span><span style="color:#005CC5">120.0</span></span>
+<span class="line"><span style="color:#22863A">database</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#22863A">  engine</span><span style="color:#24292E">: </span><span style="color:#032F62">"sqlite"</span></span>
+<span class="line"><span style="color:#22863A">  url</span><span style="color:#24292E">: </span><span style="color:#032F62">"sqlite:///aetherion.db"</span></span>
+<span class="line"><span style="color:#22863A">  pool_size</span><span style="color:#24292E">: </span><span style="color:#005CC5">5</span></span>
+<span class="line"><span style="color:#22863A">security</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#22863A">  constitution</span><span style="color:#24292E">: </span><span style="color:#032F62">"safety"</span></span>
+<span class="line"><span style="color:#22863A">  enable_sandbox</span><span style="color:#24292E">: </span><span style="color:#005CC5">true</span></span>
+<span class="line"><span style="color:#22863A">  enable_audit_log</span><span style="color:#24292E">: </span><span style="color:#005CC5">true</span></span>
+<span class="line"><span style="color:#22863A">  max_join_tables</span><span style="color:#24292E">: </span><span style="color:#005CC5">4</span></span>
+<span class="line"><span style="color:#22863A">governance</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#22863A">  execution_mode</span><span style="color:#24292E">: </span><span style="color:#032F62">"plan"</span></span>
+<span class="line"><span style="color:#22863A">  cognitive_mode</span><span style="color:#24292E">: </span><span style="color:#032F62">"vivace"</span></span></code></pre>
+<h3 id="82-环境变量">8.2 环境变量</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>变量</th><th>说明</th></tr></thead><tbody><tr><td><code>ANTHROPIC_API_KEY</code></td><td>API 密钥</td></tr><tr><td><code>ANTHROPIC_BASE_URL</code></td><td>API 基础地址</td></tr><tr><td><code>AETHERION_MODEL</code></td><td>默认模型名</td></tr></tbody></table>
+<h3 id="83-安全宪法类型">8.3 安全宪法类型</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>宪法</th><th>说明</th></tr></thead><tbody><tr><td><code>safety</code></td><td>最保守：默认拒绝所有写操作</td></tr><tr><td><code>research</code></td><td>研究导向：允许分析和探索</td></tr><tr><td><code>enterprise</code></td><td>平衡：效率与安全并重</td></tr><tr><td><code>speed</code></td><td>最快：最少审批，仍保留 Guardian 硬限制</td></tr></tbody></table>
+<hr>
+<h2 id="九项目文件结构">九、项目文件结构</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Aetherion_Project/</span></span>
+<span class="line"><span>├── aetherion/                          # Python 后端</span></span>
+<span class="line"><span>│   ├── __init__.py                     # 包初始化，版本号</span></span>
+<span class="line"><span>│   ├── config.py                       # 配置系统（Pydantic 模型 + YAML 加载）</span></span>
+<span class="line"><span>│   ├── cli.py                          # CLI 入口（Typer + Rich）</span></span>
+<span class="line"><span>│   ├── ai/</span></span>
+<span class="line"><span>│   │   ├── client.py                   # Anthropic SDK 封装</span></span>
+<span class="line"><span>│   │   ├── cognitive_engine.py         # 认知引擎抽象基类</span></span>
+<span class="line"><span>│   │   └── engines/</span></span>
+<span class="line"><span>│   │       ├── hokiboshi.py            # 深度推理引擎</span></span>
+<span class="line"><span>│   │       ├── sfumato.py              # 探索引擎</span></span>
+<span class="line"><span>│   │       └── vivace.py               # 高速引擎</span></span>
+<span class="line"><span>│   ├── db/adapters/</span></span>
+<span class="line"><span>│   │   ├── base.py                     # 数据库适配器抽象基类 + 数据模型</span></span>
+<span class="line"><span>│   │   ├── sqlite_adapter.py           # SQLite 实现</span></span>
+<span class="line"><span>│   │   └── postgresql_adapter.py       # PostgreSQL 实现</span></span>
+<span class="line"><span>│   ├── security/</span></span>
+<span class="line"><span>│   │   ├── ast_validator.py            # SQL AST 验证器</span></span>
+<span class="line"><span>│   │   └── risk_engine.py              # 风险评分引擎</span></span>
+<span class="line"><span>│   ├── governance/</span></span>
+<span class="line"><span>│   │   ├── matrix.py                   # 治理矩阵（核心编排器）</span></span>
+<span class="line"><span>│   │   └── role_registry.py            # 角色注册表</span></span>
+<span class="line"><span>│   ├── audit/</span></span>
+<span class="line"><span>│   │   └── logger.py                   # 审计日志</span></span>
+<span class="line"><span>│   └── api/</span></span>
+<span class="line"><span>│       ├── __init__.py                 # FastAPI 应用入口</span></span>
+<span class="line"><span>│       ├── schemas.py                  # Pydantic 请求/响应模型</span></span>
+<span class="line"><span>│       └── routes/</span></span>
+<span class="line"><span>│           ├── chat.py                 # AI 对话端点</span></span>
+<span class="line"><span>│           ├── db.py                   # 数据库端点</span></span>
+<span class="line"><span>│           ├── security.py             # 安全治理端点</span></span>
+<span class="line"><span>│           ├── audit.py                # 审计端点</span></span>
+<span class="line"><span>│           └── settings.py             # 设置管理端点</span></span>
+<span class="line"><span>├── frontend/                           # React 前端</span></span>
+<span class="line"><span>│   ├── index.html                      # HTML 入口（Google Fonts）</span></span>
+<span class="line"><span>│   ├── vite.config.ts                  # Vite 配置 + API 代理</span></span>
+<span class="line"><span>│   ├── src/</span></span>
+<span class="line"><span>│   │   ├── main.tsx                    # React 入口</span></span>
+<span class="line"><span>│   │   ├── App.tsx                     # 应用壳 + 面板路由</span></span>
+<span class="line"><span>│   │   ├── index.css                   # 全局样式 + 设计 Token</span></span>
+<span class="line"><span>│   │   ├── types/index.ts              # TypeScript 类型定义</span></span>
+<span class="line"><span>│   │   ├── lib/</span></span>
+<span class="line"><span>│   │   │   ├── api.ts                  # API 客户端</span></span>
+<span class="line"><span>│   │   │   ├── i18n.ts                 # 国际化（中/英）</span></span>
+<span class="line"><span>│   │   │   └── utils.ts                # 工具函数</span></span>
+<span class="line"><span>│   │   └── components/</span></span>
+<span class="line"><span>│   │       ├── Sidebar.tsx             # 侧边栏导航</span></span>
+<span class="line"><span>│   │       ├── ChatPanel.tsx           # AI 对话面板</span></span>
+<span class="line"><span>│   │       ├── DatabasePanel.tsx       # 数据库浏览器面板</span></span>
+<span class="line"><span>│   │       ├── SecurityPanel.tsx       # 安全与治理面板</span></span>
+<span class="line"><span>│   │       ├── MonitorPanel.tsx        # 监控与审计面板</span></span>
+<span class="line"><span>│   │       └── SettingsPanel.tsx       # 设置模态窗口</span></span>
+<span class="line"><span>│   └── package.json</span></span>
+<span class="line"><span>├── tests/                              # 测试目录（待编写）</span></span>
+<span class="line"><span>├── pyproject.toml                      # Python 项目配置</span></span>
+<span class="line"><span>├── chinook.sqlite                      # 测试数据库（Chinook 音乐商店）</span></span>
+<span class="line"><span>└── aetherion.yaml                      # 运行时配置文件</span></span></code></pre>
+<hr>
+<h2 id="十测试数据库">十、测试数据库</h2>
+<p>项目附带 <strong>Chinook</strong> 示例数据库（音乐商店模型）：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>表名</th><th>行数</th><th>说明</th></tr></thead><tbody><tr><td>Album</td><td>347</td><td>专辑</td></tr><tr><td>Artist</td><td>275</td><td>艺术家</td></tr><tr><td>Customer</td><td>59</td><td>客户</td></tr><tr><td>Employee</td><td>8</td><td>员工</td></tr><tr><td>Genre</td><td>25</td><td>流派</td></tr><tr><td>Invoice</td><td>412</td><td>发票</td></tr><tr><td>InvoiceLine</td><td>2240</td><td>发票明细</td></tr><tr><td>MediaType</td><td>5</td><td>媒体类型</td></tr><tr><td>Playlist</td><td>18</td><td>播放列表</td></tr><tr><td>PlaylistTrack</td><td>8715</td><td>播放列表曲目</td></tr><tr><td>Track</td><td>3503</td><td>曲目</td></tr></tbody></table>
+<p><strong>总计：</strong> 11 张表，15,607 行数据</p>
+<hr>
+<h2 id="十一已知-bug-修复记录">十一、已知 Bug 修复记录</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Bug</th><th>原因</th><th>修复方案</th></tr></thead><tbody><tr><td>配置不读取环境变量</td><td>Pydantic v2.12.5 中 <code>field_validator(mode="before")</code> 在使用默认值时不触发</td><td>改用 <code>model_validator(mode="after")</code></td></tr><tr><td>Token 追踪崩溃</td><td>MiMo 代理返回 <code>None</code> 值的 cache tokens，<code>getattr</code> 返回 <code>None</code> 而非 <code>0</code></td><td>所有 <code>getattr</code> 后加 <code>or 0</code></td></tr><tr><td>自定义模型不生效</td><td><code>get_model_for_mode()</code> 始终返回内置模型映射</td><td>检测用户自定义模型时覆盖映射</td></tr><tr><td>API 401 认证失败</td><td>Claude Code 会话遗留 <code>ANTHROPIC_AUTH_TOKEN</code> 环境变量，SDK 自动发送导致代理拒绝</td><td><code>AetherionClient.__init__</code> 中清除冲突环境变量</td></tr></tbody></table>
+<hr>
+<h2 id="十二未来路线图">十二、未来路线图</h2>
+<h3 id="phase-2">Phase 2</h3>
+<ul>
+<li>多 Agent 编排</li>
+<li>向量数据库集成</li>
+<li>查询优化引擎</li>
+<li>记忆系统</li>
+</ul>
+<h3 id="phase-3">Phase 3</h3>
+<ul>
+<li>自主基础设施管理</li>
+<li>AI 驱动的数据库迁移</li>
+<li>自修复数据库系统</li>
+<li>分布式治理框架</li>
+<li>用户认证与多租户</li>
+<li>WebSocket 实时推送安全告警</li>
+<li>更多数据库适配器（MySQL、DuckDB）</li>
+<li>单元测试与集成测试</li>
+</ul>
+<hr>
+<h2 id="十三依赖清单">十三、依赖清单</h2>
+<h3 id="python-后端">Python 后端</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>包</th><th>版本</th><th>用途</th></tr></thead><tbody><tr><td>anthropic</td><td>≥0.40.0</td><td>Claude API SDK</td></tr><tr><td>fastapi</td><td>≥0.110.0</td><td>Web API 框架</td></tr><tr><td>uvicorn</td><td>≥0.27.0</td><td>ASGI 服务器</td></tr><tr><td>sqlalchemy</td><td>≥2.0.25</td><td>ORM（预留）</td></tr><tr><td>psycopg2-binary</td><td>≥2.9.9</td><td>PostgreSQL 驱动</td></tr><tr><td>pydantic</td><td>≥2.5.0</td><td>数据验证</td></tr><tr><td>pydantic-settings</td><td>≥2.1.0</td><td>设置管理</td></tr><tr><td>sqlglot</td><td>≥20.0.0</td><td>SQL AST 解析</td></tr><tr><td>pyyaml</td><td>≥6.0.1</td><td>YAML 配置</td></tr><tr><td>rich</td><td>≥13.7.0</td><td>终端富文本</td></tr><tr><td>typer</td><td>≥0.9.0</td><td>CLI 框架</td></tr></tbody></table>
+<h3 id="前端">前端</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>包</th><th>用途</th></tr></thead><tbody><tr><td>react 18</td><td>UI 框架</td></tr><tr><td>react-dom</td><td>DOM 渲染</td></tr><tr><td>react-markdown</td><td>Markdown 渲染</td></tr><tr><td>lucide-react</td><td>图标库</td></tr><tr><td>react-router-dom</td><td>路由（预留）</td></tr><tr><td>tailwindcss 4</td><td>原子化 CSS</td></tr><tr><td>@tailwindcss/vite</td><td>Vite 集成</td></tr><tr><td>clsx + tailwind-merge</td><td>类名合并</td></tr><tr><td>vite</td><td>构建工具</td></tr><tr><td>typescript</td><td>类型安全</td></tr></tbody></table>  </article> </div> </div>  </main> <footer class="footer-border" style="padding: 2.5rem 1.5rem; text-align: center; font-size: 0.8125rem; color: #9a938c; background: #f5f0eb;" data-astro-cid-37fxchfa> <p data-astro-cid-37fxchfa>&copy; 2026 AI Portfolio. Crafted with precision.</p> </footer> </body></html>  <script type="module">function l(){const s=document.querySelector(".markdown-content"),o=document.getElementById("toc");if(!s||!o)return;o.innerHTML="";const a=s.querySelectorAll("h2, h3");a.forEach((e,n)=>{const r=e.id||`heading-${n}`;e.id=r;const t=document.createElement("a");t.href=`#${r}`,t.textContent=e.textContent?.trim()||"",t.style.display="block",t.style.padding="0.2rem 0",t.style.color=e.tagName==="H2"?"#1a1a1a":"#9a938c",t.style.textDecoration="none",t.style.transition="color 0.15s ease",t.style.paddingLeft=e.tagName==="H3"?"0.75rem":"0",t.style.fontSize=e.tagName==="H3"?"0.75rem":"0.8125rem",t.style.opacity="0.85",o.appendChild(t)});const i=new IntersectionObserver(e=>{e.forEach(n=>{if(n.isIntersecting){const r=n.target.id;o.querySelectorAll("a").forEach(t=>{const c=t.getAttribute("href")===`#${r}`;t.style.opacity=c?"1":"0.85",t.style.color=c?"#1a1a1a":"",t.style.fontWeight=c?"600":""})}})},{rootMargin:"-80px 0px -70% 0px"});a.forEach(e=>i.observe(e))}l();document.addEventListener("astro:page-load",l);</script>

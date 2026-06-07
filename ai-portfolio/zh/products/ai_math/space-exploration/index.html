@@ -1,0 +1,651 @@
+<!DOCTYPE html><html lang="zh" data-theme="math" class="scroll-smooth" data-astro-cid-37fxchfa> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="太空探索与小行星采矿模拟，10000+行代码，GPU Q-learning 431K eps/s"><title>Space Exploration Platform | AI Portfolio</title><link rel="icon" type="image/svg+xml" href="../../../../favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="../../../../_astro/BaseLayout.BuAdYsho.css">
+<style>@media(min-width:1024px){.toc-sidebar[data-astro-cid-fz5pa65a]{display:block!important}}
+</style></head> <body data-astro-cid-37fxchfa> <nav class="nav-bar fixed top-0 left-0 right-0 z-50" style="height: 56px;" data-astro-cid-37fxchfa> <div style="max-width: 80rem; margin: 0 auto; height: 100%; display: flex; align-items: center; padding: 0 1.5rem;" data-astro-cid-37fxchfa> <!-- Logo --> <a href="../../../index.html" class="nav-logo" data-astro-cid-37fxchfa>AI Portfolio</a> <!-- Spacer --> <div style="flex: 1;" data-astro-cid-37fxchfa></div> <!-- Desktop nav links (center) --> <div class="desktop-nav" style="display: flex; align-items: center; gap: 2rem; position: absolute; left: 50%; transform: translateX(-50%);" data-astro-cid-37fxchfa> <a href="../../../index.html" class="nav-link" data-astro-cid-37fxchfa>首页</a> <a href="../../../index.html#products" class="nav-link" data-astro-cid-37fxchfa>产品</a> <a href="../../../index.html#research" class="nav-link" data-astro-cid-37fxchfa>研究</a> <a href="../../../about/index.html" class="nav-link" data-astro-cid-37fxchfa>About</a> </div> <!-- Right side --> <div style="display: flex; align-items: center; gap: 0.5rem;" data-astro-cid-37fxchfa> <a href="../../../index.html" style="font-size: 0.8125rem; font-weight: 500; text-decoration: none; padding: 0.375rem 0.625rem; border-radius: 4px; transition: all 0.15s ease; background: #1a1a1a; color: #fff;" data-astro-cid-37fxchfa>中文</a> <a href="../../../../en/index.html" style="font-size: 0.8125rem; font-weight: 500; text-decoration: none; padding: 0.375rem 0.625rem; border-radius: 4px; transition: all 0.15s ease; color: #6b6560; border: 1px solid #d6cec4;" data-astro-cid-37fxchfa>EN</a> <!-- Mobile hamburger --> <button class="mobile-menu-btn" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu" data-astro-cid-37fxchfa> <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" data-astro-cid-37fxchfa> <path d="M3 6h14M3 10h14M3 14h14" data-astro-cid-37fxchfa></path> </svg> </button> </div> </div> </nav> <!-- Mobile nav --> <div class="mobile-nav" data-astro-cid-37fxchfa> <a href="../../../index.html" data-astro-cid-37fxchfa>首页</a> <a href="../../../index.html#products" data-astro-cid-37fxchfa>产品</a> <a href="../../../index.html#research" data-astro-cid-37fxchfa>研究</a> <a href="../../../about/index.html" data-astro-cid-37fxchfa>About</a> <a href="../../../../en/index.html" data-astro-cid-37fxchfa>English</a> </div> <main class="min-h-screen" style="padding-top: 56px;" data-astro-cid-37fxchfa>  <div style="max-width: 80rem; margin: 0 auto; padding: 0 1.5rem;" data-astro-cid-fz5pa65a> <!-- Breadcrumb --> <nav style="padding: 1rem 0; font-size: 0.8125rem; color: #9a938c; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;" data-astro-cid-fz5pa65a> <a href="../../../index.html" style="color: #6b6560; text-decoration: none; transition: opacity 0.15s;" data-astro-cid-fz5pa65a>首页</a>  <span style="color: #c4bdb4;" data-astro-cid-fz5pa65a>/</span> <a href="../../../index.html#products" style="color: #6b6560; text-decoration: none; transition: opacity 0.15s;" data-astro-cid-fz5pa65a>产品</a> <span style="color: #c4bdb4;" data-astro-cid-fz5pa65a>/</span> <a href="../../../index.html#products" style="color: #6b6560; text-decoration: none; transition: opacity 0.15s;" data-astro-cid-fz5pa65a>AI Math</a> <span style="color: #c4bdb4;" data-astro-cid-fz5pa65a>/</span> <span style="color: #1a1a1a;" data-astro-cid-fz5pa65a>Space Exploration Platform</span> </nav> <div style="display: flex; gap: 3rem; padding-bottom: 4rem;" data-astro-cid-fz5pa65a> <!-- Sidebar TOC --> <aside style="width: 14rem; flex-shrink: 0; display: none;" class="toc-sidebar" data-astro-cid-fz5pa65a> <div style="position: sticky; top: 5rem;" data-astro-cid-fz5pa65a> <p style="font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #9a938c; margin-bottom: 0.75rem;" data-astro-cid-fz5pa65a>目录</p> <nav id="toc" style="font-size: 0.8125rem; line-height: 1.6;" data-astro-cid-fz5pa65a></nav> </div> </aside> <!-- Content --> <article class="markdown-content" style="flex: 1; min-width: 0; max-width: 48rem;" data-astro-cid-fz5pa65a> <!-- Category badge --> <div style="margin-bottom: 1rem;" data-astro-cid-fz5pa65a> <span style="display: inline-block; font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9a938c; padding: 0.25rem 0.625rem; border: 1px solid #d6cec4; border-radius: 4px;" data-astro-cid-fz5pa65a> AI Math </span> </div> <h1 style="font-size: 2.25rem; font-weight: 700; color: #1a1a1a; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 0.75rem; font-family: var(--font-heading); border: none; padding: 0;" data-astro-cid-fz5pa65a> Space Exploration Platform </h1> <p style="font-size: 1rem; color: #6b6560; line-height: 1.7; margin-bottom: 2rem;" data-astro-cid-fz5pa65a> 太空探索与小行星采矿模拟，10000+行代码，GPU Q-learning 431K eps/s </p> <div style="height: 1px; background: #d6cec4; margin-bottom: 2rem;" data-astro-cid-fz5pa65a></div>  <h1 id="space-exploration--asteroid-mining-simulation-platform">Space Exploration &#x26; Asteroid Mining Simulation Platform</h1>
+<h2 id="complete-feature-report">Complete Feature Report</h2>
+<p><strong>Version</strong>: 0.1.0
+<strong>Date</strong>: 2026-05-31
+<strong>Codebase</strong>: ~10,000+ lines across 40+ modules
+<strong>Backup</strong>: <code>spaceinmath_backup_20260531_v3.zip</code></p>
+<hr>
+<h2 id="1-architecture-overview">1. Architecture Overview</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>spaceinmath/</span></span>
+<span class="line"><span>├── config.py                      # Global parameters (10 asteroids, economic, game-theory)</span></span>
+<span class="line"><span>├── module1_astrodynamics.py       # 3D Δv calculation, synodic windows</span></span>
+<span class="line"><span>├── module2_market_shock.py        # Inverse demand, market simulation</span></span>
+<span class="line"><span>├── module3_game_theory.py         # Cournot/Stackelberg equilibria</span></span>
+<span class="line"><span>├── module4_qlearning.py           # Q-learning (GPU/CPU/numpy 3 backends)</span></span>
+<span class="line"><span>├── module4_qlearning_gpu.py       # 128-agent GPU parameter sweep</span></span>
+<span class="line"><span>├── run_simulation.py              # Main CLI entry point</span></span>
+<span class="line"><span>├── realistic/                     # Solar system simulation (28 modules)</span></span>
+<span class="line"><span>│   ├── solar_system_db.py         # 200+ celestial bodies</span></span>
+<span class="line"><span>│   ├── lambert_solver.py          # Interplanetary trajectory optimization</span></span>
+<span class="line"><span>│   ├── transfer_network.py        # Dijkstra-based path finding</span></span>
+<span class="line"><span>│   ├── technology_evolution.py    # Wright's Law + breakthrough events</span></span>
+<span class="line"><span>│   ├── resource_depletion.py      # Reserve tracking &#x26; cost escalation</span></span>
+<span class="line"><span>│   ├── market_evolution.py        # M&#x26;A, bankruptcies, entrants</span></span>
+<span class="line"><span>│   ├── business_models.py         # 9 business models across 100 years</span></span>
+<span class="line"><span>│   ├── stochastic_runner.py       # 100-year quarterly simulation engine</span></span>
+<span class="line"><span>│   ├── monte_carlo.py             # Monte Carlo ensemble (multiprocessing)</span></span>
+<span class="line"><span>│   ├── economic_ecosystem.py      # 4 investor types, 12 instruments, 5 governments</span></span>
+<span class="line"><span>│   ├── stochastic_events.py       # 6 event types with cascading effects</span></span>
+<span class="line"><span>│   ├── agent_decisions.py         # Behavioral economics decision engine</span></span>
+<span class="line"><span>│   ├── mission_scheduler.py       # Mission queues + launch windows</span></span>
+<span class="line"><span>│   ├── iterative_equilibrium.py   # Tatonnement price adjustment</span></span>
+<span class="line"><span>│   ├── results_analytics.py       # Percentiles, CIs, risk metrics</span></span>
+<span class="line"><span>│   ├── launch_vehicles.py         # 10 real launch vehicle specs</span></span>
+<span class="line"><span>│   ├── mission_cost_model.py      # Calibrated to 7 real missions</span></span>
+<span class="line"><span>│   ├── supply_chain.py            # 7-stage space supply chain</span></span>
+<span class="line"><span>│   ├── commodity_prices.py        # 14 commodities, LME data</span></span>
+<span class="line"><span>│   ├── players.py                 # 8 players with Nash equilibrium</span></span>
+<span class="line"><span>│   ├── market_dynamics.py         # Dynamic supply/demand equilibrium</span></span>
+<span class="line"><span>│   ├── regulation.py              # 8 space treaties</span></span>
+<span class="line"><span>│   ├── base_infrastructure.py     # 11 space bases (Moon → Titan)</span></span>
+<span class="line"><span>│   ├── integration.py             # Bridge to existing modules</span></span>
+<span class="line"><span>│   ├── validate.py                # Model verification</span></span>
+<span class="line"><span>│   └── run_realistic.py           # CLI</span></span>
+<span class="line"><span>├── physics/                       # Hard sci-fi physics (5 modules)</span></span>
+<span class="line"><span>│   ├── propulsion_physics.py      # Tsiolkovsky, relativistic rocket, E=mc²</span></span>
+<span class="line"><span>│   ├── relativistic_orbital.py    # GR corrections, Schwarzschild, Shapiro delay</span></span>
+<span class="line"><span>│   ├── quantum_technology.py      # Quantum computing, QKD, sensors</span></span>
+<span class="line"><span>│   └── physical_limits.py         # Radiation, ECLSS, thermal, info-theory bounds</span></span>
+<span class="line"><span>├── paper/                         # LaTeX paper + figures</span></span>
+<span class="line"><span>└── tests/                         # Unit tests</span></span></code></pre>
+<hr>
+<h2 id="2-layer-1-core-modules-mcmicm-competition">2. Layer 1: Core Modules (MCM/ICM Competition)</h2>
+<h3 id="21-configpy--global-parameters">2.1 config.py — Global Parameters</h3>
+<ul>
+<li><strong>10 real asteroids</strong> with JPL orbital data (Bennu, Ryugu, Psyche, Ceres, Pallas, Phaethon, Hektor, etc.)</li>
+<li>Economic parameters: P0=$50K/kg, Q0=200t/yr, ε=0.5</li>
+<li>Q-learning: α=0.1, γ=0.95, ε_greedy=0.1, 5000 episodes</li>
+</ul>
+<h3 id="22-module1_astrodynamicspy--3d-astrodynamics">2.2 module1_astrodynamics.py — 3D Astrodynamics</h3>
+<ul>
+<li><strong>vis-viva equation</strong>: V = √(GM(2/r - 1/a))</li>
+<li><strong>3D cosine rule</strong> for plane-change Δv: Δv = √(V₁² + V₂² - 2V₁V₂ cos(i))</li>
+<li><strong>Synodic period</strong>: S = 1 / |1/T₁ - 1/T₂|</li>
+<li><strong>Golden windows</strong>: sinusoidal launch opportunity detection</li>
+<li>Output: Δv cost matrix (10 asteroids × 21 years)</li>
+</ul>
+<h3 id="23-module2_market_shockpy--market-dynamics">2.3 module2_market_shock.py — Market Dynamics</h3>
+<ul>
+<li><strong>Inverse demand function</strong>: P(Q) = P₀ × (Q₀/(Q₀+Q))^ε</li>
+<li><strong>Supply ramp-up</strong>: logistic curves per asteroid</li>
+<li><strong>Price elasticity sweep</strong>: ε = 0.3 to 0.8</li>
+</ul>
+<h3 id="24-module3_game_theorypy--duopoly-game-theory">2.4 module3_game_theory.py — Duopoly Game Theory</h3>
+<ul>
+<li><strong>Cournot-Nash equilibrium</strong>: simultaneous production competition</li>
+<li><strong>Stackelberg equilibrium</strong>: sequential leader-follower game</li>
+<li><strong>Time-series analysis</strong>: equilibrium evolution over 21 years</li>
+<li>SpaceX (leader) vs Blue Origin (follower) model</li>
+</ul>
+<h3 id="25-module4_qlearningpy--reinforcement-learning-3-backends">2.5 module4_qlearning.py — Reinforcement Learning (3 backends)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Backend</th><th>Implementation</th><th>Speed</th></tr></thead><tbody><tr><td><strong>GPU (CuPy)</strong></td><td>Batched environment, 100 episodes parallel</td><td>~431K eps/s</td></tr><tr><td><strong>CPU (Numba JIT)</strong></td><td>@njit compiled inner loop</td><td>~15K eps/s</td></tr><tr><td><strong>numpy</strong></td><td>Pure Python fallback</td><td>~1K eps/s</td></tr></tbody></table>
+<ul>
+<li>State space: (year × price_level) = 21 × 5 = 105 states</li>
+<li>Action space: 5 quantity levels [0%, 25%, 50%, 75%, 100%]</li>
+<li>Bellman update: Q(s,a) ← Q(s,a) + α·[R + γ·max Q(s’,·) - Q(s,a)]</li>
+<li>ESS (Evolutionary Stable Strategy) extraction</li>
+</ul>
+<h3 id="26-module4_qlearning_gpupy--gpu-parameter-sweep">2.6 module4_qlearning_gpu.py — GPU Parameter Sweep</h3>
+<ul>
+<li><strong>128 agents</strong> simultaneously on RTX 3060 (6GB VRAM)</li>
+<li>Hyperparameter grid: α×γ×ε_greedy×demand_ε = 4×4×4×2 = 128 combinations</li>
+<li>Expanded state: 50 price levels × 21 years = 1,050 states</li>
+<li>Expanded actions: 20 quantity levels</li>
+<li><strong>99.9% GPU utilization</strong> achieved</li>
+<li>Throughput: 431,000 eps/s (141× faster than CPU)</li>
+</ul>
+<hr>
+<h2 id="3-layer-2-realistic-solar-system-simulation">3. Layer 2: Realistic Solar System Simulation</h2>
+<h3 id="31-solar-system-database--205-celestial-bodies">3.1 Solar System Database — 205 Celestial Bodies</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Category</th><th>Count</th><th>Examples</th></tr></thead><tbody><tr><td>Planets</td><td>8</td><td>Mercury → Neptune</td></tr><tr><td>Dwarf planets</td><td>6</td><td>Ceres, Vesta, Pluto, Eris, Haumea, Makemake</td></tr><tr><td>Major moons</td><td>4</td><td>Europa, Ganymede, Titan, Enceladus</td></tr><tr><td>Near-Earth asteroids</td><td>20</td><td>Bennu, Ryugu, Phaethon, Eros, Apophis</td></tr><tr><td>Main-belt asteroids</td><td>82</td><td>Pallas, Hygiea, Interamnia, Herculina</td></tr><tr><td>Jupiter Trojans</td><td>32</td><td>624 Hektor, 911 Agamemnon</td></tr><tr><td>Centaurs</td><td>15</td><td>Chiron, Pholus, Chariklo</td></tr><tr><td>Kuiper Belt objects</td><td>28</td><td>Quaoar, Sedna, Ixion</td></tr><tr><td>Comets</td><td>10</td><td>67P, Halley, Hale-Bopp</td></tr></tbody></table>
+<p>Each body includes: J2000 orbital elements (a, e, i, ω, Ω, M₀), radius, mass, surface gravity, resource composition, value score.</p>
+<h3 id="32-lambert-solver--interplanetary-trajectory-optimization">3.2 Lambert Solver — Interplanetary Trajectory Optimization</h3>
+<ul>
+<li><strong>Universal variable method</strong> (Bate-Mueller-White)</li>
+<li>Handles elliptic, hyperbolic, and near-parabolic orbits</li>
+<li>Multi-revolution solutions</li>
+<li>Pre-computed Δv lookup table for all body pairs</li>
+</ul>
+<h3 id="33-transfer-network--40000-edges">3.3 Transfer Network — 40,000+ Edges</h3>
+<ul>
+<li>Dijkstra shortest path on Δv-weighted graph</li>
+<li>204 nodes (bodies + bases), 39,256 edges</li>
+<li>Single query: 5.1ms</li>
+<li>All-pairs pre-computation: ~210s (optional)</li>
+</ul>
+<h3 id="34-technology-evolution-100-years">3.4 Technology Evolution (100 Years)</h3>
+<ul>
+<li><strong>Wright’s Law</strong>: C(N) = C₀ × N^(-α)</li>
+<li><strong>S-curve adoption</strong>: T(t) = T_max / (1 + exp(-k(t-t_mid)))</li>
+<li><strong>8 breakthrough events</strong>:
+<ul>
+<li>2035: Starship full reuse (cost ×0.4)</li>
+<li>2040: Fusion demonstration (cost ×0.5)</li>
+<li>2045: Autonomous mining AI (efficiency ×3)</li>
+<li>2050: Orbital manufacturing (spacecraft ×0.7)</li>
+<li>2060: Quantum communication network</li>
+<li>2070: Antimatter propulsion prototype</li>
+<li>2080: Nano-mining robot swarms (efficiency ×10)</li>
+<li>2100: Interstellar probe technology</li>
+</ul>
+</li>
+</ul>
+<h3 id="35-resource-depletion">3.5 Resource Depletion</h3>
+<ul>
+<li>10 bodies with realistic reserve estimates</li>
+<li>Power-law ore grade decline: grade = initial × (remaining/total)^0.5</li>
+<li>Cost multiplier: increases as grade decreases</li>
+<li>Estimated depletion year tracking</li>
+</ul>
+<h3 id="36-market-evolution-100-years">3.6 Market Evolution (100 Years)</h3>
+<ul>
+<li><strong>M&#x26;A triggers</strong>: HHI > 0.5, dominant player acquires</li>
+<li><strong>Bankruptcy cascades</strong>: 3 consecutive loss quarters</li>
+<li><strong>21 new entrant types</strong> across 5 eras:
+<ul>
+<li>2026-2040: Government agencies</li>
+<li>2040-2055: Large corporations (Amazon, Tesla)</li>
+<li>2055-2070: Space startups</li>
+<li>2070-2090: AI-driven companies</li>
+<li>2090-2126: Open-source collectives</li>
+</ul>
+</li>
+<li>Market phases: Fragmented → Growing → Oligopoly → Monopoly → Disruption</li>
+</ul>
+<h3 id="37-economic-ecosystem">3.7 Economic Ecosystem</h3>
+<p><strong>4 investor types</strong>:</p>
+<ul>
+<li>Sovereign wealth funds (Saudi Aramco, Norway GPFG)</li>
+<li>Venture capital (Sequoia, Accel)</li>
+<li>Hedge funds (Citadel, Bridgewater)</li>
+<li>Retail investors (aggregated)</li>
+</ul>
+<p><strong>12 investment instruments</strong>:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Instrument</th><th>Risk</th><th>Liquidity</th></tr></thead><tbody><tr><td>Equity</td><td>High</td><td>Medium</td></tr><tr><td>Debt</td><td>Low</td><td>Low</td></tr><tr><td>Futures</td><td>High</td><td>High</td></tr><tr><td>Options</td><td>High</td><td>High</td></tr><tr><td>Insurance</td><td>Medium</td><td>Low</td></tr><tr><td>Crowdfunding</td><td>Very high</td><td>Very low</td></tr><tr><td>Sovereign bonds</td><td>Low</td><td>Medium</td></tr><tr><td>REITs</td><td>Medium</td><td>Medium</td></tr><tr><td>Hedge</td><td>Medium</td><td>High</td></tr><tr><td>ETF</td><td>Medium</td><td>High</td></tr><tr><td>ICO/Tokens</td><td>Very high</td><td>High</td></tr><tr><td>Pre-sale contracts</td><td>Medium</td><td>Low</td></tr></tbody></table>
+<p><strong>5 virtual space governments</strong>:</p>
+<ul>
+<li>Lunar Autonomous Region (2040)</li>
+<li>Mars Federation (2055)</li>
+<li>L5 Free Republic (2065)</li>
+<li>Asteroid Miners Guild (2050)</li>
+<li>Outer System Alliance (2070)</li>
+</ul>
+<h3 id="38-monte-carlo-ensemble">3.8 Monte Carlo Ensemble</h3>
+<ul>
+<li><strong>100+ parallel runs</strong> with different random seeds</li>
+<li><code>multiprocessing.Pool</code> for CPU parallelism</li>
+<li>Per-run reproducibility via seeded <code>np.random.Generator</code></li>
+<li>Output: percentile bands (P5, P25, P50, P75, P95), confidence intervals, risk metrics</li>
+</ul>
+<h3 id="39-100-year-quarterly-simulation-engine">3.9 100-Year Quarterly Simulation Engine</h3>
+<p><strong>5 compositional layers</strong>:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>MonteCarloEnsemble</span></span>
+<span class="line"><span>  └─ StochasticScenarioRunner</span></span>
+<span class="line"><span>       ├─ AgentDecisionEngine    (player decisions per quarter)</span></span>
+<span class="line"><span>       ├─ StochasticEventEngine  (random events with cascading)</span></span>
+<span class="line"><span>       ├─ MissionScheduler       (launch windows + queue management)</span></span>
+<span class="line"><span>       └─ IterativeEquilibrium   (tatonnement price adjustment)</span></span></code></pre>
+<ul>
+<li>400 quarters × 3 sub-steps = 1,200 time steps</li>
+<li>15 tatonnement iterations per commodity per step</li>
+<li>6 stochastic event types with cascade logic</li>
+<li><strong>Performance</strong>: 100 runs in ~60 seconds (0.6s/run)</li>
+</ul>
+<hr>
+<h2 id="4-layer-3-hard-sci-fi-physics">4. Layer 3: Hard Sci-Fi Physics</h2>
+<h3 id="41-propulsion-physics">4.1 Propulsion Physics</h3>
+<p><strong>8 propulsion systems</strong>:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>System</th><th>Isp (s)</th><th>Thrust</th><th>Available</th></tr></thead><tbody><tr><td>Chemical (LOX/LH2)</td><td>450</td><td>3 MN</td><td>Now</td></tr><tr><td>Ion drive</td><td>3,500</td><td>0.5 N</td><td>Now</td></tr><tr><td>Nuclear thermal (NTP)</td><td>900</td><td>100 kN</td><td>2030</td></tr><tr><td>Nuclear electric (NEP)</td><td>5,000</td><td>5 N</td><td>2035</td></tr><tr><td>Fusion (D-He3)</td><td>50,000</td><td>10 kN</td><td>2050</td></tr><tr><td>Laser sail</td><td>∞</td><td>μN</td><td>2045</td></tr><tr><td>Antimatter</td><td>1,000,000</td><td>100 kN</td><td>2070</td></tr></tbody></table>
+<p><strong>Key formulas</strong>:</p>
+<ul>
+<li>Tsiolkovsky: Δv = Isp × g₀ × ln(m₀/mf)</li>
+<li>Relativistic: v = c × tanh(Isp × g₀ × ln(m₀/mf) / c)</li>
+<li>Antimatter cost: m × c² / efficiency / $/J → 1 kg costs $6.5×10²²</li>
+<li>Fusion energy: 0.7% mass-energy conversion for D-He3</li>
+</ul>
+<h3 id="42-relativistic-orbital-mechanics">4.2 Relativistic Orbital Mechanics</h3>
+<ul>
+<li><strong>Schwarzschild metric correction</strong>: v_GR = v_Newton × √(1 - 3GM/(c²r))</li>
+<li><strong>Gravitational time dilation</strong>: Δt = Δt₀ / √(1 - 2GM/(c²r))</li>
+<li><strong>Shapiro delay</strong>: Δt = 2GM/c³ × ln(4r₁r₂/b²)</li>
+<li><strong>Gravitational redshift</strong>: z = GM/(c²r)</li>
+<li><strong>Lagrange points</strong> (L1-L5): precise computation for Sun-Earth system</li>
+<li><strong>Gravity assist</strong> with flyby geometry</li>
+</ul>
+<h3 id="43-quantum-technology">4.3 Quantum Technology</h3>
+<ul>
+<li><strong>Grover’s search</strong>: O(√N) speedup for unstructured search</li>
+<li><strong>Shor’s factoring</strong>: O(n³) vs classical O(exp(n^⅓))</li>
+<li><strong>QKD (BB84)</strong>: secure key rate = η × f_rep × (1 - h(QBER))</li>
+<li><strong>Quantum sensor precision</strong>: Heisenberg limit δx = λ/(2πN)</li>
+<li><strong>Quantum navigation</strong>: drift rate ~10⁻³ m/s/hr</li>
+<li><strong>Technology roadmap</strong>: 100 qubits (2026) → 1T qubits (2100)</li>
+</ul>
+<h3 id="44-physical-limits">4.4 Physical Limits</h3>
+<p><strong>Radiation</strong>:</p>
+<ul>
+<li>GCR dose: 0.5-1.0 mSv/day deep space</li>
+<li>SPE dose: 0.1-4 Sv per event</li>
+<li>NASA career limit: 600 mSv</li>
+<li>Shielding: exponential attenuation, mass calculation</li>
+</ul>
+<p><strong>Life Support (ECLSS)</strong>:</p>
+<ul>
+<li>O₂: 0.84 kg/person/day</li>
+<li>Water: 28.5 kg/person/day (drinking + hygiene)</li>
+<li>Food: 1.8 kg/person/day</li>
+<li>Recycling: 90-99% depending on tech level</li>
+<li>ECLSS mass: 2000 kg base + 500 kg/person</li>
+</ul>
+<p><strong>Thermal Management</strong>:</p>
+<ul>
+<li>Stefan-Boltzmann: P = εσAT⁴</li>
+<li>Nuclear reactor: 35% efficiency → 65% waste heat → radiator sizing</li>
+<li>Carnot limit: η = 1 - T_cold/T_hot</li>
+</ul>
+<p><strong>Information-Theoretic Bounds</strong>:</p>
+<ul>
+<li>Landauer limit: E_min = k_B × T × ln(2) per bit erased</li>
+<li>Bekenstein bound: I ≤ 2πRE/(ℏc·ln2)</li>
+<li>Bremermann limit: f_max = mc²/(ℏ·ln2)</li>
+</ul>
+<hr>
+<h2 id="5-performance-benchmarks">5. Performance Benchmarks</h2>
+<h3 id="gpu-q-learning-rtx-3060-laptop-6gb">GPU Q-Learning (RTX 3060 Laptop 6GB)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Metric</th><th>CPU-Numba</th><th>GPU-v1</th><th>GPU-v2</th></tr></thead><tbody><tr><td>Episodes/sec</td><td>1,000</td><td>9,000</td><td><strong>431,000</strong></td></tr><tr><td>Episodes total</td><td>10,000</td><td>10,000</td><td>1,280,000</td></tr><tr><td>Wall time</td><td>3.3s</td><td>1.1s</td><td>2.97s</td></tr><tr><td>GPU utilization</td><td>N/A</td><td>100%</td><td><strong>99.9%</strong></td></tr><tr><td>Speedup vs CPU</td><td>1×</td><td>3×</td><td><strong>141×</strong></td></tr></tbody></table>
+<h3 id="100-year-simulation">100-Year Simulation</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Metric</th><th>Value</th></tr></thead><tbody><tr><td>Time resolution</td><td>Quarterly (400 steps) + 3 sub-steps</td></tr><tr><td>Single run</td><td>0.6 seconds</td></tr><tr><td>Monte Carlo (100 runs)</td><td>~60 seconds</td></tr><tr><td>Monte Carlo (200 runs)</td><td>~120 seconds</td></tr><tr><td>Market value range</td><td>$50B (2026) → $666B (2125)</td></tr><tr><td>Active players</td><td>8 (steady state)</td></tr><tr><td>Stochastic events</td><td>~341 per run</td></tr></tbody></table>
+<hr>
+<h2 id="6-key-mathematical-models">6. Key Mathematical Models</h2>
+<h3 id="game-theory">Game Theory</h3>
+<ul>
+<li><strong>Cournot Nash</strong>: simultaneous quantity competition, best-response iteration</li>
+<li><strong>Stackelberg</strong>: sequential leader-follower, first-order conditions</li>
+<li><strong>Multi-player Nash</strong>: capacity-weighted Cournot with 7+ players</li>
+</ul>
+<h3 id="reinforcement-learning">Reinforcement Learning</h3>
+<ul>
+<li><strong>ε-greedy</strong>: explore (random) vs exploit (argmax Q)</li>
+<li><strong>Bellman update</strong>: Q(s,a) ← Q(s,a) + α·[R + γ·max Q(s’,·) - Q(s,a)]</li>
+<li><strong>Multi-agent</strong>: 128 independent agents with different hyperparameters</li>
+</ul>
+<h3 id="economics">Economics</h3>
+<ul>
+<li><strong>Inverse demand</strong>: P(Q) = P₀ × (Q₀/(Q₀+Q))^ε</li>
+<li><strong>Wright’s Law</strong>: cost decline = C₀ × N^(-0.15)</li>
+<li><strong>Tatonnement</strong>: iterative price adjustment until supply = demand</li>
+</ul>
+<h3 id="orbital-mechanics">Orbital Mechanics</h3>
+<ul>
+<li><strong>Vis-viva</strong>: V = √(GM(2/r - 1/a))</li>
+<li><strong>Lambert</strong>: universal variable method for transfer orbit</li>
+<li><strong>Hohmann</strong>: minimum-energy transfer, Δv₁ + Δv₂</li>
+</ul>
+<h3 id="physics">Physics</h3>
+<ul>
+<li><strong>Relativistic rocket</strong>: v = c·tanh(Isp·g₀·ln(m₀/mf)/c)</li>
+<li><strong>Schwarzschild</strong>: GR correction factor = 1 - 1.5·GM/(c²r)</li>
+<li><strong>Stefan-Boltzmann</strong>: P = εσAT⁴ for thermal radiation</li>
+</ul>
+<hr>
+<h2 id="7-dependencies">7. Dependencies</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Python 3.12+</span></span>
+<span class="line"><span>numpy</span></span>
+<span class="line"><span>scipy</span></span>
+<span class="line"><span>matplotlib</span></span>
+<span class="line"><span>pandas</span></span>
+<span class="line"><span>cupy-cuda12x          # GPU acceleration (optional)</span></span>
+<span class="line"><span>numba                 # CPU JIT compilation (optional)</span></span></code></pre>
+<hr>
+<h2 id="8-usage">8. Usage</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Core MCM/ICM simulation</span></span>
+<span class="line"><span style="color:#6F42C1">python</span><span style="color:#032F62"> run_simulation.py</span><span style="color:#005CC5"> --no-plots</span><span style="color:#005CC5"> --episodes</span><span style="color:#005CC5"> 5000</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># GPU parameter sweep (128 agents)</span></span>
+<span class="line"><span style="color:#6F42C1">python</span><span style="color:#032F62"> run_simulation.py</span><span style="color:#005CC5"> --gpu-v2</span><span style="color:#005CC5"> --no-plots</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Realistic solar system simulation</span></span>
+<span class="line"><span style="color:#6F42C1">python</span><span style="color:#032F62"> realistic/run_realistic.py</span><span style="color:#005CC5"> --interactive</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 100-year stochastic simulation</span></span>
+<span class="line"><span style="color:#6F42C1">python</span><span style="color:#032F62"> realistic/scenario_runner.py</span><span style="color:#005CC5"> --horizon</span><span style="color:#005CC5"> 2126</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Monte Carlo analysis</span></span>
+<span class="line"><span style="color:#6F42C1">python</span><span style="color:#005CC5"> -c</span><span style="color:#032F62"> "from realistic.stochastic_runner import run_monte_carlo; run_monte_carlo(100)"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># GPU benchmark</span></span>
+<span class="line"><span style="color:#6F42C1">python</span><span style="color:#032F62"> module4_qlearning_gpu.py</span><span style="color:#005CC5"> --benchmark</span><span style="color:#005CC5"> --episodes</span><span style="color:#005CC5"> 10000</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Physics validation</span></span>
+<span class="line"><span style="color:#6F42C1">python</span><span style="color:#005CC5"> -m</span><span style="color:#032F62"> pytest</span><span style="color:#032F62"> tests/</span><span style="color:#005CC5"> -v</span></span></code></pre>
+<hr>
+<h2 id="9-future-extensions">9. Future Extensions</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Area</th><th>Status</th><th>Priority</th></tr></thead><tbody><tr><td>Interactive 3D visualization</td><td>Planned</td><td>High</td></tr><tr><td>LaTeX paper auto-generation</td><td>In progress</td><td>High</td></tr><tr><td>Multi-country political dynamics</td><td>Conceptual</td><td>Medium</td></tr><tr><td>Orbital debris tracking</td><td>Conceptual</td><td>Medium</td></tr><tr><td>Crewed mission modeling</td><td>Conceptual</td><td>Low</td></tr><tr><td>AI-driven autonomous mining</td><td>In physics package</td><td>High</td></tr><tr><td>Real-time market data integration</td><td>Conceptual</td><td>Low</td></tr></tbody></table>  </article> </div> </div>  </main> <footer class="footer-border" style="padding: 2.5rem 1.5rem; text-align: center; font-size: 0.8125rem; color: #9a938c; background: #f5f0eb;" data-astro-cid-37fxchfa> <p data-astro-cid-37fxchfa>&copy; 2026 AI Portfolio. Crafted with precision.</p> </footer> </body></html>  <script type="module">function l(){const s=document.querySelector(".markdown-content"),o=document.getElementById("toc");if(!s||!o)return;o.innerHTML="";const a=s.querySelectorAll("h2, h3");a.forEach((e,n)=>{const r=e.id||`heading-${n}`;e.id=r;const t=document.createElement("a");t.href=`#${r}`,t.textContent=e.textContent?.trim()||"",t.style.display="block",t.style.padding="0.2rem 0",t.style.color=e.tagName==="H2"?"#1a1a1a":"#9a938c",t.style.textDecoration="none",t.style.transition="color 0.15s ease",t.style.paddingLeft=e.tagName==="H3"?"0.75rem":"0",t.style.fontSize=e.tagName==="H3"?"0.75rem":"0.8125rem",t.style.opacity="0.85",o.appendChild(t)});const i=new IntersectionObserver(e=>{e.forEach(n=>{if(n.isIntersecting){const r=n.target.id;o.querySelectorAll("a").forEach(t=>{const c=t.getAttribute("href")===`#${r}`;t.style.opacity=c?"1":"0.85",t.style.color=c?"#1a1a1a":"",t.style.fontWeight=c?"600":""})}})},{rootMargin:"-80px 0px -70% 0px"});a.forEach(e=>i.observe(e))}l();document.addEventListener("astro:page-load",l);</script>

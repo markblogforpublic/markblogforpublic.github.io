@@ -1,0 +1,517 @@
+<!DOCTYPE html><html lang="en" data-theme="research" class="scroll-smooth" data-astro-cid-37fxchfa> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Three leading Chinese AI models: MoE architecture, GRPO algorithm, hybrid reasoning, and training efficiency innovations"><title>DeepSeek, Qwen, Kimi Frontier Research Report | AI Portfolio</title><link rel="icon" type="image/svg+xml" href="../../../favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="../../../_astro/BaseLayout.BuAdYsho.css">
+<style>@media(min-width:1024px){.toc-sidebar[data-astro-cid-fz5pa65a]{display:block!important}}
+</style></head> <body data-astro-cid-37fxchfa> <nav class="nav-bar fixed top-0 left-0 right-0 z-50" style="height: 56px;" data-astro-cid-37fxchfa> <div style="max-width: 80rem; margin: 0 auto; height: 100%; display: flex; align-items: center; padding: 0 1.5rem;" data-astro-cid-37fxchfa> <!-- Logo --> <a href="../../../zh/index.html" class="nav-logo" data-astro-cid-37fxchfa>AI Portfolio</a> <!-- Spacer --> <div style="flex: 1;" data-astro-cid-37fxchfa></div> <!-- Desktop nav links (center) --> <div class="desktop-nav" style="display: flex; align-items: center; gap: 2rem; position: absolute; left: 50%; transform: translateX(-50%);" data-astro-cid-37fxchfa> <a href="../../../zh/index.html" class="nav-link" data-astro-cid-37fxchfa>首页</a> <a href="../../../zh/index.html#products" class="nav-link" data-astro-cid-37fxchfa>产品</a> <a href="../../../zh/index.html#research" class="nav-link" data-astro-cid-37fxchfa>研究</a> <a href="../../../zh/about/index.html" class="nav-link" data-astro-cid-37fxchfa>About</a> </div> <!-- Right side --> <div style="display: flex; align-items: center; gap: 0.5rem;" data-astro-cid-37fxchfa> <a href="../../../zh/index.html" style="font-size: 0.8125rem; font-weight: 500; text-decoration: none; padding: 0.375rem 0.625rem; border-radius: 4px; transition: all 0.15s ease; color: #6b6560; border: 1px solid #d6cec4;" data-astro-cid-37fxchfa>中文</a> <a href="../../index.html" style="font-size: 0.8125rem; font-weight: 500; text-decoration: none; padding: 0.375rem 0.625rem; border-radius: 4px; transition: all 0.15s ease; background: #1a1a1a; color: #fff;" data-astro-cid-37fxchfa>EN</a> <!-- Mobile hamburger --> <button class="mobile-menu-btn" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu" data-astro-cid-37fxchfa> <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" data-astro-cid-37fxchfa> <path d="M3 6h14M3 10h14M3 14h14" data-astro-cid-37fxchfa></path> </svg> </button> </div> </div> </nav> <!-- Mobile nav --> <div class="mobile-nav" data-astro-cid-37fxchfa> <a href="../../../zh/index.html" data-astro-cid-37fxchfa>首页</a> <a href="../../../zh/index.html#products" data-astro-cid-37fxchfa>产品</a> <a href="../../../zh/index.html#research" data-astro-cid-37fxchfa>研究</a> <a href="../../../zh/about/index.html" data-astro-cid-37fxchfa>About</a> <a href="../../index.html" data-astro-cid-37fxchfa>English</a> </div> <main class="min-h-screen" style="padding-top: 56px;" data-astro-cid-37fxchfa>  <div style="max-width: 80rem; margin: 0 auto; padding: 0 1.5rem;" data-astro-cid-fz5pa65a> <!-- Breadcrumb --> <nav style="padding: 1rem 0; font-size: 0.8125rem; color: #9a938c; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;" data-astro-cid-fz5pa65a> <a href="../../../zh/index.html" style="color: #6b6560; text-decoration: none; transition: opacity 0.15s;" data-astro-cid-fz5pa65a>首页</a>  <span style="color: #c4bdb4;" data-astro-cid-fz5pa65a>/</span> <a href="../../index.html#research" style="color: #6b6560; text-decoration: none; transition: opacity 0.15s;" data-astro-cid-fz5pa65a>Research</a> <span style="color: #c4bdb4;" data-astro-cid-fz5pa65a>/</span> <span style="color: #1a1a1a;" data-astro-cid-fz5pa65a>DeepSeek, Qwen, Kimi Frontier Research Report</span> </nav> <div style="display: flex; gap: 3rem; padding-bottom: 4rem;" data-astro-cid-fz5pa65a> <!-- Sidebar TOC --> <aside style="width: 14rem; flex-shrink: 0; display: none;" class="toc-sidebar" data-astro-cid-fz5pa65a> <div style="position: sticky; top: 5rem;" data-astro-cid-fz5pa65a> <p style="font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #9a938c; margin-bottom: 0.75rem;" data-astro-cid-fz5pa65a>目录</p> <nav id="toc" style="font-size: 0.8125rem; line-height: 1.6;" data-astro-cid-fz5pa65a></nav> </div> </aside> <!-- Content --> <article class="markdown-content" style="flex: 1; min-width: 0; max-width: 48rem;" data-astro-cid-fz5pa65a> <!-- Category badge --> <div style="margin-bottom: 1rem;" data-astro-cid-fz5pa65a> <span style="display: inline-block; font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9a938c; padding: 0.25rem 0.625rem; border: 1px solid #d6cec4; border-radius: 4px;" data-astro-cid-fz5pa65a> Research </span> </div> <h1 style="font-size: 2.25rem; font-weight: 700; color: #1a1a1a; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 0.75rem; font-family: var(--font-heading); border: none; padding: 0;" data-astro-cid-fz5pa65a> DeepSeek, Qwen, Kimi Frontier Research Report </h1> <p style="font-size: 1rem; color: #6b6560; line-height: 1.7; margin-bottom: 2rem;" data-astro-cid-fz5pa65a> Three leading Chinese AI models: MoE architecture, GRPO algorithm, hybrid reasoning, and training efficiency innovations </p> <div style="height: 1px; background: #d6cec4; margin-bottom: 2rem;" data-astro-cid-fz5pa65a></div>  <h1 id="deepseek-qwen-kimi-frontier-research-report">DeepSeek, Qwen, Kimi Frontier Research Report</h1>
+<blockquote>
+<p>Report date: May 30, 2026
+Coverage period: December 2024 — July 2025</p>
+</blockquote>
+<hr>
+<h2 id="abstract">Abstract</h2>
+<p>DeepSeek, Qwen (Tongyi Qianwen, Alibaba), and Kimi (Moonshot AI) are currently the three most influential research forces in China’s large AI model landscape. Between 2024 and 2025, they achieved a series of breakthrough developments, with core innovations concentrated in the following directions:</p>
+<ul>
+<li><strong>Reinforcement learning (RL)-driven emergence of reasoning capabilities</strong>: DeepSeek-R1-Zero demonstrated that pure RL training alone can elicit chain-of-thought reasoning capabilities</li>
+<li><strong>MoE (Mixture-of-Experts) architectural engineering breakthroughs</strong>: Training a 671B parameter model at extremely low cost</li>
+<li><strong>Hybrid reasoning modes</strong>: Qwen3 enables free switching between <code>/think</code> and <code>/no_think</code> modes within a single model</li>
+<li><strong>Long context and long-chain reasoning optimization</strong>: Kimi k1.5 proposed long2short technology, distilling long-chain reasoning capabilities into short-chain reasoning models</li>
+<li><strong>Training efficiency innovations</strong>: FP8 mixed-precision training, the Muon optimizer, and other techniques reduced training costs by an order of magnitude</li>
+</ul>
+<hr>
+<h2 id="1-deepseek">1. DeepSeek</h2>
+<h3 id="11-deepseek-v3-ultra-efficient-moe-architecture">1.1 DeepSeek-V3: Ultra-Efficient MoE Architecture</h3>
+<p><strong>Release date</strong>: December 2024</p>
+<p><strong>Architecture highlights</strong>:</p>
+<ul>
+<li><strong>Total parameters</strong>: 671B (67.1 billion)</li>
+<li><strong>Active parameters per token</strong>: 37B (approximately 3.7 billion)</li>
+<li><strong>Architecture type</strong>: Mixture-of-Experts (MoE) with fine-grained expert routing</li>
+</ul>
+<p><strong>Key technical innovations</strong>:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Technology</th><th>Description</th></tr></thead><tbody><tr><td><strong>Multi-head Latent Attention (MLA)</strong></td><td>Compresses KV Cache into a low-rank latent space and dynamically reconstructs it at inference time, reducing KV Cache memory by approximately 93% while maintaining or exceeding standard MHA performance and running faster than GQA</td></tr><tr><td><strong>DeepSeekMoE</strong></td><td>Fine-grained expert partitioning + shared expert mechanism, supplemented by an auxiliary-loss-free load balancing strategy</td></tr><tr><td><strong>FP8 mixed-precision training</strong></td><td>Employs FP8 precision in large-scale training, significantly reducing GPU memory usage and computational cost</td></tr></tbody></table>
+<p><strong>Training efficiency</strong>:</p>
+<ul>
+<li>Training data: 14.8 trillion tokens</li>
+<li>Training cost: Approximately $5.5 million (far below the hundreds of millions of dollars typical for comparable closed-source models)</li>
+<li>Performance comparable to GPT-4o and Claude 3.5 Sonnet</li>
+</ul>
+<p><strong>Paper</strong>: <em>DeepSeek-V3 Technical Report</em> (arXiv, December 2024)</p>
+<hr>
+<h3 id="12-deepseek-r1-rl-driven-reasoning-revolution">1.2 DeepSeek-R1: RL-Driven Reasoning Revolution</h3>
+<p><strong>Release date</strong>: January 2025</p>
+<h4 id="deepseek-r1-zero-reasoning-emergence-from-pure-rl-training">DeepSeek-R1-Zero: Reasoning Emergence from Pure RL Training</h4>
+<p>This is one of the most striking AI research findings of 2025:</p>
+<ul>
+<li><strong>Training method</strong>: Uses only reinforcement learning (RL), <strong>completely without supervised fine-tuning (SFT)</strong> as a preliminary step</li>
+<li><strong>Core finding</strong>: The model spontaneously developed chain-of-thought (CoT) reasoning, self-reflection, and self-correction capabilities during RL training</li>
+<li><strong>“Aha Moment”</strong>: During training, the model suddenly began generating longer, more structured reasoning chains, demonstrating emergent behavior of “learning to think”</li>
+<li><strong>Significance</strong>: Challenges the traditional assumption that “SFT is a necessary prerequisite for building reasoning models,” demonstrating that large language models can develop complex problem-solving strategies through purely trial-and-error reinforcement learning</li>
+</ul>
+<p><strong>Limitations</strong>: R1-Zero suffered from poor readability and language mixing issues, so the final R1 model incorporated a cold-start SFT phase to improve output quality.</p>
+<h4 id="deepseek-r1-complete-training-pipeline">DeepSeek-R1 Complete Training Pipeline</h4>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Cold-start SFT -> RL (GRPO) -> Rejection sampling SFT -> Second-stage RL</span></span></code></pre>
+<h4 id="grpo-group-relative-policy-optimization">GRPO (Group Relative Policy Optimization)</h4>
+<p>GRPO is DeepSeek’s core RL algorithm innovation:</p>
+<p><strong>How it works</strong>:</p>
+<ol>
+<li>For each prompt, generates a group of responses (e.g., 64 candidates)</li>
+<li>Scores each response using a rule-based reward function (e.g., math/code correctness checks)</li>
+<li>Rewards are relatively normalized within the group: <code>advantage = (reward - mean(rewards)) / std(rewards)</code></li>
+<li>Updates the policy using PPO-style clipped objectives</li>
+</ol>
+<p><strong>Key advantages</strong>:</p>
+<ul>
+<li><strong>Eliminates the critic/value model</strong>: Replaces the value function with group-averaged rewards, drastically reducing GPU memory and computational overhead</li>
+<li>More computationally efficient than standard PPO</li>
+</ul>
+<h4 id="distilled-model-series">Distilled Model Series</h4>
+<p>R1’s reasoning capabilities were distilled into a series of smaller models:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Model</th><th>Parameters</th></tr></thead><tbody><tr><td>DeepSeek-R1-Distill-Qwen-1.5B</td><td>1.5B</td></tr><tr><td>DeepSeek-R1-Distill-Qwen-7B</td><td>7B</td></tr><tr><td>DeepSeek-R1-Distill-Qwen-14B</td><td>14B</td></tr><tr><td>DeepSeek-R1-Distill-Qwen-32B</td><td>32B</td></tr><tr><td>DeepSeek-R1-Distill-Llama-8B</td><td>8B</td></tr><tr><td>DeepSeek-R1-Distill-Llama-70B</td><td>70B</td></tr></tbody></table>
+<p><strong>Paper</strong>: <em>DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning</em> (arXiv:2501.12948, January 2025)</p>
+<hr>
+<h3 id="13-social-impact-and-open-source-contributions">1.3 Social Impact and Open-Source Contributions</h3>
+<ul>
+<li>DeepSeek-R1 was dubbed by some analysts as the “Sputnik moment” of the AI field</li>
+<li>Demonstrated the feasibility of building competitive AI models at a fraction of the cost of Western counterparts</li>
+<li>GitHub repositories and Hugging Face models garnered tens of thousands of stars within weeks of release</li>
+<li>Sparked widespread debate on the open-source vs. closed-source AI development path</li>
+<li>In late January 2025, triggered significant market reactions (e.g., Nvidia stock price volatility)</li>
+</ul>
+<hr>
+<h2 id="2-qwen-tongyi-qianwen-alibaba">2. Qwen (Tongyi Qianwen, Alibaba)</h2>
+<h3 id="21-qwen25-series-specialized-model-matrix">2.1 Qwen2.5 Series: Specialized Model Matrix</h3>
+<p><strong>Release date</strong>: Rolling releases starting September 2024</p>
+<p><strong>Model scale</strong>: 0.5B — 72B parameters, covering scenarios from edge devices to the cloud</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Model Series</th><th>Parameter Scale</th><th>Specialization</th></tr></thead><tbody><tr><td>Qwen2.5</td><td>0.5B / 1.5B / 3B / 7B / 14B / 32B / 72B</td><td>General language capabilities</td></tr><tr><td>Qwen2.5-Coder</td><td>1.5B / 7B / 14B / 32B</td><td>Code generation and programming tasks</td></tr><tr><td>Qwen2.5-Math</td><td>1.5B / 7B / 72B</td><td>Mathematical reasoning (supports bilingual Chinese-English)</td></tr></tbody></table>
+<p><strong>Technical specifications</strong>:</p>
+<ul>
+<li>Context window: Up to 128K tokens</li>
+<li>Training data: Up to 18 trillion tokens</li>
+<li>Architecture: Based on Transformer, with improved attention mechanisms and training stability</li>
+</ul>
+<p><strong>Benchmark performance</strong>:</p>
+<ul>
+<li>Qwen2.5-Coder competes with DeepSeek-Coder and GPT-4 Turbo on code benchmarks such as HumanEval and MBPP</li>
+<li>Qwen2.5-Math achieves excellent results on math benchmarks such as GSM8K and MATH</li>
+</ul>
+<hr>
+<h3 id="22-qwq-32b-reasoning-model-exploration">2.2 QwQ-32B: Reasoning Model Exploration</h3>
+<p><strong>Release date</strong>: Late 2024 / Early 2025</p>
+<ul>
+<li><strong>Positioning</strong>: A reasoning-type model similar to OpenAI’s o1</li>
+<li><strong>Parameter scale</strong>: 32B</li>
+<li><strong>Training method</strong>: Applies reinforcement learning (RL) on top of a strong pre-trained base model</li>
+<li><strong>Benchmark performance</strong>: On reasoning benchmarks such as AIME 2024 (math competition), LiveCodeBench (code), and GPQA (graduate-level science Q&#x26;A), approaches or matches the performance of DeepSeek-R1 and o1-mini</li>
+<li><strong>Open source</strong>: Released with open weights</li>
+</ul>
+<p><strong>Technical report statement</strong>:</p>
+<blockquote>
+<p>“These findings highlight the effectiveness of applying RL to robust foundation models pre-trained on a vast corpus of world knowledge, and indicate that scaling RL has the potential to elevate model performance beyond what traditional pre-training and post-training methods can achieve.”</p>
+</blockquote>
+<hr>
+<h3 id="23-qwen3-the-pinnacle-of-hybrid-reasoning">2.3 Qwen3: The Pinnacle of Hybrid Reasoning</h3>
+<p><strong>Release date</strong>: April 2025</p>
+<p>Qwen3 is the latest generation of the Qwen series, representing a significant leap in architecture and reasoning capability.</p>
+<h4 id="model-matrix">Model Matrix</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Model</th><th>Parameters</th><th>Type</th></tr></thead><tbody><tr><td><strong>Qwen3-235B-A22B</strong></td><td>235B total / 22B active</td><td>MoE (flagship)</td></tr><tr><td>Qwen3-30B-A3B</td><td>30B total / 3B active</td><td>MoE</td></tr><tr><td>Qwen3-32B</td><td>32B</td><td>Dense</td></tr><tr><td>Qwen3-14B</td><td>14B</td><td>Dense</td></tr><tr><td>Qwen3-8B</td><td>8B</td><td>Dense</td></tr><tr><td>Qwen3-4B</td><td>4B</td><td>Dense</td></tr><tr><td>Qwen3-1.7B</td><td>1.7B</td><td>Dense</td></tr><tr><td>Qwen3-0.6B</td><td>0.6B</td><td>Dense</td></tr></tbody></table>
+<h4 id="core-innovation-hybrid-thinking-mode">Core Innovation: Hybrid Thinking Mode</h4>
+<p>Qwen3’s most iconic innovation is <strong>reasoning mode switching within a single model</strong>:</p>
+<ul>
+<li><strong><code>/think</code> mode</strong>: The model performs extended chain-of-thought reasoning (similar to o1 style), suited for complex math, logic, and coding tasks</li>
+<li><strong><code>/no_think</code> mode</strong>: The model provides answers directly, suited for fast-response scenarios</li>
+<li><strong>Thinking budget control</strong>: Users can choose when to enable deep reasoning based on task complexity</li>
+</ul>
+<p><strong>Significance</strong>: A single model serves both reasoning and non-reasoning use cases without the need to deploy different models.</p>
+<h4 id="benchmark-performance">Benchmark Performance</h4>
+<ul>
+<li>The flagship model <strong>Qwen3-235B-A22B</strong> competes with or surpasses DeepSeek-R1, OpenAI o1, GPT-4o, and Grok-3 across multiple benchmarks</li>
+<li><strong>Qwen3-30B-A3B</strong> (MoE) surpasses QwQ-32B with fewer active parameters</li>
+<li>Strong performance across mathematical reasoning (AIME, MATH-500), code generation (LiveCodeBench), general knowledge (GPQA), and multilingual tasks (supporting 100+ languages)</li>
+</ul>
+<h4 id="open-source-contributions">Open-Source Contributions</h4>
+<p>The full Qwen3 series is released with open weights, available on Hugging Face and ModelScope, offering both base and instruction-tuned versions.</p>
+<hr>
+<h2 id="3-kimi-moonshot-ai">3. Kimi (Moonshot AI)</h2>
+<h3 id="31-long-context-pioneer">3.1 Long Context Pioneer</h3>
+<p>Kimi is a pioneer in long context processing in China’s AI field:</p>
+<ul>
+<li>One of the first commercial models to support a <strong>200K token</strong> context window</li>
+<li>Subsequently expanded the context window to the <strong>millions of tokens</strong> range</li>
+<li>Established advantages in long document understanding, multi-turn dialogue retention, and cross-document reasoning</li>
+<li>Conducted extensive engineering innovations in KV Cache optimization and long context training</li>
+</ul>
+<h3 id="32-kimi-k15-long-chain-to-short-chain-distillation-for-rl-reasoning">3.2 Kimi k1.5: Long-Chain to Short-Chain Distillation for RL Reasoning</h3>
+<p><strong>Release date</strong>: January 2025</p>
+<p><strong>Core positioning</strong>: Multimodal reasoning model trained with reinforcement learning</p>
+<h4 id="key-technical-contributions">Key Technical Contributions</h4>
+<p><strong>Long2Short (long-chain to short-chain) technology</strong>:</p>
+<ul>
+<li>Distills long-chain reasoning (Long-CoT) capabilities into short-chain reasoning (Short-CoT) models</li>
+<li>Significantly reduces token consumption and latency at inference time while maintaining strong reasoning capabilities</li>
+<li>Makes models more efficient in practical deployment</li>
+</ul>
+<p><strong>Other technical highlights</strong>:</p>
+<ul>
+<li>Long-CoT to short-CoT distillation</li>
+<li>Partial rollout strategy in RL training</li>
+<li>Improved reward modeling</li>
+<li>Curriculum learning to enhance training efficiency</li>
+</ul>
+<h4 id="multimodal-capabilities">Multimodal Capabilities</h4>
+<p>k1.5 is designed to handle multimodal inputs (text and images), enabling cross-modal reasoning.</p>
+<h4 id="benchmark-performance-1">Benchmark Performance</h4>
+<p>Achieved competitive results on math, code, and reasoning benchmarks, matching or surpassing leading reasoning models such as OpenAI o1 on multiple tasks.</p>
+<p><strong>Paper</strong>: <em>Kimi k1.5: Scaling Reinforcement Learning with LLMs</em> (Moonshot AI, January 2025)</p>
+<hr>
+<h3 id="33-kimi-k2-trillion-parameter-moe--new-optimizer">3.3 Kimi k2: Trillion-Parameter MoE + New Optimizer</h3>
+<p><strong>Release date</strong>: July 2025</p>
+<p>Kimi k2 is Moonshot AI’s latest flagship model, representing its latest breakthroughs in architecture and training methodology.</p>
+<h4 id="model-specifications">Model Specifications</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Attribute</th><th>Value</th></tr></thead><tbody><tr><td>Total parameters</td><td>Approximately 1 trillion (1T)</td></tr><tr><td>Active parameters per token</td><td>Approximately 32B</td></tr><tr><td>Architecture</td><td>Mixture-of-Experts (MoE)</td></tr><tr><td>Training data</td><td>15.5 trillion tokens</td></tr><tr><td>License</td><td>Modified MIT License (open source)</td></tr></tbody></table>
+<h4 id="core-innovation-muon-optimizer">Core Innovation: Muon Optimizer</h4>
+<p>A key training innovation in Kimi k2 is the adoption of the <strong>Muon optimizer</strong> (proposed by Keller Jordan et al., paper title: <em>Muon: An Optimizer for Neural Networks with Orthogonalizing Momentum</em>):</p>
+<ul>
+<li><strong>Core idea</strong>: Applies spectral orthogonalization to the momentum buffer</li>
+<li><strong>Advantage</strong>: Achieves stronger performance with fewer training steps compared to the traditional Adam optimizer</li>
+<li><strong>Significance</strong>: First successful application of a novel optimizer at the trillion-parameter model scale</li>
+</ul>
+<h4 id="capability-positioning">Capability Positioning</h4>
+<ul>
+<li><strong>Code generation</strong>: Strong performance on code benchmarks such as LiveCodeBench and SWE-bench</li>
+<li><strong>Mathematical reasoning</strong>: Competitive on math benchmarks such as MATH</li>
+<li><strong>Agent/tool use</strong>: Specifically designed for autonomous agent workflows, supporting complex tool calls and task orchestration</li>
+<li><strong>Open source</strong>: Released with open weights</li>
+</ul>
+<hr>
+<h2 id="4-cross-comparison-and-technology-trends">4. Cross-Comparison and Technology Trends</h2>
+<h3 id="41-model-scale-and-architecture-comparison">4.1 Model Scale and Architecture Comparison</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Dimension</th><th>DeepSeek-V3</th><th>Qwen3-235B</th><th>Kimi k2</th></tr></thead><tbody><tr><td>Total parameters</td><td>671B</td><td>235B</td><td>~1T</td></tr><tr><td>Active parameters</td><td>37B</td><td>22B</td><td>~32B</td></tr><tr><td>Architecture</td><td>MoE</td><td>MoE</td><td>MoE</td></tr><tr><td>Context window</td><td>128K</td><td>128K+</td><td>128K+</td></tr><tr><td>Training data</td><td>14.8T tokens</td><td>—</td><td>15.5T tokens</td></tr><tr><td>Training cost</td><td>~$5.5M</td><td>—</td><td>—</td></tr></tbody></table>
+<h3 id="42-core-technical-approach-comparison">4.2 Core Technical Approach Comparison</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Technical Direction</th><th>DeepSeek</th><th>Qwen</th><th>Kimi</th></tr></thead><tbody><tr><td><strong>RL algorithm</strong></td><td>GRPO (critic-free)</td><td>RL + QwQ reasoning model</td><td>RL + Long2Short</td></tr><tr><td><strong>Attention mechanism</strong></td><td>MLA (low-rank KV compression)</td><td>Improved Transformer</td><td>Long context optimization</td></tr><tr><td><strong>MoE design</strong></td><td>Fine-grained experts + shared experts</td><td>Standard MoE</td><td>Trillion-scale MoE</td></tr><tr><td><strong>Training precision</strong></td><td>FP8 mixed-precision</td><td>—</td><td>—</td></tr><tr><td><strong>Optimizer</strong></td><td>Adam variant</td><td>—</td><td>Muon (spectral orthogonal momentum)</td></tr><tr><td><strong>Reasoning mode</strong></td><td>R1: Long-chain reasoning</td><td>Hybrid /think mode</td><td>Long2Short distillation</td></tr></tbody></table>
+<h3 id="43-key-technology-trends">4.3 Key Technology Trends</h3>
+<h4 id="trend-1-rl-becomes-the-core-driver-of-reasoning-capabilities">Trend 1: RL Becomes the Core Driver of Reasoning Capabilities</h4>
+<p>All three institutions independently adopted reinforcement learning as the key lever for enhancing reasoning capabilities:</p>
+<ul>
+<li>DeepSeek demonstrated that pure RL can elicit reasoning capabilities (R1-Zero)</li>
+<li>Qwen applied RL on pre-trained base models for significant performance gains (QwQ)</li>
+<li>Kimi achieved long-chain reasoning through RL training and distilled it into short-chain models (k1.5)</li>
+</ul>
+<h4 id="trend-2-moe-architecture-becomes-the-efficiency-benchmark">Trend 2: MoE Architecture Becomes the Efficiency Benchmark</h4>
+<p>All three adopt or support MoE architectures:</p>
+<ul>
+<li>Dramatically reduce inference costs through sparse activation</li>
+<li>While maintaining or even surpassing dense model performance, keep active parameters in the 20–40B range</li>
+<li>Make training and deployment of trillion-parameter models a reality</li>
+</ul>
+<h4 id="trend-3-fine-grained-control-of-reasoning-efficiency">Trend 3: Fine-Grained Control of Reasoning Efficiency</h4>
+<p>Moving from “deep reasoning only” to “reasoning on demand”:</p>
+<ul>
+<li>Qwen3’s <code>/think</code> / <code>/no_think</code> mode switching</li>
+<li>Kimi k1.5’s Long2Short distillation</li>
+<li>DeepSeek R1’s multi-tier distilled model series</li>
+</ul>
+<h4 id="trend-4-exponential-decline-in-training-costs">Trend 4: Exponential Decline in Training Costs</h4>
+<ul>
+<li>DeepSeek-V3 trained a model comparable to GPT-4o for approximately $5.5 million</li>
+<li>FP8 precision, GRPO, and other technical innovations drastically reduced compute requirements</li>
+<li>MoE architecture further improved training efficiency</li>
+</ul>
+<hr>
+<h2 id="5-open-source-contributions-summary">5. Open-Source Contributions Summary</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Organization</th><th>Open-Source Model Series</th><th>Key Open Content</th></tr></thead><tbody><tr><td>DeepSeek</td><td>V2/V3, R1 (including distilled series), Coder</td><td>Model weights, technical reports, training framework</td></tr><tr><td>Qwen</td><td>Full Qwen2.5 series, QwQ-32B, full Qwen3 series</td><td>Model weights (HF/ModelScope), base and instruction-tuned versions</td></tr><tr><td>Kimi</td><td>k2</td><td>Model weights (Modified MIT License)</td></tr></tbody></table>
+<hr>
+<h2 id="6-conclusion">6. Conclusion</h2>
+<p>The research achievements of DeepSeek, Qwen, and Kimi between 2024 and 2025 collectively outline the frontier landscape of China’s large AI model field:</p>
+<ol>
+<li><strong>DeepSeek</strong> excels in engineering efficiency and theoretical innovation — MLA, GRPO, and R1-Zero’s pure RL reasoning emergence each challenge existing paradigms</li>
+<li><strong>Qwen</strong> wins through productization and ecosystem breadth — full-size coverage from 0.6B to 235B, Qwen3’s hybrid reasoning mode, and the largest open-source model matrix</li>
+<li><strong>Kimi</strong> distinguishes itself through long context and training methodology innovation — Long2Short technology, trillion-parameter MoE training, and the engineering validation of the Muon optimizer</li>
+</ol>
+<p>Together, these three organizations have accelerated several key trends: RL-driven reasoning, MoE architecture adoption, declining training costs, and fine-grained control of reasoning efficiency. These advances are not only significant at the technical level but also have profound implications for the global AI competitive landscape.</p>
+<hr>
+<h2 id="references">References</h2>
+<ol>
+<li>DeepSeek-AI. <em>DeepSeek-V3 Technical Report</em>. arXiv, December 2024.</li>
+<li>DeepSeek-AI. <em>DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning</em>. arXiv:2501.12948, January 2025.</li>
+<li>DeepSeek-AI. <em>DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model</em>. arXiv, May 2024.</li>
+<li>Qwen Team. <em>Qwen3 Technical Report</em>. Alibaba Cloud, April 2025.</li>
+<li>Qwen Team. <em>QwQ: Reflect Deeply on the Boundaries of the Unknown</em>. qwenlm.github.io, 2024.</li>
+<li>Moonshot AI. <em>Kimi k1.5: Scaling Reinforcement Learning with LLMs</em>. arXiv, January 2025.</li>
+<li>Keller Jordan et al. <em>Muon: An Optimizer for Neural Networks with Orthogonalizing Momentum</em>. 2024.</li>
+<li>Gao et al. <em>Scaling Laws for Reward Model Overoptimization</em>. NeurIPS 2022.</li>
+</ol>  </article> </div> </div>  </main> <footer class="footer-border" style="padding: 2.5rem 1.5rem; text-align: center; font-size: 0.8125rem; color: #9a938c; background: #f5f0eb;" data-astro-cid-37fxchfa> <p data-astro-cid-37fxchfa>&copy; 2026 AI Portfolio. Crafted with precision.</p> </footer> </body></html>  <script type="module">function l(){const s=document.querySelector(".markdown-content"),o=document.getElementById("toc");if(!s||!o)return;o.innerHTML="";const a=s.querySelectorAll("h2, h3");a.forEach((e,n)=>{const r=e.id||`heading-${n}`;e.id=r;const t=document.createElement("a");t.href=`#${r}`,t.textContent=e.textContent?.trim()||"",t.style.display="block",t.style.padding="0.2rem 0",t.style.color=e.tagName==="H2"?"#1a1a1a":"#9a938c",t.style.textDecoration="none",t.style.transition="color 0.15s ease",t.style.paddingLeft=e.tagName==="H3"?"0.75rem":"0",t.style.fontSize=e.tagName==="H3"?"0.75rem":"0.8125rem",t.style.opacity="0.85",o.appendChild(t)});const i=new IntersectionObserver(e=>{e.forEach(n=>{if(n.isIntersecting){const r=n.target.id;o.querySelectorAll("a").forEach(t=>{const c=t.getAttribute("href")===`#${r}`;t.style.opacity=c?"1":"0.85",t.style.color=c?"#1a1a1a":"",t.style.fontWeight=c?"600":""})}})},{rootMargin:"-80px 0px -70% 0px"});a.forEach(e=>i.observe(e))}l();document.addEventListener("astro:page-load",l);</script>

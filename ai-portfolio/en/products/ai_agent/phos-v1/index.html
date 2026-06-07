@@ -1,0 +1,354 @@
+<!DOCTYPE html><html lang="en" data-theme="agent" class="scroll-smooth" data-astro-cid-37fxchfa> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Local small model toolkit with llama-cpp-python + Streamlit GUI, fully offline operation"><title>Phos v1.0 | AI Portfolio</title><link rel="icon" type="image/svg+xml" href="../../../../favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="../../../../_astro/BaseLayout.BuAdYsho.css">
+<style>@media(min-width:1024px){.toc-sidebar[data-astro-cid-fz5pa65a]{display:block!important}}
+</style></head> <body data-astro-cid-37fxchfa> <nav class="nav-bar fixed top-0 left-0 right-0 z-50" style="height: 56px;" data-astro-cid-37fxchfa> <div style="max-width: 80rem; margin: 0 auto; height: 100%; display: flex; align-items: center; padding: 0 1.5rem;" data-astro-cid-37fxchfa> <!-- Logo --> <a href="../../../../zh/index.html" class="nav-logo" data-astro-cid-37fxchfa>AI Portfolio</a> <!-- Spacer --> <div style="flex: 1;" data-astro-cid-37fxchfa></div> <!-- Desktop nav links (center) --> <div class="desktop-nav" style="display: flex; align-items: center; gap: 2rem; position: absolute; left: 50%; transform: translateX(-50%);" data-astro-cid-37fxchfa> <a href="../../../../zh/index.html" class="nav-link" data-astro-cid-37fxchfa>首页</a> <a href="../../../../zh/index.html#products" class="nav-link" data-astro-cid-37fxchfa>产品</a> <a href="../../../../zh/index.html#research" class="nav-link" data-astro-cid-37fxchfa>研究</a> <a href="../../../../zh/about/index.html" class="nav-link" data-astro-cid-37fxchfa>About</a> </div> <!-- Right side --> <div style="display: flex; align-items: center; gap: 0.5rem;" data-astro-cid-37fxchfa> <a href="../../../../zh/index.html" style="font-size: 0.8125rem; font-weight: 500; text-decoration: none; padding: 0.375rem 0.625rem; border-radius: 4px; transition: all 0.15s ease; color: #6b6560; border: 1px solid #d6cec4;" data-astro-cid-37fxchfa>中文</a> <a href="../../../index.html" style="font-size: 0.8125rem; font-weight: 500; text-decoration: none; padding: 0.375rem 0.625rem; border-radius: 4px; transition: all 0.15s ease; background: #1a1a1a; color: #fff;" data-astro-cid-37fxchfa>EN</a> <!-- Mobile hamburger --> <button class="mobile-menu-btn" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu" data-astro-cid-37fxchfa> <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" data-astro-cid-37fxchfa> <path d="M3 6h14M3 10h14M3 14h14" data-astro-cid-37fxchfa></path> </svg> </button> </div> </div> </nav> <!-- Mobile nav --> <div class="mobile-nav" data-astro-cid-37fxchfa> <a href="../../../../zh/index.html" data-astro-cid-37fxchfa>首页</a> <a href="../../../../zh/index.html#products" data-astro-cid-37fxchfa>产品</a> <a href="../../../../zh/index.html#research" data-astro-cid-37fxchfa>研究</a> <a href="../../../../zh/about/index.html" data-astro-cid-37fxchfa>About</a> <a href="../../../index.html" data-astro-cid-37fxchfa>English</a> </div> <main class="min-h-screen" style="padding-top: 56px;" data-astro-cid-37fxchfa>  <div style="max-width: 80rem; margin: 0 auto; padding: 0 1.5rem;" data-astro-cid-fz5pa65a> <!-- Breadcrumb --> <nav style="padding: 1rem 0; font-size: 0.8125rem; color: #9a938c; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;" data-astro-cid-fz5pa65a> <a href="../../../../zh/index.html" style="color: #6b6560; text-decoration: none; transition: opacity 0.15s;" data-astro-cid-fz5pa65a>首页</a>  <span style="color: #c4bdb4;" data-astro-cid-fz5pa65a>/</span> <a href="../../../index.html#products" style="color: #6b6560; text-decoration: none; transition: opacity 0.15s;" data-astro-cid-fz5pa65a>Products</a> <span style="color: #c4bdb4;" data-astro-cid-fz5pa65a>/</span> <a href="../../../index.html#products" style="color: #6b6560; text-decoration: none; transition: opacity 0.15s;" data-astro-cid-fz5pa65a>AI Agent</a> <span style="color: #c4bdb4;" data-astro-cid-fz5pa65a>/</span> <span style="color: #1a1a1a;" data-astro-cid-fz5pa65a>Phos v1.0</span> </nav> <div style="display: flex; gap: 3rem; padding-bottom: 4rem;" data-astro-cid-fz5pa65a> <!-- Sidebar TOC --> <aside style="width: 14rem; flex-shrink: 0; display: none;" class="toc-sidebar" data-astro-cid-fz5pa65a> <div style="position: sticky; top: 5rem;" data-astro-cid-fz5pa65a> <p style="font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #9a938c; margin-bottom: 0.75rem;" data-astro-cid-fz5pa65a>目录</p> <nav id="toc" style="font-size: 0.8125rem; line-height: 1.6;" data-astro-cid-fz5pa65a></nav> </div> </aside> <!-- Content --> <article class="markdown-content" style="flex: 1; min-width: 0; max-width: 48rem;" data-astro-cid-fz5pa65a> <!-- Category badge --> <div style="margin-bottom: 1rem;" data-astro-cid-fz5pa65a> <span style="display: inline-block; font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9a938c; padding: 0.25rem 0.625rem; border: 1px solid #d6cec4; border-radius: 4px;" data-astro-cid-fz5pa65a> AI Agent </span> </div> <h1 style="font-size: 2.25rem; font-weight: 700; color: #1a1a1a; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 0.75rem; font-family: var(--font-heading); border: none; padding: 0;" data-astro-cid-fz5pa65a> Phos v1.0 </h1> <p style="font-size: 1rem; color: #6b6560; line-height: 1.7; margin-bottom: 2rem;" data-astro-cid-fz5pa65a> Local small model toolkit with llama-cpp-python + Streamlit GUI, fully offline operation </p> <div style="height: 1px; background: #d6cec4; margin-bottom: 2rem;" data-astro-cid-fz5pa65a></div>  <h1 id="phos-v10--feature-report">Phos v1.0 — Feature Report</h1>
+<h2 id="project-overview">Project Overview</h2>
+<p>Phos is a local small model toolkit based on llama-cpp-python, providing a visual interface through Streamlit GUI. Users can load local GGUF format models to perform translation, summarization, chat, classification, extraction, visual understanding, speech synthesis, and more — all running locally without an internet connection.</p>
+<hr>
+<h2 id="system-architecture">System Architecture</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>minimalLLMagent/</span></span>
+<span class="line"><span>├── app.py               # Streamlit GUI entry point (sidebar + 7 tabs)</span></span>
+<span class="line"><span>├── requirements.txt     # Dependency declaration</span></span>
+<span class="line"><span>├── phos/</span></span>
+<span class="line"><span>│   ├── __init__.py      # Package exports</span></span>
+<span class="line"><span>│   ├── model.py         # ModelManager — Core model management</span></span>
+<span class="line"><span>│   ├── tasks.py         # Text task functions (5)</span></span>
+<span class="line"><span>│   ├── vision.py        # Image understanding tasks</span></span>
+<span class="line"><span>│   ├── tts.py           # Orpheus TTS speech synthesis</span></span>
+<span class="line"><span>│   └── presets.py       # Parameter preset persistence</span></span>
+<span class="line"><span>└── models/              # GGUF model storage directory</span></span></code></pre>
+<hr>
+<h2 id="core-module-details">Core Module Details</h2>
+<h3 id="1-phosmodelpy--model-management-core">1. <code>phos/model.py</code> — Model Management Core</h3>
+<p><code>ModelManager</code> is the central class of the entire system, loading GGUF models directly via llama-cpp-python.</p>
+<p><strong>Key Methods:</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody><tr><td><code>load(path, n_ctx, n_gpu_layers)</code></td><td>Load text-only model</td></tr><tr><td><code>load_multimodal(path, mmproj, n_ctx, n_gpu_layers)</code></td><td>Load multimodal model (with mmproj vision projector)</td></tr><tr><td><code>unload()</code></td><td>Release model memory</td></tr><tr><td><code>complete(messages, temperature, max_tokens)</code></td><td>Single-turn generation, returns full text</td></tr><tr><td><code>stream(messages, temperature, max_tokens)</code></td><td>Token-by-token streaming generation, yields <code>(text, stats)</code></td></tr><tr><td><code>_has_images(messages)</code></td><td>Detects whether messages contain images</td></tr></tbody></table>
+<p><strong>Features:</strong></p>
+<ul>
+<li>Auto-scans NVIDIA CUDA DLL paths at startup, supports GPU acceleration</li>
+<li>Auto-detects multimodal messages during streaming generation, falls back to non-streaming mode to ensure proper image processing</li>
+<li>Records performance statistics after each generation (total time, token count, tokens/sec, time to first token)</li>
+</ul>
+<hr>
+<h3 id="2-phostaskspy--text-tasks">2. <code>phos/tasks.py</code> — Text Tasks</h3>
+<p>Five independent functions, all accepting a <code>manager</code> parameter:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Function</th><th>Functionality</th><th>Input</th><th>Output</th></tr></thead><tbody><tr><td><code>translate(text, target_lang, source_lang)</code></td><td>Translation</td><td>Text + target language</td><td>str</td></tr><tr><td><code>summarize(text, style, max_length)</code></td><td>Summarization/rewriting</td><td>Text + style parameters</td><td>str</td></tr><tr><td><code>classify(text, categories)</code></td><td>Text classification</td><td>Text + category list</td><td>dict (category, confidence, reasoning)</td></tr><tr><td><code>extract(text, fields)</code></td><td>Information extraction</td><td>Text + field list</td><td>dict (field name -> value)</td></tr><tr><td><code>chat(messages, system_prompt)</code></td><td>Multi-turn conversation</td><td>Message history</td><td>str</td></tr></tbody></table>
+<p>classify/extract use regex to extract JSON from output, not relying on <code>json_mode</code>, compatible with all models.</p>
+<hr>
+<h3 id="3-phosvisionpy--image-understanding">3. <code>phos/vision.py</code> — Image Understanding</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Function</th><th>Functionality</th></tr></thead><tbody><tr><td><code>describe_image(image_path, prompt)</code></td><td>Image description, supports custom prompts</td></tr><tr><td><code>ask_about_image(image_path, question)</code></td><td>Image Q&#x26;A</td></tr></tbody></table>
+<p>Image files are read and base64-encoded, then passed to the model via <code>image_url</code> type messages.</p>
+<hr>
+<h3 id="4-phosttspy--speech-synthesis">4. <code>phos/tts.py</code> — Speech Synthesis</h3>
+<p>Based on Orpheus-3B TTS model + SNAC audio decoder:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Text -> Orpheus GGUF model -> Audio tokens -> SNAC decoder -> PCM audio -> WAV file</span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Component</th><th>Purpose</th></tr></thead><tbody><tr><td><code>synthesize(text, voice, temperature)</code></td><td>Main entry point, returns WAV bytes</td></tr><tr><td><code>pcm_to_wav(pcm_bytes, sample_rate)</code></td><td>PCM to WAV conversion</td></tr><tr><td>SNAC (24kHz)</td><td>Audio decoder, auto-downloaded and cached</td></tr></tbody></table>
+<p>Supports 8 voices: tara, leah, jess, leo, dan, mia, zac, zoe</p>
+<hr>
+<h3 id="5-phospresetspy--parameter-presets">5. <code>phos/presets.py</code> — Parameter Presets</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Function</th><th>Functionality</th></tr></thead><tbody><tr><td><code>load_presets()</code></td><td>Read <code>~/.phos/presets.json</code></td></tr><tr><td><code>save_preset(name, settings)</code></td><td>Save n_ctx, n_gpu_layers, temperature, max_tokens</td></tr><tr><td><code>delete_preset(name)</code></td><td>Delete preset</td></tr></tbody></table>
+<hr>
+<h2 id="gui-features-apppy">GUI Features (<code>app.py</code>)</h2>
+<h3 id="sidebar">Sidebar</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Feature</th><th>Description</th></tr></thead><tbody><tr><td>Directory selection</td><td>Opens Windows native directory selector, recursively scans <code>.gguf</code> files</td></tr><tr><td>Model type</td><td>Three types: Text model / Multimodal vision (requires mmproj) / Speech synthesis</td></tr><tr><td>n_ctx</td><td>Context length (1024~131072, default 4096)</td></tr><tr><td>Compute mode</td><td>GPU (CUDA) or CPU</td></tr><tr><td>GPU layers</td><td>Configurable when GPU is selected (default 99, full offload)</td></tr><tr><td>Load/Unload</td><td>Button operations, displays current model status</td></tr><tr><td>temperature</td><td>0.0~1.5</td></tr><tr><td>max_tokens</td><td>64~8192</td></tr><tr><td>Preset management</td><td>Save/load/delete parameter combinations</td></tr></tbody></table>
+<h3 id="main-area-tabs">Main Area Tabs</h3>
+<h4 id="tab-1-chat">Tab 1: Chat</h4>
+<ul>
+<li>Streaming output (character-by-character display)</li>
+<li>Maintains multi-turn conversation history</li>
+<li>Optional System prompt</li>
+<li><strong>When using multimodal model</strong>: Shows image upload interface (paperclip icon to attach images), images sent with messages</li>
+<li>Performance stats bar: Total time, token count, tokens/s, time to first token</li>
+</ul>
+<h4 id="tab-2-translation">Tab 2: Translation</h4>
+<ul>
+<li>Source language/target language dropdowns (supports auto-detection)</li>
+<li>Target language defaults to Chinese</li>
+</ul>
+<h4 id="tab-3-summarizationrewriting">Tab 3: Summarization/Rewriting</h4>
+<ul>
+<li>Style selection: concise / formal / casual / bullet-points / elaborate</li>
+<li>Custom output length</li>
+</ul>
+<h4 id="tab-4-classificationextraction">Tab 4: Classification/Extraction</h4>
+<ul>
+<li>Classification mode: Input text + category list -> JSON (category, confidence, reasoning)</li>
+<li>Extraction mode: Input text + field list -> JSON (field -> value)</li>
+</ul>
+<h4 id="tab-5-vision-shown-when-multimodal-model-is-loaded">Tab 5: Vision (shown when multimodal model is loaded)</h4>
+<ul>
+<li>Upload image + custom question</li>
+<li>Returns model analysis result</li>
+</ul>
+<h4 id="tab-6-speech-synthesis">Tab 6: Speech Synthesis</h4>
+<ul>
+<li>Enter text + select voice</li>
+<li>Play audio + download WAV</li>
+<li>Depends on snac package</li>
+</ul>
+<hr>
+<h2 id="downloaded-models">Downloaded Models</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Model File</th><th>Size</th><th>Quantization</th><th>Purpose</th></tr></thead><tbody><tr><td>Qwen3.5-2B-Q4_K_M.gguf</td><td>1.2 GB</td><td>Q4_K_M</td><td>Primary GPU text task model</td></tr><tr><td>Qwen3-0.6B-Q4_K_M.gguf</td><td>379 MB</td><td>Q4_K_M</td><td>Lightweight CPU text task model</td></tr><tr><td>Qwen2.5-VL-3B-Instruct-Q4_K_M.gguf</td><td>1.8 GB</td><td>Q4_K_M</td><td>Multimodal visual understanding</td></tr><tr><td>mmproj-model-f16.gguf</td><td>1.3 GB</td><td>F16</td><td>Qwen2.5-VL vision projector</td></tr><tr><td>Janus-Pro-1B.Q4_K_M.gguf</td><td>989 MB</td><td>Q4_K_M</td><td>Image-text understanding</td></tr><tr><td>Janus-Pro-1B.mmproj-f16.gguf</td><td>594 MB</td><td>F16</td><td>Janus-Pro vision projector</td></tr><tr><td>orpheus-3b-tts-multilingual.Q4_K_M.gguf</td><td>2.0 GB</td><td>Q4_K_M</td><td>Speech synthesis</td></tr></tbody></table>
+<hr>
+<h2 id="dependencies">Dependencies</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>--extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cu124</span></span>
+<span class="line"><span>llama-cpp-python>=0.2.0      # Core inference engine (CUDA version)</span></span>
+<span class="line"><span>nvidia-cublas-cu12            # CUDA acceleration library</span></span>
+<span class="line"><span>nvidia-cuda-runtime-cu12      # CUDA runtime</span></span>
+<span class="line"><span>nvidia-cuda-nvrtc-cu12        # CUDA compiler</span></span>
+<span class="line"><span>streamlit>=1.30.0             # Web GUI</span></span>
+<span class="line"><span>snac                          # Orpheus TTS audio decoding</span></span></code></pre>
+<hr>
+<h2 id="startup">Startup</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#005CC5">cd</span><span style="color:#032F62"> minimalLLMagent</span></span>
+<span class="line"><span style="color:#6F42C1">pip</span><span style="color:#032F62"> install</span><span style="color:#005CC5"> -r</span><span style="color:#032F62"> requirements.txt</span></span>
+<span class="line"><span style="color:#6F42C1">streamlit</span><span style="color:#032F62"> run</span><span style="color:#032F62"> app.py</span></span></code></pre>
+<p>Open in browser at <code>http://localhost:8501</code></p>
+<hr>
+<h2 id="technical-highlights">Technical Highlights</h2>
+<ol>
+<li><strong>Zero-configuration auto-detection</strong>: Auto-scans CUDA DLLs at startup, no manual environment variable setup needed</li>
+<li><strong>GPU/CPU one-click switching</strong>: Sidebar radio toggle, n_gpu_layers auto-adjusts</li>
+<li><strong>Multimodal auto-adaptation</strong>: After loading a model with mmproj, the chat tab automatically shows the image upload interface</li>
+<li><strong>Streaming generation</strong>: Chat tab displays character-by-character, non-streaming for regular tasks ensures stability</li>
+<li><strong>Performance visualization</strong>: Displays tokens/sec, TTFT, and other key metrics after each generation</li>
+<li><strong>Preset persistence</strong>: Parameter combinations saved to <code>~/.phos/presets.json</code>, preserved across restarts</li>
+<li><strong>Native directory selector</strong>: Uses tkinter to open system-level directory selection dialog</li>
+</ol>
+<hr>
+<h2 id="version-information">Version Information</h2>
+<ul>
+<li><strong>Version</strong>: v1.0</li>
+<li><strong>Backup file</strong>: <code>D:\claude\codex\phos-v1.0-backup.zip</code> (11.7 KB, source code package)</li>
+<li><strong>Date</strong>: 2026-05-31</li>
+</ul>  </article> </div> </div>  </main> <footer class="footer-border" style="padding: 2.5rem 1.5rem; text-align: center; font-size: 0.8125rem; color: #9a938c; background: #f5f0eb;" data-astro-cid-37fxchfa> <p data-astro-cid-37fxchfa>&copy; 2026 AI Portfolio. Crafted with precision.</p> </footer> </body></html>  <script type="module">function l(){const s=document.querySelector(".markdown-content"),o=document.getElementById("toc");if(!s||!o)return;o.innerHTML="";const a=s.querySelectorAll("h2, h3");a.forEach((e,n)=>{const r=e.id||`heading-${n}`;e.id=r;const t=document.createElement("a");t.href=`#${r}`,t.textContent=e.textContent?.trim()||"",t.style.display="block",t.style.padding="0.2rem 0",t.style.color=e.tagName==="H2"?"#1a1a1a":"#9a938c",t.style.textDecoration="none",t.style.transition="color 0.15s ease",t.style.paddingLeft=e.tagName==="H3"?"0.75rem":"0",t.style.fontSize=e.tagName==="H3"?"0.75rem":"0.8125rem",t.style.opacity="0.85",o.appendChild(t)});const i=new IntersectionObserver(e=>{e.forEach(n=>{if(n.isIntersecting){const r=n.target.id;o.querySelectorAll("a").forEach(t=>{const c=t.getAttribute("href")===`#${r}`;t.style.opacity=c?"1":"0.85",t.style.color=c?"#1a1a1a":"",t.style.fontWeight=c?"600":""})}})},{rootMargin:"-80px 0px -70% 0px"});a.forEach(e=>i.observe(e))}l();document.addEventListener("astro:page-load",l);</script>

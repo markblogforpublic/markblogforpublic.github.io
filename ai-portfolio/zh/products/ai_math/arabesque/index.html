@@ -1,0 +1,355 @@
+<!DOCTYPE html><html lang="zh" data-theme="math" class="scroll-smooth" data-astro-cid-37fxchfa> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="AI驱动的数学公式3D/2D可视化教学工具，React + FastAPI + Plotly.js"><title>Arabesque | AI Portfolio</title><link rel="icon" type="image/svg+xml" href="../../../../favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="../../../../_astro/BaseLayout.BuAdYsho.css">
+<style>@media(min-width:1024px){.toc-sidebar[data-astro-cid-fz5pa65a]{display:block!important}}
+</style></head> <body data-astro-cid-37fxchfa> <nav class="nav-bar fixed top-0 left-0 right-0 z-50" style="height: 56px;" data-astro-cid-37fxchfa> <div style="max-width: 80rem; margin: 0 auto; height: 100%; display: flex; align-items: center; padding: 0 1.5rem;" data-astro-cid-37fxchfa> <!-- Logo --> <a href="../../../index.html" class="nav-logo" data-astro-cid-37fxchfa>AI Portfolio</a> <!-- Spacer --> <div style="flex: 1;" data-astro-cid-37fxchfa></div> <!-- Desktop nav links (center) --> <div class="desktop-nav" style="display: flex; align-items: center; gap: 2rem; position: absolute; left: 50%; transform: translateX(-50%);" data-astro-cid-37fxchfa> <a href="../../../index.html" class="nav-link" data-astro-cid-37fxchfa>首页</a> <a href="../../../index.html#products" class="nav-link" data-astro-cid-37fxchfa>产品</a> <a href="../../../index.html#research" class="nav-link" data-astro-cid-37fxchfa>研究</a> <a href="../../../about/index.html" class="nav-link" data-astro-cid-37fxchfa>About</a> </div> <!-- Right side --> <div style="display: flex; align-items: center; gap: 0.5rem;" data-astro-cid-37fxchfa> <a href="../../../index.html" style="font-size: 0.8125rem; font-weight: 500; text-decoration: none; padding: 0.375rem 0.625rem; border-radius: 4px; transition: all 0.15s ease; background: #1a1a1a; color: #fff;" data-astro-cid-37fxchfa>中文</a> <a href="../../../../en/index.html" style="font-size: 0.8125rem; font-weight: 500; text-decoration: none; padding: 0.375rem 0.625rem; border-radius: 4px; transition: all 0.15s ease; color: #6b6560; border: 1px solid #d6cec4;" data-astro-cid-37fxchfa>EN</a> <!-- Mobile hamburger --> <button class="mobile-menu-btn" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu" data-astro-cid-37fxchfa> <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" data-astro-cid-37fxchfa> <path d="M3 6h14M3 10h14M3 14h14" data-astro-cid-37fxchfa></path> </svg> </button> </div> </div> </nav> <!-- Mobile nav --> <div class="mobile-nav" data-astro-cid-37fxchfa> <a href="../../../index.html" data-astro-cid-37fxchfa>首页</a> <a href="../../../index.html#products" data-astro-cid-37fxchfa>产品</a> <a href="../../../index.html#research" data-astro-cid-37fxchfa>研究</a> <a href="../../../about/index.html" data-astro-cid-37fxchfa>About</a> <a href="../../../../en/index.html" data-astro-cid-37fxchfa>English</a> </div> <main class="min-h-screen" style="padding-top: 56px;" data-astro-cid-37fxchfa>  <div style="max-width: 80rem; margin: 0 auto; padding: 0 1.5rem;" data-astro-cid-fz5pa65a> <!-- Breadcrumb --> <nav style="padding: 1rem 0; font-size: 0.8125rem; color: #9a938c; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;" data-astro-cid-fz5pa65a> <a href="../../../index.html" style="color: #6b6560; text-decoration: none; transition: opacity 0.15s;" data-astro-cid-fz5pa65a>首页</a>  <span style="color: #c4bdb4;" data-astro-cid-fz5pa65a>/</span> <a href="../../../index.html#products" style="color: #6b6560; text-decoration: none; transition: opacity 0.15s;" data-astro-cid-fz5pa65a>产品</a> <span style="color: #c4bdb4;" data-astro-cid-fz5pa65a>/</span> <a href="../../../index.html#products" style="color: #6b6560; text-decoration: none; transition: opacity 0.15s;" data-astro-cid-fz5pa65a>AI Math</a> <span style="color: #c4bdb4;" data-astro-cid-fz5pa65a>/</span> <span style="color: #1a1a1a;" data-astro-cid-fz5pa65a>Arabesque</span> </nav> <div style="display: flex; gap: 3rem; padding-bottom: 4rem;" data-astro-cid-fz5pa65a> <!-- Sidebar TOC --> <aside style="width: 14rem; flex-shrink: 0; display: none;" class="toc-sidebar" data-astro-cid-fz5pa65a> <div style="position: sticky; top: 5rem;" data-astro-cid-fz5pa65a> <p style="font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #9a938c; margin-bottom: 0.75rem;" data-astro-cid-fz5pa65a>目录</p> <nav id="toc" style="font-size: 0.8125rem; line-height: 1.6;" data-astro-cid-fz5pa65a></nav> </div> </aside> <!-- Content --> <article class="markdown-content" style="flex: 1; min-width: 0; max-width: 48rem;" data-astro-cid-fz5pa65a> <!-- Category badge --> <div style="margin-bottom: 1rem;" data-astro-cid-fz5pa65a> <span style="display: inline-block; font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9a938c; padding: 0.25rem 0.625rem; border: 1px solid #d6cec4; border-radius: 4px;" data-astro-cid-fz5pa65a> AI Math </span> </div> <h1 style="font-size: 2.25rem; font-weight: 700; color: #1a1a1a; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 0.75rem; font-family: var(--font-heading); border: none; padding: 0;" data-astro-cid-fz5pa65a> Arabesque </h1> <p style="font-size: 1rem; color: #6b6560; line-height: 1.7; margin-bottom: 2rem;" data-astro-cid-fz5pa65a> AI驱动的数学公式3D/2D可视化教学工具，React + FastAPI + Plotly.js </p> <div style="height: 1px; background: #d6cec4; margin-bottom: 2rem;" data-astro-cid-fz5pa65a></div>  <h1 id="arabesque--功能报告">Arabesque — 功能报告</h1>
+<blockquote>
+<p>AI 驱动的数学/物理公式 3D/2D 可视化教学工具<br>
+版本 1.0 · 开发者 Mark · 2026-05-30</p>
+</blockquote>
+<hr>
+<h2 id="项目概览">项目概览</h2>
+<p>Arabesque 是一个交互式公式可视化平台。用户输入自然语言或 LaTeX 数学公式，AI 自动解析并生成结构化的可视化配置，前端通过 Plotly.js 实时渲染 3D 曲面、参数曲线、向量场、粒子动画等图形，同时提供中文讲解。</p>
+<p><strong>技术栈</strong>：React + TypeScript + Vite（前端）| Python FastAPI（后端）| Anthropic SDK + OpenAI SDK（AI）| Plotly.js（可视化）</p>
+<hr>
+<h2 id="系统架构">系统架构</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>┌─────────────────────────────────────────────────┐</span></span>
+<span class="line"><span>│  Frontend · React + TypeScript + Plotly.js      │</span></span>
+<span class="line"><span>│                                                 │</span></span>
+<span class="line"><span>│  [公式输入] → [LaTeX预览] → [3D/2D画布]         │</span></span>
+<span class="line"><span>│  [AI讲解面板] [参数滑块] [加载动画]              │</span></span>
+<span class="line"><span>└──────────────────┬──────────────────────────────┘</span></span>
+<span class="line"><span>                   │ HTTP (Vite proxy → :8001)</span></span>
+<span class="line"><span>┌──────────────────▼──────────────────────────────┐</span></span>
+<span class="line"><span>│  Backend · Python FastAPI                       │</span></span>
+<span class="line"><span>│                                                 │</span></span>
+<span class="line"><span>│  /api/visualize   AI 解析公式→可视化配置        │</span></span>
+<span class="line"><span>│  /api/explain     AI 中文讲解公式               │</span></span>
+<span class="line"><span>│  /api/models      获取可用模型列表（过滤TTS）   │</span></span>
+<span class="line"><span>│  /api/providers   查询各AI通道配置状态          │</span></span>
+<span class="line"><span>│  /api/settings    读取/写入配置（.env文件）      │</span></span>
+<span class="line"><span>│  /api/health      健康检查                      │</span></span>
+<span class="line"><span>│                                                 │</span></span>
+<span class="line"><span>│  ┌─────────────┐  ┌──────────────┐             │</span></span>
+<span class="line"><span>│  │Anthropic SDK│  │ OpenAI SDK   │             │</span></span>
+<span class="line"><span>│  │(MiMo等兼容) │  │(GPT等兼容)   │             │</span></span>
+<span class="line"><span>│  └─────────────┘  └──────────────┘             │</span></span>
+<span class="line"><span>└─────────────────────────────────────────────────┘</span></span></code></pre>
+<hr>
+<h2 id="功能模块">功能模块</h2>
+<h3 id="1-公式输入与-ai-解析">1. 公式输入与 AI 解析</h3>
+<p><strong>输入方式</strong>：自然语言（如 <code>z = sin(x) * cos(y)</code>）或描述性文本（如 <code>projectile motion</code>）</p>
+<p><strong>AI 双通道</strong>（前端可切换）：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>通道</th><th>协议</th><th>说明</th></tr></thead><tbody><tr><td><code>anthropic</code></td><td>Anthropic Messages API</td><td>兼容所有 Anthropic 协议服务（如 MiMo），用 <code>tool_use</code> 强制结构化输出</td></tr><tr><td><code>openai</code></td><td>OpenAI Chat Completions</td><td>兼容所有 OpenAI 协议服务，用 <code>function calling</code> 强制结构化输出</td></tr></tbody></table>
+<p><strong>AI 输出结构</strong>：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#005CC5">  "type"</span><span style="color:#24292E">: </span><span style="color:#032F62">"surface"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">  "expression"</span><span style="color:#24292E">: </span><span style="color:#032F62">"Math.sin(x) * Math.cos(y)"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">  "variables"</span><span style="color:#24292E">: [</span><span style="color:#032F62">"x"</span><span style="color:#24292E">, </span><span style="color:#032F62">"y"</span><span style="color:#24292E">],</span></span>
+<span class="line"><span style="color:#005CC5">  "domain"</span><span style="color:#24292E">: { </span><span style="color:#005CC5">"x"</span><span style="color:#24292E">: [</span><span style="color:#005CC5">-5</span><span style="color:#24292E">, </span><span style="color:#005CC5">5</span><span style="color:#24292E">], </span><span style="color:#005CC5">"y"</span><span style="color:#24292E">: [</span><span style="color:#005CC5">-5</span><span style="color:#24292E">, </span><span style="color:#005CC5">5</span><span style="color:#24292E">] },</span></span>
+<span class="line"><span style="color:#005CC5">  "parameters"</span><span style="color:#24292E">: [{ </span><span style="color:#005CC5">"name"</span><span style="color:#24292E">: </span><span style="color:#032F62">"A"</span><span style="color:#24292E">, </span><span style="color:#005CC5">"label"</span><span style="color:#24292E">: </span><span style="color:#032F62">"振幅"</span><span style="color:#24292E">, </span><span style="color:#005CC5">"min"</span><span style="color:#24292E">: </span><span style="color:#005CC5">0.1</span><span style="color:#24292E">, </span><span style="color:#005CC5">"max"</span><span style="color:#24292E">: </span><span style="color:#005CC5">5</span><span style="color:#24292E">, </span><span style="color:#005CC5">"step"</span><span style="color:#24292E">: </span><span style="color:#005CC5">0.1</span><span style="color:#24292E">, </span><span style="color:#005CC5">"default"</span><span style="color:#24292E">: </span><span style="color:#005CC5">1</span><span style="color:#24292E"> }],</span></span>
+<span class="line"><span style="color:#005CC5">  "animation"</span><span style="color:#24292E">: { </span><span style="color:#005CC5">"variable"</span><span style="color:#24292E">: </span><span style="color:#032F62">"t"</span><span style="color:#24292E">, </span><span style="color:#005CC5">"speed"</span><span style="color:#24292E">: </span><span style="color:#005CC5">1.0</span><span style="color:#24292E">, </span><span style="color:#005CC5">"range"</span><span style="color:#24292E">: [</span><span style="color:#005CC5">0</span><span style="color:#24292E">, </span><span style="color:#005CC5">10</span><span style="color:#24292E">], </span><span style="color:#005CC5">"loop"</span><span style="color:#24292E">: </span><span style="color:#005CC5">true</span><span style="color:#24292E"> },</span></span>
+<span class="line"><span style="color:#005CC5">  "explanation"</span><span style="color:#24292E">: </span><span style="color:#032F62">"这是一个二元正弦余弦乘积曲面..."</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">  "latex"</span><span style="color:#24292E">: </span><span style="color:#032F62">"z = </span><span style="color:#005CC5">\\</span><span style="color:#032F62">sin(x) </span><span style="color:#005CC5">\\</span><span style="color:#032F62">cdot </span><span style="color:#005CC5">\\</span><span style="color:#032F62">cos(y)"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">  "title"</span><span style="color:#24292E">: </span><span style="color:#032F62">"sin(x)cos(y) 曲面"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">  "dimension"</span><span style="color:#24292E">: </span><span style="color:#032F62">"3d"</span></span>
+<span class="line"><span style="color:#24292E">}</span></span></code></pre>
+<p><strong>可视化类型</strong>：<code>surface</code>（曲面）| <code>curve</code>（参数曲线）| <code>parametric2d</code>（2D参数图）| <code>vectorField</code>（向量场）| <code>particles</code>（粒子）</p>
+<hr>
+<h3 id="2-3d2d-可视化渲染">2. 3D/2D 可视化渲染</h3>
+<p>使用 <strong>Plotly.js</strong>（<code>react-plotly.js</code>）渲染，无需 WebGL，在所有浏览器环境均可工作。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>类型</th><th>Plotly trace</th><th>说明</th></tr></thead><tbody><tr><td><code>surface</code></td><td><code>type: 'surface'</code> 或 <code>'contour'</code></td><td>3D 曲面 / 2D 等高线图，Viridis 色彩映射</td></tr><tr><td><code>curve</code></td><td><code>type: 'scatter3d'</code> 或 <code>'scatter'</code></td><td>参数曲线，支持 2D/3D</td></tr><tr><td><code>vectorField</code></td><td><code>type: 'cone'</code></td><td>箭头场，6×6 网格</td></tr><tr><td><code>particles</code></td><td><code>type: 'scatter3d'</code></td><td>粒子散点，随机初始化 + 位移</td></tr></tbody></table>
+<p><strong>交互功能</strong>：鼠标旋转、缩放、平移（Plotly 内置），参数滑块实时更新图形。</p>
+<hr>
+<h3 id="3-ai-讲解面板">3. AI 讲解面板</h3>
+<ul>
+<li>公式以 KaTeX 渲染（支持完整 LaTeX）</li>
+<li>AI 返回中文讲解，含公式含义、物理意义、可视化要点</li>
+<li>支持 <code>explain</code> 接口独立调用（带上下文）</li>
+</ul>
+<hr>
+<h3 id="4-预置公式库">4. 预置公式库</h3>
+<p>8 个预设公式，点击即触发可视化：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>公式</th><th>类型</th></tr></thead><tbody><tr><td><code>z = sin(x) * cos(y)</code></td><td>3D 曲面</td></tr><tr><td><code>z = x² + y²</code></td><td>3D 旋转抛物面</td></tr><tr><td><code>x=sin(3t), y=cos(5t)</code></td><td>Lissajous 曲线</td></tr><tr><td><code>F = -kx (弹簧)</code></td><td>弹性力学</td></tr><tr><td><code>E = mc²</code></td><td>质能等价</td></tr><tr><td><code>F = (-y, x)</code> 向量场</td><td>旋转向量场</td></tr><tr><td><code>y = A sin(kx - wt)</code></td><td>波动方程</td></tr><tr><td><code>抛物运动</code></td><td>抛体运动</td></tr></tbody></table>
+<hr>
+<h3 id="5-设置与配置">5. 设置与配置</h3>
+<p><strong>设置面板</strong>（⚙ 按钮）可在线修改 AI 通道配置：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>字段</th><th>说明</th></tr></thead><tbody><tr><td>Anthropic API Key</td><td>支持 <code>sk-</code> 和 <code>tp-</code> 格式</td></tr><tr><td>Anthropic Base URL</td><td>完整地址（如 <code>https://xxx.com/anthropic/v1</code>）</td></tr><tr><td>Anthropic Model</td><td>模型名（如 <code>mimo-v2.5</code>）</td></tr><tr><td>OpenAI API Key</td><td>支持 <code>sk-</code> 格式</td></tr><tr><td>OpenAI Base URL</td><td>留空则用官方 API</td></tr><tr><td>OpenAI Model</td><td>留空则默认 <code>gpt-4o</code></td></tr></tbody></table>
+<p>保存后写入 <code>backend/.env</code>，立即生效，无需重启后端。</p>
+<p><strong>通道状态检测</strong>：侧边栏按钮显示可用状态，未配置的通道自动置灰禁用。</p>
+<p><strong>模型列表</strong>：<code>/api/models</code> 自动从 <code>ANTHROPIC_BASE_URL</code> 推导 <code>/v1/models</code> 端点，获取模型列表并过滤 TTS 等非文本模型。</p>
+<hr>
+<h3 id="6-加载状态">6. 加载状态</h3>
+<p>AI 解析期间（约 5-15s），画布区域显示加载遮罩：</p>
+<ul>
+<li>旋转 spinner</li>
+<li>滑动进度条动画</li>
+<li>提示文字 “AI 正在解析公式并生成可视化…”</li>
+</ul>
+<hr>
+<h2 id="文件结构">文件结构</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>arabesque/</span></span>
+<span class="line"><span>├── backend/</span></span>
+<span class="line"><span>│   ├── main.py                     # FastAPI 入口</span></span>
+<span class="line"><span>│   ├── requirements.txt            # Python 依赖</span></span>
+<span class="line"><span>│   ├── .env / .env.example         # 配置文件</span></span>
+<span class="line"><span>│   ├── routers/</span></span>
+<span class="line"><span>│   │   ├── visualize.py            # POST /api/visualize</span></span>
+<span class="line"><span>│   │   ├── explain.py              # POST /api/explain</span></span>
+<span class="line"><span>│   │   ├── models.py               # GET  /api/models</span></span>
+<span class="line"><span>│   │   └── settings.py             # GET/POST /api/settings, /api/providers</span></span>
+<span class="line"><span>│   ├── services/</span></span>
+<span class="line"><span>│   │   ├── ai_base.py              # AIVisualizer 抽象基类</span></span>
+<span class="line"><span>│   │   ├── ai_anthropic.py         # Anthropic SDK（兼容 MiMo 等）</span></span>
+<span class="line"><span>│   │   └── ai_openai.py            # OpenAI SDK（兼容第三方）</span></span>
+<span class="line"><span>│   └── schemas/</span></span>
+<span class="line"><span>│       └── visualization.py        # Pydantic 数据模型</span></span>
+<span class="line"><span>│</span></span>
+<span class="line"><span>├── frontend/</span></span>
+<span class="line"><span>│   ├── package.json</span></span>
+<span class="line"><span>│   ├── vite.config.ts              # Vite + proxy → :8001</span></span>
+<span class="line"><span>│   ├── index.html</span></span>
+<span class="line"><span>│   └── src/</span></span>
+<span class="line"><span>│       ├── main.tsx</span></span>
+<span class="line"><span>│       ├── App.tsx                 # 主布局 + 状态管理</span></span>
+<span class="line"><span>│       ├── index.css               # 全局样式（深色主题）</span></span>
+<span class="line"><span>│       ├── components/</span></span>
+<span class="line"><span>│       │   ├── FormulaInput.tsx    # 公式输入 + 预设按钮</span></span>
+<span class="line"><span>│       │   ├── VisCanvas.tsx       # Plotly 可视化核心</span></span>
+<span class="line"><span>│       │   ├── ControlPanel.tsx    # 参数滑块 + 类型标签</span></span>
+<span class="line"><span>│       │   ├── ExplanationPanel.tsx # KaTeX 渲染 + AI讲解</span></span>
+<span class="line"><span>│       │   └── SettingsPanel.tsx   # API 配置面板</span></span>
+<span class="line"><span>│       ├── hooks/</span></span>
+<span class="line"><span>│       │   └── useVisualization.ts # API 调用 + 状态管理</span></span>
+<span class="line"><span>│       ├── types/</span></span>
+<span class="line"><span>│       │   ├── visualization.ts    # TypeScript 类型</span></span>
+<span class="line"><span>│       │   └── plotly.d.ts         # Plotly 类型声明</span></span>
+<span class="line"><span>│       └── utils/</span></span>
+<span class="line"><span>│           └── mathEval.ts         # 安全数学表达式求值</span></span>
+<span class="line"><span>│</span></span>
+<span class="line"><span>└── arabesque-clean.zip / arabesque-full.zip  # 项目备份</span></span></code></pre>
+<hr>
+<h2 id="api-端点一览">API 端点一览</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>方法</th><th>路径</th><th>说明</th></tr></thead><tbody><tr><td><code>POST</code></td><td><code>/api/visualize</code></td><td>解析公式，返回可视化配置</td></tr><tr><td><code>POST</code></td><td><code>/api/explain</code></td><td>解释公式，返回中文讲解</td></tr><tr><td><code>GET</code></td><td><code>/api/models</code></td><td>获取可用模型列表（过滤TTS）</td></tr><tr><td><code>GET</code></td><td><code>/api/providers</code></td><td>查询各通道配置状态</td></tr><tr><td><code>GET</code></td><td><code>/api/settings</code></td><td>读取当前配置</td></tr><tr><td><code>POST</code></td><td><code>/api/settings</code></td><td>更新配置（写入.env）</td></tr><tr><td><code>GET</code></td><td><code>/api/health</code></td><td>健康检查</td></tr></tbody></table>
+<hr>
+<h2 id="当前配置">当前配置</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>通道</th><th>状态</th><th>说明</th></tr></thead><tbody><tr><td><code>anthropic</code></td><td>✅ 已配置</td><td>MiMo（xiaomi）via <code>token-plan-cn.xiaomimimo.com/anthropic/v1</code>，模型 <code>mimo-v2.5</code></td></tr><tr><td><code>openai</code></td><td>❌ 未配置</td><td>需在设置面板填写 API Key</td></tr></tbody></table>
+<hr>
+<h2 id="启动方式">启动方式</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 后端</span></span>
+<span class="line"><span style="color:#005CC5">cd</span><span style="color:#032F62"> backend</span></span>
+<span class="line"><span style="color:#6F42C1">pip</span><span style="color:#032F62"> install</span><span style="color:#005CC5"> -r</span><span style="color:#032F62"> requirements.txt</span></span>
+<span class="line"><span style="color:#6F42C1">uvicorn</span><span style="color:#032F62"> main:app</span><span style="color:#005CC5"> --host</span><span style="color:#005CC5"> 0.0.0.0</span><span style="color:#005CC5"> --port</span><span style="color:#005CC5"> 8001</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 前端</span></span>
+<span class="line"><span style="color:#005CC5">cd</span><span style="color:#032F62"> frontend</span></span>
+<span class="line"><span style="color:#6F42C1">npm</span><span style="color:#032F62"> install</span></span>
+<span class="line"><span style="color:#6F42C1">npm</span><span style="color:#032F62"> run</span><span style="color:#032F62"> dev</span><span style="color:#6A737D">   # → http://localhost:5173</span></span></code></pre>
+<hr>
+<h2 id="备份说明">备份说明</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>文件</th><th>内容</th></tr></thead><tbody><tr><td><code>arabesque-clean.zip</code></td><td>31 个文件，<strong>不含</strong> <code>.env</code>（敏感信息已排除）</td></tr><tr><td><code>arabesque-full.zip</code></td><td>32 个文件，<strong>含</strong> <code>.env</code>（完整配置含 API Key）</td></tr></tbody></table>
+<p>均排除 <code>node_modules</code>、<code>dist</code>、<code>__pycache__</code>、<code>.claude</code> 目录。</p>  </article> </div> </div>  </main> <footer class="footer-border" style="padding: 2.5rem 1.5rem; text-align: center; font-size: 0.8125rem; color: #9a938c; background: #f5f0eb;" data-astro-cid-37fxchfa> <p data-astro-cid-37fxchfa>&copy; 2026 AI Portfolio. Crafted with precision.</p> </footer> </body></html>  <script type="module">function l(){const s=document.querySelector(".markdown-content"),o=document.getElementById("toc");if(!s||!o)return;o.innerHTML="";const a=s.querySelectorAll("h2, h3");a.forEach((e,n)=>{const r=e.id||`heading-${n}`;e.id=r;const t=document.createElement("a");t.href=`#${r}`,t.textContent=e.textContent?.trim()||"",t.style.display="block",t.style.padding="0.2rem 0",t.style.color=e.tagName==="H2"?"#1a1a1a":"#9a938c",t.style.textDecoration="none",t.style.transition="color 0.15s ease",t.style.paddingLeft=e.tagName==="H3"?"0.75rem":"0",t.style.fontSize=e.tagName==="H3"?"0.75rem":"0.8125rem",t.style.opacity="0.85",o.appendChild(t)});const i=new IntersectionObserver(e=>{e.forEach(n=>{if(n.isIntersecting){const r=n.target.id;o.querySelectorAll("a").forEach(t=>{const c=t.getAttribute("href")===`#${r}`;t.style.opacity=c?"1":"0.85",t.style.color=c?"#1a1a1a":"",t.style.fontWeight=c?"600":""})}})},{rootMargin:"-80px 0px -70% 0px"});a.forEach(e=>i.observe(e))}l();document.addEventListener("astro:page-load",l);</script>

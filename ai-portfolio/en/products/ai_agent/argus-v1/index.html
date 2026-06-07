@@ -1,0 +1,604 @@
+<!DOCTYPE html><html lang="en" data-theme="agent" class="scroll-smooth" data-astro-cid-37fxchfa> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="AI desktop automation agent with screenshot -> AI analysis -> PyAutoGUI execution, 15 actions, three-tier security"><title>Argus v1.0 | AI Portfolio</title><link rel="icon" type="image/svg+xml" href="../../../../favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="../../../../_astro/BaseLayout.BuAdYsho.css">
+<style>@media(min-width:1024px){.toc-sidebar[data-astro-cid-fz5pa65a]{display:block!important}}
+</style></head> <body data-astro-cid-37fxchfa> <nav class="nav-bar fixed top-0 left-0 right-0 z-50" style="height: 56px;" data-astro-cid-37fxchfa> <div style="max-width: 80rem; margin: 0 auto; height: 100%; display: flex; align-items: center; padding: 0 1.5rem;" data-astro-cid-37fxchfa> <!-- Logo --> <a href="../../../../zh/index.html" class="nav-logo" data-astro-cid-37fxchfa>AI Portfolio</a> <!-- Spacer --> <div style="flex: 1;" data-astro-cid-37fxchfa></div> <!-- Desktop nav links (center) --> <div class="desktop-nav" style="display: flex; align-items: center; gap: 2rem; position: absolute; left: 50%; transform: translateX(-50%);" data-astro-cid-37fxchfa> <a href="../../../../zh/index.html" class="nav-link" data-astro-cid-37fxchfa>首页</a> <a href="../../../../zh/index.html#products" class="nav-link" data-astro-cid-37fxchfa>产品</a> <a href="../../../../zh/index.html#research" class="nav-link" data-astro-cid-37fxchfa>研究</a> <a href="../../../../zh/about/index.html" class="nav-link" data-astro-cid-37fxchfa>About</a> </div> <!-- Right side --> <div style="display: flex; align-items: center; gap: 0.5rem;" data-astro-cid-37fxchfa> <a href="../../../../zh/index.html" style="font-size: 0.8125rem; font-weight: 500; text-decoration: none; padding: 0.375rem 0.625rem; border-radius: 4px; transition: all 0.15s ease; color: #6b6560; border: 1px solid #d6cec4;" data-astro-cid-37fxchfa>中文</a> <a href="../../../index.html" style="font-size: 0.8125rem; font-weight: 500; text-decoration: none; padding: 0.375rem 0.625rem; border-radius: 4px; transition: all 0.15s ease; background: #1a1a1a; color: #fff;" data-astro-cid-37fxchfa>EN</a> <!-- Mobile hamburger --> <button class="mobile-menu-btn" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu" data-astro-cid-37fxchfa> <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" data-astro-cid-37fxchfa> <path d="M3 6h14M3 10h14M3 14h14" data-astro-cid-37fxchfa></path> </svg> </button> </div> </div> </nav> <!-- Mobile nav --> <div class="mobile-nav" data-astro-cid-37fxchfa> <a href="../../../../zh/index.html" data-astro-cid-37fxchfa>首页</a> <a href="../../../../zh/index.html#products" data-astro-cid-37fxchfa>产品</a> <a href="../../../../zh/index.html#research" data-astro-cid-37fxchfa>研究</a> <a href="../../../../zh/about/index.html" data-astro-cid-37fxchfa>About</a> <a href="../../../index.html" data-astro-cid-37fxchfa>English</a> </div> <main class="min-h-screen" style="padding-top: 56px;" data-astro-cid-37fxchfa>  <div style="max-width: 80rem; margin: 0 auto; padding: 0 1.5rem;" data-astro-cid-fz5pa65a> <!-- Breadcrumb --> <nav style="padding: 1rem 0; font-size: 0.8125rem; color: #9a938c; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;" data-astro-cid-fz5pa65a> <a href="../../../../zh/index.html" style="color: #6b6560; text-decoration: none; transition: opacity 0.15s;" data-astro-cid-fz5pa65a>首页</a>  <span style="color: #c4bdb4;" data-astro-cid-fz5pa65a>/</span> <a href="../../../index.html#products" style="color: #6b6560; text-decoration: none; transition: opacity 0.15s;" data-astro-cid-fz5pa65a>Products</a> <span style="color: #c4bdb4;" data-astro-cid-fz5pa65a>/</span> <a href="../../../index.html#products" style="color: #6b6560; text-decoration: none; transition: opacity 0.15s;" data-astro-cid-fz5pa65a>AI Agent</a> <span style="color: #c4bdb4;" data-astro-cid-fz5pa65a>/</span> <span style="color: #1a1a1a;" data-astro-cid-fz5pa65a>Argus v1.0</span> </nav> <div style="display: flex; gap: 3rem; padding-bottom: 4rem;" data-astro-cid-fz5pa65a> <!-- Sidebar TOC --> <aside style="width: 14rem; flex-shrink: 0; display: none;" class="toc-sidebar" data-astro-cid-fz5pa65a> <div style="position: sticky; top: 5rem;" data-astro-cid-fz5pa65a> <p style="font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #9a938c; margin-bottom: 0.75rem;" data-astro-cid-fz5pa65a>目录</p> <nav id="toc" style="font-size: 0.8125rem; line-height: 1.6;" data-astro-cid-fz5pa65a></nav> </div> </aside> <!-- Content --> <article class="markdown-content" style="flex: 1; min-width: 0; max-width: 48rem;" data-astro-cid-fz5pa65a> <!-- Category badge --> <div style="margin-bottom: 1rem;" data-astro-cid-fz5pa65a> <span style="display: inline-block; font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9a938c; padding: 0.25rem 0.625rem; border: 1px solid #d6cec4; border-radius: 4px;" data-astro-cid-fz5pa65a> AI Agent </span> </div> <h1 style="font-size: 2.25rem; font-weight: 700; color: #1a1a1a; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 0.75rem; font-family: var(--font-heading); border: none; padding: 0;" data-astro-cid-fz5pa65a> Argus v1.0 </h1> <p style="font-size: 1rem; color: #6b6560; line-height: 1.7; margin-bottom: 2rem;" data-astro-cid-fz5pa65a> AI desktop automation agent with screenshot -&gt; AI analysis -&gt; PyAutoGUI execution, 15 actions, three-tier security </p> <div style="height: 1px; background: #d6cec4; margin-bottom: 2rem;" data-astro-cid-fz5pa65a></div>  <h1 id="argus-v10--computer-use-agent-feature-report">Argus v1.0 — Computer Use Agent Feature Report</h1>
+<blockquote>
+<p><strong>Project Name</strong>: Argus<br>
+<strong>Version</strong>: v1.0<br>
+<strong>Total Lines of Code</strong>: 1,581 (11 source files)<br>
+<strong>Runtime Environment</strong>: Python 3.12+, Windows 10/11<br>
+<strong>Generated</strong>: 2026-06-06</p>
+</blockquote>
+<hr>
+<h2 id="1-project-overview">1. Project Overview</h2>
+<p>Argus is an AI-driven desktop automation agent that enables AI models to control a computer like a human through a screenshot -> AI analysis -> action execution loop. Supports multi-vendor APIs (Anthropic official / OpenAI-compatible third-party), with built-in safety analysis, automatic input method switching, smart scrolling, and more.</p>
+<h3 id="core-architecture">Core Architecture</h3>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>User inputs task</span></span>
+<span class="line"><span>    ↓</span></span>
+<span class="line"><span>┌─────────────────────┐</span></span>
+<span class="line"><span>│  Screenshot (mss)    │ ← Dynamic resolution detection</span></span>
+<span class="line"><span>│  Encode to base64 PNG │</span></span>
+<span class="line"><span>└─────────┬───────────┘</span></span>
+<span class="line"><span>          ↓</span></span>
+<span class="line"><span>┌─────────────────────────┐</span></span>
+<span class="line"><span>│  Send screenshot +       │ ← Auto-selects Anthropic/OpenAI</span></span>
+<span class="line"><span>│  tool definitions        │   protocol</span></span>
+<span class="line"><span>│  via provider.send()     │</span></span>
+<span class="line"><span>└─────────┬───────────────┘</span></span>
+<span class="line"><span>          ↓</span></span>
+<span class="line"><span>   stop_reason?</span></span>
+<span class="line"><span>   ├─ "tool_use" -> Safety analysis -> Dialog confirm(dangerous) -> PyAutoGUI execution</span></span>
+<span class="line"><span>   └─ "end_turn" -> Output result -> End</span></span></code></pre>
+<hr>
+<h2 id="2-file-structure">2. File Structure</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>computeruse_mode/</span></span>
+<span class="line"><span>├── .env                       # API keys (local storage, not in git)</span></span>
+<span class="line"><span>├── computer_use.py            # CLI main entry point (171 lines)</span></span>
+<span class="line"><span>├── agent_loop.py              # Core Agentic Loop (230 lines)</span></span>
+<span class="line"><span>├── computer_tool.py           # Action executor (281 lines)</span></span>
+<span class="line"><span>├── safety.py                  # Safety analysis module (106 lines)</span></span>
+<span class="line"><span>├── screen.py                  # Screenshot + resolution detection (30 lines)</span></span>
+<span class="line"><span>├── model_detect.py            # Model capability detection (92 lines)</span></span>
+<span class="line"><span>├── config.py                  # Configuration management + auto-import (188 lines)</span></span>
+<span class="line"><span>├── test_run.py                # Test script (49 lines)</span></span>
+<span class="line"><span>└── providers/</span></span>
+<span class="line"><span>    ├── __init__.py            # Factory function (23 lines)</span></span>
+<span class="line"><span>    ├── base.py                # Provider abstract base class (43 lines)</span></span>
+<span class="line"><span>    ├── anthropic_provider.py  # Anthropic SDK + HTTP (165 lines)</span></span>
+<span class="line"><span>    └── openai_compat.py       # OpenAI compatibility layer (203 lines)</span></span></code></pre>
+<hr>
+<h2 id="3-feature-list">3. Feature List</h2>
+<h3 id="31-multi-vendor-api-support">3.1 Multi-Vendor API Support</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Provider</th><th>Protocol</th><th>Authentication</th><th>Use Case</th></tr></thead><tbody><tr><td><strong>AnthropicProvider</strong></td><td>Anthropic Messages API</td><td><code>x-api-key</code> header</td><td>Claude official + Anthropic-compatible relays</td></tr><tr><td><strong>OpenAICompatProvider</strong></td><td>OpenAI Chat Completions</td><td><code>Authorization: Bearer</code></td><td>OpenRouter, SiliconFlow, one-api, etc.</td></tr></tbody></table>
+<p><strong>Auto-routing Logic</strong>:</p>
+<ul>
+<li><code>provider_name == "anthropic"</code> -> AnthropicProvider</li>
+<li><code>base_url</code> contains <code>/anthropic</code> or <code>anthropic</code> -> AnthropicProvider</li>
+<li>Otherwise -> OpenAICompatProvider</li>
+</ul>
+<p><strong>AnthropicProvider Dual Mode</strong>:</p>
+<ul>
+<li><code>api.anthropic.com</code> -> Uses anthropic SDK (<code>client.messages.create</code>)</li>
+<li>Third-party URL -> Uses httpx to call <code>/v1/messages</code> directly</li>
+</ul>
+<h3 id="32-action-system-15-actions">3.2 Action System (15 Actions)</h3>
+<h4 id="mouse-operations">Mouse Operations</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Action</th><th>Parameters</th><th>Security Level</th><th>Description</th></tr></thead><tbody><tr><td><code>left_click</code></td><td><code>coordinate: [x, y]</code></td><td>CAUTION</td><td>Left click</td></tr><tr><td><code>right_click</code></td><td><code>coordinate: [x, y]</code></td><td>CAUTION</td><td>Right click</td></tr><tr><td><code>double_click</code></td><td><code>coordinate: [x, y]</code></td><td>CAUTION</td><td>Double-click (select word, open file)</td></tr><tr><td><code>triple_click</code></td><td><code>coordinate: [x, y]</code></td><td>CAUTION</td><td>Triple-click (select line/paragraph)</td></tr><tr><td><code>mouse_move</code></td><td><code>coordinate: [x, y]</code></td><td>SAFE</td><td>Move cursor</td></tr><tr><td><code>drag</code></td><td><code>start_coordinate</code>, <code>end_coordinate</code></td><td>CAUTION</td><td>Drag (includes None check)</td></tr></tbody></table>
+<h4 id="text-input">Text Input</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Action</th><th>Parameters</th><th>Security Level</th><th>Description</th></tr></thead><tbody><tr><td><code>type</code></td><td><code>text: str</code></td><td>CAUTION</td><td>Smart input (auto-detects language + switches input method + clipboard paste)</td></tr></tbody></table>
+<h4 id="keyboard-operations">Keyboard Operations</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Action</th><th>Parameters</th><th>Security Level</th><th>Description</th></tr></thead><tbody><tr><td><code>key</code></td><td><code>key: str</code></td><td>CAUTION~DANGEROUS</td><td>Key/key combo press (supports <code>win</code>, <code>cmd</code> and other mappings)</td></tr><tr><td><code>long_press</code></td><td><code>key: str</code>, <code>duration: float</code></td><td>CAUTION</td><td>Long press key for N seconds</td></tr></tbody></table>
+<h4 id="context-menu">Context Menu</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Action</th><th>Parameters</th><th>Security Level</th><th>Description</th></tr></thead><tbody><tr><td><code>context_menu</code></td><td><code>coordinate</code>, <code>menu_item?: str</code></td><td>CAUTION</td><td>Right-click to open menu + optional click menu item</td></tr></tbody></table>
+<h4 id="scrolling">Scrolling</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Action</th><th>Parameters</th><th>Security Level</th><th>Description</th></tr></thead><tbody><tr><td><code>scroll</code></td><td><code>coordinate</code>, <code>scroll_direction</code>, <code>scroll_amount</code></td><td>CAUTION</td><td>Supports 8 directions</td></tr></tbody></table>
+<p><strong>scroll_direction support</strong>:</p>
+<ul>
+<li><code>up</code> / <code>down</code> — Normal scrolling (amount controls step size)</li>
+<li><code>left</code> / <code>right</code> — Horizontal scrolling</li>
+<li><code>page_up</code> / <code>page_down</code> — Page scrolling (maps to PgUp/PgDn keys)</li>
+<li><code>home</code> / <code>end</code> — Jump to top/bottom</li>
+</ul>
+<h4 id="other">Other</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Action</th><th>Parameters</th><th>Security Level</th><th>Description</th></tr></thead><tbody><tr><td><code>screenshot</code></td><td>None</td><td>SAFE</td><td>Take screenshot, returns base64 PNG</td></tr><tr><td><code>wait</code></td><td><code>duration: float</code></td><td>SAFE</td><td>Wait N seconds</td></tr><tr><td><code>cursor_position</code></td><td>None</td><td>SAFE</td><td>Returns current cursor coordinates</td></tr></tbody></table>
+<hr>
+<h3 id="33-smart-input-method-switching">3.3 Smart Input Method Switching</h3>
+<p><strong>Language Detection</strong> (<code>_detect_language</code>):</p>
+<ul>
+<li>Detects CJK characters based on Unicode ranges (CJK Unified Ideographs, Kana, Hangul, etc.)</li>
+<li>Threshold: CJK character ratio > 15% determines CJK text</li>
+<li>Mixed text (e.g., “Hello你好”) also triggers switching</li>
+</ul>
+<p><strong>Input Method Switching</strong> (<code>_ensure_ime_for_text</code>):</p>
+<ul>
+<li>CJK text detected -> Automatically sends <code>Shift</code> key to switch input method</li>
+<li>Applicable to Microsoft Pinyin, Sogou Input, and other input methods that use Shift to toggle Chinese/English by default</li>
+<li>After switching, pastes via clipboard (<code>Ctrl+V</code>)</li>
+</ul>
+<p><strong>Windows Key Mapping</strong>:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>User Input</th><th>Maps to PyAutoGUI</th></tr></thead><tbody><tr><td><code>win</code> / <code>windows</code> / <code>command</code> / <code>cmd</code></td><td><code>win</code></td></tr></tbody></table>
+<hr>
+<h3 id="34-safety-analysis-system">3.4 Safety Analysis System</h3>
+<p><strong>Three-tier Security Assessment</strong>:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Level</th><th>Trigger Condition</th><th>Handling</th></tr></thead><tbody><tr><td><strong>SAFE</strong></td><td><code>mouse_move</code>, <code>screenshot</code>, <code>cursor_position</code>, <code>wait</code></td><td>Auto-execute</td></tr><tr><td><strong>CAUTION</strong></td><td><code>left_click</code>, <code>right_click</code>, <code>type</code>, <code>key</code>, <code>scroll</code>, <code>drag</code></td><td>Log record, auto-execute</td></tr><tr><td><strong>DANGEROUS</strong></td><td>Specific hotkeys, dangerous commands, rapid consecutive clicks</td><td><strong>Dialog confirmation</strong> (tkinter messagebox)</td></tr></tbody></table>
+<p><strong>DANGEROUS Trigger Rules</strong>:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Category</th><th>Trigger Condition</th></tr></thead><tbody><tr><td>Dangerous hotkeys</td><td><code>alt+f4</code>, <code>ctrl+alt+del</code>, <code>ctrl+shift+esc</code>, <code>delete</code>, <code>backspace</code>, <code>alt+tab</code>, <code>win+d</code>, <code>win+l</code>, <code>win+r</code>, <code>ctrl+w</code>, <code>ctrl+q</code>, <code>f4</code></td></tr><tr><td>Dangerous commands</td><td><code>rm </code>, <code>del </code>, <code>format </code>, <code>shutdown</code>, <code>restart</code>, <code>taskkill</code>, <code>sudo </code>, <code>chmod 777</code>, <code>rd /s</code>, <code>diskpart</code>, <code>bcdedit</code></td></tr><tr><td>Consecutive clicks</td><td>Same-type click action more than 5 times</td></tr></tbody></table>
+<p><strong>Dialog Confirmation</strong>:</p>
+<ul>
+<li>Uses <code>tkinter.messagebox.askyesno</code></li>
+<li>Displays action details + risk description</li>
+<li>User clicks “Yes” to execute, “No” to skip and notify AI to try alternative approaches</li>
+</ul>
+<p><strong>Two Modes</strong>:</p>
+<ul>
+<li><code>safe</code> (default) — DANGEROUS actions require confirmation</li>
+<li><code>dangerous</code> — All actions auto-execute</li>
+</ul>
+<hr>
+<h3 id="35-model-capability-intelligent-detection">3.5 Model Capability Intelligent Detection</h3>
+<p><strong>Three-tier Detection Strategy</strong>:</p>
+<ol>
+<li><strong>Exact match</strong> — Known model database (20+ models)</li>
+<li><strong>Keyword inference</strong> — Model name contains <code>vision</code>/<code>vl</code>/<code>omni</code> -> vision=True</li>
+<li><strong>Fallback default</strong> — tool_use=True (supported by almost all modern models)</li>
+</ol>
+<p><strong>Known Model Database</strong>:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Vendor</th><th>Model</th><th>Vision</th><th>Computer Use</th><th>Tool Use</th></tr></thead><tbody><tr><td>Anthropic</td><td>claude-opus-4, claude-sonnet-4, claude-3.5-sonnet</td><td>Yes</td><td>Yes</td><td>Yes</td></tr><tr><td>Anthropic</td><td>claude-3-haiku, claude-3-opus, claude-3-sonnet</td><td>Yes</td><td>No</td><td>Yes</td></tr><tr><td>OpenAI</td><td>gpt-4o, gpt-4o-mini, gpt-4-turbo</td><td>Yes</td><td>No</td><td>Yes</td></tr><tr><td>OpenAI</td><td>gpt-4, gpt-3.5-turbo</td><td>No</td><td>No</td><td>Yes</td></tr><tr><td>Google</td><td>gemini-1.5-pro/flash, gemini-2.0-flash</td><td>Yes</td><td>No</td><td>Yes</td></tr><tr><td>Qwen</td><td>qwen-vl-max, qwen2.5-vl-72b</td><td>Yes</td><td>No</td><td>Yes</td></tr><tr><td>Xiaomi</td><td>mimo-v2-omni</td><td>Yes</td><td>No</td><td>Yes</td></tr></tbody></table>
+<p><strong>Anti-mismatch</strong>: Longer key priority sorting prevents <code>gpt-4</code> from falsely matching <code>gpt-4o</code></p>
+<hr>
+<h3 id="36-configuration-management-system">3.6 Configuration Management System</h3>
+<p><strong>Three Configuration Sources</strong> (priority increases):</p>
+<ol>
+<li><strong><code>~/.claude/cli_config.json</code></strong> — AGENT_AI compatible format, stores base_url + model</li>
+<li><strong>Project <code>.env</code></strong> — Stores API Key</li>
+<li><strong>Environment variables</strong> — <code>ANTHROPIC_API_KEY</code>, <code>ANTHROPIC_BASE_URL</code></li>
+</ol>
+<p><strong>Auto-import</strong>:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#24292E">try_import_existing_config()</span></span>
+<span class="line"><span style="color:#6A737D"># -> Merges from three sources, returns {base_url, model, api_key, profile_type}</span></span></code></pre>
+<p><strong>Save Configuration</strong>:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#24292E">save_config(base_url, api_key, model, profile_name)</span></span>
+<span class="line"><span style="color:#6A737D"># -> Writes to both cli_config.json and project .env</span></span></code></pre>
+<p><strong>Preset Configurations</strong>:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Name</th><th>Base URL</th><th>Default Model</th></tr></thead><tbody><tr><td><code>anthropic</code></td><td><code>https://api.anthropic.com</code></td><td><code>claude-sonnet-4-20250514</code></td></tr><tr><td><code>openrouter</code></td><td><code>https://openrouter.ai/api/v1</code></td><td><code>anthropic/claude-sonnet-4</code></td></tr><tr><td><code>siliconflow</code></td><td><code>https://api.siliconflow.cn/v1</code></td><td><code>Qwen/Qwen2.5-VL-72B-Instruct</code></td></tr></tbody></table>
+<hr>
+<h3 id="37-screenshot-module">3.7 Screenshot Module</h3>
+<ul>
+<li><strong>Screenshot library</strong>: <code>mss</code> (~5x faster than pyautogui)</li>
+<li><strong>Resolution detection</strong>: <code>pyautogui.size()</code> auto-detected at runtime</li>
+<li><strong>Output format</strong>: base64-encoded PNG</li>
+<li><strong>Optional scaling</strong>: <code>scale</code> parameter (0.5 = scale to half, saves tokens)</li>
+</ul>
+<hr>
+<h3 id="38-system-prompt-ai-instructions">3.8 System Prompt (AI Instructions)</h3>
+<p>Contains the following sections:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Section</th><th>Content</th></tr></thead><tbody><tr><td><strong>Mouse</strong></td><td>Usage scenarios for all mouse actions</td></tr><tr><td><strong>Text Input</strong></td><td>type action + automatic input method switching</td></tr><tr><td><strong>Keyboard</strong></td><td>key + long_press usage guide</td></tr><tr><td><strong>Scrolling</strong></td><td>8 scroll directions + semantic scrolling</td></tr><tr><td><strong>Terminal</strong></td><td>CMD/PowerShell operations (cls, clear, Enter, ctrl+c)</td></tr><tr><td><strong>Chinese/Multilingual</strong></td><td>Shift input method switching + mixed text handling</td></tr><tr><td><strong>Web Browsing</strong></td><td>page_down navigation + ctrl+f search + ctrl+w close</td></tr><tr><td><strong>Critical Rules</strong></td><td>5 core rules (click before typing, no duplicate clicks, etc.)</td></tr></tbody></table>
+<hr>
+<h2 id="4-dependencies">4. Dependencies</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Package</th><th>Version</th><th>Purpose</th></tr></thead><tbody><tr><td><code>anthropic</code></td><td>0.52.0</td><td>Anthropic SDK (official API)</td></tr><tr><td><code>httpx</code></td><td>0.28.1</td><td>HTTP client (third-party APIs)</td></tr><tr><td><code>pyautogui</code></td><td>0.9.54</td><td>Mouse/keyboard control</td></tr><tr><td><code>pyperclip</code></td><td>1.11.0</td><td>Clipboard operations (Chinese input)</td></tr><tr><td><code>mss</code></td><td>10.2.0</td><td>Fast screenshots</td></tr><tr><td><code>Pillow</code></td><td>12.1.0</td><td>Image processing</td></tr></tbody></table>
+<hr>
+<h2 id="5-known-limitations">5. Known Limitations</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Limitation</th><th>Description</th></tr></thead><tbody><tr><td>Windows-only</td><td>pyautogui, mss, tkinter behave differently on Linux/Mac</td></tr><tr><td>Input method dependency</td><td>Shift switching only works with Chinese input methods that default to Shift</td></tr><tr><td>No OCR</td><td>Right-click menu items cannot be auto-recognized; AI must click by coordinates</td></tr><tr><td>Single monitor</td><td>Screenshot only captures the primary monitor (<code>sct.monitors[1]</code>)</td></tr><tr><td>No window management</td><td>Cannot minimize/maximize/switch windows (must simulate via hotkeys)</td></tr></tbody></table>
+<hr>
+<h2 id="6-running">6. Running</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># CLI interactive mode</span></span>
+<span class="line"><span style="color:#6F42C1">python</span><span style="color:#032F62"> computer_use.py</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Direct test (skip CLI interaction)</span></span>
+<span class="line"><span style="color:#6F42C1">python</span><span style="color:#032F62"> test_run.py</span></span></code></pre>
+<p><strong>CLI Flow</strong>:</p>
+<ol>
+<li>Auto-detects screen resolution</li>
+<li>Auto-imports API configuration from <code>.env</code> + <code>cli_config.json</code></li>
+<li>Shows existing profiles, select or create new</li>
+<li>Detects model capabilities (vision / computer_use / tool_use)</li>
+<li>Selects safety mode (safe / dangerous)</li>
+<li>Enter task and begin execution</li>
+</ol>  </article> </div> </div>  </main> <footer class="footer-border" style="padding: 2.5rem 1.5rem; text-align: center; font-size: 0.8125rem; color: #9a938c; background: #f5f0eb;" data-astro-cid-37fxchfa> <p data-astro-cid-37fxchfa>&copy; 2026 AI Portfolio. Crafted with precision.</p> </footer> </body></html>  <script type="module">function l(){const s=document.querySelector(".markdown-content"),o=document.getElementById("toc");if(!s||!o)return;o.innerHTML="";const a=s.querySelectorAll("h2, h3");a.forEach((e,n)=>{const r=e.id||`heading-${n}`;e.id=r;const t=document.createElement("a");t.href=`#${r}`,t.textContent=e.textContent?.trim()||"",t.style.display="block",t.style.padding="0.2rem 0",t.style.color=e.tagName==="H2"?"#1a1a1a":"#9a938c",t.style.textDecoration="none",t.style.transition="color 0.15s ease",t.style.paddingLeft=e.tagName==="H3"?"0.75rem":"0",t.style.fontSize=e.tagName==="H3"?"0.75rem":"0.8125rem",t.style.opacity="0.85",o.appendChild(t)});const i=new IntersectionObserver(e=>{e.forEach(n=>{if(n.isIntersecting){const r=n.target.id;o.querySelectorAll("a").forEach(t=>{const c=t.getAttribute("href")===`#${r}`;t.style.opacity=c?"1":"0.85",t.style.color=c?"#1a1a1a":"",t.style.fontWeight=c?"600":""})}})},{rootMargin:"-80px 0px -70% 0px"});a.forEach(e=>i.observe(e))}l();document.addEventListener("astro:page-load",l);</script>

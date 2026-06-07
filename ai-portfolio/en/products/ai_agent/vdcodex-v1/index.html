@@ -1,0 +1,563 @@
+<!DOCTYPE html><html lang="en" data-theme="agent" class="scroll-smooth" data-astro-cid-37fxchfa> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Terminal AI coding assistant, Python Textual + Rich TUI, 6 tools, 4x2 orthogonal mode system"><title>DeepSeek Codex TUI | AI Portfolio</title><link rel="icon" type="image/svg+xml" href="../../../../favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="../../../../_astro/BaseLayout.BuAdYsho.css">
+<style>@media(min-width:1024px){.toc-sidebar[data-astro-cid-fz5pa65a]{display:block!important}}
+</style></head> <body data-astro-cid-37fxchfa> <nav class="nav-bar fixed top-0 left-0 right-0 z-50" style="height: 56px;" data-astro-cid-37fxchfa> <div style="max-width: 80rem; margin: 0 auto; height: 100%; display: flex; align-items: center; padding: 0 1.5rem;" data-astro-cid-37fxchfa> <!-- Logo --> <a href="../../../../zh/index.html" class="nav-logo" data-astro-cid-37fxchfa>AI Portfolio</a> <!-- Spacer --> <div style="flex: 1;" data-astro-cid-37fxchfa></div> <!-- Desktop nav links (center) --> <div class="desktop-nav" style="display: flex; align-items: center; gap: 2rem; position: absolute; left: 50%; transform: translateX(-50%);" data-astro-cid-37fxchfa> <a href="../../../../zh/index.html" class="nav-link" data-astro-cid-37fxchfa>首页</a> <a href="../../../../zh/index.html#products" class="nav-link" data-astro-cid-37fxchfa>产品</a> <a href="../../../../zh/index.html#research" class="nav-link" data-astro-cid-37fxchfa>研究</a> <a href="../../../../zh/about/index.html" class="nav-link" data-astro-cid-37fxchfa>About</a> </div> <!-- Right side --> <div style="display: flex; align-items: center; gap: 0.5rem;" data-astro-cid-37fxchfa> <a href="../../../../zh/index.html" style="font-size: 0.8125rem; font-weight: 500; text-decoration: none; padding: 0.375rem 0.625rem; border-radius: 4px; transition: all 0.15s ease; color: #6b6560; border: 1px solid #d6cec4;" data-astro-cid-37fxchfa>中文</a> <a href="../../../index.html" style="font-size: 0.8125rem; font-weight: 500; text-decoration: none; padding: 0.375rem 0.625rem; border-radius: 4px; transition: all 0.15s ease; background: #1a1a1a; color: #fff;" data-astro-cid-37fxchfa>EN</a> <!-- Mobile hamburger --> <button class="mobile-menu-btn" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu" data-astro-cid-37fxchfa> <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" data-astro-cid-37fxchfa> <path d="M3 6h14M3 10h14M3 14h14" data-astro-cid-37fxchfa></path> </svg> </button> </div> </div> </nav> <!-- Mobile nav --> <div class="mobile-nav" data-astro-cid-37fxchfa> <a href="../../../../zh/index.html" data-astro-cid-37fxchfa>首页</a> <a href="../../../../zh/index.html#products" data-astro-cid-37fxchfa>产品</a> <a href="../../../../zh/index.html#research" data-astro-cid-37fxchfa>研究</a> <a href="../../../../zh/about/index.html" data-astro-cid-37fxchfa>About</a> <a href="../../../index.html" data-astro-cid-37fxchfa>English</a> </div> <main class="min-h-screen" style="padding-top: 56px;" data-astro-cid-37fxchfa>  <div style="max-width: 80rem; margin: 0 auto; padding: 0 1.5rem;" data-astro-cid-fz5pa65a> <!-- Breadcrumb --> <nav style="padding: 1rem 0; font-size: 0.8125rem; color: #9a938c; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;" data-astro-cid-fz5pa65a> <a href="../../../../zh/index.html" style="color: #6b6560; text-decoration: none; transition: opacity 0.15s;" data-astro-cid-fz5pa65a>首页</a>  <span style="color: #c4bdb4;" data-astro-cid-fz5pa65a>/</span> <a href="../../../index.html#products" style="color: #6b6560; text-decoration: none; transition: opacity 0.15s;" data-astro-cid-fz5pa65a>Products</a> <span style="color: #c4bdb4;" data-astro-cid-fz5pa65a>/</span> <a href="../../../index.html#products" style="color: #6b6560; text-decoration: none; transition: opacity 0.15s;" data-astro-cid-fz5pa65a>AI Agent</a> <span style="color: #c4bdb4;" data-astro-cid-fz5pa65a>/</span> <span style="color: #1a1a1a;" data-astro-cid-fz5pa65a>DeepSeek Codex TUI</span> </nav> <div style="display: flex; gap: 3rem; padding-bottom: 4rem;" data-astro-cid-fz5pa65a> <!-- Sidebar TOC --> <aside style="width: 14rem; flex-shrink: 0; display: none;" class="toc-sidebar" data-astro-cid-fz5pa65a> <div style="position: sticky; top: 5rem;" data-astro-cid-fz5pa65a> <p style="font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #9a938c; margin-bottom: 0.75rem;" data-astro-cid-fz5pa65a>目录</p> <nav id="toc" style="font-size: 0.8125rem; line-height: 1.6;" data-astro-cid-fz5pa65a></nav> </div> </aside> <!-- Content --> <article class="markdown-content" style="flex: 1; min-width: 0; max-width: 48rem;" data-astro-cid-fz5pa65a> <!-- Category badge --> <div style="margin-bottom: 1rem;" data-astro-cid-fz5pa65a> <span style="display: inline-block; font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9a938c; padding: 0.25rem 0.625rem; border: 1px solid #d6cec4; border-radius: 4px;" data-astro-cid-fz5pa65a> AI Agent </span> </div> <h1 style="font-size: 2.25rem; font-weight: 700; color: #1a1a1a; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 0.75rem; font-family: var(--font-heading); border: none; padding: 0;" data-astro-cid-fz5pa65a> DeepSeek Codex TUI </h1> <p style="font-size: 1rem; color: #6b6560; line-height: 1.7; margin-bottom: 2rem;" data-astro-cid-fz5pa65a> Terminal AI coding assistant, Python Textual + Rich TUI, 6 tools, 4x2 orthogonal mode system </p> <div style="height: 1px; background: #d6cec4; margin-bottom: 2rem;" data-astro-cid-fz5pa65a></div>  <h1 id="deepseek-codex-tui-v10--full-feature-report">DeepSeek Codex TUI v1.0 — Full Feature Report</h1>
+<h2 id="1-project-overview">1. Project Overview</h2>
+<p>DeepSeek Codex TUI is a terminal AI coding assistant similar to OpenAI Codex CLI, using the DeepSeek API as the backend (OpenAI protocol compatible). Core capability: AI reads/writes files, executes commands, and searches code through Tool Calls, interactively completing programming tasks in the terminal.</p>
+<h3 id="tech-stack">Tech Stack</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Component</th><th>Technology</th></tr></thead><tbody><tr><td>TUI framework</td><td>Python Textual + Rich</td></tr><tr><td>HTTP client</td><td>httpx (async streaming)</td></tr><tr><td>API protocol</td><td>OpenAI compatible (DeepSeek / OpenAI / any compatible API)</td></tr><tr><td>Key storage</td><td>keyring (OS-level secure storage) + file fallback</td></tr><tr><td>Sandbox</td><td>Docker container (optional) / local subprocess</td></tr></tbody></table>
+<h3 id="startup">Startup</h3>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#005CC5">cd</span><span style="color:#032F62"> D:/claude/agenttui</span></span>
+<span class="line"><span style="color:#6F42C1">pip</span><span style="color:#032F62"> install</span><span style="color:#005CC5"> -e</span><span style="color:#032F62"> .</span></span>
+<span class="line"><span style="color:#6F42C1">dcodex</span></span></code></pre>
+<hr>
+<h2 id="2-core-features">2. Core Features</h2>
+<h3 id="21-streaming-chat">2.1 Streaming Chat</h3>
+<ul>
+<li>Real-time streaming output of AI replies (Markdown rendered)</li>
+<li>Thinking process (reasoning_content) collapsible display</li>
+<li>Processing time display (“Sautéed for 3s”)</li>
+<li>Token usage and cache hits updated in real time</li>
+</ul>
+<h3 id="22-tool-calls">2.2 Tool Calls</h3>
+<p>AI can call 6 tools to complete programming tasks:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Tool</th><th>Function</th><th>Parameters</th></tr></thead><tbody><tr><td><code>read_file</code></td><td>Read file content</td><td>path, start_line, end_line</td></tr><tr><td><code>write_file</code></td><td>Write/overwrite file</td><td>path, content</td></tr><tr><td><code>edit_file</code></td><td>Find-and-replace editing</td><td>path, old_text, new_text</td></tr><tr><td><code>run_command</code></td><td>Execute terminal command</td><td>command, cwd</td></tr><tr><td><code>search_code</code></td><td>Regex code search</td><td>pattern, path, file_filter</td></tr><tr><td><code>list_files</code></td><td>List directory structure</td><td>path</td></tr></tbody></table>
+<h3 id="23-tool-call-display-claude-code-style">2.3 Tool Call Display (Claude Code Style)</h3>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>● Write(scientific_calculator/calculator.py)</span></span>
+<span class="line"><span>    1 │ #!/usr/bin/env python3</span></span>
+<span class="line"><span>    2 │ import math</span></span>
+<span class="line"><span>    3 │</span></span>
+<span class="line"><span>    4 │ def add(a, b):</span></span>
+<span class="line"><span>    5 │     return a + b</span></span>
+<span class="line"><span>    ... +269 lines (ctrl+o to expand)</span></span>
+<span class="line"><span>  ✓ auto</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>● Bash(python calculator.py)</span></span>
+<span class="line"><span>  $ python calculator.py</span></span>
+<span class="line"><span>  Calculator ready</span></span>
+<span class="line"><span>  ✓ done</span></span></code></pre>
+<hr>
+<h2 id="3-4x2-orthogonal-mode-system">3. 4x2 Orthogonal Mode System</h2>
+<h3 id="31-runtime-mode-what-ai-is-doing">3.1 Runtime Mode (What AI Is Doing)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Mode</th><th>Description</th><th>Toggle</th></tr></thead><tbody><tr><td><strong>auto</strong></td><td>AI executes tools normally per permission mode</td><td><code>/plan</code> to exit</td></tr><tr><td><strong>plan</strong></td><td>AI only plans, does not execute any tools</td><td><code>/plan</code> to enter</td></tr></tbody></table>
+<h3 id="32-permission-mode-how-tools-are-approved">3.2 Permission Mode (How Tools Are Approved)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Mode</th><th>File Read</th><th>File Write</th><th>Command Execution</th><th>Security Level</th></tr></thead><tbody><tr><td><strong>suggest</strong></td><td>Confirm</td><td>Confirm</td><td>Confirm</td><td>5/5</td></tr><tr><td><strong>auto-edit</strong></td><td>Auto</td><td>Auto</td><td>Confirm</td><td>3/5</td></tr><tr><td><strong>full-auto</strong></td><td>Auto</td><td>Auto</td><td>Auto</td><td>2/5</td></tr><tr><td><strong>bypass</strong></td><td>Auto</td><td>Auto</td><td>Auto (dangerous)</td><td>1/5</td></tr></tbody></table>
+<h3 id="33-approval-dialog-claude-code-style">3.3 Approval Dialog (Claude Code Style)</h3>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>● Write(calc.py)</span></span>
+<span class="line"><span>  write_file(path='calc.py', content='...')</span></span>
+<span class="line"><span>  Do you want to proceed?</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  > 1. Yes</span></span>
+<span class="line"><span>    2. Yes, and always allow for this session</span></span>
+<span class="line"><span>    3. No</span></span></code></pre>
+<ul>
+<li><strong>Yes</strong> — Allow for this instance</li>
+<li><strong>Yes, and always allow</strong> — Auto-approve same-type tools within the session</li>
+<li><strong>No</strong> — Reject, AI receives “User rejected this action”</li>
+</ul>
+<hr>
+<h2 id="4--command-system">4. / Command System</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Command</th><th>Function</th></tr></thead><tbody><tr><td><code>/help</code></td><td>Display all available commands</td></tr><tr><td><code>/clear</code></td><td>Clear current conversation</td></tr><tr><td><code>/new</code></td><td>New session (choose working directory)</td></tr><tr><td><code>/settings</code></td><td>Open settings interface</td></tr><tr><td><code>/plan</code></td><td>Enter/exit planning mode</td></tr><tr><td><code>/mode</code></td><td>Switch permission mode (suggest -> auto-edit -> full-auto -> bypass)</td></tr><tr><td><code>/model</code></td><td>Switch model (supports <code>--1m</code> 1M context)</td></tr><tr><td><code>/thinking</code></td><td>Toggle thinking mode</td></tr><tr><td><code>/effort</code></td><td>Set thinking depth (low/medium/high/xhigh/max)</td></tr><tr><td><code>/balance</code></td><td>Query account balance</td></tr><tr><td><code>/cost</code></td><td>Show this session’s token usage</td></tr><tr><td><code>/compact</code></td><td>Compress conversation context</td></tr><tr><td><code>/system</code></td><td>View/set system prompt</td></tr><tr><td><code>/history</code></td><td>View session history</td></tr></tbody></table>
+<h3 id="41-plan-planning-mode-workflow">4.1 /plan Planning Mode Workflow</h3>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>● /plan</span></span>
+<span class="line"><span>📋 Planning mode enabled (runtime: plan)</span></span>
+<span class="line"><span>Permission mode unchanged: suggest</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>● I want to build a calculator</span></span>
+<span class="line"><span>→ AI asks clarifying questions (does not execute tools)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>● Scientific calculator, Python</span></span>
+<span class="line"><span>→ AI outputs implementation plan</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>● /plan</span></span>
+<span class="line"><span>✓ Exited planning mode -> auto</span></span>
+<span class="line"><span>Current permission: suggest</span></span></code></pre>
+<h3 id="42-model-1m-1m-context">4.2 /model —1m 1M Context</h3>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>/model deepseek-v4-pro --1m    ->  deepseek-v4-pro[1m]</span></span>
+<span class="line"><span>/model deepseek-v4-flash --1m  ->  deepseek-v4-flash[1m]</span></span></code></pre>
+<hr>
+<h2 id="5-multi-provider-configuration">5. Multi-Provider Configuration</h2>
+<p>Supports multiple API Providers with independent configuration:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#6A737D">// providers.json</span></span>
+<span class="line"><span style="color:#24292E">[</span></span>
+<span class="line"><span style="color:#24292E">  {</span></span>
+<span class="line"><span style="color:#005CC5">    "id"</span><span style="color:#24292E">: </span><span style="color:#032F62">"abc123"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "name"</span><span style="color:#24292E">: </span><span style="color:#032F62">"DeepSeek"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "base_url"</span><span style="color:#24292E">: </span><span style="color:#032F62">"https://api.deepseek.com"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "api_key"</span><span style="color:#24292E">: </span><span style="color:#032F62">"sk-..."</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "model"</span><span style="color:#24292E">: </span><span style="color:#032F62">"deepseek-v4-pro"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "thinking_enabled"</span><span style="color:#24292E">: </span><span style="color:#005CC5">true</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "reasoning_effort"</span><span style="color:#24292E">: </span><span style="color:#032F62">"high"</span></span>
+<span class="line"><span style="color:#24292E">  },</span></span>
+<span class="line"><span style="color:#24292E">  {</span></span>
+<span class="line"><span style="color:#005CC5">    "id"</span><span style="color:#24292E">: </span><span style="color:#032F62">"def456"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "name"</span><span style="color:#24292E">: </span><span style="color:#032F62">"OpenAI"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "base_url"</span><span style="color:#24292E">: </span><span style="color:#032F62">"https://api.openai.com/v1"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "api_key"</span><span style="color:#24292E">: </span><span style="color:#032F62">"sk-..."</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "model"</span><span style="color:#24292E">: </span><span style="color:#032F62">"gpt-4o"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "thinking_enabled"</span><span style="color:#24292E">: </span><span style="color:#005CC5">false</span></span>
+<span class="line"><span style="color:#24292E">  }</span></span>
+<span class="line"><span style="color:#24292E">]</span></span></code></pre>
+<p>Settings interface features:</p>
+<ul>
+<li>Add/delete Provider</li>
+<li>One-click switch to current Provider</li>
+<li>Verify API Key connectivity + balance query</li>
+<li>Independent model, thinking, and effort configuration per Provider</li>
+</ul>
+<hr>
+<h2 id="6-interface-layout">6. Interface Layout</h2>
+<h3 id="61-main-chat-interface">6.1 Main Chat Interface</h3>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>╔═══════════════════════════════════════════════════════════════╗</span></span>
+<span class="line"><span>║ DeepSeek Codex  deepseek-v4-pro  cwd: D:/project  auto|suggest ║</span></span>
+<span class="line"><span>╠═══════════════════════════════════════════════════════════════╣</span></span>
+<span class="line"><span>║ ┌─ Message Area (2/3) ──────┬─ Tool Calls (1/3) ─────────────────┐║</span></span>
+<span class="line"><span>║ │ ● Hello                  │ Tool Calls                          │║</span></span>
+<span class="line"><span>║ │                          │                                     │║</span></span>
+<span class="line"><span>║ │ Thought for 3s           │ ● Write(calc.py)                    │║</span></span>
+<span class="line"><span>║ │ (ctrl+o to expand)       │   1 │ #!/usr/bin/env python3       │║</span></span>
+<span class="line"><span>║ │                          │   2 │ import math                   │║</span></span>
+<span class="line"><span>║ │ Let me help you create   │   ... +269 lines                    │║</span></span>
+<span class="line"><span>║ │ a calculator...          │ ✓ auto                              │║</span></span>
+<span class="line"><span>║ │                          │                                     │║</span></span>
+<span class="line"><span>║ │                          │ ● Bash(python calc.py)              │║</span></span>
+<span class="line"><span>║ │                          │   $ python calc.py                  │║</span></span>
+<span class="line"><span>║ │                          │ ✓ done                              │║</span></span>
+<span class="line"><span>║ ├──────────────────────────┴──────────────────────────────────┤║</span></span>
+<span class="line"><span>║ │ > Enter message... (/ commands, Enter to send, Esc to abort)│║</span></span>
+<span class="line"><span>║ ├────────────────────────────────────────────────────────────┤║</span></span>
+<span class="line"><span>║ │ v4-pro | effort:high | Tokens: 13,604 | Cache: 13,056     │║</span></span>
+<span class="line"><span>║ └────────────────────────────────────────────────────────────┘║</span></span>
+<span class="line"><span>╚═══════════════════════════════════════════════════════════════╝</span></span></code></pre>
+<h3 id="62-startup-trust-check">6.2 Startup Trust Check</h3>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>╔════════════════════════════════════════════════════════╗</span></span>
+<span class="line"><span>║ Accessing workspace:                                   ║</span></span>
+<span class="line"><span>║ D:\claude\agenttui                                     ║</span></span>
+<span class="line"><span>║                                                        ║</span></span>
+<span class="line"><span>║ Quick safety check: Is this a project you created      ║</span></span>
+<span class="line"><span>║ or one you trust?                                      ║</span></span>
+<span class="line"><span>║                                                        ║</span></span>
+<span class="line"><span>║ DeepSeek Codex will be able to read, edit, and         ║</span></span>
+<span class="line"><span>║ execute files here.                                    ║</span></span>
+<span class="line"><span>║                                                        ║</span></span>
+<span class="line"><span>║ Security guide:                                        ║</span></span>
+<span class="line"><span>║   - Commands run in a Docker sandbox when available    ║</span></span>
+<span class="line"><span>║   - Dangerous commands require explicit approval       ║</span></span>
+<span class="line"><span>║   - You can change approval mode with /mode            ║</span></span>
+<span class="line"><span>║                                                        ║</span></span>
+<span class="line"><span>║     [  1. Yes, I trust this folder  ]                  ║</span></span>
+<span class="line"><span>║     [  2. No, exit                  ]                  ║</span></span>
+<span class="line"><span>╚════════════════════════════════════════════════════════╝</span></span></code></pre>
+<h3 id="63-settings-interface">6.3 Settings Interface</h3>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>╔════════════════════════════════════════════════════════╗</span></span>
+<span class="line"><span>║ [← Back]  Settings                                    ║</span></span>
+<span class="line"><span>╠════════════════════════════════════════════════════════╣</span></span>
+<span class="line"><span>║ API Provider Configuration                             ║</span></span>
+<span class="line"><span>║ ┌──────────────────────────────────────────────────┐  ║</span></span>
+<span class="line"><span>║ │ DeepSeek  (https://api.deepseek.com) [Current]   │  ║</span></span>
+<span class="line"><span>║ │ OpenAI    (https://api.openai.com/v1)            │  ║</span></span>
+<span class="line"><span>║ └──────────────────────────────────────────────────┘  ║</span></span>
+<span class="line"><span>║ [+ Add] [Set as Current] [Delete]                     ║</span></span>
+<span class="line"><span>║                                                        ║</span></span>
+<span class="line"><span>║ Edit Provider                                          ║</span></span>
+<span class="line"><span>║   Name:        [DeepSeek               ]              ║</span></span>
+<span class="line"><span>║   Base URL:    [https://api.deepseek.com]             ║</span></span>
+<span class="line"><span>║   API Key:     [sk-****...             ]              ║</span></span>
+<span class="line"><span>║   Model:       [deepseek-v4-pro        ]              ║</span></span>
+<span class="line"><span>║   Thinking:    [x] Enabled                             ║</span></span>
+<span class="line"><span>║ [Save Provider] [Verify Key]                           ║</span></span>
+<span class="line"><span>║                                                        ║</span></span>
+<span class="line"><span>║ Global Settings                                        ║</span></span>
+<span class="line"><span>║   Permission mode:  [suggest ▾]                        ║</span></span>
+<span class="line"><span>║   Working directory: [D:/projects              ]       ║</span></span>
+<span class="line"><span>╚════════════════════════════════════════════════════════╝</span></span></code></pre>
+<hr>
+<h2 id="7-keyboard-shortcuts">7. Keyboard Shortcuts</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Shortcut</th><th>Function</th></tr></thead><tbody><tr><td><code>Ctrl+1</code></td><td>Switch to chat interface</td></tr><tr><td><code>Ctrl+5</code></td><td>Switch to settings interface</td></tr><tr><td><code>Ctrl+N</code></td><td>New session (choose working directory)</td></tr><tr><td><code>Ctrl+L</code></td><td>Clear chat</td></tr><tr><td><code>Ctrl+M</code></td><td>Switch permission mode</td></tr><tr><td><code>Esc</code></td><td>Abort current generation</td></tr><tr><td><code>Enter</code></td><td>Send message / Confirm approval</td></tr><tr><td><code>Tab</code></td><td>Switch between approval buttons</td></tr></tbody></table>
+<hr>
+<h2 id="8-security-features">8. Security Features</h2>
+<h3 id="81-docker-sandbox">8.1 Docker Sandbox</h3>
+<ul>
+<li>Automatically uses container execution when Docker is available</li>
+<li><code>python:3.12-slim</code> image</li>
+<li><code>--network none</code> to disable networking</li>
+<li>Working directory mounted to <code>/workspace</code></li>
+<li>Auto-cleanup of containers on exit</li>
+<li>Falls back to local subprocess when unavailable</li>
+</ul>
+<h3 id="82-dangerous-command-detection">8.2 Dangerous Command Detection</h3>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#005CC5">DANGEROUS_COMMANDS</span><span style="color:#D73A49"> =</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#032F62">    "rm"</span><span style="color:#24292E">, </span><span style="color:#032F62">"rmdir"</span><span style="color:#24292E">, </span><span style="color:#032F62">"del"</span><span style="color:#24292E">, </span><span style="color:#032F62">"rd"</span><span style="color:#24292E">, </span><span style="color:#032F62">"format"</span><span style="color:#24292E">, </span><span style="color:#032F62">"mkfs"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#032F62">    "shutdown"</span><span style="color:#24292E">, </span><span style="color:#032F62">"reboot"</span><span style="color:#24292E">, </span><span style="color:#032F62">"halt"</span><span style="color:#24292E">, </span><span style="color:#032F62">"poweroff"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#032F62">    "sudo"</span><span style="color:#24292E">, </span><span style="color:#032F62">"su"</span><span style="color:#24292E">, </span><span style="color:#032F62">"runas"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#032F62">    "chmod"</span><span style="color:#24292E">, </span><span style="color:#032F62">"chown"</span><span style="color:#24292E">, </span><span style="color:#032F62">"icacls"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#032F62">    "kill"</span><span style="color:#24292E">, </span><span style="color:#032F62">"killall"</span><span style="color:#24292E">, </span><span style="color:#032F62">"taskkill"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">}</span></span></code></pre>
+<h3 id="83-api-key-secure-storage">8.3 API Key Secure Storage</h3>
+<ul>
+<li>Prefers OS keyring (Windows Credential Locker / macOS Keychain / Linux SecretService)</li>
+<li>Falls back to encrypted file storage</li>
+<li>Never hardcoded in source code</li>
+</ul>
+<hr>
+<h2 id="9-performance-optimizations">9. Performance Optimizations</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Optimization</th><th>Implementation</th></tr></thead><tbody><tr><td>Markdown update rate limiting</td><td>Updates at most once every 0.08 seconds</td></tr><tr><td>Thinking process update rate limiting</td><td>Updates once every 0.3 seconds</td></tr><tr><td>Scroll rate limiting</td><td>scroll_end once every 0.15 seconds</td></tr><tr><td>Parameter filtering</td><td>inspect.signature auto-filters extra parameters returned by AI</td></tr><tr><td>Session persistence</td><td>conversations.json local storage</td></tr></tbody></table>
+<hr>
+<h2 id="10-error-handling">10. Error Handling</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Scenario</th><th>Handling</th></tr></thead><tbody><tr><td>Network connection failure</td><td>Toast notification + retry</td></tr><tr><td>401 authentication failure</td><td>Navigate to settings page</td></tr><tr><td>429 rate limit</td><td>Display wait time</td></tr><tr><td>Stream interruption (no [DONE])</td><td>Preserve already generated content</td></tr><tr><td>Tool execution timeout</td><td>Auto-terminate after 30 seconds</td></tr><tr><td>Command execution timeout</td><td>Docker container auto-cleanup</td></tr><tr><td>ESC interruption</td><td>Preserve already generated content + clean up agent messages</td></tr></tbody></table>
+<hr>
+<h2 id="11-project-structure">11. Project Structure</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>deepseek_tui/</span></span>
+<span class="line"><span>├── __main__.py              # Entry point</span></span>
+<span class="line"><span>├── app.py                   # Main App (mode switching, trust check)</span></span>
+<span class="line"><span>├── core/</span></span>
+<span class="line"><span>│   ├── agent.py             # Agent loop (message -> tool -> continue)</span></span>
+<span class="line"><span>│   ├── client.py            # OpenAI protocol HTTP client</span></span>
+<span class="line"><span>│   ├── tool_executor.py     # Tool execution (parameter filtering, Docker integration)</span></span>
+<span class="line"><span>│   ├── tools.py             # 6 tool definitions</span></span>
+<span class="line"><span>│   ├── sandbox.py           # Docker sandbox + local execution</span></span>
+<span class="line"><span>│   ├── stream_parser.py     # SSE stream parsing</span></span>
+<span class="line"><span>│   ├── settings.py          # Settings + Provider management</span></span>
+<span class="line"><span>│   ├── key_store.py         # API Key secure storage</span></span>
+<span class="line"><span>│   ├── conversation_manager.py  # Session persistence</span></span>
+<span class="line"><span>│   └── models.py            # Data classes</span></span>
+<span class="line"><span>├── screens/</span></span>
+<span class="line"><span>│   ├── chat_screen.py       # Chat interface</span></span>
+<span class="line"><span>│   └── settings_screen.py   # Settings interface</span></span>
+<span class="line"><span>├── widgets/</span></span>
+<span class="line"><span>│   ├── chat_pane.py         # Core chat panel (streaming, commands, layout)</span></span>
+<span class="line"><span>│   ├── tool_call_widget.py  # Tool call display (Claude Code style)</span></span>
+<span class="line"><span>│   ├── approval_widget.py   # Approval dialog (3 options)</span></span>
+<span class="line"><span>│   ├── effort_screen.py     # Effort selection dialog</span></span>
+<span class="line"><span>│   ├── workdir_prompt.py    # Working directory selection dialog</span></span>
+<span class="line"><span>│   ├── trust_screen.py      # Startup trust check dialog</span></span>
+<span class="line"><span>│   ├── welcome_banner.py    # Welcome banner</span></span>
+<span class="line"><span>│   └── status_bar.py        # Bottom status bar</span></span>
+<span class="line"><span>├── storage/</span></span>
+<span class="line"><span>│   ├── paths.py             # Data directory</span></span>
+<span class="line"><span>│   └── json_store.py        # JSON read/write</span></span>
+<span class="line"><span>├── resources/</span></span>
+<span class="line"><span>│   ├── system_prompt.md     # AI system prompt</span></span>
+<span class="line"><span>│   └── plan_mode_prompt.md  # Planning mode prompt</span></span>
+<span class="line"><span>└── css/</span></span>
+<span class="line"><span>    └── app.tcss             # Global styles</span></span></code></pre>
+<hr>
+<h2 id="12-data-storage">12. Data Storage</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>~/.local/share/deepseek-codex-tui/</span></span>
+<span class="line"><span>├── settings.json            # Global settings (runtime_mode, permission_mode...)</span></span>
+<span class="line"><span>├── providers.json           # API Provider configuration list</span></span>
+<span class="line"><span>├── secrets.json             # API Key fallback storage (when keyring unavailable)</span></span>
+<span class="line"><span>├── index.json               # Session index</span></span>
+<span class="line"><span>└── conversations/</span></span>
+<span class="line"><span>    ├── {uuid1}.json         # Session 1</span></span>
+<span class="line"><span>    ├── {uuid2}.json         # Session 2</span></span>
+<span class="line"><span>    └── ...</span></span></code></pre>
+<hr>
+<h2 id="13-known-limitations">13. Known Limitations</h2>
+<ol>
+<li><strong>Docker dependency</strong>: Sandbox functionality requires Docker Desktop running</li>
+<li><strong>No undo</strong>: Cannot automatically revert file writes</li>
+<li><strong>No tests</strong>: Does not include automated tests</li>
+<li><strong>Single user</strong>: Does not support concurrent multi-user access</li>
+<li><strong>Offline unavailable</strong>: Requires network connection to API</li>
+</ol>  </article> </div> </div>  </main> <footer class="footer-border" style="padding: 2.5rem 1.5rem; text-align: center; font-size: 0.8125rem; color: #9a938c; background: #f5f0eb;" data-astro-cid-37fxchfa> <p data-astro-cid-37fxchfa>&copy; 2026 AI Portfolio. Crafted with precision.</p> </footer> </body></html>  <script type="module">function l(){const s=document.querySelector(".markdown-content"),o=document.getElementById("toc");if(!s||!o)return;o.innerHTML="";const a=s.querySelectorAll("h2, h3");a.forEach((e,n)=>{const r=e.id||`heading-${n}`;e.id=r;const t=document.createElement("a");t.href=`#${r}`,t.textContent=e.textContent?.trim()||"",t.style.display="block",t.style.padding="0.2rem 0",t.style.color=e.tagName==="H2"?"#1a1a1a":"#9a938c",t.style.textDecoration="none",t.style.transition="color 0.15s ease",t.style.paddingLeft=e.tagName==="H3"?"0.75rem":"0",t.style.fontSize=e.tagName==="H3"?"0.75rem":"0.8125rem",t.style.opacity="0.85",o.appendChild(t)});const i=new IntersectionObserver(e=>{e.forEach(n=>{if(n.isIntersecting){const r=n.target.id;o.querySelectorAll("a").forEach(t=>{const c=t.getAttribute("href")===`#${r}`;t.style.opacity=c?"1":"0.85",t.style.color=c?"#1a1a1a":"",t.style.fontWeight=c?"600":""})}})},{rootMargin:"-80px 0px -70% 0px"});a.forEach(e=>i.observe(e))}l();document.addEventListener("astro:page-load",l);</script>

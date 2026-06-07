@@ -1,0 +1,603 @@
+<!DOCTYPE html><html lang="zh" data-theme="agent" class="scroll-smooth" data-astro-cid-37fxchfa> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="AI桌面自动化代理，截图→AI分析→PyAutoGUI执行，15种动作，三级安全"><title>Argus v1.0 | AI Portfolio</title><link rel="icon" type="image/svg+xml" href="../../../../favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="../../../../_astro/BaseLayout.BuAdYsho.css">
+<style>@media(min-width:1024px){.toc-sidebar[data-astro-cid-fz5pa65a]{display:block!important}}
+</style></head> <body data-astro-cid-37fxchfa> <nav class="nav-bar fixed top-0 left-0 right-0 z-50" style="height: 56px;" data-astro-cid-37fxchfa> <div style="max-width: 80rem; margin: 0 auto; height: 100%; display: flex; align-items: center; padding: 0 1.5rem;" data-astro-cid-37fxchfa> <!-- Logo --> <a href="../../../index.html" class="nav-logo" data-astro-cid-37fxchfa>AI Portfolio</a> <!-- Spacer --> <div style="flex: 1;" data-astro-cid-37fxchfa></div> <!-- Desktop nav links (center) --> <div class="desktop-nav" style="display: flex; align-items: center; gap: 2rem; position: absolute; left: 50%; transform: translateX(-50%);" data-astro-cid-37fxchfa> <a href="../../../index.html" class="nav-link" data-astro-cid-37fxchfa>首页</a> <a href="../../../index.html#products" class="nav-link" data-astro-cid-37fxchfa>产品</a> <a href="../../../index.html#research" class="nav-link" data-astro-cid-37fxchfa>研究</a> <a href="../../../about/index.html" class="nav-link" data-astro-cid-37fxchfa>About</a> </div> <!-- Right side --> <div style="display: flex; align-items: center; gap: 0.5rem;" data-astro-cid-37fxchfa> <a href="../../../index.html" style="font-size: 0.8125rem; font-weight: 500; text-decoration: none; padding: 0.375rem 0.625rem; border-radius: 4px; transition: all 0.15s ease; background: #1a1a1a; color: #fff;" data-astro-cid-37fxchfa>中文</a> <a href="../../../../en/index.html" style="font-size: 0.8125rem; font-weight: 500; text-decoration: none; padding: 0.375rem 0.625rem; border-radius: 4px; transition: all 0.15s ease; color: #6b6560; border: 1px solid #d6cec4;" data-astro-cid-37fxchfa>EN</a> <!-- Mobile hamburger --> <button class="mobile-menu-btn" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu" data-astro-cid-37fxchfa> <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" data-astro-cid-37fxchfa> <path d="M3 6h14M3 10h14M3 14h14" data-astro-cid-37fxchfa></path> </svg> </button> </div> </div> </nav> <!-- Mobile nav --> <div class="mobile-nav" data-astro-cid-37fxchfa> <a href="../../../index.html" data-astro-cid-37fxchfa>首页</a> <a href="../../../index.html#products" data-astro-cid-37fxchfa>产品</a> <a href="../../../index.html#research" data-astro-cid-37fxchfa>研究</a> <a href="../../../about/index.html" data-astro-cid-37fxchfa>About</a> <a href="../../../../en/index.html" data-astro-cid-37fxchfa>English</a> </div> <main class="min-h-screen" style="padding-top: 56px;" data-astro-cid-37fxchfa>  <div style="max-width: 80rem; margin: 0 auto; padding: 0 1.5rem;" data-astro-cid-fz5pa65a> <!-- Breadcrumb --> <nav style="padding: 1rem 0; font-size: 0.8125rem; color: #9a938c; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;" data-astro-cid-fz5pa65a> <a href="../../../index.html" style="color: #6b6560; text-decoration: none; transition: opacity 0.15s;" data-astro-cid-fz5pa65a>首页</a>  <span style="color: #c4bdb4;" data-astro-cid-fz5pa65a>/</span> <a href="../../../index.html#products" style="color: #6b6560; text-decoration: none; transition: opacity 0.15s;" data-astro-cid-fz5pa65a>产品</a> <span style="color: #c4bdb4;" data-astro-cid-fz5pa65a>/</span> <a href="../../../index.html#products" style="color: #6b6560; text-decoration: none; transition: opacity 0.15s;" data-astro-cid-fz5pa65a>AI Agent</a> <span style="color: #c4bdb4;" data-astro-cid-fz5pa65a>/</span> <span style="color: #1a1a1a;" data-astro-cid-fz5pa65a>Argus v1.0</span> </nav> <div style="display: flex; gap: 3rem; padding-bottom: 4rem;" data-astro-cid-fz5pa65a> <!-- Sidebar TOC --> <aside style="width: 14rem; flex-shrink: 0; display: none;" class="toc-sidebar" data-astro-cid-fz5pa65a> <div style="position: sticky; top: 5rem;" data-astro-cid-fz5pa65a> <p style="font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #9a938c; margin-bottom: 0.75rem;" data-astro-cid-fz5pa65a>目录</p> <nav id="toc" style="font-size: 0.8125rem; line-height: 1.6;" data-astro-cid-fz5pa65a></nav> </div> </aside> <!-- Content --> <article class="markdown-content" style="flex: 1; min-width: 0; max-width: 48rem;" data-astro-cid-fz5pa65a> <!-- Category badge --> <div style="margin-bottom: 1rem;" data-astro-cid-fz5pa65a> <span style="display: inline-block; font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9a938c; padding: 0.25rem 0.625rem; border: 1px solid #d6cec4; border-radius: 4px;" data-astro-cid-fz5pa65a> AI Agent </span> </div> <h1 style="font-size: 2.25rem; font-weight: 700; color: #1a1a1a; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 0.75rem; font-family: var(--font-heading); border: none; padding: 0;" data-astro-cid-fz5pa65a> Argus v1.0 </h1> <p style="font-size: 1rem; color: #6b6560; line-height: 1.7; margin-bottom: 2rem;" data-astro-cid-fz5pa65a> AI桌面自动化代理，截图→AI分析→PyAutoGUI执行，15种动作，三级安全 </p> <div style="height: 1px; background: #d6cec4; margin-bottom: 2rem;" data-astro-cid-fz5pa65a></div>  <h1 id="argus-v10--computer-use-agent-功能报告">Argus v1.0 — Computer Use Agent 功能报告</h1>
+<blockquote>
+<p><strong>项目名称</strong>: Argus<br>
+<strong>版本</strong>: v1.0<br>
+<strong>总代码量</strong>: 1,581 行 (11 个源文件)<br>
+<strong>运行环境</strong>: Python 3.12+, Windows 10/11<br>
+<strong>生成日期</strong>: 2026-06-06</p>
+</blockquote>
+<hr>
+<h2 id="一项目概述">一、项目概述</h2>
+<p>Argus 是一个 AI 驱动的桌面自动化代理，通过截图→AI 分析→执行操作的循环，让 AI 模型能够像人一样操控电脑。支持多供应商 API（Anthropic 官方 / OpenAI 兼容第三方），内置安全分析、输入法自动切换、智能滚动等功能。</p>
+<h3 id="核心架构">核心架构</h3>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>用户输入任务</span></span>
+<span class="line"><span>    ↓</span></span>
+<span class="line"><span>┌─────────────────────┐</span></span>
+<span class="line"><span>│  截屏 (mss)          │ ← 动态分辨率检测</span></span>
+<span class="line"><span>│  编码为 base64 PNG    │</span></span>
+<span class="line"><span>└─────────┬───────────┘</span></span>
+<span class="line"><span>          ↓</span></span>
+<span class="line"><span>┌─────────────────────────┐</span></span>
+<span class="line"><span>│  发送截图 + 工具定义      │ ← 自动选择 Anthropic/OpenAI 协议</span></span>
+<span class="line"><span>│  via provider.send()     │</span></span>
+<span class="line"><span>└─────────┬───────────────┘</span></span>
+<span class="line"><span>          ↓</span></span>
+<span class="line"><span>   stop_reason?</span></span>
+<span class="line"><span>   ├─ "tool_use" → 安全分析 → 弹窗确认(dangerous) → PyAutoGUI 执行</span></span>
+<span class="line"><span>   └─ "end_turn" → 输出结果 → 结束</span></span></code></pre>
+<hr>
+<h2 id="二文件结构">二、文件结构</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>computeruse_mode/</span></span>
+<span class="line"><span>├── .env                       # API 密钥（本地存储，不进 git）</span></span>
+<span class="line"><span>├── computer_use.py            # CLI 主入口 (171 lines)</span></span>
+<span class="line"><span>├── agent_loop.py              # 核心 Agentic Loop (230 lines)</span></span>
+<span class="line"><span>├── computer_tool.py           # 动作执行器 (281 lines)</span></span>
+<span class="line"><span>├── safety.py                  # 安全分析模块 (106 lines)</span></span>
+<span class="line"><span>├── screen.py                  # 截屏 + 分辨率检测 (30 lines)</span></span>
+<span class="line"><span>├── model_detect.py            # 模型能力检测 (92 lines)</span></span>
+<span class="line"><span>├── config.py                  # 配置管理 + 自动导入 (188 lines)</span></span>
+<span class="line"><span>├── test_run.py                # 测试脚本 (49 lines)</span></span>
+<span class="line"><span>└── providers/</span></span>
+<span class="line"><span>    ├── __init__.py            # 工厂函数 (23 lines)</span></span>
+<span class="line"><span>    ├── base.py                # Provider 抽象基类 (43 lines)</span></span>
+<span class="line"><span>    ├── anthropic_provider.py  # Anthropic SDK + HTTP (165 lines)</span></span>
+<span class="line"><span>    └── openai_compat.py       # OpenAI 兼容层 (203 lines)</span></span></code></pre>
+<hr>
+<h2 id="三功能清单">三、功能清单</h2>
+<h3 id="31-多供应商-api-支持">3.1 多供应商 API 支持</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Provider</th><th>协议</th><th>认证方式</th><th>适用场景</th></tr></thead><tbody><tr><td><strong>AnthropicProvider</strong></td><td>Anthropic Messages API</td><td><code>x-api-key</code> header</td><td>Claude 官方 + Anthropic 兼容中转站</td></tr><tr><td><strong>OpenAICompatProvider</strong></td><td>OpenAI Chat Completions</td><td><code>Authorization: Bearer</code></td><td>OpenRouter, SiliconFlow, one-api 等</td></tr></tbody></table>
+<p><strong>自动路由逻辑</strong>：</p>
+<ul>
+<li><code>provider_name == "anthropic"</code> → AnthropicProvider</li>
+<li><code>base_url</code> 含 <code>/anthropic</code> 或 <code>anthropic</code> → AnthropicProvider</li>
+<li>其他 → OpenAICompatProvider</li>
+</ul>
+<p><strong>AnthropicProvider 双模式</strong>：</p>
+<ul>
+<li><code>api.anthropic.com</code> → 使用 anthropic SDK（<code>client.messages.create</code>）</li>
+<li>第三方 URL → 使用 httpx 直接调用 <code>/v1/messages</code></li>
+</ul>
+<h3 id="32-动作系统15-种动作">3.2 动作系统（15 种动作）</h3>
+<h4 id="鼠标操作">鼠标操作</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>动作</th><th>参数</th><th>安全级别</th><th>说明</th></tr></thead><tbody><tr><td><code>left_click</code></td><td><code>coordinate: [x, y]</code></td><td>CAUTION</td><td>左键单击</td></tr><tr><td><code>right_click</code></td><td><code>coordinate: [x, y]</code></td><td>CAUTION</td><td>右键单击</td></tr><tr><td><code>double_click</code></td><td><code>coordinate: [x, y]</code></td><td>CAUTION</td><td>双击（选词、打开文件）</td></tr><tr><td><code>triple_click</code></td><td><code>coordinate: [x, y]</code></td><td>CAUTION</td><td>三击（选整行/段落）</td></tr><tr><td><code>mouse_move</code></td><td><code>coordinate: [x, y]</code></td><td>SAFE</td><td>移动光标</td></tr><tr><td><code>drag</code></td><td><code>start_coordinate</code>, <code>end_coordinate</code></td><td>CAUTION</td><td>拖拽（含 None 检查）</td></tr></tbody></table>
+<h4 id="文本输入">文本输入</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>动作</th><th>参数</th><th>安全级别</th><th>说明</th></tr></thead><tbody><tr><td><code>type</code></td><td><code>text: str</code></td><td>CAUTION</td><td>智能输入（自动检测语言 + 切换输入法 + 剪贴板粘贴）</td></tr></tbody></table>
+<h4 id="键盘操作">键盘操作</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>动作</th><th>参数</th><th>安全级别</th><th>说明</th></tr></thead><tbody><tr><td><code>key</code></td><td><code>key: str</code></td><td>CAUTION~DANGEROUS</td><td>按键/组合键（支持 <code>win</code>, <code>cmd</code> 等映射）</td></tr><tr><td><code>long_press</code></td><td><code>key: str</code>, <code>duration: float</code></td><td>CAUTION</td><td>长按住键 N 秒</td></tr></tbody></table>
+<h4 id="右键菜单">右键菜单</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>动作</th><th>参数</th><th>安全级别</th><th>说明</th></tr></thead><tbody><tr><td><code>context_menu</code></td><td><code>coordinate</code>, <code>menu_item?: str</code></td><td>CAUTION</td><td>右键打开菜单 + 可选点击菜单项</td></tr></tbody></table>
+<h4 id="滚动">滚动</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>动作</th><th>参数</th><th>安全级别</th><th>说明</th></tr></thead><tbody><tr><td><code>scroll</code></td><td><code>coordinate</code>, <code>scroll_direction</code>, <code>scroll_amount</code></td><td>CAUTION</td><td>支持 8 种方向</td></tr></tbody></table>
+<p><strong>scroll_direction 支持</strong>：</p>
+<ul>
+<li><code>up</code> / <code>down</code> — 普通滚动（amount 控制步长）</li>
+<li><code>left</code> / <code>right</code> — 水平滚动</li>
+<li><code>page_up</code> / <code>page_down</code> — 翻页滚动（映射到 PgUp/PgDn 按键）</li>
+<li><code>home</code> / <code>end</code> — 跳到顶部/底部</li>
+</ul>
+<h4 id="其他">其他</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>动作</th><th>参数</th><th>安全级别</th><th>说明</th></tr></thead><tbody><tr><td><code>screenshot</code></td><td>无</td><td>SAFE</td><td>截屏返回 base64 PNG</td></tr><tr><td><code>wait</code></td><td><code>duration: float</code></td><td>SAFE</td><td>等待 N 秒</td></tr><tr><td><code>cursor_position</code></td><td>无</td><td>SAFE</td><td>返回当前光标坐标</td></tr></tbody></table>
+<hr>
+<h3 id="33-智能输入法切换">3.3 智能输入法切换</h3>
+<p><strong>语言检测</strong> (<code>_detect_language</code>)：</p>
+<ul>
+<li>基于 Unicode 范围检测 CJK 字符（中日韩统一表意文字、假名、韩文等）</li>
+<li>阈值：CJK 字符占比 > 15% 即判定为 CJK 文本</li>
+<li>混合文本（如 “Hello你好”）也会触发切换</li>
+</ul>
+<p><strong>输入法切换</strong> (<code>_ensure_ime_for_text</code>)：</p>
+<ul>
+<li>检测到 CJK 文本 → 自动发送 <code>Shift</code> 键切换输入法</li>
+<li>适用于微软拼音、搜狗输入法等默认用 Shift 切换中英文的输入法</li>
+<li>切换后通过剪贴板粘贴输入（<code>Ctrl+V</code>）</li>
+</ul>
+<p><strong>Windows 键映射</strong>：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>用户输入</th><th>映射到 PyAutoGUI</th></tr></thead><tbody><tr><td><code>win</code> / <code>windows</code> / <code>command</code> / <code>cmd</code></td><td><code>win</code></td></tr></tbody></table>
+<hr>
+<h3 id="34-安全分析系统">3.4 安全分析系统</h3>
+<p><strong>三级安全评估</strong>：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>级别</th><th>触发条件</th><th>处理方式</th></tr></thead><tbody><tr><td><strong>SAFE</strong></td><td><code>mouse_move</code>, <code>screenshot</code>, <code>cursor_position</code>, <code>wait</code></td><td>自动执行</td></tr><tr><td><strong>CAUTION</strong></td><td><code>left_click</code>, <code>right_click</code>, <code>type</code>, <code>key</code>, <code>scroll</code>, <code>drag</code></td><td>日志记录，自动执行</td></tr><tr><td><strong>DANGEROUS</strong></td><td>特定快捷键、危险命令、连续快速点击</td><td><strong>弹窗确认</strong>（tkinter messagebox）</td></tr></tbody></table>
+<p><strong>DANGEROUS 触发规则</strong>：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>类别</th><th>触发条件</th></tr></thead><tbody><tr><td>危险快捷键</td><td><code>alt+f4</code>, <code>ctrl+alt+del</code>, <code>ctrl+shift+esc</code>, <code>delete</code>, <code>backspace</code>, <code>alt+tab</code>, <code>win+d</code>, <code>win+l</code>, <code>win+r</code>, <code>ctrl+w</code>, <code>ctrl+q</code>, <code>f4</code></td></tr><tr><td>危险命令</td><td><code>rm </code>, <code>del </code>, <code>format </code>, <code>shutdown</code>, <code>restart</code>, <code>taskkill</code>, <code>sudo </code>, <code>chmod 777</code>, <code>rd /s</code>, <code>diskpart</code>, <code>bcdedit</code></td></tr><tr><td>连续点击</td><td>同类点击动作超过 5 次</td></tr></tbody></table>
+<p><strong>弹窗确认</strong>：</p>
+<ul>
+<li>使用 <code>tkinter.messagebox.askyesno</code></li>
+<li>显示动作详情 + 风险描述</li>
+<li>用户点”是”执行，点”否”跳过并通知 AI 尝试其他方案</li>
+</ul>
+<p><strong>两种模式</strong>：</p>
+<ul>
+<li><code>safe</code>（默认）— DANGEROUS 动作需确认</li>
+<li><code>dangerous</code> — 所有动作自动执行</li>
+</ul>
+<hr>
+<h3 id="35-模型能力智能检测">3.5 模型能力智能检测</h3>
+<p><strong>三级检测策略</strong>：</p>
+<ol>
+<li><strong>精确匹配</strong> — 已知模型数据库（20+ 模型）</li>
+<li><strong>关键词推断</strong> — 模型名含 <code>vision</code>/<code>vl</code>/<code>omni</code> → vision=True</li>
+<li><strong>兜底默认</strong> — tool_use=True（几乎所有现代模型支持）</li>
+</ol>
+<p><strong>已知模型数据库</strong>：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>厂商</th><th>模型</th><th>Vision</th><th>Computer Use</th><th>Tool Use</th></tr></thead><tbody><tr><td>Anthropic</td><td>claude-opus-4, claude-sonnet-4, claude-3.5-sonnet</td><td>✅</td><td>✅</td><td>✅</td></tr><tr><td>Anthropic</td><td>claude-3-haiku, claude-3-opus, claude-3-sonnet</td><td>✅</td><td>❌</td><td>✅</td></tr><tr><td>OpenAI</td><td>gpt-4o, gpt-4o-mini, gpt-4-turbo</td><td>✅</td><td>❌</td><td>✅</td></tr><tr><td>OpenAI</td><td>gpt-4, gpt-3.5-turbo</td><td>❌</td><td>❌</td><td>✅</td></tr><tr><td>Google</td><td>gemini-1.5-pro/flash, gemini-2.0-flash</td><td>✅</td><td>❌</td><td>✅</td></tr><tr><td>Qwen</td><td>qwen-vl-max, qwen2.5-vl-72b</td><td>✅</td><td>❌</td><td>✅</td></tr><tr><td>Xiaomi</td><td>mimo-v2-omni</td><td>✅</td><td>❌</td><td>✅</td></tr></tbody></table>
+<p><strong>防误匹配</strong>：长键优先排序，防止 <code>gpt-4</code> 误匹配 <code>gpt-4o</code></p>
+<hr>
+<h3 id="36-配置管理系统">3.6 配置管理系统</h3>
+<p><strong>三个配置来源</strong>（优先级递增）：</p>
+<ol>
+<li><strong><code>~/.claude/cli_config.json</code></strong> — AGENT_AI 兼容格式，存 base_url + model</li>
+<li><strong>项目内 <code>.env</code></strong> — 存 API Key</li>
+<li><strong>环境变量</strong> — <code>ANTHROPIC_API_KEY</code>, <code>ANTHROPIC_BASE_URL</code></li>
+</ol>
+<p><strong>自动导入</strong>：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#24292E">try_import_existing_config()</span></span>
+<span class="line"><span style="color:#6A737D"># → 从三个来源合并，返回 {base_url, model, api_key, profile_type}</span></span></code></pre>
+<p><strong>保存配置</strong>：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#24292E">save_config(base_url, api_key, model, profile_name)</span></span>
+<span class="line"><span style="color:#6A737D"># → 同时写入 cli_config.json + 项目内 .env</span></span></code></pre>
+<p><strong>预设配置</strong>：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>名称</th><th>Base URL</th><th>默认模型</th></tr></thead><tbody><tr><td><code>anthropic</code></td><td><code>https://api.anthropic.com</code></td><td><code>claude-sonnet-4-20250514</code></td></tr><tr><td><code>openrouter</code></td><td><code>https://openrouter.ai/api/v1</code></td><td><code>anthropic/claude-sonnet-4</code></td></tr><tr><td><code>siliconflow</code></td><td><code>https://api.siliconflow.cn/v1</code></td><td><code>Qwen/Qwen2.5-VL-72B-Instruct</code></td></tr></tbody></table>
+<hr>
+<h3 id="37-截屏模块">3.7 截屏模块</h3>
+<ul>
+<li><strong>截屏库</strong>: <code>mss</code>（比 pyautogui 快 ~5x）</li>
+<li><strong>分辨率检测</strong>: <code>pyautogui.size()</code> 运行时自动获取</li>
+<li><strong>输出格式</strong>: base64 编码 PNG</li>
+<li><strong>可选缩放</strong>: <code>scale</code> 参数（0.5 = 缩小到一半，节省 token）</li>
+</ul>
+<hr>
+<h3 id="38-system-promptai-指令">3.8 System Prompt（AI 指令）</h3>
+<p>包含以下章节：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>章节</th><th>内容</th></tr></thead><tbody><tr><td><strong>Mouse</strong></td><td>所有鼠标动作的使用场景</td></tr><tr><td><strong>Text Input</strong></td><td>type 动作 + 输入法自动切换说明</td></tr><tr><td><strong>Keyboard</strong></td><td>key + long_press 使用指南</td></tr><tr><td><strong>Scrolling</strong></td><td>8 种滚动方向 + 语义滚动</td></tr><tr><td><strong>Terminal</strong></td><td>CMD/PowerShell 操作（cls, clear, Enter, ctrl+c）</td></tr><tr><td><strong>Chinese/Multilingual</strong></td><td>Shift 切换输入法 + 混合文本处理</td></tr><tr><td><strong>Web Browsing</strong></td><td>page_down 翻页 + ctrl+f 搜索 + ctrl+w 关闭</td></tr><tr><td><strong>Critical Rules</strong></td><td>5 条核心规则（先点击再输入、不重复点击等）</td></tr></tbody></table>
+<hr>
+<h2 id="四依赖">四、依赖</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>包</th><th>版本</th><th>用途</th></tr></thead><tbody><tr><td><code>anthropic</code></td><td>0.52.0</td><td>Anthropic SDK（官方 API）</td></tr><tr><td><code>httpx</code></td><td>0.28.1</td><td>HTTP 客户端（第三方 API）</td></tr><tr><td><code>pyautogui</code></td><td>0.9.54</td><td>鼠标/键盘控制</td></tr><tr><td><code>pyperclip</code></td><td>1.11.0</td><td>剪贴板操作（中文输入）</td></tr><tr><td><code>mss</code></td><td>10.2.0</td><td>快速截屏</td></tr><tr><td><code>Pillow</code></td><td>12.1.0</td><td>图片处理</td></tr></tbody></table>
+<hr>
+<h2 id="五已知限制">五、已知限制</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>限制</th><th>说明</th></tr></thead><tbody><tr><td>Windows 专属</td><td>pyautogui、mss、tkinter 在 Linux/Mac 行为不同</td></tr><tr><td>输入法依赖</td><td>Shift 切换仅适用于默认用 Shift 的中文输入法</td></tr><tr><td>无 OCR</td><td>右键菜单项无法自动识别文字，需 AI 用坐标点击</td></tr><tr><td>单显示器</td><td>截屏仅捕获主显示器（<code>sct.monitors[1]</code>）</td></tr><tr><td>无窗口管理</td><td>不能最小化/最大化/切换窗口（需用快捷键模拟）</td></tr></tbody></table>
+<hr>
+<h2 id="六运行方式">六、运行方式</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># CLI 交互模式</span></span>
+<span class="line"><span style="color:#6F42C1">python</span><span style="color:#032F62"> computer_use.py</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 直接测试（跳过 CLI 交互）</span></span>
+<span class="line"><span style="color:#6F42C1">python</span><span style="color:#032F62"> test_run.py</span></span></code></pre>
+<p><strong>CLI 流程</strong>：</p>
+<ol>
+<li>自动检测屏幕分辨率</li>
+<li>从 <code>.env</code> + <code>cli_config.json</code> 自动导入 API 配置</li>
+<li>显示已有 profiles，选择或新建</li>
+<li>检测模型能力（vision / computer_use / tool_use）</li>
+<li>选择安全模式（safe / dangerous）</li>
+<li>输入任务，开始执行</li>
+</ol>  </article> </div> </div>  </main> <footer class="footer-border" style="padding: 2.5rem 1.5rem; text-align: center; font-size: 0.8125rem; color: #9a938c; background: #f5f0eb;" data-astro-cid-37fxchfa> <p data-astro-cid-37fxchfa>&copy; 2026 AI Portfolio. Crafted with precision.</p> </footer> </body></html>  <script type="module">function l(){const s=document.querySelector(".markdown-content"),o=document.getElementById("toc");if(!s||!o)return;o.innerHTML="";const a=s.querySelectorAll("h2, h3");a.forEach((e,n)=>{const r=e.id||`heading-${n}`;e.id=r;const t=document.createElement("a");t.href=`#${r}`,t.textContent=e.textContent?.trim()||"",t.style.display="block",t.style.padding="0.2rem 0",t.style.color=e.tagName==="H2"?"#1a1a1a":"#9a938c",t.style.textDecoration="none",t.style.transition="color 0.15s ease",t.style.paddingLeft=e.tagName==="H3"?"0.75rem":"0",t.style.fontSize=e.tagName==="H3"?"0.75rem":"0.8125rem",t.style.opacity="0.85",o.appendChild(t)});const i=new IntersectionObserver(e=>{e.forEach(n=>{if(n.isIntersecting){const r=n.target.id;o.querySelectorAll("a").forEach(t=>{const c=t.getAttribute("href")===`#${r}`;t.style.opacity=c?"1":"0.85",t.style.color=c?"#1a1a1a":"",t.style.fontWeight=c?"600":""})}})},{rootMargin:"-80px 0px -70% 0px"});a.forEach(e=>i.observe(e))}l();document.addEventListener("astro:page-load",l);</script>

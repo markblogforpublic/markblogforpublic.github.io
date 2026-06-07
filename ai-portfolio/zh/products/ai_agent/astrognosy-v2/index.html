@@ -1,0 +1,586 @@
+<!DOCTYPE html><html lang="zh" data-theme="agent" class="scroll-smooth" data-astro-cid-37fxchfa> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="多模型深度研究工具，多源聚合搜索，Playwright截图+多模态分析"><title>Astrognosy v2 | AI Portfolio</title><link rel="icon" type="image/svg+xml" href="../../../../favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="../../../../_astro/BaseLayout.BuAdYsho.css">
+<style>@media(min-width:1024px){.toc-sidebar[data-astro-cid-fz5pa65a]{display:block!important}}
+</style></head> <body data-astro-cid-37fxchfa> <nav class="nav-bar fixed top-0 left-0 right-0 z-50" style="height: 56px;" data-astro-cid-37fxchfa> <div style="max-width: 80rem; margin: 0 auto; height: 100%; display: flex; align-items: center; padding: 0 1.5rem;" data-astro-cid-37fxchfa> <!-- Logo --> <a href="../../../index.html" class="nav-logo" data-astro-cid-37fxchfa>AI Portfolio</a> <!-- Spacer --> <div style="flex: 1;" data-astro-cid-37fxchfa></div> <!-- Desktop nav links (center) --> <div class="desktop-nav" style="display: flex; align-items: center; gap: 2rem; position: absolute; left: 50%; transform: translateX(-50%);" data-astro-cid-37fxchfa> <a href="../../../index.html" class="nav-link" data-astro-cid-37fxchfa>首页</a> <a href="../../../index.html#products" class="nav-link" data-astro-cid-37fxchfa>产品</a> <a href="../../../index.html#research" class="nav-link" data-astro-cid-37fxchfa>研究</a> <a href="../../../about/index.html" class="nav-link" data-astro-cid-37fxchfa>About</a> </div> <!-- Right side --> <div style="display: flex; align-items: center; gap: 0.5rem;" data-astro-cid-37fxchfa> <a href="../../../index.html" style="font-size: 0.8125rem; font-weight: 500; text-decoration: none; padding: 0.375rem 0.625rem; border-radius: 4px; transition: all 0.15s ease; background: #1a1a1a; color: #fff;" data-astro-cid-37fxchfa>中文</a> <a href="../../../../en/index.html" style="font-size: 0.8125rem; font-weight: 500; text-decoration: none; padding: 0.375rem 0.625rem; border-radius: 4px; transition: all 0.15s ease; color: #6b6560; border: 1px solid #d6cec4;" data-astro-cid-37fxchfa>EN</a> <!-- Mobile hamburger --> <button class="mobile-menu-btn" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu" data-astro-cid-37fxchfa> <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" data-astro-cid-37fxchfa> <path d="M3 6h14M3 10h14M3 14h14" data-astro-cid-37fxchfa></path> </svg> </button> </div> </div> </nav> <!-- Mobile nav --> <div class="mobile-nav" data-astro-cid-37fxchfa> <a href="../../../index.html" data-astro-cid-37fxchfa>首页</a> <a href="../../../index.html#products" data-astro-cid-37fxchfa>产品</a> <a href="../../../index.html#research" data-astro-cid-37fxchfa>研究</a> <a href="../../../about/index.html" data-astro-cid-37fxchfa>About</a> <a href="../../../../en/index.html" data-astro-cid-37fxchfa>English</a> </div> <main class="min-h-screen" style="padding-top: 56px;" data-astro-cid-37fxchfa>  <div style="max-width: 80rem; margin: 0 auto; padding: 0 1.5rem;" data-astro-cid-fz5pa65a> <!-- Breadcrumb --> <nav style="padding: 1rem 0; font-size: 0.8125rem; color: #9a938c; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;" data-astro-cid-fz5pa65a> <a href="../../../index.html" style="color: #6b6560; text-decoration: none; transition: opacity 0.15s;" data-astro-cid-fz5pa65a>首页</a>  <span style="color: #c4bdb4;" data-astro-cid-fz5pa65a>/</span> <a href="../../../index.html#products" style="color: #6b6560; text-decoration: none; transition: opacity 0.15s;" data-astro-cid-fz5pa65a>产品</a> <span style="color: #c4bdb4;" data-astro-cid-fz5pa65a>/</span> <a href="../../../index.html#products" style="color: #6b6560; text-decoration: none; transition: opacity 0.15s;" data-astro-cid-fz5pa65a>AI Agent</a> <span style="color: #c4bdb4;" data-astro-cid-fz5pa65a>/</span> <span style="color: #1a1a1a;" data-astro-cid-fz5pa65a>Astrognosy v2</span> </nav> <div style="display: flex; gap: 3rem; padding-bottom: 4rem;" data-astro-cid-fz5pa65a> <!-- Sidebar TOC --> <aside style="width: 14rem; flex-shrink: 0; display: none;" class="toc-sidebar" data-astro-cid-fz5pa65a> <div style="position: sticky; top: 5rem;" data-astro-cid-fz5pa65a> <p style="font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #9a938c; margin-bottom: 0.75rem;" data-astro-cid-fz5pa65a>目录</p> <nav id="toc" style="font-size: 0.8125rem; line-height: 1.6;" data-astro-cid-fz5pa65a></nav> </div> </aside> <!-- Content --> <article class="markdown-content" style="flex: 1; min-width: 0; max-width: 48rem;" data-astro-cid-fz5pa65a> <!-- Category badge --> <div style="margin-bottom: 1rem;" data-astro-cid-fz5pa65a> <span style="display: inline-block; font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9a938c; padding: 0.25rem 0.625rem; border: 1px solid #d6cec4; border-radius: 4px;" data-astro-cid-fz5pa65a> AI Agent </span> </div> <h1 style="font-size: 2.25rem; font-weight: 700; color: #1a1a1a; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 0.75rem; font-family: var(--font-heading); border: none; padding: 0;" data-astro-cid-fz5pa65a> Astrognosy v2 </h1> <p style="font-size: 1rem; color: #6b6560; line-height: 1.7; margin-bottom: 2rem;" data-astro-cid-fz5pa65a> 多模型深度研究工具，多源聚合搜索，Playwright截图+多模态分析 </p> <div style="height: 1px; background: #d6cec4; margin-bottom: 2rem;" data-astro-cid-fz5pa65a></div>  <h1 id="astrognosy-v2---功能报告">Astrognosy v2 - 功能报告</h1>
+<h2 id="项目概述">项目概述</h2>
+<p>Astrognosy 是一款类 OpenAI Deep Research 的多模型深度研究工具。用户输入研究问题后，系统自动进行多轮搜索、阅读、分析，最终生成带引用的 Markdown 格式深度研究报告。</p>
+<p><strong>核心差异化</strong>：支持所有兼容 OpenAI API 格式的模型提供商（OpenAI、DeepSeek、Moonshot、Qwen、本地 Ollama 等），开箱即用，无需绑定特定平台。</p>
+<hr>
+<h2 id="技术架构">技术架构</h2>
+<h3 id="技术栈">技术栈</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>类别</th><th>技术</th></tr></thead><tbody><tr><td>框架</td><td>Next.js 16 (App Router) + TypeScript</td></tr><tr><td>样式</td><td>Tailwind CSS</td></tr><tr><td>LLM 调用</td><td>openai npm SDK（天然兼容所有 OpenAI 格式 provider）</td></tr><tr><td>实时流</td><td>Server-Sent Events (SSE)</td></tr><tr><td>截图</td><td>Playwright (headless Chromium)</td></tr><tr><td>XML 解析</td><td>fast-xml-parser（arXiv 数据解析）</td></tr></tbody></table>
+<h3 id="项目结构">项目结构</h3>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>astrognosy/</span></span>
+<span class="line"><span>├── app/</span></span>
+<span class="line"><span>│   ├── api/research/route.ts     # SSE 流式 API 端点</span></span>
+<span class="line"><span>│   ├── page.tsx                  # 主页面（客户端组件）</span></span>
+<span class="line"><span>│   ├── layout.tsx                # 根布局</span></span>
+<span class="line"><span>│   └── globals.css               # 全局样式 + 暗色主题</span></span>
+<span class="line"><span>├── components/</span></span>
+<span class="line"><span>│   ├── research-form.tsx         # 搜索输入表单</span></span>
+<span class="line"><span>│   ├── progress-tracker.tsx      # 研究进度实时时间线</span></span>
+<span class="line"><span>│   ├── report-viewer.tsx         # Markdown 报告渲染器</span></span>
+<span class="line"><span>│   ├── model-settings.tsx        # 模型配置面板（含域名过滤 + 截图开关）</span></span>
+<span class="line"><span>│   └── source-card.tsx           # 引用来源卡片</span></span>
+<span class="line"><span>├── lib/</span></span>
+<span class="line"><span>│   ├── llm.ts                    # 多 Provider LLM 封装 + Vision 检测</span></span>
+<span class="line"><span>│   ├── prompts.ts                # 各阶段 System Prompts（规划/阅读/分析/写作）</span></span>
+<span class="line"><span>│   ├── research-agent.ts         # 核心研究循环引擎</span></span>
+<span class="line"><span>│   ├── browser/</span></span>
+<span class="line"><span>│   │   ├── screenshot.ts         # Playwright 截图 + DOM 文本提取</span></span>
+<span class="line"><span>│   │   └── vision-analyzer.ts    # 截图 → base64 → 多模态 LLM 分析</span></span>
+<span class="line"><span>│   └── search/</span></span>
+<span class="line"><span>│       ├── index.ts              # 多源聚合搜索 + 内容提取路由</span></span>
+<span class="line"><span>│       ├── types.ts              # 类型定义</span></span>
+<span class="line"><span>│       ├── web/</span></span>
+<span class="line"><span>│       │   ├── duckduckgo.ts     # DuckDuckGo</span></span>
+<span class="line"><span>│       │   ├── tavily.ts         # Tavily</span></span>
+<span class="line"><span>│       │   ├── brave.ts          # Brave Search</span></span>
+<span class="line"><span>│       │   └── searxng.ts        # SearXNG</span></span>
+<span class="line"><span>│       ├── academic/</span></span>
+<span class="line"><span>│       │   ├── semantic-scholar.ts  # Semantic Scholar</span></span>
+<span class="line"><span>│       │   ├── arxiv.ts          # arXiv</span></span>
+<span class="line"><span>│       │   └── openalex.ts       # OpenAlex</span></span>
+<span class="line"><span>│       ├── code/github.ts        # GitHub Search API</span></span>
+<span class="line"><span>│       ├── knowledge/wikipedia.ts # Wikipedia REST API</span></span>
+<span class="line"><span>│       └── content/jina-reader.ts # Jina Reader 内容提取</span></span>
+<span class="line"><span>└── .env.local                    # 环境变量配置模板</span></span></code></pre>
+<hr>
+<h2 id="核心功能">核心功能</h2>
+<h3 id="1-研究循环引擎-research-agent-loop">1. 研究循环引擎 (Research Agent Loop)</h3>
+<p>系统自动执行以下循环（最多 3-5 轮迭代）：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>用户输入问题</span></span>
+<span class="line"><span>    ↓</span></span>
+<span class="line"><span>[规划] LLM 分解问题为 3-5 个子问题 + 搜索词 + 搜索类别</span></span>
+<span class="line"><span>    ↓</span></span>
+<span class="line"><span>[搜索] 并行多源搜索：通用 + 学术 + GitHub + Wikipedia</span></span>
+<span class="line"><span>    ↓</span></span>
+<span class="line"><span>[内容提取] 三层降级策略获取网页正文</span></span>
+<span class="line"><span>    ↓</span></span>
+<span class="line"><span>[阅读] LLM 分析搜索结果，提取关键事实和引用</span></span>
+<span class="line"><span>    ↓</span></span>
+<span class="line"><span>[分析] 评估信息完整性，判断是否继续搜索</span></span>
+<span class="line"><span>    ↓</span></span>
+<span class="line"><span>  信息足够？──否──→ 回到 [搜索]</span></span>
+<span class="line"><span>    ↓ 是</span></span>
+<span class="line"><span>[写作] 生成带内联引用的 Markdown 报告</span></span></code></pre>
+<p>每一步通过 SSE 实时推送到前端，用户可观察完整的研究过程。</p>
+<h3 id="2-多模型支持">2. 多模型支持</h3>
+<p>通过 OpenAI SDK 的 <code>baseURL</code> 切换，天然兼容所有 OpenAI 格式 API：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Provider</th><th>Base URL</th><th>特点</th></tr></thead><tbody><tr><td><strong>OpenAI</strong></td><td><code>https://api.openai.com/v1</code></td><td>GPT-4o, GPT-4-turbo 等</td></tr><tr><td><strong>DeepSeek</strong></td><td><code>https://api.deepseek.com/v1</code></td><td>性价比高，支持长上下文</td></tr><tr><td><strong>Moonshot (Kimi)</strong></td><td><code>https://api.moonshot.cn/v1</code></td><td>国内可用，支持联网</td></tr><tr><td><strong>Qwen (通义千问)</strong></td><td><code>https://dashscope.aliyuncs.com/compatible-mode/v1</code></td><td>阿里云，多模态支持</td></tr><tr><td><strong>Ollama (本地)</strong></td><td><code>http://localhost:11434/v1</code></td><td>完全免费，本地部署</td></tr><tr><td><strong>自定义</strong></td><td>用户填写</td><td>任何兼容 OpenAI 格式的 API</td></tr></tbody></table>
+<h3 id="3-多源搜索系统">3. 多源搜索系统</h3>
+<p>按信息维度分类的可插拔搜索层，开箱即用（无需 API Key 的 Provider 标注 ✅）：</p>
+<h4 id="通用网页搜索">通用网页搜索</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Provider</th><th>免费额度</th><th>API Key</th><th>域名过滤</th><th>说明</th></tr></thead><tbody><tr><td>DuckDuckGo ✅</td><td>无限制</td><td>不需要</td><td>✅ site: 语法</td><td>完全免费，可能被限流</td></tr><tr><td>Tavily</td><td>1000次/月</td><td>需要</td><td>✅ includeDomains</td><td>专为 AI 设计，LLM 友好格式</td></tr><tr><td>Brave Search</td><td>2000次/月</td><td>需要</td><td>✅ site: 语法</td><td>隐私优先，结果质量高</td></tr><tr><td>SearXNG ✅</td><td>无限制</td><td>不需要</td><td>✅ site: 语法</td><td>自托管元搜索引擎</td></tr></tbody></table>
+<h4 id="学术论文搜索">学术论文搜索</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Provider</th><th>免费额度</th><th>API Key</th><th>说明</th></tr></thead><tbody><tr><td>Semantic Scholar ✅</td><td>1 req/s</td><td>可选（提高到 10 req/s）</td><td>200M+ 论文，AI 驱动</td></tr><tr><td>arXiv ✅</td><td>无限制（建议 3s 间隔）</td><td>不需要</td><td>CS/物理/数学预印本</td></tr><tr><td>OpenAlex ✅</td><td>~10 req/s</td><td>不需要</td><td>250M+ 学术作品，全学科覆盖</td></tr></tbody></table>
+<h4 id="代码--开源">代码 &#x26; 开源</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Provider</th><th>免费额度</th><th>API Key</th><th>说明</th></tr></thead><tbody><tr><td>GitHub Search ✅</td><td>30 req/min</td><td>可选（提高到 5000/hr）</td><td>搜索 repos、code、issues</td></tr></tbody></table>
+<h4 id="知识百科">知识百科</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Provider</th><th>免费额度</th><th>API Key</th><th>说明</th></tr></thead><tbody><tr><td>Wikipedia REST API ✅</td><td>无限制</td><td>不需要</td><td>权威百科知识，支持多语言</td></tr></tbody></table>
+<h4 id="网页内容提取">网页内容提取</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Provider</th><th>免费额度</th><th>API Key</th><th>说明</th></tr></thead><tbody><tr><td>Jina Reader ✅</td><td>每日有额度</td><td>可选</td><td>URL → 干净 Markdown，去广告去导航</td></tr></tbody></table>
+<p><strong>搜索策略</strong>：</p>
+<ul>
+<li><strong>默认多源并发</strong>：同时在所有可用类别中搜索，结果按 URL 去重聚合</li>
+<li><strong>LLM 智能路由</strong>：规划阶段的 LLM 根据问题类型决定搜索哪些类别</li>
+<li><strong>降级机制</strong>：Provider 失败时自动尝试同类别的其他 Provider</li>
+</ul>
+<h3 id="4-指定网站搜索域名过滤">4. 指定网站搜索（域名过滤）</h3>
+<p>用户可在设置面板中添加关注的域名列表（如 <code>arxiv.org</code>、<code>github.com</code>、<code>nature.com</code>），搜索时自动应用域名限制：</p>
+<ul>
+<li>DuckDuckGo / Brave / SearXNG：使用 <code>site:xxx.com</code> 前缀</li>
+<li>Tavily：使用内置的 <code>includeDomains</code> 参数</li>
+<li>GitHub：使用 <code>org:</code> 过滤</li>
+<li>不支持域名过滤的 Provider（Wikipedia、OpenAlex）照常搜索</li>
+</ul>
+<h3 id="5-浏览器截图--多模态分析">5. 浏览器截图 + 多模态分析</h3>
+<p>三层降级的内容获取策略，处理 JS 重度渲染的页面：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>1️⃣ Jina Reader 文本提取（快速、低成本，适合静态页面）</span></span>
+<span class="line"><span>   ↓ 内容不足或提取失败？</span></span>
+<span class="line"><span>2️⃣ Playwright 截图 → base64 → 多模态 LLM 分析（准确、处理动态页面）</span></span>
+<span class="line"><span>   ↓ 模型不支持 vision？</span></span>
+<span class="line"><span>3️⃣ Playwright DOM 文本提取（移除脚本/样式/广告后提取正文）</span></span></code></pre>
+<p><strong>多模态模型自动检测</strong>：</p>
+<p>系统自动识别当前模型是否支持视觉（Vision）能力，已知支持的模型：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>厂商</th><th>支持 Vision 的模型关键词</th></tr></thead><tbody><tr><td>OpenAI</td><td>gpt-4o, gpt-4-turbo, gpt-4-vision</td></tr><tr><td>Anthropic</td><td>claude-3, claude-3.5, claude-4</td></tr><tr><td>Google</td><td>gemini-1.5, gemini-2, gemini-pro-vision</td></tr><tr><td>阿里</td><td>qwen-vl, qwen2-vl</td></tr><tr><td>其他</td><td>deepseek-vl, llava, minicpm-v</td></tr></tbody></table>
+<ul>
+<li>支持 vision → 截图方案可用，设置面板显示绿色标识</li>
+<li>不支持 vision → 仅用文本提取，设置面板显示灰色标识</li>
+<li>用户可在设置中手动开关截图功能</li>
+</ul>
+<h3 id="6-实时进度展示">6. 实时进度展示</h3>
+<p>前端通过 SSE 接收研究进度，展示：</p>
+<ul>
+<li><strong>阶段指示</strong>：规划 → 搜索 → 阅读 → 分析 → 写作 → 完成</li>
+<li><strong>每步详情</strong>：搜索词、结果数量、提取状态</li>
+<li><strong>思考过程</strong>：模型的分析和判断（如果模型支持）</li>
+<li><strong>来源列表</strong>：已收集的所有引用来源，按类别分色显示</li>
+<li><strong>时间戳</strong>：每个步骤的精确时间</li>
+</ul>
+<h3 id="7-研究报告渲染">7. 研究报告渲染</h3>
+<p>使用 <code>react-markdown</code> + <code>remark-gfm</code> 渲染最终报告：</p>
+<ul>
+<li>完整的 Markdown 支持（标题、列表、表格、代码块、引用）</li>
+<li>暗色主题适配</li>
+<li>内联引用链接（点击跳转原始来源）</li>
+<li>引用来源列表（编号对应内联引用）</li>
+</ul>
+<hr>
+<h2 id="前端界面">前端界面</h2>
+<h3 id="主页面布局">主页面布局</h3>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>┌─────────────────────────────────────────┐</span></span>
+<span class="line"><span>│  ✦ Astrognosy  多模型深度研究工具  [设置] │  ← 顶栏（固定）</span></span>
+<span class="line"><span>├─────────────────────────────────────────┤</span></span>
+<span class="line"><span>│                                         │</span></span>
+<span class="line"><span>│         深度研究，多源聚合                │  ← 标题</span></span>
+<span class="line"><span>│   输入研究问题，AI 将自动进行多轮搜索...   │  ← 副标题</span></span>
+<span class="line"><span>│                                         │</span></span>
+<span class="line"><span>│  [ 输入你的研究问题...          ] [开始研究] │  ← 搜索框</span></span>
+<span class="line"><span>│                                         │</span></span>
+<span class="line"><span>├─────────────────────────────────────────┤</span></span>
+<span class="line"><span>│  📋 研究进度                             │</span></span>
+<span class="line"><span>│  ├ ✅ 规划: 识别了 4 个子问题              │  ← 实时进度</span></span>
+<span class="line"><span>│  ├ ✅ 搜索: "quantum computing 2025"     │</span></span>
+<span class="line"><span>│  ├ 🔄 阅读: LLM 正在分析搜索结果...       │</span></span>
+<span class="line"><span>│  └ ⏳ 写作: 等待中                        │</span></span>
+<span class="line"><span>├─────────────────────────────────────────┤</span></span>
+<span class="line"><span>│  已收集来源 (12)                         │</span></span>
+<span class="line"><span>│  ┌──────────┐  ┌──────────┐             │</span></span>
+<span class="line"><span>│  │ [1] 标题 │  │ [2] 标题 │  ...         │  ← 来源卡片</span></span>
+<span class="line"><span>│  │ web/DDG  │  │ academic │             │     按类别着色</span></span>
+<span class="line"><span>│  └──────────┘  └──────────┘             │</span></span>
+<span class="line"><span>├─────────────────────────────────────────┤</span></span>
+<span class="line"><span>│  # 研究报告                              │</span></span>
+<span class="line"><span>│  ## 1. 引言                              │</span></span>
+<span class="line"><span>│  量子计算在2025年取得了突破性进展 [1]...   │  ← Markdown 报告</span></span>
+<span class="line"><span>│  ## 参考来源                              │</span></span>
+<span class="line"><span>│  [1] Nature - Quantum Computing...       │</span></span>
+<span class="line"><span>│                                         │</span></span>
+<span class="line"><span>└─────────────────────────────────────────┘</span></span></code></pre>
+<h3 id="设置面板">设置面板</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>配置项</th><th>说明</th></tr></thead><tbody><tr><td>Provider</td><td>选择模型提供商（OpenAI / DeepSeek / Moonshot / Qwen / Ollama / 自定义）</td></tr><tr><td>API Key</td><td>输入对应 Provider 的 API Key</td></tr><tr><td>Base URL</td><td>自定义 Provider 时填写 API 地址</td></tr><tr><td>模型名称</td><td>填写模型名称（如 gpt-4o、deepseek-chat）</td></tr><tr><td>Vision 检测</td><td>自动检测模型是否支持视觉，影响内容获取策略</td></tr><tr><td>截图开关</td><td>当模型支持 Vision 时，可手动开关截图分析功能</td></tr><tr><td>指定网站</td><td>添加/删除关注的域名列表，搜索时自动过滤</td></tr></tbody></table>
+<hr>
+<h2 id="api-设计">API 设计</h2>
+<h3 id="post-apiresearch">POST /api/research</h3>
+<p><strong>请求体</strong>：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#005CC5">  "query"</span><span style="color:#24292E">: </span><span style="color:#032F62">"研究问题"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">  "modelConfig"</span><span style="color:#24292E">: {</span></span>
+<span class="line"><span style="color:#005CC5">    "provider"</span><span style="color:#24292E">: </span><span style="color:#032F62">"deepseek"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "apiKey"</span><span style="color:#24292E">: </span><span style="color:#032F62">"sk-..."</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "baseURL"</span><span style="color:#24292E">: </span><span style="color:#032F62">"https://api.deepseek.com/v1"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "model"</span><span style="color:#24292E">: </span><span style="color:#032F62">"deepseek-chat"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "enableScreenshot"</span><span style="color:#24292E">: </span><span style="color:#005CC5">false</span></span>
+<span class="line"><span style="color:#24292E">  },</span></span>
+<span class="line"><span style="color:#005CC5">  "maxRounds"</span><span style="color:#24292E">: </span><span style="color:#005CC5">3</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">  "targetDomains"</span><span style="color:#24292E">: [</span><span style="color:#032F62">"arxiv.org"</span><span style="color:#24292E">, </span><span style="color:#032F62">"github.com"</span><span style="color:#24292E">]</span></span>
+<span class="line"><span style="color:#24292E">}</span></span></code></pre>
+<p><strong>响应</strong>：SSE 流，事件类型：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>事件类型</th><th>数据字段</th><th>说明</th></tr></thead><tbody><tr><td><code>progress</code></td><td>phase, message, round, thinking, report</td><td>研究进度</td></tr><tr><td><code>sources</code></td><td>sources[]</td><td>已收集的来源列表</td></tr><tr><td><code>done</code></td><td>message</td><td>研究完成</td></tr><tr><td><code>error</code></td><td>message</td><td>错误信息</td></tr></tbody></table>
+<hr>
+<h2 id="环境变量配置">环境变量配置</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># ===== 搜索 Provider（全部可选，不填则使用免费 Provider）=====</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Tavily (1000次/月免费)</span></span>
+<span class="line"><span style="color:#24292E">TAVILY_API_KEY</span><span style="color:#D73A49">=</span><span style="color:#032F62">tvly-xxxxx</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Brave Search (2000次/月免费)</span></span>
+<span class="line"><span style="color:#24292E">BRAVE_API_KEY</span><span style="color:#D73A49">=</span><span style="color:#032F62">BSAxxxxx</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># SearXNG (自托管)</span></span>
+<span class="line"><span style="color:#24292E">SEARXNG_URL</span><span style="color:#D73A49">=</span><span style="color:#032F62">https://searxng.example.com</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Semantic Scholar (可选，提高速率)</span></span>
+<span class="line"><span style="color:#24292E">SEMANTIC_SCHOLAR_API_KEY</span><span style="color:#D73A49">=</span><span style="color:#032F62">xxxxx</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Jina Reader (可选，提高额度)</span></span>
+<span class="line"><span style="color:#24292E">JINA_API_KEY</span><span style="color:#D73A49">=</span><span style="color:#032F62">jina_xxxxx</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># GitHub Token (可选，提高速率)</span></span>
+<span class="line"><span style="color:#24292E">GITHUB_TOKEN</span><span style="color:#D73A49">=</span><span style="color:#032F62">ghp_xxxxx</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># OpenAlex (可选，礼貌邮箱提高速率)</span></span>
+<span class="line"><span style="color:#24292E">OPENALEX_EMAIL</span><span style="color:#D73A49">=</span><span style="color:#032F62">your@email.com</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Wikipedia 语言 (默认 en，可选 zh)</span></span>
+<span class="line"><span style="color:#24292E">WIKIPEDIA_LANG</span><span style="color:#D73A49">=</span><span style="color:#032F62">zh</span></span></code></pre>
+<p><strong>开箱即用</strong>：不配置任何环境变量，系统仍可使用 DuckDuckGo + arXiv + OpenAlex + Wikipedia + GitHub（无认证模式）进行搜索。</p>
+<hr>
+<h2 id="研究引擎-prompt-设计">研究引擎 Prompt 设计</h2>
+<h3 id="规划阶段-planning_prompt">规划阶段 (PLANNING_PROMPT)</h3>
+<p>将用户问题分解为 3-5 个子问题，每个子问题生成搜索词和搜索类别（web/academic/code/knowledge），以 JSON 格式输出。</p>
+<h3 id="阅读阶段-reading_prompt">阅读阶段 (READING_PROMPT)</h3>
+<p>从搜索结果中提取关键事实、引用来源、信息可信度和信息缺口，以 JSON 格式输出。</p>
+<h3 id="分析阶段-analysis_prompt">分析阶段 (ANALYSIS_PROMPT)</h3>
+<p>评估已收集信息的完整性（0-100 分），判断是否需要继续搜索，如需要则生成下一轮搜索建议。</p>
+<h3 id="写作阶段-writing_prompt">写作阶段 (WRITING_PROMPT)</h3>
+<p>根据所有收集的信息撰写结构化的 Markdown 研究报告，包含内联引用 [数字] 和参考来源列表。</p>
+<hr>
+<h2 id="依赖清单">依赖清单</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#005CC5">  "dependencies"</span><span style="color:#24292E">: {</span></span>
+<span class="line"><span style="color:#005CC5">    "next"</span><span style="color:#24292E">: </span><span style="color:#032F62">"16.x"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "react"</span><span style="color:#24292E">: </span><span style="color:#032F62">"18.x"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "react-dom"</span><span style="color:#24292E">: </span><span style="color:#032F62">"18.x"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "openai"</span><span style="color:#24292E">: </span><span style="color:#032F62">"^4.0.0"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "react-markdown"</span><span style="color:#24292E">: </span><span style="color:#032F62">"^9.0.0"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "remark-gfm"</span><span style="color:#24292E">: </span><span style="color:#032F62">"^4.0.0"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "lucide-react"</span><span style="color:#24292E">: </span><span style="color:#032F62">"^0.400.0"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "clsx"</span><span style="color:#24292E">: </span><span style="color:#032F62">"^2.0.0"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "tailwind-merge"</span><span style="color:#24292E">: </span><span style="color:#032F62">"^2.0.0"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "fast-xml-parser"</span><span style="color:#24292E">: </span><span style="color:#032F62">"^4.0.0"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "playwright"</span><span style="color:#24292E">: </span><span style="color:#032F62">"^1.40.0"</span></span>
+<span class="line"><span style="color:#24292E">  }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span></code></pre>
+<hr>
+<h2 id="快速开始">快速开始</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 1. 安装依赖</span></span>
+<span class="line"><span style="color:#6F42C1">npm</span><span style="color:#032F62"> install</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 2. 安装 Playwright 浏览器（仅截图功能需要）</span></span>
+<span class="line"><span style="color:#6F42C1">npx</span><span style="color:#032F62"> playwright</span><span style="color:#032F62"> install</span><span style="color:#032F62"> chromium</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 3. 配置环境变量（可选）</span></span>
+<span class="line"><span style="color:#6F42C1">cp</span><span style="color:#032F62"> .env.example</span><span style="color:#032F62"> .env.local</span></span>
+<span class="line"><span style="color:#6A737D"># 编辑 .env.local 填入你的 API Keys</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 4. 启动开发服务器</span></span>
+<span class="line"><span style="color:#6F42C1">npm</span><span style="color:#032F62"> run</span><span style="color:#032F62"> dev</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 5. 打开浏览器</span></span>
+<span class="line"><span style="color:#6A737D"># http://localhost:3000</span></span></code></pre>
+<hr>
+<h2 id="已知限制">已知限制</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>限制</th><th>说明</th></tr></thead><tbody><tr><td>DuckDuckGo 反爬</td><td>频繁请求可能被限流，建议配置 Tavily 或 Brave 作为备选</td></tr><tr><td>截图性能</td><td>Playwright 启动 Chromium 有一定开销，建议仅在模型支持 Vision 时启用</td></tr><tr><td>内存存储</td><td>研究报告存储在内存中，页面刷新后丢失（后续可加数据库）</td></tr><tr><td>SSE 超时</td><td>长时间研究（>5分钟）可能触发代理超时，需配置超时时间</td></tr><tr><td>arXiv 速率</td><td>建议请求间隔 3 秒以上，避免被封禁</td></tr></tbody></table>
+<hr>
+<h2 id="后续迭代方向">后续迭代方向</h2>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> 研究报告持久化（SQLite / IndexedDB）</li>
+<li class="task-list-item"><input type="checkbox" disabled> 历史研究记录查看</li>
+<li class="task-list-item"><input type="checkbox" disabled> 报告导出（PDF / DOCX）</li>
+<li class="task-list-item"><input type="checkbox" disabled> 多语言界面（英文 / 中文切换）</li>
+<li class="task-list-item"><input type="checkbox" disabled> 流式报告生成（边写边显示）</li>
+<li class="task-list-item"><input type="checkbox" disabled> 引用验证（自动检查引用链接有效性）</li>
+<li class="task-list-item"><input type="checkbox" disabled> 研究模板（预设常见研究场景）</li>
+<li class="task-list-item"><input type="checkbox" disabled> 团队协作（共享研究结果）</li>
+</ul>
+<hr>
+<p><em>Astrognosy v2 - 多模型深度研究工具</em></p>  </article> </div> </div>  </main> <footer class="footer-border" style="padding: 2.5rem 1.5rem; text-align: center; font-size: 0.8125rem; color: #9a938c; background: #f5f0eb;" data-astro-cid-37fxchfa> <p data-astro-cid-37fxchfa>&copy; 2026 AI Portfolio. Crafted with precision.</p> </footer> </body></html>  <script type="module">function l(){const s=document.querySelector(".markdown-content"),o=document.getElementById("toc");if(!s||!o)return;o.innerHTML="";const a=s.querySelectorAll("h2, h3");a.forEach((e,n)=>{const r=e.id||`heading-${n}`;e.id=r;const t=document.createElement("a");t.href=`#${r}`,t.textContent=e.textContent?.trim()||"",t.style.display="block",t.style.padding="0.2rem 0",t.style.color=e.tagName==="H2"?"#1a1a1a":"#9a938c",t.style.textDecoration="none",t.style.transition="color 0.15s ease",t.style.paddingLeft=e.tagName==="H3"?"0.75rem":"0",t.style.fontSize=e.tagName==="H3"?"0.75rem":"0.8125rem",t.style.opacity="0.85",o.appendChild(t)});const i=new IntersectionObserver(e=>{e.forEach(n=>{if(n.isIntersecting){const r=n.target.id;o.querySelectorAll("a").forEach(t=>{const c=t.getAttribute("href")===`#${r}`;t.style.opacity=c?"1":"0.85",t.style.color=c?"#1a1a1a":"",t.style.fontWeight=c?"600":""})}})},{rootMargin:"-80px 0px -70% 0px"});a.forEach(e=>i.observe(e))}l();document.addEventListener("astro:page-load",l);</script>

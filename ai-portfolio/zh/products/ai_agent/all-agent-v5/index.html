@@ -1,0 +1,1262 @@
+<!DOCTYPE html><html lang="zh" data-theme="agent" class="scroll-smooth" data-astro-cid-37fxchfa> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="AI Agent 基础设施平台，三轴18配置，18个MCP Server，595个测试全通过"><title>ALL-AGENT v5.0 Omni3 | AI Portfolio</title><link rel="icon" type="image/svg+xml" href="../../../../favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="../../../../_astro/BaseLayout.BuAdYsho.css">
+<style>@media(min-width:1024px){.toc-sidebar[data-astro-cid-fz5pa65a]{display:block!important}}
+</style></head> <body data-astro-cid-37fxchfa> <nav class="nav-bar fixed top-0 left-0 right-0 z-50" style="height: 56px;" data-astro-cid-37fxchfa> <div style="max-width: 80rem; margin: 0 auto; height: 100%; display: flex; align-items: center; padding: 0 1.5rem;" data-astro-cid-37fxchfa> <!-- Logo --> <a href="../../../index.html" class="nav-logo" data-astro-cid-37fxchfa>AI Portfolio</a> <!-- Spacer --> <div style="flex: 1;" data-astro-cid-37fxchfa></div> <!-- Desktop nav links (center) --> <div class="desktop-nav" style="display: flex; align-items: center; gap: 2rem; position: absolute; left: 50%; transform: translateX(-50%);" data-astro-cid-37fxchfa> <a href="../../../index.html" class="nav-link" data-astro-cid-37fxchfa>首页</a> <a href="../../../index.html#products" class="nav-link" data-astro-cid-37fxchfa>产品</a> <a href="../../../index.html#research" class="nav-link" data-astro-cid-37fxchfa>研究</a> <a href="../../../about/index.html" class="nav-link" data-astro-cid-37fxchfa>About</a> </div> <!-- Right side --> <div style="display: flex; align-items: center; gap: 0.5rem;" data-astro-cid-37fxchfa> <a href="../../../index.html" style="font-size: 0.8125rem; font-weight: 500; text-decoration: none; padding: 0.375rem 0.625rem; border-radius: 4px; transition: all 0.15s ease; background: #1a1a1a; color: #fff;" data-astro-cid-37fxchfa>中文</a> <a href="../../../../en/index.html" style="font-size: 0.8125rem; font-weight: 500; text-decoration: none; padding: 0.375rem 0.625rem; border-radius: 4px; transition: all 0.15s ease; color: #6b6560; border: 1px solid #d6cec4;" data-astro-cid-37fxchfa>EN</a> <!-- Mobile hamburger --> <button class="mobile-menu-btn" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu" data-astro-cid-37fxchfa> <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" data-astro-cid-37fxchfa> <path d="M3 6h14M3 10h14M3 14h14" data-astro-cid-37fxchfa></path> </svg> </button> </div> </div> </nav> <!-- Mobile nav --> <div class="mobile-nav" data-astro-cid-37fxchfa> <a href="../../../index.html" data-astro-cid-37fxchfa>首页</a> <a href="../../../index.html#products" data-astro-cid-37fxchfa>产品</a> <a href="../../../index.html#research" data-astro-cid-37fxchfa>研究</a> <a href="../../../about/index.html" data-astro-cid-37fxchfa>About</a> <a href="../../../../en/index.html" data-astro-cid-37fxchfa>English</a> </div> <main class="min-h-screen" style="padding-top: 56px;" data-astro-cid-37fxchfa>  <div style="max-width: 80rem; margin: 0 auto; padding: 0 1.5rem;" data-astro-cid-fz5pa65a> <!-- Breadcrumb --> <nav style="padding: 1rem 0; font-size: 0.8125rem; color: #9a938c; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;" data-astro-cid-fz5pa65a> <a href="../../../index.html" style="color: #6b6560; text-decoration: none; transition: opacity 0.15s;" data-astro-cid-fz5pa65a>首页</a>  <span style="color: #c4bdb4;" data-astro-cid-fz5pa65a>/</span> <a href="../../../index.html#products" style="color: #6b6560; text-decoration: none; transition: opacity 0.15s;" data-astro-cid-fz5pa65a>产品</a> <span style="color: #c4bdb4;" data-astro-cid-fz5pa65a>/</span> <a href="../../../index.html#products" style="color: #6b6560; text-decoration: none; transition: opacity 0.15s;" data-astro-cid-fz5pa65a>AI Agent</a> <span style="color: #c4bdb4;" data-astro-cid-fz5pa65a>/</span> <span style="color: #1a1a1a;" data-astro-cid-fz5pa65a>ALL-AGENT v5.0 Omni3</span> </nav> <div style="display: flex; gap: 3rem; padding-bottom: 4rem;" data-astro-cid-fz5pa65a> <!-- Sidebar TOC --> <aside style="width: 14rem; flex-shrink: 0; display: none;" class="toc-sidebar" data-astro-cid-fz5pa65a> <div style="position: sticky; top: 5rem;" data-astro-cid-fz5pa65a> <p style="font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #9a938c; margin-bottom: 0.75rem;" data-astro-cid-fz5pa65a>目录</p> <nav id="toc" style="font-size: 0.8125rem; line-height: 1.6;" data-astro-cid-fz5pa65a></nav> </div> </aside> <!-- Content --> <article class="markdown-content" style="flex: 1; min-width: 0; max-width: 48rem;" data-astro-cid-fz5pa65a> <!-- Category badge --> <div style="margin-bottom: 1rem;" data-astro-cid-fz5pa65a> <span style="display: inline-block; font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: #9a938c; padding: 0.25rem 0.625rem; border: 1px solid #d6cec4; border-radius: 4px;" data-astro-cid-fz5pa65a> AI Agent </span> </div> <h1 style="font-size: 2.25rem; font-weight: 700; color: #1a1a1a; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 0.75rem; font-family: var(--font-heading); border: none; padding: 0;" data-astro-cid-fz5pa65a> ALL-AGENT v5.0 Omni3 </h1> <p style="font-size: 1rem; color: #6b6560; line-height: 1.7; margin-bottom: 2rem;" data-astro-cid-fz5pa65a> AI Agent 基础设施平台，三轴18配置，18个MCP Server，595个测试全通过 </p> <div style="height: 1px; background: #d6cec4; margin-bottom: 2rem;" data-astro-cid-fz5pa65a></div>  <h1 id="all-agent-v50-omni3--全功能详细报告">ALL-AGENT v5.0 Omni3 — 全功能详细报告</h1>
+<blockquote>
+<p>版本: 内部 5.0 / 外部 v4.5.0 Omni3<br>
+日期: 2026-06-06<br>
+状态: Phase 0-3 全部完成，Phase 4 测试通过（595/595）</p>
+</blockquote>
+<hr>
+<h2 id="目录">目录</h2>
+<ol>
+<li><a href="#1-%E9%A1%B9%E7%9B%AE%E6%80%BB%E8%A7%88">项目总览</a></li>
+<li><a href="#2-%E6%A0%B8%E5%BF%83%E6%9E%B6%E6%9E%84%E4%B8%89%E8%BD%B4-18-%E9%85%8D%E7%BD%AE">核心架构：三轴 18 配置</a></li>
+<li><a href="#3-phase-0--core-shell">Phase 0 — Core Shell</a></li>
+<li><a href="#4-phase-05--%E5%88%86%E5%B1%82%E4%B8%8A%E4%B8%8B%E6%96%87%E8%BF%90%E8%A1%8C%E6%97%B6">Phase 0.5 — 分层上下文运行时</a></li>
+<li><a href="#5-phase-1--%E6%89%A7%E8%A1%8C%E8%BF%90%E8%A1%8C%E6%97%B6--%E7%BC%96%E6%8E%92%E5%99%A8">Phase 1 — 执行运行时 + 编排器</a></li>
+<li><a href="#6-phase-2--agent-%E7%B3%BB%E7%BB%9F--%E5%AE%89%E5%85%A8">Phase 2 — Agent 系统 + 安全</a></li>
+<li><a href="#7-phase-3--%E4%BA%A4%E4%BB%98%E5%B1%82">Phase 3 — 交付层</a></li>
+<li><a href="#8-phase-4--%E6%B5%8B%E8%AF%95--%E7%A8%B3%E5%AE%9A%E5%8C%96">Phase 4 — 测试 + 稳定化</a></li>
+<li><a href="#9-%E9%AB%98%E7%BA%A7%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97">高级功能模块</a></li>
+<li><a href="#10-mcp-server-%E7%94%9F%E6%80%81">MCP Server 生态</a></li>
+<li><a href="#11-%E5%89%8D%E7%AB%AF-desktop-gui">前端 Desktop GUI</a></li>
+<li><a href="#12-%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84%E7%B4%A2%E5%BC%95">文件结构索引</a></li>
+<li><a href="#13-%E5%B7%B2%E7%9F%A5%E5%B1%80%E9%99%90%E4%B8%8E%E5%90%8E%E7%BB%AD%E6%96%B9%E5%90%91">已知局限与后续方向</a></li>
+</ol>
+<hr>
+<h2 id="1-项目总览">1. 项目总览</h2>
+<p><strong>ALL-AGENT v5.0</strong> 是一个 <strong>AI Agent 基础设施平台</strong>，不是聊天机器人。它提供：</p>
+<ul>
+<li><strong>MCP 工具调用</strong> — 所有外部能力通过标准 MCP Server 暴露</li>
+<li><strong>动态工具加载</strong> — 只加载当前任务相关的工具，节省 token</li>
+<li><strong>编码 + 生产力工作流</strong> — 从计划到代码到审查的完整 agent 链</li>
+<li><strong>安全 + 权限边界</strong> — 三级权限模式 + Policy Engine</li>
+<li><strong>模型提供商可替换</strong> — Anthropic / OpenAI / Gemini / 本地模型无缝切换</li>
+<li><strong>分布式 DAG</strong> — 跨机器任务调度与执行</li>
+<li><strong>自优化运行时（Apotheosis）</strong> — 自愈、自进化、自适应</li>
+</ul>
+<h3 id="代码规模">代码规模</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>指标</th><th>数值</th></tr></thead><tbody><tr><td>Python 源文件</td><td>150+</td></tr><tr><td>TypeScript/TSX 前端</td><td>20+</td></tr><tr><td>MCP Server 实现</td><td>18 个</td></tr><tr><td>单元/集成/E2E 测试</td><td>595 个（全部通过）</td></tr><tr><td>压缩备份体积</td><td>228 MB</td></tr></tbody></table>
+<hr>
+<h2 id="2-核心架构三轴-18-配置">2. 核心架构：三轴 18 配置</h2>
+<p>系统由三个<strong>完全独立</strong>的轴控制，任意组合均有效：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>轴</th><th>选项</th><th>范围</th></tr></thead><tbody><tr><td><strong>A: Security Mode</strong></td><td>Safe / Allow Edit / Bypass</td><td>权限执行级别</td></tr><tr><td><strong>B: Runtime Mode</strong></td><td>Hoshiai / Swing / Cadence</td><td>交付形式、状态机深度</td></tr><tr><td><strong>C: Model Strategy</strong></td><td>Auto / Manual</td><td>模型发现、配置、路由</td></tr></tbody></table>
+<p>A × B × C = <strong>3 × 3 × 2 = 18 种运行配置</strong>。</p>
+<h3 id="轴-b-详解runtime-模式">轴 B 详解：Runtime 模式</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>模式</th><th>定位</th><th>DAG 深度</th><th>Agent 数量</th><th>压缩阈值</th></tr></thead><tbody><tr><td><strong>Hoshiai</strong></td><td>全能独立运行</td><td>无限</td><td>全部</td><td>标准</td></tr><tr><td><strong>Swing</strong></td><td>MCP 聚合适配器</td><td>2 层</td><td>受限</td><td>标准</td></tr><tr><td><strong>Cadence</strong></td><td>轻量独立运行</td><td>受限</td><td>减少</td><td>40%</td></tr></tbody></table>
+<h3 id="轴-c-详解model-策略">轴 C 详解：Model 策略</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>策略</th><th>行为</th></tr></thead><tbody><tr><td><strong>Auto</strong></td><td>自动调用 <code>/v1/models</code> 发现模型，正则猜测能力，自动路由任务</td></tr><tr><td><strong>Manual</strong></td><td>用户在 <code>user_models.yaml</code> 手动配置，零日兼容 + 安全回退</td></tr></tbody></table>
+<hr>
+<h2 id="3-phase-0--core-shell">3. Phase 0 — Core Shell</h2>
+<h3 id="31-provider-抽象层">3.1 Provider 抽象层</h3>
+<p><strong>文件</strong>: <code>providers/base.py</code>, <code>providers/anthropic.py</code>, <code>providers/openai.py</code>, <code>providers/gemini.py</code>, <code>providers/fallback.py</code></p>
+<p>统一接口，所有 Provider 内部处理格式转换：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#D73A49">class</span><span style="color:#6F42C1"> Provider</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#D73A49">    async</span><span style="color:#D73A49"> def</span><span style="color:#6F42C1"> generate</span><span style="color:#24292E">(self, messages, </span><span style="color:#D73A49">*</span><span style="color:#24292E">, tools</span><span style="color:#D73A49">=</span><span style="color:#005CC5">None</span><span style="color:#24292E">, temperature</span><span style="color:#D73A49">=</span><span style="color:#005CC5">None</span><span style="color:#24292E">): </span><span style="color:#005CC5">...</span></span>
+<span class="line"><span style="color:#D73A49">    async</span><span style="color:#D73A49"> def</span><span style="color:#6F42C1"> stream</span><span style="color:#24292E">(self, messages, </span><span style="color:#D73A49">*</span><span style="color:#24292E">, tools</span><span style="color:#D73A49">=</span><span style="color:#005CC5">None</span><span style="color:#24292E">): </span><span style="color:#005CC5">...</span></span>
+<span class="line"><span style="color:#D73A49">    async</span><span style="color:#D73A49"> def</span><span style="color:#6F42C1"> embed</span><span style="color:#24292E">(self, texts): </span><span style="color:#005CC5">...</span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Provider</th><th>特性</th></tr></thead><tbody><tr><td>Anthropic</td><td>原生 tool calling、extended thinking</td></tr><tr><td>OpenAI</td><td>Base64 tunnel + Batch Tool Unpacker</td></tr><tr><td>Gemini</td><td>Google AI 适配</td></tr><tr><td>Fallback</td><td>多 Provider 自动降级</td></tr></tbody></table>
+<h3 id="32-mcp-hub">3.2 MCP Hub</h3>
+<p><strong>文件</strong>: <code>hub/client.py</code>, <code>hub/registry.py</code>, <code>hub/router.py</code>, <code>hub/gateway.py</code></p>
+<p>核心路由器，职责：</p>
+<ul>
+<li>启动 MCP Server 进程（从 <code>config.yaml</code>）</li>
+<li>通过 <code>tools/list</code> 自动发现工具</li>
+<li>按任务过滤工具（Orchestrator context 层决定）</li>
+<li>执行权限检查（Safe / Allow Edit / Bypass）</li>
+<li>评估 Policy Engine 规则</li>
+<li>路由 <code>tools/call</code> 到正确的 Server</li>
+<li>处理 Server 崩溃（自动重启，最多 2 次）</li>
+<li>强制工具响应截断（硬限制 per call）</li>
+</ul>
+<p><strong>Streaming Byte-Limit Guard</strong>:</p>
+<ul>
+<li>64KB 分块读取 stdio</li>
+<li>超过 20MB 物理限制 → 关闭管道 + 杀死 MCP Server</li>
+<li>防止 OOM</li>
+</ul>
+<p><strong>Tool Truncation (Head-Tail + Semantic Anchoring)</strong>:</p>
+<ul>
+<li>超过 <code>max_tokens</code> 时保留前 2K + 后 8K tokens</li>
+<li>中间扫描 <code>error</code>/<code>traceback</code>/<code>exception</code> 等关键词，提取关键行注入截断标记</li>
+<li>消除”中间盲区”</li>
+</ul>
+<h3 id="33-runtime-modes">3.3 Runtime Modes</h3>
+<p><strong>文件</strong>: <code>runtime/hoshiai.py</code>, <code>runtime/swing.py</code>, <code>runtime/cadence.py</code>, <code>runtime/base_mode.py</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>模式</th><th>核心机制</th></tr></thead><tbody><tr><td>Hoshiai</td><td>100% 独立运行，无限 DAG，完整 agent 链</td></tr><tr><td>Swing</td><td>MCP 聚合，Lease + Polling，PAUSED 响应包装，Base64 tunnel</td></tr><tr><td>Cadence</td><td>Deadman Switch（30s lease / 45s 无 poll → Abort），工作区隔离</td></tr></tbody></table>
+<p><strong>Swing 特有</strong>:</p>
+<ul>
+<li>Base64 tunnel: 代码/文本工具参数自动 Base64 编码，消除 JSON/转义字符冲突</li>
+<li>Batch Tool Unpacker: 单次 LLM 轮次捕获多个工具意图，<code>anyio.create_task_group()</code> 并发分发</li>
+</ul>
+<p><strong>Cadence 特有</strong>:</p>
+<ul>
+<li>Lease &#x26; Heartbeat: 每次 <code>get_task_result</code> 轮询续租 30s，45s 无轮询 → AbortEvent</li>
+<li>PAUSED 响应包装: 包含 <code>instruction</code> 字段，强制客户端 LLM 停止生成并展示问题</li>
+</ul>
+<h3 id="34-gateway">3.4 Gateway</h3>
+<p><strong>文件</strong>: <code>hub/gateway.py</code></p>
+<p>运行时模式分发器，根据配置动态实例化 Hoshiai / Swing / Cadence。</p>
+<h3 id="35-model-manager">3.5 Model Manager</h3>
+<p><strong>文件</strong>: <code>hub/model_manager.py</code></p>
+<ul>
+<li>动态模型发现（调用 Provider API）</li>
+<li>正则智能猜测（<code>context_window</code>、<code>thinking_supported</code>）</li>
+<li>用户 YAML 覆盖</li>
+<li>Safe Fallback: 未配置模型使用保守默认值（<code>context_window: 4096</code>, <code>thinking_budget: 0</code>）</li>
+</ul>
+<h3 id="36-权限系统">3.6 权限系统</h3>
+<p><strong>文件</strong>: <code>hub/permissions.py</code>, <code>hub/policy_engine.py</code>, <code>hub/tool_capability.py</code></p>
+<p>三级权限模式：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>模式</th><th>Policy Engine</th><th>工作区隔离</th></tr></thead><tbody><tr><td><strong>Safe</strong>（默认）</td><td>完全执行（deny/allow/require_approval）</td><td>是</td></tr><tr><td><strong>Allow Edit</strong></td><td>执行中，文件编辑+git 允许，破坏性操作阻止</td><td>是</td></tr><tr><td><strong>Bypass</strong></td><td>无策略执行，所有操作允许</td><td>否</td></tr></tbody></table>
+<p>Policy Engine 示例：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#22863A">policies</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#24292E">  - </span><span style="color:#22863A">tool</span><span style="color:#24292E">: </span><span style="color:#032F62">"terminal.execute"</span></span>
+<span class="line"><span style="color:#22863A">    deny</span><span style="color:#24292E">: [</span><span style="color:#032F62">"rm -rf *"</span><span style="color:#24292E">, </span><span style="color:#032F62">"sudo *"</span><span style="color:#24292E">, </span><span style="color:#032F62">"wget *"</span><span style="color:#24292E">, </span><span style="color:#032F62">"curl *"</span><span style="color:#24292E">]</span></span>
+<span class="line"><span style="color:#22863A">    allow</span><span style="color:#24292E">: [</span><span style="color:#032F62">"pytest *"</span><span style="color:#24292E">, </span><span style="color:#032F62">"npm *"</span><span style="color:#24292E">, </span><span style="color:#032F62">"git *"</span><span style="color:#24292E">, </span><span style="color:#032F62">"python *"</span><span style="color:#24292E">]</span></span>
+<span class="line"><span style="color:#22863A">    require_approval</span><span style="color:#24292E">: [</span><span style="color:#032F62">"rm *"</span><span style="color:#24292E">, </span><span style="color:#032F62">"git push *"</span><span style="color:#24292E">]</span></span></code></pre>
+<p>Tool Capability Metadata:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#D73A49">class</span><span style="color:#6F42C1"> ToolCapability</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#24292E">    risk: Literal[</span><span style="color:#032F62">"low"</span><span style="color:#24292E">, </span><span style="color:#032F62">"medium"</span><span style="color:#24292E">, </span><span style="color:#032F62">"high"</span><span style="color:#24292E">]</span></span>
+<span class="line"><span style="color:#24292E">    cost: Literal[</span><span style="color:#032F62">"cheap"</span><span style="color:#24292E">, </span><span style="color:#032F62">"medium"</span><span style="color:#24292E">, </span><span style="color:#032F62">"expensive"</span><span style="color:#24292E">]</span></span>
+<span class="line"><span style="color:#24292E">    requires_network: </span><span style="color:#005CC5">bool</span></span>
+<span class="line"><span style="color:#24292E">    side_effects: </span><span style="color:#005CC5">bool</span></span>
+<span class="line"><span style="color:#24292E">    rate_limit: </span><span style="color:#005CC5">int</span><span style="color:#D73A49"> |</span><span style="color:#005CC5"> None</span></span></code></pre>
+<h3 id="37-首个-mcp-server-filesystem">3.7 首个 MCP Server: Filesystem</h3>
+<p><strong>文件</strong>: <code>mcp_servers/filesystem_server.py</code></p>
+<p>标准文件操作 MCP Server，支持：</p>
+<ul>
+<li>读取/写入/列出文件</li>
+<li>目录操作</li>
+<li>符号链接解析（<code>resolve()</code> 验证防遍历）</li>
+</ul>
+<hr>
+<h2 id="4-phase-05--分层上下文运行时">4. Phase 0.5 — 分层上下文运行时</h2>
+<p><strong>文件</strong>: <code>orchestrator/context.py</code>, <code>orchestrator/context_snapshot.py</code></p>
+<h3 id="41-四层-context-层次">4.1 四层 Context 层次</h3>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>L3: Long-term Knowledge</span></span>
+<span class="line"><span>  └── 跨会话知识、用户偏好、项目结构</span></span>
+<span class="line"><span>  └── 持久化存储，会话启动时加载</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>L2: Task Memory</span></span>
+<span class="line"><span>  └── 每个 DAG 任务提取的关键信息</span></span>
+<span class="line"><span>  └── Agent: Planner 加载 L2+L3</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>L1: Rolling Summary</span></span>
+<span class="line"><span>  └── 压缩会话摘要（旧轮次折叠）</span></span>
+<span class="line"><span>  └── Agent: Reviewer 使用 L1+L2</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>L0: Raw History</span></span>
+<span class="line"><span>  └── 最近 N 轮完整保留</span></span>
+<span class="line"><span>  └── Agent: Debugger 使用 L0+L1</span></span></code></pre>
+<h3 id="42-token-预算控制">4.2 Token 预算控制</h3>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>固定开销 = system prompt + tool schemas</span></span>
+<span class="line"><span>可用 = 总预算 − 固定开销 − sunk_tokens</span></span>
+<span class="line"><span>  ├── history: ≤ 60% of available（超过 → 触发压缩）</span></span>
+<span class="line"><span>  ├── output: 保留 20% of available</span></span>
+<span class="line"><span>  └── buffer: 保留 20%（安全边际，永不分配）</span></span></code></pre>
+<h3 id="43-semantic-collapse">4.3 Semantic Collapse</h3>
+<p>当 history 超过 60% 阈值：</p>
+<ol>
+<li><strong>Lossless Metadata Condensation</strong>: 压缩前提取不可压缩实体
+<ul>
+<li>所有成功修改的文件路径和行范围</li>
+<li>所有失败的工具调用（名称、参数、错误回溯）</li>
+<li>每个任务的失败计数器</li>
+</ul>
+</li>
+<li>这些元数据附加为 <code>StructuredEvictionTombstones</code>，永不压缩</li>
+<li><strong>Immutable Semantic Anchors</strong>: 架构决策、被拒绝的方案、设计约束
+<ul>
+<li>标记为 <code>PERMANENT</code>，在所有压缩周期中存活</li>
+</ul>
+</li>
+</ol>
+<h3 id="44-context-snapshot">4.4 Context Snapshot</h3>
+<p><strong>文件</strong>: <code>orchestrator/context_snapshot.py</code></p>
+<ul>
+<li><code>ContextSnapshot</code>: 保存 L0-L3 完整状态</li>
+<li><code>create_snapshot()</code>: 保存当前 context layers（含 L1+L3）</li>
+<li><code>restore_from_snapshot()</code>: 恢复到指定 snapshot</li>
+<li>支持 Blackboard 任务记忆注入</li>
+</ul>
+<hr>
+<h2 id="5-phase-1--执行运行时--编排器">5. Phase 1 — 执行运行时 + 编排器</h2>
+<h3 id="51-taskgraph-dag">5.1 TaskGraph (DAG)</h3>
+<p><strong>文件</strong>: <code>orchestrator/task_graph.py</code></p>
+<ul>
+<li>DAG 定义 + 拓扑排序 + 并行执行</li>
+<li>TaskNode 状态：<code>PENDING → RUNNING → COMPLETED / FAILED / SKIPPED</code></li>
+<li><code>is_terminal()</code>: 终态判断</li>
+<li><code>get_full_summary()</code>: 完整状态摘要（含 retry_count, error, tokens_used, tools_called）</li>
+<li><strong>Fail-Fast Graph Pruning</strong>: FAILED 节点级联所有下游为 SKIPPED</li>
+</ul>
+<h3 id="52-task-lifecycle">5.2 Task Lifecycle</h3>
+<p><strong>文件</strong>: <code>orchestrator/task_lifecycle.py</code></p>
+<p>完整状态机：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>PENDING → RUNNING → WAITING_TOOL → RUNNING → COMPLETED</span></span>
+<span class="line"><span>                       ↓                         ↓</span></span>
+<span class="line"><span>                 BLOCKED_PERMISSION          PARTIAL</span></span>
+<span class="line"><span>                       ↓                  WAITING_USER_INPUT</span></span>
+<span class="line"><span>                  RETRYING → RUNNING → FAILED → PAUSED</span></span></code></pre>
+<p><strong>Resiliency Matrix</strong>:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>状态</th><th>类型</th><th>行为</th></tr></thead><tbody><tr><td>CRASHED</td><td>瞬态</td><td>自动重入队列，指数退避（最多 3 次）</td></tr><tr><td>PAUSED</td><td>瞬态</td><td>保留上下文快照，等待显式 WakeEvent</td></tr><tr><td>WAITING_USER_INPUT</td><td>瞬态</td><td>60s 超时 → Dummy Tool Responder</td></tr><tr><td>FAILED</td><td><strong>终态</strong></td><td><strong>立即阻断</strong>，级联下游 SKIPPED</td></tr><tr><td>PARTIAL</td><td><strong>终态</strong></td><td>不可重入，硬链接下游 SKIPPED</td></tr></tbody></table>
+<h3 id="53-event-bus">5.3 Event Bus</h3>
+<p><strong>文件</strong>: <code>orchestrator/event_bus.py</code></p>
+<p>结构化事件系统：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#24292E">event_types </span><span style="color:#D73A49">=</span><span style="color:#24292E"> [</span></span>
+<span class="line"><span style="color:#032F62">    "TaskStarted"</span><span style="color:#24292E">, </span><span style="color:#032F62">"TaskCompleted"</span><span style="color:#24292E">, </span><span style="color:#032F62">"TaskFailed"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#032F62">    "ToolCalled"</span><span style="color:#24292E">, </span><span style="color:#032F62">"ToolResult"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#032F62">    "AgentStarted"</span><span style="color:#24292E">, </span><span style="color:#032F62">"AgentCompleted"</span><span style="color:#24292E">, </span><span style="color:#032F62">"AgentFailed"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#032F62">    "Retry"</span><span style="color:#24292E">, </span><span style="color:#032F62">"ContextCompressed"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#032F62">    "PermissionBlocked"</span><span style="color:#24292E">, </span><span style="color:#032F62">"PermissionApproved"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#032F62">    "UserFeedbackProvided"</span><span style="color:#24292E">, </span><span style="color:#032F62">"UserFeedbackApplied"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#032F62">    "TaskPaused"</span><span style="color:#24292E">, </span><span style="color:#032F62">"TaskResumed"</span><span style="color:#24292E">, </span><span style="color:#032F62">"TaskAborted"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#032F62">    "CheckpointSaved"</span><span style="color:#24292E">, </span><span style="color:#032F62">"RecoveryTriggered"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">]</span></span></code></pre>
+<p><strong>Suppression Flag（递归防护）</strong>: 遥测监听器触发新事件时使用 <code>ContextVar</code> 抑制，防止无限递归。</p>
+<h3 id="54-orchestrator">5.4 Orchestrator</h3>
+<p><strong>文件</strong>: <code>orchestrator/orchestrator.py</code></p>
+<p>中央调度器：</p>
+<ul>
+<li>接收请求 → DAG → 执行 → 结果</li>
+<li>AgentResult: <code>summary + status + artifacts + files_changed</code></li>
+<li>ContextVar 传播到后台任务（<code>copy_context().run()</code>）</li>
+<li>Background agent: 异步运行，结果写入 Blackboard</li>
+</ul>
+<h3 id="55-recovery">5.5 Recovery</h3>
+<p><strong>文件</strong>: <code>orchestrator/recovery.py</code></p>
+<ul>
+<li><strong>Checkpoint Atomicity</strong>: Copy-on-Write 快照 + <code>fsync()</code> + <code>os.replace()</code> 原子写入</li>
+<li><strong>Sunk Token Registry</strong>: 追踪 crashed/retry/rejected 消耗的 token</li>
+<li><strong>Sunk Cost Circuit Breaker</strong>: <code>available / max_context_window &#x3C; 0.35</code> → 停止重试，标记 PARTIAL</li>
+<li>恢复流程：启动 → 加载 checkpoint → COMPLETED 跳过 → FAILED/CRASHED 重入队列</li>
+</ul>
+<h3 id="56-blackboard">5.6 Blackboard</h3>
+<p><strong>文件</strong>: <code>orchestrator/blackboard.py</code></p>
+<p>三层共享数据平面：</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#D73A49">class</span><span style="color:#6F42C1"> Blackboard</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#24292E">    task_state: dict[</span><span style="color:#005CC5">str</span><span style="color:#24292E">, TaskNode]     </span><span style="color:#6A737D"># DAG 节点状态</span></span>
+<span class="line"><span style="color:#24292E">    memory: dict[</span><span style="color:#005CC5">str</span><span style="color:#24292E">, MemoryEntry]      </span><span style="color:#6A737D"># 跨 agent 发现、决策</span></span>
+<span class="line"><span style="color:#24292E">    artifacts: dict[</span><span style="color:#005CC5">str</span><span style="color:#24292E">, Artifact]      </span><span style="color:#6A737D"># 文件引用、代码 diff、测试输出</span></span></code></pre>
+<p><strong>Generation Ring Buffer</strong>: 每个 artifact 保留 <code>latest</code> + <code>previous</code>，支持 Diff/Regression/Blame。</p>
+<p><strong>GC 策略</strong>:</p>
+<ul>
+<li><code>task_state</code>: 所有下游节点达到终态后裁剪</li>
+<li><code>memory</code>: 同 key 覆盖自动归档，总量超阈值 → Semantic Merge</li>
+<li><code>artifacts</code>: 下游引用完 → 回收 <code>previous</code> 指针</li>
+</ul>
+<h3 id="57-conflict-detection">5.7 Conflict Detection</h3>
+<p><strong>文件</strong>: <code>orchestrator/conflict.py</code></p>
+<p>并行分支文件变更跟踪 + 冲突检测。</p>
+<hr>
+<h2 id="6-phase-2--agent-系统--安全">6. Phase 2 — Agent 系统 + 安全</h2>
+<h3 id="61-agent-基类">6.1 Agent 基类</h3>
+<p><strong>文件</strong>: <code>agents/base.py</code></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#D73A49">class</span><span style="color:#6F42C1"> Agent</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#D73A49">    async</span><span style="color:#D73A49"> def</span><span style="color:#6F42C1"> run</span><span style="color:#24292E">(self, context: AgentContext) -> AgentResult: </span><span style="color:#005CC5">...</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">class</span><span style="color:#6F42C1"> AgentContext</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#24292E">    task: </span><span style="color:#005CC5">str</span></span>
+<span class="line"><span style="color:#24292E">    task_id: </span><span style="color:#005CC5">str</span></span>
+<span class="line"><span style="color:#24292E">    provider: Provider </span><span style="color:#D73A49">|</span><span style="color:#005CC5"> None</span></span>
+<span class="line"><span style="color:#24292E">    blackboard: Blackboard </span><span style="color:#D73A49">|</span><span style="color:#005CC5"> None</span></span>
+<span class="line"><span style="color:#24292E">    system_extra: </span><span style="color:#005CC5">str</span><span style="color:#D73A49"> |</span><span style="color:#005CC5"> None</span></span>
+<span class="line"><span style="color:#24292E">    messages: list[Message] </span><span style="color:#D73A49">|</span><span style="color:#005CC5"> None</span></span>
+<span class="line"><span style="color:#24292E">    mcp_servers: list[</span><span style="color:#005CC5">str</span><span style="color:#24292E">] </span><span style="color:#D73A49">|</span><span style="color:#005CC5"> None</span><span style="color:#6A737D">   # Agent 级 MCP 过滤</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">class</span><span style="color:#6F42C1"> AgentResult</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#24292E">    summary: </span><span style="color:#005CC5">str</span></span>
+<span class="line"><span style="color:#24292E">    status: AgentStatus</span></span>
+<span class="line"><span style="color:#24292E">    artifacts: dict[</span><span style="color:#005CC5">str</span><span style="color:#24292E">, Any]</span></span>
+<span class="line"><span style="color:#24292E">    files_changed: list[</span><span style="color:#005CC5">str</span><span style="color:#24292E">]</span></span></code></pre>
+<h3 id="62-agent-角色">6.2 Agent 角色</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Agent</th><th>输入</th><th>输出</th><th>特性</th></tr></thead><tbody><tr><td><strong>Planner</strong></td><td>目标</td><td>DAG 任务图</td><td>无 provider 也可运行（纯规划）</td></tr><tr><td><strong>Coder</strong></td><td>任务 + 工具</td><td>代码变更 + 测试结果</td><td>需要 provider，使用工具编辑文件</td></tr><tr><td><strong>SubReviewer</strong></td><td>Coder 输出</td><td>pass/reject</td><td>需要 provider，LLM 评审</td></tr><tr><td><strong>GlobalReviewer</strong></td><td>所有 SubReviewer 结果</td><td>跨任务兼容性</td><td>无 provider 默认 pass</td></tr><tr><td><strong>Debugger</strong></td><td>失败信息</td><td>修复方案</td><td>需要 provider</td></tr><tr><td><strong>Finalizer</strong></td><td>所有结果</td><td>最终输出</td><td>汇总所有 artifacts</td></tr></tbody></table>
+<p><strong>Agent 工作流（初始 DAG）</strong>:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Planner → DAG</span></span>
+<span class="line"><span>          ├── Coder(task1) → SubReviewer(task1) ──┐</span></span>
+<span class="line"><span>          ├── Coder(task2) → SubReviewer(task2) ──┤── GlobalReviewer → Finalize</span></span>
+<span class="line"><span>          └── Coder(task3) → SubReviewer(task3) ──┘</span></span></code></pre>
+<p><strong>动态节点展开（Unrolling）</strong>:</p>
+<ul>
+<li>SubReviewer 拒绝 → Coder(v2) → SubReviewer(v2)</li>
+<li>GlobalReviewer 拒绝 → <code>conflict_boundary</code> → 仅受影响分支重执行</li>
+<li>DAG 始终保持无环；周期展开为顺序节点对</li>
+</ul>
+<h3 id="63-agent-声明式系统-p0-p4">6.3 Agent 声明式系统 (P0-P4)</h3>
+<p><strong>文件</strong>: <code>agents/registry.py</code>, <code>agents/base.py</code>, <code>orchestrator/context_snapshot.py</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>级别</th><th>功能</th><th>文件</th></tr></thead><tbody><tr><td><strong>P0</strong></td><td>YAML/Markdown frontmatter 定义 agent</td><td><code>agents/registry.py</code></td></tr><tr><td><strong>P1</strong></td><td>Context 隔离 — Snapshot 保存/恢复 L0-L3</td><td><code>orchestrator/context_snapshot.py</code></td></tr><tr><td><strong>P2</strong></td><td>Foreground/Background 模式 — <code>RUNNING_BACKGROUND</code> 状态</td><td><code>orchestrator/task_lifecycle.py</code></td></tr><tr><td><strong>P3</strong></td><td>Agent 级 MCP 选择 — <code>mcp_servers</code> 字段过滤工具</td><td><code>hub/router.py</code></td></tr><tr><td><strong>P4</strong></td><td>自然语言任务路由 — <code>find_best_match()</code> 语义匹配</td><td><code>agents/base.py</code></td></tr></tbody></table>
+<h3 id="64-human-in-the-loop-hitl">6.4 Human-in-the-Loop (HITL)</h3>
+<p><strong>中断策略</strong>:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>级别</th><th><code>blocking</code></th><th>超时</th><th>状态</th><th>行为</th></tr></thead><tbody><tr><td>Info</td><td>False</td><td>60s</td><td>WAITING_USER_INPUT</td><td>Agent 用最佳猜测继续</td></tr><tr><td>Blocking</td><td>True</td><td>无</td><td><strong>PAUSED</strong></td><td>必须用户显式唤醒</td></tr></tbody></table>
+<p><strong>Dummy Tool Responder</strong>: 60s 超时时注入 ToolResult（非伪造用户消息），符合 LLM 协议。</p>
+<h3 id="65-安全模块">6.5 安全模块</h3>
+<p><strong>文件</strong>: <code>security/sandbox.py</code>, <code>security/allowlist.py</code>, <code>security/denylist.py</code>, <code>security/approvals.py</code>, <code>security/docker_sandbox.py</code></p>
+<ul>
+<li><strong>Sandbox</strong>: 工作区隔离（Safe + Allow Edit 模式）</li>
+<li><strong>Allowlist/Denylist</strong>: 工具访问控制</li>
+<li><strong>Approvals</strong>: 高风险操作审批流</li>
+<li><strong>Docker Sandbox</strong>: 可选的 Docker 容器隔离</li>
+</ul>
+<h3 id="66-computer-use-安全">6.6 Computer Use 安全</h3>
+<p><strong>文件</strong>: <code>security/cu_security/auto_pause.py</code>, <code>security/cu_security/injection.py</code>, <code>security/cu_security/risk_engine.py</code>, <code>security/cu_security/safe_rollback.py</code></p>
+<ul>
+<li>Auto-pause: 异常行为自动暂停</li>
+<li>Injection detection: 注入攻击检测</li>
+<li>Risk engine: 操作风险评分</li>
+<li>Safe rollback: 安全回滚机制</li>
+</ul>
+<hr>
+<h2 id="7-phase-3--交付层">7. Phase 3 — 交付层</h2>
+<h3 id="71-fastapi-服务器">7.1 FastAPI 服务器</h3>
+<p><strong>文件</strong>: <code>desktop/server.py</code>, <code>api/main.py</code></p>
+<ul>
+<li>REST API + WebSocket + SSE streaming</li>
+<li>Session 管理（创建、列表、删除）</li>
+<li>Admin endpoints（权限模式切换、模型配置）</li>
+<li>OpenTelemetry tracing</li>
+</ul>
+<h3 id="72-cli-客户端">7.2 CLI 客户端</h3>
+<p><strong>文件</strong>: <code>cli/main.py</code>, <code>cli/agent_cli.py</code>, <code>cli/config.py</code>, <code>cli/app.py</code></p>
+<ul>
+<li>HTTP + WebSocket 通信</li>
+<li>Agent 命令行接口</li>
+<li>配置加载</li>
+</ul>
+<h3 id="73-mcp-aggregation-adapter">7.3 MCP Aggregation Adapter</h3>
+<p>暴露标准接口：</p>
+<ul>
+<li><code>submit_task</code>: 提交任务</li>
+<li><code>get_task_result</code>: 获取结果（含 PAUSED 包装）</li>
+<li><code>cancel_task</code>: 取消任务</li>
+<li><code>ask_followup</code>: HITL 交互</li>
+</ul>
+<hr>
+<h2 id="8-phase-4--测试--稳定化">8. Phase 4 — 测试 + 稳定化</h2>
+<h3 id="81-测试覆盖">8.1 测试覆盖</h3>
+<p><strong>595 个测试，全部通过。</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>测试层</th><th>文件数</th><th>内容</th></tr></thead><tbody><tr><td>Unit</td><td>14</td><td>agents, hub, orchestrator, providers, runtime, security, evaluation, distributed_dag, sandbox_v2, marketplace, apothosis, episodic</td></tr><tr><td>Integration</td><td>5</td><td>MCP protocol, orchestrator flow, security modes, knowledge graph, wiring sprint</td></tr><tr><td>E2E</td><td>1</td><td>Full workflow</td></tr><tr><td>Performance</td><td>1</td><td>Token budget stress</td></tr></tbody></table>
+<h3 id="82-48-bugs-已修复">8.2 48 Bugs 已修复</h3>
+<p>按严重度：</p>
+<ul>
+<li><strong>CRITICAL (6)</strong>: 路由方法不存在、httpx 未定义、流式不工作、stream 返回 generator、Ultracode 显示错误、yaml.safe_load 返回 None</li>
+<li><strong>HIGH (10)</strong>: Background agent 状态错误、MCP filter 清除、状态转换缺失、Lock 串行化、HTTP 500 返回 200</li>
+<li><strong>MEDIUM (14)</strong>: ContextVar 丢失、context snapshot 混合、session 类型错误</li>
+<li><strong>LOW (18)</strong>: 正则补全、名称冲突、symlink 遍历、类型标注</li>
+</ul>
+<h3 id="83-结构性-bug-已修复">8.3 结构性 Bug 已修复</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Bug</th><th>修复</th></tr></thead><tbody><tr><td>Blackboard task_state 泄漏</td><td>添加 <code>prune_task_state()</code> + downstream 追踪</td></tr><tr><td>Checkpoint metadata 丢失</td><td><code>get_full_summary()</code> 包含 retry/error/tokens/tools</td></tr><tr><td>Context snapshot 缺 L1+L3</td><td>Snapshot 完整保存 L0-L3</td></tr><tr><td>task_memory 始终空</td><td>从 Blackboard 注入 memory</td></tr><tr><td>Router MCP filter 竞态</td><td>改为无状态 <code>get_filtered_tools(mcp_servers=)</code></td></tr><tr><td>循环导入 (agents↔orchestrator)</td><td>移除顶层 ComputerUseAgent 导入</td></tr><tr><td>ID 碰撞 (sandbox)</td><td><code>_generate_id()</code> 改用 <code>uuid.uuid4()</code></td></tr><tr><td>asyncio 废弃 (Python 3.12)</td><td>全部 <code>get_event_loop()</code> → <code>asyncio.run()</code></td></tr></tbody></table>
+<hr>
+<h2 id="9-高级功能模块">9. 高级功能模块</h2>
+<h3 id="91-apotheosis-引擎自优化运行时">9.1 Apotheosis 引擎（自优化运行时）</h3>
+<p><strong>文件</strong>: <code>apothosis/engine.py</code>, <code>apothosis/adaptive.py</code>, <code>apothosis/observability.py</code>, <code>apothosis/evolution.py</code>, <code>apothosis/healer.py</code></p>
+<p>五层自优化架构：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>层</th><th>功能</th></tr></thead><tbody><tr><td>Layer 1</td><td>Unified Observability — 指标、告警、仪表板</td></tr><tr><td>Layer 2</td><td>Cross-Mode Intelligence — 自动切换运行模式</td></tr><tr><td>Layer 3</td><td>Adaptive Optimization — 并发、模型路由、压缩</td></tr><tr><td>Layer 4</td><td>Self-Healing — 错误诊断、自动修复、Provider 降级</td></tr><tr><td>Layer 5</td><td>Self-Evolution — 模式检测、技能提取、经验知识库</td></tr></tbody></table>
+<h3 id="92-distributed-dag">9.2 Distributed DAG</h3>
+<p><strong>文件</strong>: <code>orchestrator/distributed/distributed_dag.py</code>, <code>orchestrator/distributed/worker_registry.py</code>, <code>orchestrator/distributed/task_dispatcher.py</code>, <code>orchestrator/distributed/transport.py</code></p>
+<p>跨机器 DAG 执行：</p>
+<ul>
+<li><strong>WorkerRegistry</strong>: Worker 注册、能力匹配、负载均衡、心跳检测</li>
+<li><strong>TaskDispatcher</strong>: 分发策略（Least Loaded / Capability-based / LOCAL_FIRST）</li>
+<li><strong>Transport</strong>: 本地/远程通信抽象（LocalTransport 用于测试）</li>
+<li><strong>DistributedDAG</strong>: 在本地 TaskGraph 之上添加分布式层
+<ul>
+<li>Worker 失败时自动重分配</li>
+<li>混合执行（部分本地、部分远程）</li>
+</ul>
+</li>
+</ul>
+<h3 id="93-knowledge-graph">9.3 Knowledge Graph</h3>
+<p><strong>文件</strong>: <code>memory/knowledge_graph.py</code></p>
+<p>结构化项目知识图谱：</p>
+<ul>
+<li>Entity-Relation 图（module, class, function, api_endpoint, data_table, decision）</li>
+<li>RAG 查询支持</li>
+<li>项目结构、依赖、API 端点、设计决策追踪</li>
+</ul>
+<h3 id="94-dreaming记忆重组">9.4 Dreaming（记忆重组）</h3>
+<p><strong>文件</strong>: <code>memory/dreaming.py</code></p>
+<p>DAG 完成后异步运行记忆整理：</p>
+<ul>
+<li>提取关键决策、错误模式、文件变更</li>
+<li>写入 L3 长期知识库</li>
+<li>下次同类型任务自动加载相关记忆</li>
+</ul>
+<h3 id="95-episodic-memory">9.5 Episodic Memory</h3>
+<p><strong>文件</strong>: <code>memory/episodic.py</code>, <code>memory/episodic_utils.py</code></p>
+<p>情景记忆系统，追踪任务执行经历。</p>
+<h3 id="96-skill-marketplace">9.6 Skill Marketplace</h3>
+<p><strong>文件</strong>: <code>skills/marketplace.py</code>, <code>skills/_registry.py</code>, <code>skills/_loader.py</code>, <code>skills/_executor.py</code></p>
+<ul>
+<li>内置技能：brainstorming, code_review, code_simplifier, deep_research, inbox_digest, log_analyzer</li>
+<li>市场技能：catalog.json 管理，HTTP/Git 下载</li>
+<li>安全：SSRF 防护（ALLOWED_SOURCE_HOSTS 白名单）、路径遍历防护</li>
+</ul>
+<h3 id="97-feature-registry">9.7 Feature Registry</h3>
+<p><strong>文件</strong>: <code>providers/advanced/features.py</code>, <code>providers/advanced/thinking.py</code></p>
+<ul>
+<li>厂商无关的模型能力声明</li>
+<li>Adaptive thinking（Opus/Sonnet/Haiku 差异化配置）</li>
+<li>Effort levels（推理强度控制）</li>
+</ul>
+<h3 id="98-cost-tracker">9.8 Cost Tracker</h3>
+<p><strong>文件</strong>: <code>orchestrator/cost_tracker.py</code></p>
+<p>Token 使用追踪 + 成本计算。</p>
+<h3 id="99-self-healer">9.9 Self-Healer</h3>
+<p><strong>文件</strong>: <code>orchestrator/self_healer.py</code></p>
+<p>自动错误修复：诊断失败原因，自动调整策略重试。</p>
+<h3 id="910-compaction">9.10 Compaction</h3>
+<p><strong>文件</strong>: <code>orchestrator/advanced/compaction.py</code></p>
+<p>高级上下文压缩策略。</p>
+<h3 id="911-task-queue">9.11 Task Queue</h3>
+<p><strong>文件</strong>: <code>orchestrator/task_queue.py</code></p>
+<p>优先级任务队列。</p>
+<hr>
+<h2 id="10-mcp-server-生态">10. MCP Server 生态</h2>
+<h3 id="101-核心-server">10.1 核心 Server</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Server</th><th>文件</th><th>功能</th></tr></thead><tbody><tr><td><strong>Filesystem</strong></td><td><code>filesystem_server.py</code></td><td>文件读写、目录操作、符号链接</td></tr><tr><td><strong>Terminal</strong></td><td><code>terminal_server.py</code></td><td>Shell 命令执行、Policy Engine 强制</td></tr><tr><td><strong>GitHub</strong></td><td><code>github_server.py</code></td><td>Git 操作、PR 管理</td></tr><tr><td><strong>Web Search</strong></td><td><code>web_search_server.py</code></td><td>网页搜索（DDGS）</td></tr><tr><td><strong>Database</strong></td><td><code>database_server.py</code></td><td>数据库操作</td></tr><tr><td><strong>SQLite</strong></td><td><code>sqlite_server.py</code></td><td>SQLite 探索与查询</td></tr></tbody></table>
+<h3 id="102-高级-server">10.2 高级 Server</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Server</th><th>文件</th><th>功能</th></tr></thead><tbody><tr><td><strong>Browser</strong></td><td><code>browser_server.py</code></td><td>浏览器自动化</td></tr><tr><td><strong>Computer Use</strong></td><td><code>computer_use_server.py</code></td><td>桌面操作（Argus Agent）</td></tr><tr><td><strong>Smart Edit</strong></td><td><code>smart_edit_server.py</code></td><td>智能文件编辑</td></tr><tr><td><strong>Excel</strong></td><td><code>excel_server.py</code></td><td>Excel 操作</td></tr><tr><td><strong>Pandoc</strong></td><td><code>pandoc_server.py</code></td><td>文档格式转换</td></tr><tr><td><strong>Knowledge Graph</strong></td><td><code>knowledge_graph_server.py</code></td><td>知识图谱查询</td></tr><tr><td><strong>Memory</strong></td><td><code>memory_server.py</code></td><td>记忆存储与检索</td></tr><tr><td><strong>Mindmap</strong></td><td><code>mindmap_server.py</code></td><td>思维导图生成</td></tr><tr><td><strong>Multimodal</strong></td><td><code>multimodal_server.py</code></td><td>多模态处理</td></tr><tr><td><strong>Summarizer</strong></td><td><code>summarizer_server.py</code></td><td>文档摘要</td></tr><tr><td><strong>Alchemy</strong></td><td><code>alchemy_server.py</code></td><td>数据转换</td></tr><tr><td><strong>Calculator</strong></td><td><code>calculator_server.py</code></td><td>计算器</td></tr><tr><td><strong>Stub</strong></td><td><code>stub_server.py</code></td><td>测试用桩 Server</td></tr></tbody></table>
+<h3 id="103-computer-use-子系统">10.3 Computer Use 子系统</h3>
+<p><strong>文件</strong>: <code>mcp_servers/computer_use/</code> (12 个文件)</p>
+<p>Argus Agent 架构：</p>
+<ul>
+<li><code>argus_agent.py</code>: 核心 Agent 逻辑</li>
+<li><code>argus_computer_tool.py</code>: 计算机操作工具</li>
+<li><code>argus_model_detect.py</code>: 模型检测</li>
+<li><code>argus_safety.py</code>: 安全检查</li>
+<li><code>argus_screen.py</code>: 屏幕捕获</li>
+<li><code>input_control.py</code>: 输入控制（鼠标、键盘）</li>
+<li><code>ocr.py</code>: 文字识别</li>
+<li><code>screenshot.py</code>: 截图</li>
+<li><code>screen_info.py</code>: 屏幕信息</li>
+<li><code>security.py</code>: 安全策略</li>
+<li><code>types.py</code>: 类型定义</li>
+</ul>
+<hr>
+<h2 id="11-前端-desktop-gui">11. 前端 Desktop GUI</h2>
+<p><strong>路径</strong>: <code>desktop/app/</code></p>
+<h3 id="111-核心组件">11.1 核心组件</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>组件</th><th>文件</th><th>功能</th></tr></thead><tbody><tr><td><strong>PromptBox</strong></td><td><code>components/chat/PromptBox.tsx</code></td><td>主聊天输入（effort slider、model dropdown、Ultracode）</td></tr><tr><td><strong>OmniPromptBox</strong></td><td><code>components/omni/OmniPromptBox.tsx</code></td><td>多模态输入（文件上传、粘贴、拖拽）</td></tr><tr><td><strong>OmniPane</strong></td><td><code>components/omni/OmniPane.tsx</code></td><td>Omni 面板（流式输出、错误处理）</td></tr><tr><td><strong>MessageList</strong></td><td><code>components/chat/MessageList.tsx</code></td><td>消息列表</td></tr></tbody></table>
+<h3 id="112-状态管理">11.2 状态管理</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Store</th><th>文件</th><th>功能</th></tr></thead><tbody><tr><td>settingsStore</td><td><code>stores/settingsStore.ts</code></td><td>全局设置</td></tr><tr><td>chatStore</td><td><code>stores/chatStore.ts</code></td><td>聊天状态</td></tr><tr><td>sessionStore</td><td><code>stores/sessionStore.ts</code></td><td>会话管理</td></tr></tbody></table>
+<h3 id="113-技术栈">11.3 技术栈</h3>
+<ul>
+<li>React + TypeScript</li>
+<li>Vite 构建</li>
+<li>Zustand 状态管理</li>
+<li>SSE streaming</li>
+</ul>
+<h3 id="114-构建命令">11.4 构建命令</h3>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#005CC5">cd</span><span style="color:#032F62"> desktop/app</span></span>
+<span class="line"><span style="color:#6F42C1">npm</span><span style="color:#032F62"> run</span><span style="color:#032F62"> build</span><span style="color:#6A737D">    # vite build</span></span>
+<span class="line"><span style="color:#6F42C1">npx</span><span style="color:#032F62"> tsc</span><span style="color:#005CC5"> --noEmit</span><span style="color:#6A737D"> # type check</span></span></code></pre>
+<hr>
+<h2 id="12-文件结构索引">12. 文件结构索引</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>ALL-AGENT-v4.5.0-Omni3-20260601/</span></span>
+<span class="line"><span>├── agents/                    # Agent 实现</span></span>
+<span class="line"><span>│   ├── base.py               # Agent 基类 + AgentSpec + AgentResult</span></span>
+<span class="line"><span>│   ├── planner.py            # PlannerAgent</span></span>
+<span class="line"><span>│   ├── coder.py              # CoderAgent</span></span>
+<span class="line"><span>│   ├── reviewer.py           # SubReviewer + GlobalReviewer</span></span>
+<span class="line"><span>│   ├── debugger.py           # DebuggerAgent</span></span>
+<span class="line"><span>│   ├── finalizer.py          # FinalizerAgent</span></span>
+<span class="line"><span>│   ├── computer_use_agent.py # ComputerUseAgent</span></span>
+<span class="line"><span>│   ├── registry.py           # AgentRegistry（声明式加载）</span></span>
+<span class="line"><span>│   └── advanced/advisor.py   # 高级 Advisor Agent</span></span>
+<span class="line"><span>├── providers/                 # 模型 Provider 抽象</span></span>
+<span class="line"><span>│   ├── base.py               # Provider ABC</span></span>
+<span class="line"><span>│   ├── anthropic.py          # Anthropic 原生</span></span>
+<span class="line"><span>│   ├── openai.py             # OpenAI 适配</span></span>
+<span class="line"><span>│   ├── gemini.py             # Gemini 适配</span></span>
+<span class="line"><span>│   ├── fallback.py           # 多 Provider 降级</span></span>
+<span class="line"><span>│   └── advanced/             # Features + Thinking</span></span>
+<span class="line"><span>├── hub/                       # MCP Hub 核心</span></span>
+<span class="line"><span>│   ├── client.py             # MCP Client（stdio JSON-RPC）</span></span>
+<span class="line"><span>│   ├── registry.py           # ToolRegistry</span></span>
+<span class="line"><span>│   ├── router.py             # Tool 路由 + MCP 过滤</span></span>
+<span class="line"><span>│   ├── gateway.py            # Runtime 模式分发</span></span>
+<span class="line"><span>│   ├── model_manager.py      # ModelManager</span></span>
+<span class="line"><span>│   ├── permissions.py        # PermissionManager</span></span>
+<span class="line"><span>│   ├── policy_engine.py      # Policy Engine</span></span>
+<span class="line"><span>│   ├── tool_capability.py    # ToolCapability Metadata</span></span>
+<span class="line"><span>│   ├── server_manager.py     # MCP Server 管理</span></span>
+<span class="line"><span>│   ├── admin_tools.py        # Admin 工具</span></span>
+<span class="line"><span>│   ├── mcp_resources.py      # MCP 资源</span></span>
+<span class="line"><span>│   └── advanced/             # Citations, CodeExecution, ComputerUse, Detector, ToolSearch</span></span>
+<span class="line"><span>├── runtime/                   # Runtime 模式</span></span>
+<span class="line"><span>│   ├── base_mode.py          # BaseMode ABC</span></span>
+<span class="line"><span>│   ├── hoshiai.py            # 全能独立</span></span>
+<span class="line"><span>│   ├── swing.py              # MCP 聚合</span></span>
+<span class="line"><span>│   ├── cadence.py            # 轻量独立</span></span>
+<span class="line"><span>│   └── apothosis_mode.py     # Apotheosis 模式</span></span>
+<span class="line"><span>├── orchestrator/              # 编排器</span></span>
+<span class="line"><span>│   ├── orchestrator.py       # 中央调度器</span></span>
+<span class="line"><span>│   ├── task_graph.py         # DAG</span></span>
+<span class="line"><span>│   ├── task_lifecycle.py     # 状态机</span></span>
+<span class="line"><span>│   ├── event_bus.py          # Event Bus</span></span>
+<span class="line"><span>│   ├── context.py            # L0-L3 Context</span></span>
+<span class="line"><span>│   ├── context_snapshot.py   # Context Snapshot</span></span>
+<span class="line"><span>│   ├── blackboard.py         # Blackboard + RingBuffer + GC</span></span>
+<span class="line"><span>│   ├── recovery.py           # Checkpoint + Recovery</span></span>
+<span class="line"><span>│   ├── conflict.py           # 冲突检测</span></span>
+<span class="line"><span>│   ├── cost_tracker.py       # 成本追踪</span></span>
+<span class="line"><span>│   ├── self_healer.py        # 自修复</span></span>
+<span class="line"><span>│   ├── task_queue.py         # 任务队列</span></span>
+<span class="line"><span>│   ├── advanced/compaction.py # 高级压缩</span></span>
+<span class="line"><span>│   └── distributed/          # 分布式 DAG</span></span>
+<span class="line"><span>│       ├── distributed_dag.py</span></span>
+<span class="line"><span>│       ├── worker_registry.py</span></span>
+<span class="line"><span>│       ├── task_dispatcher.py</span></span>
+<span class="line"><span>│       └── transport.py</span></span>
+<span class="line"><span>├── mcp_servers/               # MCP Server 实现（18 个）</span></span>
+<span class="line"><span>│   ├── filesystem_server.py</span></span>
+<span class="line"><span>│   ├── terminal_server.py</span></span>
+<span class="line"><span>│   ├── github_server.py</span></span>
+<span class="line"><span>│   ├── browser_server.py</span></span>
+<span class="line"><span>│   ├── computer_use_server.py</span></span>
+<span class="line"><span>│   ├── database_server.py</span></span>
+<span class="line"><span>│   ├── ... (共 18 个)</span></span>
+<span class="line"><span>│   └── computer_use/         # Computer Use 子系统（12 个文件）</span></span>
+<span class="line"><span>├── memory/                    # 记忆系统</span></span>
+<span class="line"><span>│   ├── store.py              # MemoryStore</span></span>
+<span class="line"><span>│   ├── summarize.py          # 摘要</span></span>
+<span class="line"><span>│   ├── dreaming.py           # 记忆重组</span></span>
+<span class="line"><span>│   ├── knowledge_graph.py    # 知识图谱</span></span>
+<span class="line"><span>│   ├── episodic.py           # 情景记忆</span></span>
+<span class="line"><span>│   ├── checkpoints.py        # 检查点</span></span>
+<span class="line"><span>│   └── memory_tools.py       # 记忆工具</span></span>
+<span class="line"><span>├── security/                  # 安全模块</span></span>
+<span class="line"><span>│   ├── sandbox.py            # 沙箱</span></span>
+<span class="line"><span>│   ├── allowlist.py          # 白名单</span></span>
+<span class="line"><span>│   ├── denylist.py           # 黑名单</span></span>
+<span class="line"><span>│   ├── approvals.py          # 审批流</span></span>
+<span class="line"><span>│   ├── docker_sandbox.py     # Docker 沙箱</span></span>
+<span class="line"><span>│   └── cu_security/          # Computer Use 安全</span></span>
+<span class="line"><span>├── skills/                    # 技能系统</span></span>
+<span class="line"><span>│   ├── marketplace.py        # 技能市场</span></span>
+<span class="line"><span>│   ├── _registry.py          # 技能注册</span></span>
+<span class="line"><span>│   ├── _loader.py            # 技能加载</span></span>
+<span class="line"><span>│   ├── _executor.py          # 技能执行</span></span>
+<span class="line"><span>│   ├── built_in/             # 内置技能（6 个）</span></span>
+<span class="line"><span>│   └── market/               # 市场技能 catalog</span></span>
+<span class="line"><span>├── features/                  # 功能特性</span></span>
+<span class="line"><span>│   ├── base.py               # NewFeatureBase</span></span>
+<span class="line"><span>│   ├── milestone_management.py</span></span>
+<span class="line"><span>│   ├── progress_tracking.py</span></span>
+<span class="line"><span>│   ├── dependency_management.py</span></span>
+<span class="line"><span>│   ├── knowledge_sharing.py</span></span>
+<span class="line"><span>│   └── documentation_generation.py</span></span>
+<span class="line"><span>├── apothosis/                 # 自优化引擎</span></span>
+<span class="line"><span>│   ├── engine.py             # 五层引擎</span></span>
+<span class="line"><span>│   ├── adaptive.py           # 自适应</span></span>
+<span class="line"><span>│   ├── observability.py      # 可观测性</span></span>
+<span class="line"><span>│   ├── evolution.py          # 自进化</span></span>
+<span class="line"><span>│   └── healer.py             # 自修复</span></span>
+<span class="line"><span>├── evaluation/                # 评估框架</span></span>
+<span class="line"><span>│   ├── metrics.py            # 指标</span></span>
+<span class="line"><span>│   ├── replay.py             # 回放</span></span>
+<span class="line"><span>│   └── dashboard.py          # 仪表板</span></span>
+<span class="line"><span>├── benchmark/                 # 基准测试</span></span>
+<span class="line"><span>│   ├── eval_framework.py</span></span>
+<span class="line"><span>│   └── smoke_tests.py</span></span>
+<span class="line"><span>├── model_router/              # 模型路由器</span></span>
+<span class="line"><span>│   ├── router.py</span></span>
+<span class="line"><span>│   ├── anthropic_provider.py</span></span>
+<span class="line"><span>│   ├── openai_provider.py</span></span>
+<span class="line"><span>│   ├── google_provider.py</span></span>
+<span class="line"><span>│   └── local_provider.py</span></span>
+<span class="line"><span>├── constitution/              # 宪法 AI</span></span>
+<span class="line"><span>│   └── constitution.py</span></span>
+<span class="line"><span>├── api/                       # API 层</span></span>
+<span class="line"><span>│   ├── main.py</span></span>
+<span class="line"><span>│   └── features_api.py</span></span>
+<span class="line"><span>├── cli/                       # CLI</span></span>
+<span class="line"><span>│   ├── main.py</span></span>
+<span class="line"><span>│   ├── agent_cli.py</span></span>
+<span class="line"><span>│   ├── config.py</span></span>
+<span class="line"><span>│   ├── app.py</span></span>
+<span class="line"><span>│   ├── keychain.py</span></span>
+<span class="line"><span>│   ├── setup.py</span></span>
+<span class="line"><span>│   ├── commands/</span></span>
+<span class="line"><span>│   ├── display/</span></span>
+<span class="line"><span>│   ├── engine/</span></span>
+<span class="line"><span>│   └── presets/</span></span>
+<span class="line"><span>├── desktop/                   # Desktop GUI</span></span>
+<span class="line"><span>│   ├── server.py             # FastAPI 主服务器</span></span>
+<span class="line"><span>│   ├── schemas.py</span></span>
+<span class="line"><span>│   ├── app/                  # React + TypeScript 前端</span></span>
+<span class="line"><span>│   └── debug_dashboard.py</span></span>
+<span class="line"><span>├── frontend/</span></span>
+<span class="line"><span>│   └── debug_dashboard.py</span></span>
+<span class="line"><span>├── tests/                     # 测试（595 个）</span></span>
+<span class="line"><span>│   ├── unit/                 # 14 个测试文件</span></span>
+<span class="line"><span>│   ├── integration/          # 5 个测试文件</span></span>
+<span class="line"><span>│   ├── e2e/                  # 1 个测试文件</span></span>
+<span class="line"><span>│   └── performance/          # 1 个测试文件</span></span>
+<span class="line"><span>├── CLAUDE.md                  # 项目规范</span></span>
+<span class="line"><span>├── README.md                  # 项目说明</span></span>
+<span class="line"><span>├── QUICK_START.md             # 快速开始</span></span>
+<span class="line"><span>├── memory_ai_agent_cc.md      # 项目记忆文件</span></span>
+<span class="line"><span>├── pyproject.toml             # 项目配置</span></span>
+<span class="line"><span>├── requirements.txt           # 依赖</span></span>
+<span class="line"><span>├── start.py                   # Python 启动入口</span></span>
+<span class="line"><span>├── start.sh / start.bat       # Shell/Batch 启动</span></span>
+<span class="line"><span>├── stop.sh / stop.bat         # 停止脚本</span></span>
+<span class="line"><span>└── .env                       # 环境变量</span></span></code></pre>
+<hr>
+<h2 id="13-已知局限与后续方向">13. 已知局限与后续方向</h2>
+<h3 id="已知局限">已知局限</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>局限</th><th>严重度</th><th>说明</th></tr></thead><tbody><tr><td>Blackboard GC 需更大重构</td><td>中</td><td>task_state 保留策略需按 DAG 拓扑动态调整</td></tr><tr><td>Context snapshot 不完整</td><td>低</td><td>恢复时 L1+L3 已支持，但压缩比可优化</td></tr><tr><td>Router 无 per-agent filter 实例</td><td>低</td><td>当前使用无状态函数调用，多次过滤无缓存</td></tr><tr><td>context_usage 为轮询而非推送</td><td>低</td><td>前端每 5s 轮询，可改为 SSE</td></tr></tbody></table>
+<h3 id="后续方向">后续方向</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>优先级</th><th>方向</th><th>内容</th></tr></thead><tbody><tr><td>P1</td><td>性能基准</td><td>Token 预算、Context 压缩比、并行 DAG 吞吐</td></tr><tr><td>P2</td><td>前端改进</td><td>响应式布局、Dark Mode 优化、移动端适配</td></tr><tr><td>P3</td><td>文档完善</td><td>API 文档、用户指南、部署指南</td></tr><tr><td>P4</td><td>CI/CD</td><td>GitHub Actions 自动测试 + 部署</td></tr></tbody></table>
+<hr>
+<p><em>本报告覆盖 ALL-AGENT v5.0 Omni3 的全部已实现功能、架构设计、文件结构和已知局限。</em></p>  </article> </div> </div>  </main> <footer class="footer-border" style="padding: 2.5rem 1.5rem; text-align: center; font-size: 0.8125rem; color: #9a938c; background: #f5f0eb;" data-astro-cid-37fxchfa> <p data-astro-cid-37fxchfa>&copy; 2026 AI Portfolio. Crafted with precision.</p> </footer> </body></html>  <script type="module">function l(){const s=document.querySelector(".markdown-content"),o=document.getElementById("toc");if(!s||!o)return;o.innerHTML="";const a=s.querySelectorAll("h2, h3");a.forEach((e,n)=>{const r=e.id||`heading-${n}`;e.id=r;const t=document.createElement("a");t.href=`#${r}`,t.textContent=e.textContent?.trim()||"",t.style.display="block",t.style.padding="0.2rem 0",t.style.color=e.tagName==="H2"?"#1a1a1a":"#9a938c",t.style.textDecoration="none",t.style.transition="color 0.15s ease",t.style.paddingLeft=e.tagName==="H3"?"0.75rem":"0",t.style.fontSize=e.tagName==="H3"?"0.75rem":"0.8125rem",t.style.opacity="0.85",o.appendChild(t)});const i=new IntersectionObserver(e=>{e.forEach(n=>{if(n.isIntersecting){const r=n.target.id;o.querySelectorAll("a").forEach(t=>{const c=t.getAttribute("href")===`#${r}`;t.style.opacity=c?"1":"0.85",t.style.color=c?"#1a1a1a":"",t.style.fontWeight=c?"600":""})}})},{rootMargin:"-80px 0px -70% 0px"});a.forEach(e=>i.observe(e))}l();document.addEventListener("astro:page-load",l);</script>
